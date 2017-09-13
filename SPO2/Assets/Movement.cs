@@ -13,11 +13,12 @@ public class Movement : MonoBehaviour
 
 
 
-
+    
     // Use this for initialization
     void Start()
     {
 
+        CheckStats();
 
         myBody = this.GetComponent<Rigidbody2D>();
         myTransform = this.transform;
@@ -27,10 +28,8 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //Testing
-        Vector2 gravityS = new Vector2(0, gravityStrength);
 
-        Physics2D.gravity = gravityS;
+        
 
 
 
@@ -64,4 +63,18 @@ public class Movement : MonoBehaviour
 
         }
     }
+    public void CheckStats() {
+        //Finds the player stats script
+        playerStats Playstats = GameObject.Find("Player").GetComponent<playerStats>();
+        //Sets the gravity variable in this script
+        gravityStrength = Playstats.gravity;
+        //change the ingame gravity
+        Vector2 gravityS = new Vector2(0, gravityStrength);
+        Physics2D.gravity = gravityS;
+        //Change jump varible
+        jumpVelocity = Playstats.jumphight;
+        //change speed varible
+        speed = Playstats.playerSpeed;
+    }
+
 }
