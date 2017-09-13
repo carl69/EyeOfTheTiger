@@ -122,7 +122,8 @@ GameObject:
   - component: {fileID: 83466350}
   - component: {fileID: 83466349}
   - component: {fileID: 83466348}
-  m_Layer: 0
+  - component: {fileID: 83466355}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,13 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ea29d047d2450498745371ba044b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
-  jumpVelocity: 10
-  gravityStrength: 0
   playerMask:
     serializedVersion: 2
     m_Bits: 4294967039
   isGrounded: 0
+  updateStats: 0
 --- !u!50 &83466349
 Rigidbody2D:
   serializedVersion: 4
@@ -260,6 +259,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &83466355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 83466347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0177bbd82faf5e42872b0b9a9a95e63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSpeed: 10
+  jumphight: 10
+  gravity: -10
 --- !u!1 &473993881
 GameObject:
   m_ObjectHideFlags: 0
@@ -428,7 +441,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1833391016}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: tag_ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

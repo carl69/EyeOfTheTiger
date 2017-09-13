@@ -5,12 +5,12 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
-    public float speed = 10f, jumpVelocity = 10f, gravityStrength;
+    private float speed = 10f, jumpVelocity = 10f, gravityStrength;
     public LayerMask playerMask;
     Transform myTransform, tagGround;
     Rigidbody2D myBody;
     public bool isGrounded = false;
-
+    public bool updateStats;
 
 
     
@@ -29,7 +29,9 @@ public class Movement : MonoBehaviour
     void FixedUpdate()
     {
 
-        
+        if (updateStats) {
+            CheckStats();
+        }
 
 
 
