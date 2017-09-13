@@ -58,12 +58,10 @@ public class Movement : MonoBehaviour
 
     public void Jump()
     {
+        //Checks if you are standing on the ground
         if (isGrounded)
         {
             myBody.AddForce(transform.up * jumpVelocity);
-            //myBody.velocity += new Vector2(0, jumpVelocity);
-            //myBody.AddForce(Vector2.up * jumpVelocity);
-            //myBody.AddForce(new Vector2(0, jumpVelocity));
 
 
         }

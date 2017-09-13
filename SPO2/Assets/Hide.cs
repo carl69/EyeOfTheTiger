@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Hide : MonoBehaviour {
 
+    public Renderer rend;
 	// Use this for initialization
 	void Start () {
-		
+        rend = GetComponent<Renderer>();
+        rend.enabled = true;
 	}
 	
 	// Update is called once per frame
@@ -14,18 +16,17 @@ public class Hide : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D (Collider2D other)
     {
-        Debug.Log("2");
 
-        if (other.tag == "Bush")
+        if (other.gameObject.tag == "Bush")
         {
             intoHide();
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Bush")
+        if (collision.gameObject.tag == "Bush")
         {
             outoHide();
         }
@@ -34,10 +35,12 @@ public class Hide : MonoBehaviour {
 
     public void intoHide()
     {
+        rend.enabled = false;
         Debug.Log("in");
     }
     public void outoHide()
     {
+        rend.enabled = true;
         Debug.Log("out");
     }
 
