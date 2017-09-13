@@ -50,7 +50,10 @@ public class Movement : MonoBehaviour
 
     public void Move(float horizonalInput)
     {
-        myBody.velocity = new Vector2(horizonalInput * speed, 0);
+        //myBody.velocity = new Vector2 (horizonalInput * speed,0);
+        Vector2 moveVel = myBody.velocity;
+        moveVel.x = horizonalInput * speed;
+        myBody.velocity = moveVel;
     }
 
     public void Jump()
