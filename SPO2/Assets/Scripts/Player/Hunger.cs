@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThisIsAChange : MonoBehaviour {
+public class Hunger : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {

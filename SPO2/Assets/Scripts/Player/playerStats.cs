@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class playerStats : MonoBehaviour {
-    public float playerSpeed, jumphight, gravity;
+    public float playerSpeed, jumphight, gravity, maxHunger = 100f;
 
 	// Use this for initialization
 	void Start () {
