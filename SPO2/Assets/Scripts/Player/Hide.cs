@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hide : MonoBehaviour {
+    public bool hidden = false;
 
-    public Renderer rend;
+    private Renderer rend;
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<Renderer>();
@@ -36,12 +37,12 @@ public class Hide : MonoBehaviour {
     public void intoHide()
     {
         rend.enabled = false;
-        Debug.Log("in");
+        hidden = true;
     }
     public void outoHide()
     {
         rend.enabled = true;
-        Debug.Log("out");
+        hidden = false;
     }
 
 }
