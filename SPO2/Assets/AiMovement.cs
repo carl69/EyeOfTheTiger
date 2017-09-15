@@ -10,8 +10,14 @@ public class AiMovement : MonoBehaviour {
     public LayerMask jumpWhenMeet;
     public bool isJumpingRight = false;
     public bool isJumpingLeft = false;
+
+    public float jumpHight;
+    Rigidbody2D AiBodi;
 	// Use this for initialization
 	void Start () {
+        AiBodi = this.GetComponent<Rigidbody2D>();
+
+
         ground_right = GameObject.Find(this.name + "/tag_AIground_Right").transform;
         ground_left = GameObject.Find(this.name + "/tag_AIground_Left").transform;
 
@@ -25,7 +31,10 @@ public class AiMovement : MonoBehaviour {
 
 
 
-
+        if (isJumpingLeft || isJumpingRight)
+        {
+            Jump();
+        }
 
 
         float step = aiSpeed * Time.deltaTime;
@@ -33,4 +42,9 @@ public class AiMovement : MonoBehaviour {
 
 
 	}
+
+    void Jump() {
+        AiBodi.AddForce(transform.up * jumpHight);
+
+    }
 }
