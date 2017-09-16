@@ -44,7 +44,7 @@ public class AiMovement : MonoBehaviour {
 	}
 
     void Jump() {
-        AiBodi.AddForce(transform.up * jumpHight);
+        AiBodi.AddForce(transform.up * jumpHight *Time.deltaTime);
 
     }
 }
