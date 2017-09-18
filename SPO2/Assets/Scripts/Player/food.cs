@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class food : MonoBehaviour {
 	public int eaten = 0;
-
+    public int amountOfFood = 1;
 	// Use this for initialization
 	void Start () {
 		
@@ -13,7 +13,7 @@ public class food : MonoBehaviour {
 	public void OnTriggerEnter2D(Collider2D other){
 
 		if (other.gameObject.tag == "food") {
-			eaten++;
+			eaten += amountOfFood;
 			Destroy (other.gameObject);
 		}
 
