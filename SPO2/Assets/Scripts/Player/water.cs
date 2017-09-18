@@ -1,17 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class water : MonoBehaviour {
-	public bool drinking = false;
+	private bool drinking = false;
 	public int drink = 100;
 
-    private float rate = 2;
-    public float timer;
-	// Use this for initialization
-	void Start () {
-
-	}
+    // how fast you lose water
+    public float rate = 2;
+    private float timer;
 
     void Update() {
 
@@ -26,6 +24,11 @@ public class water : MonoBehaviour {
         {
             timer = Time.time + rate;
             drink--;
+
+            if (drink <= 0)
+            {
+                SceneManager.LoadScene("Prototype");
+            }
         }
         
     }

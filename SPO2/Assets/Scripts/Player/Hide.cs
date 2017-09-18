@@ -8,9 +8,7 @@ public class Hide : MonoBehaviour {
     private Renderer[] renderChildren;
 	// Use this for initialization
 	void Start () {
-        //rend = GetComponentInChildren<Renderer>();
-        //rend = GetComponent<Renderer>();
-        //rend.enabled = true;
+        //finds child objects
         renderChildren = GetComponentsInChildren<Renderer>();
     }
 	
@@ -45,10 +43,7 @@ public class Hide : MonoBehaviour {
     }
     public void outoHide()
     {
-        //rend.enabled = true;
         hidden = false;
-        
-
         foreach (Renderer r in renderChildren)
         {
             r.enabled = true;
