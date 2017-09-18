@@ -52,7 +52,7 @@ public class Movement : MonoBehaviour
     {
         //myBody.velocity = new Vector2 (horizonalInput * speed,0);
         Vector2 moveVel = myBody.velocity;
-        moveVel.x = horizonalInput * speed;
+        moveVel.x = horizonalInput * speed * Time.deltaTime;
         myBody.velocity = moveVel;
     }
 
@@ -61,7 +61,7 @@ public class Movement : MonoBehaviour
         //Checks if you are standing on the ground
         if (isGrounded)
         {
-            myBody.AddForce(transform.up * jumpVelocity);
+            myBody.AddForce(transform.up * jumpVelocity*Time.deltaTime);
 
 
         }

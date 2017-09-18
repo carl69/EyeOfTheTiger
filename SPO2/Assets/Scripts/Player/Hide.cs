@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Hide : MonoBehaviour {
+    public bool hidden = false;
 
-    public Renderer rend;
+    private Renderer[] renderChildren;
 	// Use this for initialization
 	void Start () {
-        rend = GetComponent<Renderer>();
-        rend.enabled = true;
-	}
+        //rend = GetComponentInChildren<Renderer>();
+        //rend = GetComponent<Renderer>();
+        //rend.enabled = true;
+        renderChildren = GetComponentsInChildren<Renderer>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -35,13 +38,21 @@ public class Hide : MonoBehaviour {
 
     public void intoHide()
     {
-        rend.enabled = false;
-        Debug.Log("in");
+        foreach (Renderer r in renderChildren)
+        {
+            r.enabled = false;
+        }
     }
     public void outoHide()
     {
-        rend.enabled = true;
-        Debug.Log("out");
+        //rend.enabled = true;
+        hidden = false;
+        
+
+        foreach (Renderer r in renderChildren)
+        {
+            r.enabled = true;
+        }
     }
 
 }
