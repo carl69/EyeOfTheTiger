@@ -6,7 +6,7 @@ public class AiPray : MonoBehaviour {
     public Vector2[] walkLocations;
     Vector2 curTarget;
     private int target = 0;
-
+    public float turnDist = 5;
     public float aiSpeed = 10;
     private int listSize;
 	// Use this for initialization
@@ -21,11 +21,10 @@ public class AiPray : MonoBehaviour {
         float dist = Vector2.Distance(curTarget, this.transform.position);
 
 
-
-        if (dist <= 5)
+        if (dist <= turnDist)
         {
             
-            target = Random.Range(0,2);
+            target = Random.Range(0,listSize);
             curTarget = walkLocations[target];
         }
         else
