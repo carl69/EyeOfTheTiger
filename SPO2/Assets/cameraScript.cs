@@ -14,7 +14,6 @@ public class cameraScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         transform.LookAt(Player);
-        transform.position = Vector2.MoveTowards(transform.position, Player.position, speed);
-        
+        //transform.position = Vector2.MoveTowards(transform.position, Player.position, speed);
 	}
 }
