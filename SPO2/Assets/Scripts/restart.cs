@@ -9,4 +9,8 @@ public class restart : MonoBehaviour {
     {
         SceneManager.LoadScene("Prototype");
     }
+    public void RestartGame() {
+        SceneManager.LoadScene("Prototype");
+
+    }
 }
