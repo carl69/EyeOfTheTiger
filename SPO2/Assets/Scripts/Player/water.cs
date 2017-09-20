@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class water : MonoBehaviour {
 	private bool drinking = false;
-	public int drink = 100;
-
+	public int drink = 50;
+    public int MaxWater = 100;
     // how fast you lose water
     public float rate = 2;
     private float timer;
@@ -15,7 +15,7 @@ public class water : MonoBehaviour {
 
         if (drinking == true)
         {
-            if (drink < 200)
+            if (drink < MaxWater)
             {
                 drink++;
             }
