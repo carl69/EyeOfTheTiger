@@ -73,7 +73,15 @@ public class EnemieAIPrototype : MonoBehaviour {
         }
         pathIsEnded = false;
         // dir to next waypoint
-        Vector3 dir = path.vectorPath[currentWaypoint] - transform.position;
+        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        dir *= speed * Time.fixedDeltaTime;
+
+        rb.AddForce(dir, fMode);
+        float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
+        if (dist < nextWaypointDistance)
+        {
+            currentWaypoint++;
+        }
     }
 
 

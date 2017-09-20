@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4829165577619602}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: tag_ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4613483915556120}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tiger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 4856895723125884}
   - component: {fileID: 33203102091787320}
   - component: {fileID: 23755462966020174}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group50111
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -69,12 +69,13 @@ GameObject:
   - component: {fileID: 33562661082156876}
   - component: {fileID: 61713461684701030}
   - component: {fileID: 50444668722237500}
+  - component: {fileID: 114116563499665226}
   - component: {fileID: 114862527210606322}
   - component: {fileID: 114406736777673982}
   - component: {fileID: 114599147805045236}
   - component: {fileID: 114814146760689386}
   - component: {fileID: 114881057953235592}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -91,7 +92,7 @@ GameObject:
   - component: {fileID: 4317130800289906}
   - component: {fileID: 33610928632752966}
   - component: {fileID: 23050048333259584}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group389
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +109,7 @@ GameObject:
   - component: {fileID: 4478889252080008}
   - component: {fileID: 33061387556585982}
   - component: {fileID: 23525515032045406}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group63258
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -125,7 +126,7 @@ GameObject:
   - component: {fileID: 4159555049783676}
   - component: {fileID: 33554017642789450}
   - component: {fileID: 23987842639021726}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group15816
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -144,7 +145,7 @@ GameObject:
   - component: {fileID: 92322640227806026}
   - component: {fileID: 124369876261701178}
   - component: {fileID: 81444422128567092}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -270,8 +271,8 @@ Camera:
   m_GameObject: {fileID: 1777413655721166}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.4745098, g: 0.4745098, b: 0.4745098, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -475,7 +476,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: -34.37
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -520,6 +521,17 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1777413655721166}
   m_Enabled: 1
+--- !u!114 &114116563499665226
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1544061684189726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a628f6eb4804d33448233347db74a1f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114406736777673982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -562,7 +574,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drink: 100
-  rate: 2
+  MaxWater: 100
+  rate: 0.1
 --- !u!114 &114862527210606322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -576,7 +589,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMask:
     serializedVersion: 2
-    m_Bits: 4294965448
+    m_Bits: 4294965960
   isGrounded: 0
   updateStats: 0
 --- !u!114 &114881057953235592
@@ -590,9 +603,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac781f134f7339e4f91682f751c9b003, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  eaten: 50
-  amountOfFood: 10
-  rate: 10
+  maxFood: 100
+  eaten: 100
+  amountOfFood: 20
+  rate: 0.5
 --- !u!124 &124369876261701178
 Behaviour:
   m_ObjectHideFlags: 1
