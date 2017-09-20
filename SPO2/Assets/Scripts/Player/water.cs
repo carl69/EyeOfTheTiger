@@ -11,6 +11,8 @@ public class water : MonoBehaviour {
     public float rate = 2;
     private float timer;
 
+	public GameObject button;
+
     void Update() {
 
         if (drinking == true)
@@ -25,10 +27,13 @@ public class water : MonoBehaviour {
             timer = Time.time + rate;
             drink--;
 
-            if (drink <= 0)
-            {
-                SceneManager.LoadScene("Prototype");
-            }
+			if (drink <= 0){
+
+				button.SetActive (true);
+				drink = 0;
+                //SceneManager.LoadScene("Prototype");
+			}
+            
         }
         
     }
@@ -45,10 +50,6 @@ public class water : MonoBehaviour {
 			drinking = false;
 		}
 	}
-
-	void OnGUI (){
-		GUILayout.Label ("");
-		GUILayout.Label ("water =" + drink);
-	}
+		
 }
 
