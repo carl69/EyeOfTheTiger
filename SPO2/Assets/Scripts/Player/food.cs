@@ -11,6 +11,8 @@ public class food : MonoBehaviour {
     public float rate;
     private float timer;
 
+	public GameObject button;
+
     private void Update()
     {
 
@@ -21,7 +23,9 @@ public class food : MonoBehaviour {
 
             if (eaten <= 0)
             {
-                SceneManager.LoadScene("Prototype");
+				button.SetActive (true);
+				eaten = 0;
+               // SceneManager.LoadScene("Prototype");
             }
         }
     }
@@ -42,7 +46,5 @@ public class food : MonoBehaviour {
 
 	}
 
-	void OnGUI (){
-		GUILayout.Label ("food =" + eaten);
-	}
+
 }

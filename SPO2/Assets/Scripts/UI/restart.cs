@@ -7,10 +7,11 @@ public class restart : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SceneManager.LoadScene("Prototype");
+		SceneManager.LoadScene("prototype");
     }
     public void RestartGame() {
-        SceneManager.LoadScene("Prototype");
+		SceneManager.LoadScene("prototype");
+
 
     }
 }
