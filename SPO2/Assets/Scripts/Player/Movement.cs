@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     public bool isGrounded = false;
     public bool updateStats;
 
-
+    private bool jumped;
     
     // Use this for initialization
     void Start()
@@ -38,9 +38,14 @@ public class Movement : MonoBehaviour
         isGrounded = Physics2D.Linecast(myTransform.position, tagGround.position, playerMask);
 
         Move(Input.GetAxisRaw("Horizontal"));
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") && jumped == false)
         {
+            jumped = true;
             Jump();
+        }
+        else if (jumped == true)
+        {
+            jumped = false;
         }
 
 
