@@ -8,7 +8,7 @@ public class playerStats : MonoBehaviour {
     public string InfoFood = "";
     public float maxHunger = 100f, startHunger,hungerSpeed, foodPickUp;
     public string InfoWater = "";
-    public float maxWater, startWater, waterLossRate, waterPickUp;
+    public float maxWater, startWater, waterLossRate,waterLossAmount, waterPickUp;
 
 
 }

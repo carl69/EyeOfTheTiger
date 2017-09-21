@@ -583,10 +583,11 @@ MonoBehaviour:
   hungerSpeed: 1
   foodPickUp: 20
   InfoWater: '***Player Water script***'
-  maxWater: 0
-  startWater: 0
-  waterLossRate: 0
-  waterPickUp: 0
+  maxWater: 100
+  startWater: 100
+  waterLossRate: 0.1
+  waterLossAmount: 1
+  waterPickUp: 1
 --- !u!114 &114599147805045236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -612,7 +613,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drink: 93
   MaxWater: 100
-  rate: 0.5
   button: {fileID: 0}
 --- !u!114 &114862527210606322
 MonoBehaviour:
