@@ -11,6 +11,7 @@ public class food : MonoBehaviour {
     public float rate;
     private float timer;
 
+	int counter = 0;
 	public GameObject button;
 
     private void Update()
@@ -21,13 +22,20 @@ public class food : MonoBehaviour {
             timer = Time.time + rate;
             eaten--;
 
-            if (eaten <= 0)
+            if (eaten == 0)
             {
 				button.SetActive (true);
 				eaten = 0;
-               // SceneManager.LoadScene("Prototype");
+				counter = 30;
+				gameObject.GetComponent<Rigidbody2D> ().gravityScale = 0;
             }
         }
+
+		if (counter > 0) {
+			counter--;
+			transform.RotateAround (transform.position, new Vector3 (1, 0, 0), 3);
+			gameObject.GetComponent<Rigidbody2D> ().gravityScale = 0;
+		}
     }
 
     public void OnTriggerEnter2D(Collider2D other){
