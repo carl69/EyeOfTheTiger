@@ -10,9 +10,8 @@ public class water : MonoBehaviour {
     // how fast you lose water
     public float rate = 2;
     private float timer;
-
 	public GameObject button;
-
+	int counter = 0;
     void Update() {
 
         if (drinking == true)
@@ -27,14 +26,21 @@ public class water : MonoBehaviour {
             timer = Time.time + rate;
             drink--;
 
-			if (drink <= 0){
-
+			if (drink == 0){
 				button.SetActive (true);
 				drink = 0;
-                //SceneManager.LoadScene("Prototype");
+				counter = 30;
+				gameObject.GetComponent<Rigidbody2D> ().gravityScale = 0;
+
+      
 			}
             
         }
+		if (counter > 0) {
+			counter--;
+			transform.RotateAround (transform.position, new Vector3 (1, 0, 0), 3);
+			gameObject.GetComponent<Rigidbody2D> ().gravityScale = 0;
+		}
         
     }
 
