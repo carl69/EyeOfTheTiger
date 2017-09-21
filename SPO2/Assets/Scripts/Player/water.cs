@@ -12,8 +12,8 @@ public class water : MonoBehaviour {
     private float timer;
 	public GameObject button;
 	int counter = 0;
-    void Update() {
 
+    void Update() {
         if (drinking == true)
         {
             if (drink < MaxWater)
