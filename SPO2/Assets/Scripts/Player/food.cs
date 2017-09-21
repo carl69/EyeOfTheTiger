@@ -12,6 +12,8 @@ public class food : MonoBehaviour {
     private float rate;
     private float timer;
 
+    Audio_pickup audio_pickup;
+
 	int counter = 0;
 	public GameObject button;
 
@@ -23,6 +25,8 @@ public class food : MonoBehaviour {
         eaten = Playstats.startHunger;
         amountOfFood = Playstats.foodPickUp;
         rate = Playstats.hungerSpeed;
+
+        audio_pickup = GameObject.Find("PickUps").GetComponent<Audio_pickup>();
     }
 
     private void Update()
@@ -60,6 +64,7 @@ public class food : MonoBehaviour {
             {
                 eaten += amountOfFood;
             }
+            audio_pickup.isEating = true;
             Destroy (other.gameObject);
 		}
 
