@@ -12,13 +12,13 @@ public class Audio_pickup : MonoBehaviour {
 		
 	}
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.tag == "food")
+        if (other.gameObject.tag == "food" && Input.GetKeyDown(KeyCode.Space))
         {
             GetComponent<AudioSource>().PlayOneShot(food);
         }
-        else if (other.gameObject.tag == "water")
+        else if (other.gameObject.tag == "water" && Input.GetKeyDown(KeyCode.Space))
         {
             GetComponent<AudioSource>().PlayOneShot(water);
         }
