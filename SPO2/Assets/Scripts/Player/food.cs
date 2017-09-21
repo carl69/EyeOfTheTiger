@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class food : MonoBehaviour {
     [HideInInspector]
     public float maxFood = 100;
-    [HideInInspector]
     public float eaten = 50;
     private float amountOfFood = 10;
     // food loss rate
