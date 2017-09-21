@@ -30,9 +30,9 @@ public class food : MonoBehaviour {
         }
     }
 
-    public void OnTriggerEnter2D(Collider2D other){
+    public void OnTriggerStay2D(Collider2D other){
 
-		if (other.gameObject.tag == "food" && eaten <= maxFood) {
+		if (other.gameObject.tag == "food" && eaten <= maxFood && Input.GetKeyDown(KeyCode.Space)) {
             if ((maxFood - eaten) <= amountOfFood)
             {
                 eaten = maxFood;
