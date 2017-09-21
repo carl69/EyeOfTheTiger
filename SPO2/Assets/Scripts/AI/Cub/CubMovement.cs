@@ -9,6 +9,7 @@ using Pathfinding;
 
 public class CubMovement : MonoBehaviour
 {
+    
     public Transform target;
     public float updateRate = 2f;
     private Seeker seeker;
@@ -34,7 +35,7 @@ public class CubMovement : MonoBehaviour
     }
     public void OnPathComplete(Path p)
     {
-        Debug.Log("we got a path. did it have an error?" + p.error);
+        //Debug.Log("we got a path. did it have an error?" + p.error);
         if (!p.error)
         {
             path = p;

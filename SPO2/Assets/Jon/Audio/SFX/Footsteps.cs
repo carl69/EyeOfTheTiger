@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Footsteps : MonoBehaviour {
 
-    public AudioClip footstep;
+    public AudioClip[] footstep;
+
+  
 
     public bool clipPlaying = false;
 
@@ -18,7 +20,7 @@ public class Footsteps : MonoBehaviour {
 
         if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && (clipPlaying == false) && (GetComponent<AudioSource>().isPlaying == false))
         {
-            GetComponent<AudioSource>().PlayOneShot(footstep);
+            GetComponent<AudioSource>().PlayOneShot(footstep[Random.Range(0,4)]);
            // clipPlaying = true;
         }
 
