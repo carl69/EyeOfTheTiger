@@ -243,7 +243,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1544061684189726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -53.759995, y: -3.4850001, z: -0.029886723}
+  m_LocalPosition: {x: -53.759995, y: -2.44, z: -0.029886723}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4613483915556120}
@@ -572,14 +572,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0177bbd82faf5e42872b0b9a9a95e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InfoMovement: Player movement script
+  InfoMovement: '***Player movement script***'
   playerSpeed: 500
   jumphight: 70000
   gravity: -60
   Running: 500
-  InfoHunger: Player Hunger script
+  InfoFood: '***Player Food script***'
   maxHunger: 100
-  hungerSpeed: 0
+  startHunger: 100
+  hungerSpeed: 1
+  foodPickUp: 20
 --- !u!114 &114599147805045236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -636,8 +638,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxFood: 100
   eaten: 48
-  amountOfFood: 10
-  rate: 2
   button: {fileID: 0}
 --- !u!124 &124369876261701178
 Behaviour:

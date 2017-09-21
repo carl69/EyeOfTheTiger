@@ -3,18 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class playerStats : MonoBehaviour {
-    public string InfoMovement = "Player movement script";
+    public string InfoMovement = "";
     public float playerSpeed, jumphight, gravity, Running;
-    public string InfoHunger = "Player Hunger script";
-    public float maxHunger = 100f, hungerSpeed;
+    public string InfoFood = "";
+    public float maxHunger = 100f, startHunger,hungerSpeed, foodPickUp;
+    public string InfoWater = "";
+    public float maxWater, startWater, waterLossRate, waterPickUp;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }
