@@ -243,7 +243,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1544061684189726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -53.759995, y: -2.44, z: -0.029886723}
+  m_LocalPosition: {x: -53.759995, y: -3.4850001, z: -0.029886723}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4613483915556120}
@@ -603,10 +603,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cad988ada2e1e2459fdf37c96d70030, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drink: 100
+  drink: 93
   MaxWater: 100
   rate: 0.5
-  button: {fileID: 1303207655064426, guid: eb154ec14d30e3c46b6a16ebe93ac286, type: 2}
+  button: {fileID: 0}
 --- !u!114 &114862527210606322
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -620,8 +620,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMask:
     serializedVersion: 2
-    m_Bits: 4294965448
-  isGrounded: 0
+    m_Bits: 4294965960
+  isGrounded: 1
   updateStats: 0
 --- !u!114 &114881057953235592
 MonoBehaviour:
@@ -635,10 +635,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFood: 100
-  eaten: 50
+  eaten: 48
   amountOfFood: 10
   rate: 2
-  button: {fileID: 1303207655064426, guid: eb154ec14d30e3c46b6a16ebe93ac286, type: 2}
+  button: {fileID: 0}
 --- !u!124 &124369876261701178
 Behaviour:
   m_ObjectHideFlags: 1
