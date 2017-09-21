@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class playerStats : MonoBehaviour {
     public string InfoMovement = "Player movement script";
-    public float playerSpeed, jumphight, gravity;
+    public float playerSpeed, jumphight, gravity, Running;
     public string InfoHunger = "Player Hunger script";
     public float maxHunger = 100f, hungerSpeed;
 
