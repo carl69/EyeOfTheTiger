@@ -64,7 +64,7 @@ public class food : MonoBehaviour {
             {
                 eaten += amountOfFood;
             }
-            audio_pickup.isEating = true;
+            //audio_pickup.isEating = true;
             Destroy (other.gameObject);
 		}
 

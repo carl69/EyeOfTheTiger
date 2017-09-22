@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 114414380298696306}
   - component: {fileID: 114409430849771322}
   - component: {fileID: 114783804030020846}
+  - component: {fileID: 114189925938048066}
   m_Layer: 10
   m_Name: Player
   m_TagString: Player
@@ -483,13 +484,25 @@ MonoBehaviour:
     m_Bits: 4294965960
   isGrounded: 1
   updateStats: 0
---- !u!114 &114262116530536968
+--- !u!114 &114189925938048066
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1921558600548174}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1adfce6739fb1b4c86c066961551c97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  food: {fileID: 1318109642181176, guid: e1b46da5bba21124ea95105a6ae86d7f, type: 2}
+--- !u!114 &114262116530536968
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1921558600548174}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 0}
   m_Name: 
