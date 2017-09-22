@@ -24,7 +24,7 @@ public class Audio_pickup : MonoBehaviour {
             transform.GetChild(0).GetComponent<AudioSource>().GetComponent<AudioSource>().PlayOneShot(food);
             isEating = false;
         }
-        if(GameObject.Find("Player").GetComponent<water>().drinking == true && transform.GetChild(1).GetComponent<AudioSource>().GetComponent<AudioSource>().isPlaying == false)
+        if(GameObject.Find("Player").GetComponent<PlayerWater>().drinking == true && transform.GetChild(1).GetComponent<AudioSource>().GetComponent<AudioSource>().isPlaying == false)
         {
             transform.GetChild(1).GetComponent<AudioSource>().GetComponent<AudioSource>().PlayOneShot(water);
            

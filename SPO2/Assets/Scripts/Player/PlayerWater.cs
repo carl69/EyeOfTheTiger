@@ -39,10 +39,6 @@ public class PlayerWater : MonoBehaviour
         {
             timer = Time.time + rate;
             drink -= lossAmount;
-
-            timer = Time.time + rate;
-            drink--;
-
             if (drink <= 0)
             {
                 button.SetActive(true);

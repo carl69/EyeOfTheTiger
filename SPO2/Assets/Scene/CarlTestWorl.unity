@@ -550,6 +550,23 @@ GameObject:
   m_PrefabParentObject: {fileID: 1921558600548174, guid: 2daf5380b63eddf48a94dacbb42f6f67,
     type: 2}
   m_PrefabInternal: {fileID: 1047341959}
+--- !u!114 &469494216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 469494215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46800d44a2f68d643a4f71a7bbcc5004, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  drinking: 0
+  drink: 50
+  MaxWater: 100
+  rate: 2
+  button: {fileID: 591319490}
+  lossAmount: 1
 --- !u!4 &469494226 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4416042545086194, guid: 2daf5380b63eddf48a94dacbb42f6f67,
@@ -1799,7 +1816,8 @@ Prefab:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114924369988941372, guid: 2daf5380b63eddf48a94dacbb42f6f67, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 2daf5380b63eddf48a94dacbb42f6f67, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1084991571

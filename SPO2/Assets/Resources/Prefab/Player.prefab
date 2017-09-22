@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4512104498433530}
   - component: {fileID: 33008571728234242}
   - component: {fileID: 23326016117957120}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group389
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 4976867232725462}
   - component: {fileID: 33043299715160560}
   - component: {fileID: 23868697491485188}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group15816
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4466750635803552}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tiger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - component: {fileID: 4270648541191486}
   - component: {fileID: 33318523359980052}
   - component: {fileID: 23563068113954572}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group63258
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 4766629872867524}
   - component: {fileID: 33427296406402468}
   - component: {fileID: 23413064782494758}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Group50111
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,7 +117,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4613704197303094}
-  m_Layer: 8
+  m_Layer: 10
   m_Name: tag_ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,9 +139,9 @@ GameObject:
   - component: {fileID: 114094489692228988}
   - component: {fileID: 114277255969564136}
   - component: {fileID: 114414380298696306}
-  - component: {fileID: 114924369988941372}
   - component: {fileID: 114409430849771322}
-  m_Layer: 8
+  - component: {fileID: 114783804030020846}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -547,7 +547,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hidden: 0
---- !u!114 &114924369988941372
+--- !u!114 &114783804030020846
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -555,9 +555,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1921558600548174}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0cad988ada2e1e2459fdf37c96d70030, type: 3}
+  m_Script: {fileID: 11500000, guid: 46800d44a2f68d643a4f71a7bbcc5004, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  drink: 93
+  drinking: 0
+  drink: 50
   MaxWater: 100
+  rate: 2
   button: {fileID: 0}
+  lossAmount: 1
