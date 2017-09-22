@@ -5,23 +5,23 @@ using UnityEngine.SceneManagement;
 
 public class water : MonoBehaviour {
 	public bool drinking = false;
-	public int drink = 50;
+	public float drink = 50;
     public int MaxWater = 100;
     // how fast you lose water
     public float rate = 2;
     private float timer;
 	public GameObject button;
 	int counter = 0;
-
+    public float lossAmount = 1;
     Audio_pickup audio_pickup;
 
     private void Start()
     {
-        audio_pickup = GameObject.Find("PickUps").GetComponent<Audio_pickup>();
+        //audio_pickup = GameObject.Find("PickUps").GetComponent<Audio_pickup>();
     }
 
     void Update() {
-        if (drinking == true)
+        if (drinking == true && Input.GetKey(KeyCode.Space))
         {
             if (drink < MaxWater)
             {
@@ -30,15 +30,13 @@ public class water : MonoBehaviour {
         }
         else if (timer < Time.time)
         {
-<<<<<<< HEAD
             timer = Time.time +rate;
             drink-= lossAmount;
-=======
+
             timer = Time.time + rate;
             drink--;
->>>>>>> ea01ec294920d39a441d38fdcdc815e13a0bb8fe
 
-			if (drink == 0){
+			if (drink <= 0){
 				button.SetActive (true);
 				drink = 0;
 				counter = 30;
@@ -57,16 +55,11 @@ public class water : MonoBehaviour {
 
     }
 
-	public void OnTriggerStay2D(Collider2D other){
-		if (other.gameObject.tag == "water" && Input.GetKey(KeyCode.Space)) {
+	public void OnTriggerEnter2D(Collider2D other){
+		if (other.gameObject.tag == "water") {
 			drinking = true;
-           // audio_pickup.isDrinking = true;
         }
-        else if (other.gameObject.tag == "water" && Input.GetKeyUp(KeyCode.Space))
-        {
-            drinking = false;
-            //audio_pickup.isDrinking = false;
-        }
+       
        
 	}
     public void OnTriggerExit2D(Collider2D collision)
