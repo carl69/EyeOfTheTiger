@@ -16,6 +16,8 @@ public class PlayerWater : MonoBehaviour
     public float lossAmount = 1;
     Audio_pickup audio_pickup;
 
+    public bool drinkAudio = false;
+
     playerStats PlayStats;
     private void Start()
     {
@@ -28,10 +30,16 @@ public class PlayerWater : MonoBehaviour
 
     void Update()
     {
+        if (drinkAudio == true)
+        {
+            drinkAudio = false;
+        }
+
         if (drinking == true && Input.GetKey(KeyCode.Space))
         {
             if (drink < MaxWater)
             {
+                drinkAudio = true;
                 drink++;
             }
         }
