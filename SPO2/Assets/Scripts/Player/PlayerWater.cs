@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class water : MonoBehaviour
+public class PlayerWater : MonoBehaviour
 {
     public bool drinking = false;
     public float drink = 50;
