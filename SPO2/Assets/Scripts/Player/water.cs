@@ -36,7 +36,7 @@ void Update() {
         }
         else if (timer < Time.time)
         {
-            timer = Time.time + rate;
+            timer = Time.time +rate;
             drink-= lossAmount;
 
 			if (drink <= 0){
