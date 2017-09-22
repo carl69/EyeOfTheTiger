@@ -4,42 +4,41 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class water : MonoBehaviour {
-	private bool drinking = false;
-    public float drink = 50;
-    [HideInInspector]
-    public float MaxWater = 100;
-    private float lossAmount;
-    private float gain;
+	public bool drinking = false;
+	public int drink = 50;
+    public int MaxWater = 100;
     // how fast you lose water
-    private float rate = 2;
+    public float rate = 2;
     private float timer;
 	public GameObject button;
 	int counter = 0;
-    playerStats Playstats;
-    void Start()
+
+    Audio_pickup audio_pickup;
+
+    private void Start()
     {
-        Playstats = GameObject.Find("Player").GetComponent<playerStats>();
-        MaxWater = Playstats.maxWater;
-        drink = Playstats.startWater;
-        gain = Playstats.waterPickUp;
-        rate = Playstats.waterLossRate;
-        lossAmount = Playstats.waterLossAmount;
+        audio_pickup = GameObject.Find("PickUps").GetComponent<Audio_pickup>();
     }
 
-void Update() {
+    void Update() {
         if (drinking == true)
         {
             if (drink < MaxWater)
             {
-                drink+= gain;
+                drink++;
             }
         }
         else if (timer < Time.time)
         {
+<<<<<<< HEAD
             timer = Time.time +rate;
             drink-= lossAmount;
+=======
+            timer = Time.time + rate;
+            drink--;
+>>>>>>> ea01ec294920d39a441d38fdcdc815e13a0bb8fe
 
-			if (drink <= 0){
+			if (drink == 0){
 				button.SetActive (true);
 				drink = 0;
 				counter = 30;
@@ -54,21 +53,27 @@ void Update() {
 			transform.RotateAround (transform.position, new Vector3 (1, 0, 0), 3);
 			gameObject.GetComponent<Rigidbody2D> ().gravityScale = 0;
 		}
-        
+
+
     }
 
-	public void OnTriggerEnter2D(Collider2D other){
-		if (other.gameObject.tag == "water") {
+	public void OnTriggerStay2D(Collider2D other){
+		if (other.gameObject.tag == "water" && Input.GetKey(KeyCode.Space)) {
 			drinking = true;
-		}
+           // audio_pickup.isDrinking = true;
+        }
+        else if (other.gameObject.tag == "water" && Input.GetKeyUp(KeyCode.Space))
+        {
+            drinking = false;
+            //audio_pickup.isDrinking = false;
+        }
+       
 	}
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "water")
+            drinking = false;
+    }
 
-
-	public void OnTriggerExit2D(Collider2D other){
-		if (other.gameObject.tag == "water") {
-			drinking = false;
-		}
-	}
-		
 }
 
