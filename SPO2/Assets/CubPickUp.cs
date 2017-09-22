@@ -13,6 +13,8 @@ public class CubPickUp : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         cubMovement = this.gameObject.GetComponent<CubMovement>();
+
+
 	}
 
     // Update is called once per frame
