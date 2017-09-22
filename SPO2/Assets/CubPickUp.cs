@@ -8,9 +8,13 @@ public class CubPickUp : MonoBehaviour {
     bool inHive = false;
     public Transform holdingPosision;
     private Transform hiveLocal;
-    
+
+    CubMovement cubMovement;
 	// Use this for initialization
 	void Start () {
+        cubMovement = this.gameObject.GetComponent<CubMovement>();
+
+
 	}
 
     // Update is called once per frame
@@ -36,6 +40,7 @@ public class CubPickUp : MonoBehaviour {
         if (inHive && !pickedUp)
         {
             transform.position = hiveLocal.position;
+            cubMovement.enabled = false;
         }
 	}
     private void OnTriggerEnter2D(Collider2D c)
@@ -53,6 +58,7 @@ public class CubPickUp : MonoBehaviour {
     }
     private void OnTriggerExit2D(Collider2D c)
     {
+        cubMovement.enabled = true;
         if (c.tag == "Player")
         {
             canPickUp = false;
