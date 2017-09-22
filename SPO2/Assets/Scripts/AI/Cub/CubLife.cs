@@ -30,9 +30,12 @@ public class CubLife : MonoBehaviour {
     }
     void eating()
     {
-        if (curHunger < maxHunger)
+        if (curHunger + hungerGain < maxHunger)
         {
             curHunger += hungerGain;
+        }
+        else {
+            curHunger = maxHunger;
         }
     }
     void waterDrain() {
