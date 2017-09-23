@@ -169,6 +169,8 @@ ModelImporter:
     100322: Ulna.L 1
     100324: Ulna.R
     100326: Ulna.R 1
+    100328: Tiger_Body_MeshPart0
+    100330: Tiger_Body_MeshPart1
     400000: //RootNode
     400002: Bone
     400004: Bone 1
@@ -333,9 +335,13 @@ ModelImporter:
     400322: Ulna.L 1
     400324: Ulna.R
     400326: Ulna.R 1
+    400328: Tiger_Body_MeshPart0
+    400330: Tiger_Body_MeshPart1
     2000000: Camera
     2300000: Tail_Cloth
+    2300002: //RootNode
     3300000: Tail_Cloth
+    3300002: //RootNode
     4300000: Tail_Cloth
     4300002: Group15999
     4300004: Group50288
@@ -346,6 +352,8 @@ ModelImporter:
     4300014: Tiger_Body
     4300016: Group50111
     4300018: Group15816
+    4300020: Tiger_Body_MeshPart0
+    4300022: Tiger_Body_MeshPart1
     7400000: Spine01.001|Idle
     7400002: Spine01.001|Idle.001
     7400004: Skeleton|Idle
@@ -362,6 +370,8 @@ ModelImporter:
     13700012: Group560
     13700014: Group63423
     13700016: Tiger_Body
+    13700018: Tiger_Body_MeshPart0
+    13700020: Tiger_Body_MeshPart1
   materials:
     importMaterials: 1
     materialName: 0
@@ -385,7 +395,63 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Skeleton|Idle
+      takeName: Skeleton|Idle
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Skeleton|Run01
+      takeName: Skeleton|Run01
+      firstFrame: 0
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
