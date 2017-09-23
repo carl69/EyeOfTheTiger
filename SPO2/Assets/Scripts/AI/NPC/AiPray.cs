@@ -42,6 +42,7 @@ public class AiPray : MonoBehaviour {
         }
         else
         {
+            transform.LookAt(curTarget);
             transform.position = Vector2.MoveTowards(transform.position, curTarget, step);
         }
     }
