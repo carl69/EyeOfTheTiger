@@ -13,9 +13,17 @@ public class TextPrompt : MonoBehaviour {
 
     public bool text1Shown = false;
     public bool text2Shown = false;
+    public bool text3Shown = false;
+    public bool text4Shown = false;
+    public bool text5Shown = false;
+    public bool text6Shown = false;
+    public bool text7Shown = false;
+    public bool text8Shown = false;
 
-	// Use this for initialization
-	void Start () {
+
+
+    // Use this for initialization
+    void Start () {
 
        
 
@@ -39,7 +47,48 @@ public class TextPrompt : MonoBehaviour {
             text2Shown = true;
             Time.timeScale = 0;            
         }
-        
+        if (collision.gameObject.tag == "Player" && triggerNumber == "3" && text3Shown == false)
+        {
+            textBox.SetActive(true);
+            textBox.transform.GetChild(2).gameObject.SetActive(true);
+            text3Shown = true;
+            Time.timeScale = 0;
+        }
+        if (collision.gameObject.tag == "Player" && triggerNumber == "4" && text3Shown == false)
+        {
+            textBox.SetActive(true);
+            textBox.transform.GetChild(3).gameObject.SetActive(true);
+            text4Shown = true;
+            Time.timeScale = 0;
+        }
+        if (collision.gameObject.tag == "Player" && triggerNumber == "5" && text3Shown == false)
+        {
+            textBox.SetActive(true);
+            textBox.transform.GetChild(4).gameObject.SetActive(true);
+            text5Shown = true;
+            Time.timeScale = 0;
+        }
+        if (collision.gameObject.tag == "Player" && triggerNumber == "6" && text3Shown == false)
+        {
+            textBox.SetActive(true);
+            textBox.transform.GetChild(5).gameObject.SetActive(true);
+            text6Shown = true;
+            Time.timeScale = 0;
+        }
+        if (collision.gameObject.tag == "Player" && triggerNumber == "7" && text3Shown == false)
+        {
+            textBox.SetActive(true);
+            textBox.transform.GetChild(6).gameObject.SetActive(true);
+            text7Shown = true;
+            Time.timeScale = 0;
+        }
+        if (collision.gameObject.tag == "Player" && triggerNumber == "8" && text3Shown == false)
+        {
+            textBox.SetActive(true);
+            textBox.transform.GetChild(7).gameObject.SetActive(true);
+            text8Shown = true;
+            Time.timeScale = 0;
+        }
     }
 
     // Update is called once per frame
