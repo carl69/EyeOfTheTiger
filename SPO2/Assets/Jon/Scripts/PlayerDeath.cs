@@ -22,10 +22,7 @@ public class PlayerDeath : MonoBehaviour {
 
 
         }
-        if (collision.gameObject.tag == "Cub")
-        {
-            Destroy(GameObject.FindGameObjectWithTag("Cub"));
-        }
+       
     }
 
     // Update is called once per frame
