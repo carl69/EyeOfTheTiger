@@ -27,12 +27,15 @@ public class CubPickUp : MonoBehaviour {
         }
         else if (Input.GetKeyDown(KeyCode.E))
         {
+            Debug.Log(pickedUp);
             pickedUp = false;
+            
         }
 
         if (pickedUp)
         {
             transform.position = holdingPosision.position;
+            //cubMovement.enabled = false;
         }
         else {
         }
