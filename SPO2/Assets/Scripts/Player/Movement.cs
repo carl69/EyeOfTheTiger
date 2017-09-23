@@ -20,8 +20,8 @@ public class Movement : MonoBehaviour
 
         CheckStats();
 
-        myBody = this.GetComponent<Rigidbody2D>();
-        myTransform = this.transform;
+        myBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        myTransform = GameObject.FindGameObjectWithTag("Player").transform;
         tagGround = GameObject.Find(this.name + "/tag_ground").transform;
     }
 
@@ -81,7 +81,7 @@ public class Movement : MonoBehaviour
     }
     public void CheckStats() {
         //Finds the player stats script
-        playerStats Playstats = GameObject.Find("Player").GetComponent<playerStats>();
+        playerStats Playstats = GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>();
         //Sets the gravity variable in this script
         gravityStrength = Playstats.gravity;
         //change the ingame gravity

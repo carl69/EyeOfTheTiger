@@ -3,20 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowCamera : MonoBehaviour {
-	public GameObject Tiger;
+	//public GameObject Tiger;
 	public float Smooth = 10.0f;
 	float x,y;
 	// Use this for initialization
 	void Start () {
-		x = Tiger.transform.position.x;
-	    y = Tiger.transform.position.y ;
+		x = GameObject.FindGameObjectWithTag("Player").transform.position.x;
+	    y = GameObject.FindGameObjectWithTag("Player").transform.position.y ;
 		Vector3 aux = new Vector3 (x, y+7, transform.position.z);
 
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		x = transform.position.x +(  Tiger.transform.position.x -transform.position.x)/Smooth;
+		x = transform.position.x +(  GameObject.FindGameObjectWithTag("Player").transform.position.x -transform.position.x)/Smooth;
 
 		Vector3 aux = new Vector3 (x, transform.position.y, transform.position.z);
 		transform.position = aux;

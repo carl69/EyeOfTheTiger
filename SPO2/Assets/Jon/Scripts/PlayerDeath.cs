@@ -16,11 +16,9 @@ public class PlayerDeath : MonoBehaviour {
 
         if (collision.gameObject.tag == "Trap")
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
             Instantiate(TigerPrefab, GameObject.FindGameObjectWithTag("Cub").transform.position, Quaternion.identity);
             Destroy(GameObject.FindGameObjectWithTag("Cub"));
-
-
         }
        
     }

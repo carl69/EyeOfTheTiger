@@ -20,7 +20,7 @@ public class food : MonoBehaviour {
     playerStats Playstats;
     private void Start()
     {
-        Playstats = GameObject.Find("Player").GetComponent<playerStats>();
+        Playstats = GameObject.FindGameObjectWithTag("Player").GetComponent<playerStats>();
         maxFood = Playstats.maxHunger;
         eaten = Playstats.startHunger;
         amountOfFood = Playstats.foodPickUp;
