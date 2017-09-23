@@ -5,7 +5,7 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
-    private float speed = 10f, jumpVelocity = 10f, gravityStrength;
+    private float speed = 10f, jumpVelocity = 10f, gravityStrength, addedRunningSpeed, currRunningSpeed = 0;
     public LayerMask playerMask;
     Transform myTransform, tagGround;
     Rigidbody2D myBody;
@@ -55,9 +55,17 @@ public class Movement : MonoBehaviour
 
     public void Move(float horizonalInput)
     {
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            currRunningSpeed = addedRunningSpeed;
+        }
+        else {
+            currRunningSpeed = 0;
+        }
+
         //myBody.velocity = new Vector2 (horizonalInput * speed,0);
         Vector2 moveVel = myBody.velocity;
-        moveVel.x = horizonalInput * speed * Time.deltaTime;
+        moveVel.x = horizonalInput * (speed + currRunningSpeed) * Time.deltaTime;
         myBody.velocity = moveVel;
     }
 
@@ -83,6 +91,8 @@ public class Movement : MonoBehaviour
         jumpVelocity = Playstats.jumphight;
         //change speed varible
         speed = Playstats.playerSpeed;
+        // add running speed var
+        addedRunningSpeed = Playstats.Running;
     }
 
 }

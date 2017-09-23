@@ -4,15 +4,30 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class food : MonoBehaviour {
-    public int maxFood = 100;
-	public int eaten = 50;
-    public int amountOfFood = 10;
+    [HideInInspector]
+    public float maxFood = 100;
+    public float eaten = 50;
+    private float amountOfFood = 10;
     // food loss rate
-    public float rate;
+    private float rate;
     private float timer;
+
+    Audio_pickup audio_pickup;
 
 	int counter = 0;
 	public GameObject button;
+
+    playerStats Playstats;
+    private void Start()
+    {
+        Playstats = GameObject.Find("Player").GetComponent<playerStats>();
+        maxFood = Playstats.maxHunger;
+        eaten = Playstats.startHunger;
+        amountOfFood = Playstats.foodPickUp;
+        rate = Playstats.hungerSpeed;
+
+        audio_pickup = GameObject.Find("PickUps").GetComponent<Audio_pickup>();
+    }
 
     private void Update()
     {
@@ -38,9 +53,9 @@ public class food : MonoBehaviour {
 		}
     }
 
-    public void OnTriggerEnter2D(Collider2D other){
+    public void OnTriggerStay2D(Collider2D other){
 
-		if (other.gameObject.tag == "food" && eaten <= maxFood) {
+		if (other.gameObject.tag == "food" && eaten <= maxFood && Input.GetKeyDown(KeyCode.Space)) {
             if ((maxFood - eaten) <= amountOfFood)
             {
                 eaten = maxFood;
@@ -49,6 +64,7 @@ public class food : MonoBehaviour {
             {
                 eaten += amountOfFood;
             }
+            //audio_pickup.isEating = true;
             Destroy (other.gameObject);
 		}
 

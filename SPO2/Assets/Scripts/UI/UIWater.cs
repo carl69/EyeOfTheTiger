@@ -7,10 +7,10 @@ public class UIWater : MonoBehaviour {
     public float MaxThirst;
     public float CurThirst;
 
-    water Water;
+    PlayerWater Water;
 	// Use this for initialization
 	void Start () {
-        Water = GameObject.Find("Player").GetComponent<water>();
+        Water = GameObject.Find("Player").GetComponent<PlayerWater>();
     }
 	
 	// Update is called once per frame
