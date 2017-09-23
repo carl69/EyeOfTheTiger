@@ -15,7 +15,7 @@ public class food : MonoBehaviour {
     Audio_pickup audio_pickup;
 
 	int counter = 0;
-	public GameObject button;
+	//public GameObject button;
 
     playerStats Playstats;
     private void Start()
@@ -39,7 +39,7 @@ public class food : MonoBehaviour {
 
             if (eaten <= 0)
             {
-				button.SetActive (true);
+				//button.SetActive (true);
 				eaten = 0;
 				counter = 30;
 				gameObject.GetComponent<Rigidbody2D> ().gravityScale = 0;

@@ -11,7 +11,7 @@ public class PlayerWater : MonoBehaviour
     // how fast you lose water
     public float rate = 2;
     private float timer;
-    public GameObject button;
+   // public GameObject button;
     int counter = 0;
     public float lossAmount = 1;
     Audio_pickup audio_pickup;
@@ -49,7 +49,7 @@ public class PlayerWater : MonoBehaviour
             drink -= lossAmount;
             if (drink <= 0)
             {
-                button.SetActive(true);
+               // button.SetActive(true);
                 drink = 0;
                 counter = 30;
                 gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
