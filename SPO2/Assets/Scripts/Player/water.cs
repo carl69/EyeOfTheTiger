@@ -26,7 +26,7 @@ public class water : MonoBehaviour {
             timer = Time.time + rate;
             drink--;
 
-			if (drink == 0){
+			if (drink <= 0){
 				button.SetActive (true);
 				drink = 0;
 				counter = 30;

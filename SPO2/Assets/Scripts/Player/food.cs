@@ -22,7 +22,7 @@ public class food : MonoBehaviour {
             timer = Time.time + rate;
             eaten--;
 
-            if (eaten == 0)
+            if (eaten <= 0)
             {
 				button.SetActive (true);
 				eaten = 0;
