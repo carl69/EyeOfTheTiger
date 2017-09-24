@@ -54,35 +54,35 @@ public class TextPrompt : MonoBehaviour {
             text3Shown = true;
             Time.timeScale = 0;
         }
-        if (collision.gameObject.tag == "Player" && triggerNumber == "4" && text3Shown == false)
+        if (collision.gameObject.tag == "Player" && triggerNumber == "4" && text4Shown == false)
         {
             textBox.SetActive(true);
             textBox.transform.GetChild(3).gameObject.SetActive(true);
             text4Shown = true;
             Time.timeScale = 0;
         }
-        if (collision.gameObject.tag == "Player" && triggerNumber == "5" && text3Shown == false)
+        if (collision.gameObject.tag == "Player" && triggerNumber == "5" && text5Shown == false)
         {
             textBox.SetActive(true);
             textBox.transform.GetChild(4).gameObject.SetActive(true);
             text5Shown = true;
             Time.timeScale = 0;
         }
-        if (collision.gameObject.tag == "Player" && triggerNumber == "6" && text3Shown == false)
+        if (collision.gameObject.tag == "Player" && triggerNumber == "6" && text6Shown == false)
         {
             textBox.SetActive(true);
             textBox.transform.GetChild(5).gameObject.SetActive(true);
             text6Shown = true;
             Time.timeScale = 0;
         }
-        if (collision.gameObject.tag == "Player" && triggerNumber == "7" && text3Shown == false)
+        if (collision.gameObject.tag == "Player" && triggerNumber == "7" && text7Shown == false)
         {
             textBox.SetActive(true);
             textBox.transform.GetChild(6).gameObject.SetActive(true);
             text7Shown = true;
             Time.timeScale = 0;
         }
-        if (collision.gameObject.tag == "Player" && triggerNumber == "8" && text3Shown == false)
+        if (collision.gameObject.tag == "Player" && triggerNumber == "8" && text8Shown == false)
         {
             textBox.SetActive(true);
             textBox.transform.GetChild(7).gameObject.SetActive(true);

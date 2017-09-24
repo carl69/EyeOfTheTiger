@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CanvasController : MonoBehaviour {
 
@@ -29,6 +30,11 @@ public class CanvasController : MonoBehaviour {
         textBox.SetActive(false);
     }
 
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        Time.timeScale = 1;
+    }
 
 	// Update is called once per frame
 	void Update () {

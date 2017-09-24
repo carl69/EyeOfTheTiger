@@ -17,26 +17,28 @@ public class Audio_PlayerMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-        if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && (clipPlaying == false) && (transform.GetChild(0).GetComponent<AudioSource>().isPlaying == false && GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().isGrounded == true))
+        if (GameObject.FindGameObjectWithTag("Player") == true)
         {
-            transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(footstep[Random.Range(0, 4)]);
-            // clipPlaying = true;
-        }
+            if ((Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A)) && (clipPlaying == false) && (transform.GetChild(0).GetComponent<AudioSource>().isPlaying == false && GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().isGrounded == true))
+            {
+                transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(footstep[Random.Range(0, 4)]);
+                // clipPlaying = true;
+            }
 
-        if(transform.GetChild(0).GetComponent<AudioSource>().isPlaying == true && GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().isGrounded == false)
-        {
-            transform.GetChild(0).GetComponent<AudioSource>().Stop();
-        }
+            if (transform.GetChild(0).GetComponent<AudioSource>().isPlaying == true && GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().isGrounded == false)
+            {
+                transform.GetChild(0).GetComponent<AudioSource>().Stop();
+            }
 
-        if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-        {
-            clipPlaying = false;
-        }
+            if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
+            {
+                clipPlaying = false;
+            }
 
-        if (Input.GetKeyDown(KeyCode.W) && transform.GetChild(1).GetComponent<AudioSource>().isPlaying == false && GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().isGrounded == true)
-        {
-            transform.GetChild(1).GetComponent<AudioSource>().PlayOneShot(jump);
+            if (Input.GetKeyDown(KeyCode.W) && transform.GetChild(1).GetComponent<AudioSource>().isPlaying == false && GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().isGrounded == true)
+            {
+                transform.GetChild(1).GetComponent<AudioSource>().PlayOneShot(jump);
+            }
         }
 
     }
