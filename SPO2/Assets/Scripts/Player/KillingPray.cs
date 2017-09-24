@@ -13,7 +13,7 @@ public class KillingPray : MonoBehaviour {
 	void Update () {
 		
 	}
-    private void OnTriggerEnter2D(Collider2D c)
+    private void OnTriggerEnter(Collider c)
     {
         if (c.tag == "Pray")
         {
