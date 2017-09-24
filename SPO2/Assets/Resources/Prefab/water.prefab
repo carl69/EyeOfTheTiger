@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4297275217878450}
   - component: {fileID: 33356598796515724}
   - component: {fileID: 23199060883366812}
-  - component: {fileID: 61650580380615756}
+  - component: {fileID: 65313968892778580}
   m_Layer: 0
   m_Name: water
   m_TagString: water
@@ -36,7 +36,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1170466370368852}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -98.07, y: -4.5, z: 0}
   m_LocalScale: {x: 23.146519, y: 0.118959785, z: 3.3158953}
   m_Children: []
   m_Father: {fileID: 0}
@@ -81,28 +81,15 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1170466370368852}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!61 &61650580380615756
-BoxCollider2D:
+--- !u!65 &65313968892778580
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1170466370368852}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.000000059604645, y: 3.712349}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_IsTrigger: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.0000001, y: 9.424698}
-  m_EdgeRadius: 0
+  m_Size: {x: 1.0150075, y: 6.171485, z: 1.0000002}
+  m_Center: {x: -0.0017744512, y: 2.0857415, z: -0.000000071901724}
