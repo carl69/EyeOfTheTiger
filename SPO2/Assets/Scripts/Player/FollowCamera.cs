@@ -10,7 +10,7 @@ public class FollowCamera : MonoBehaviour {
 	void Start () {
 		x = GameObject.FindGameObjectWithTag("Player").transform.position.x;
 	    y = GameObject.FindGameObjectWithTag("Player").transform.position.y ;
-		Vector3 aux = new Vector3 (x, y+7, transform.position.z);
+		//Vector3 aux = new Vector3 (x, y+7, transform.position.z);
 
 	}
 	

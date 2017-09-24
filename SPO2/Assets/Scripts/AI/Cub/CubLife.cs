@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CubLife : MonoBehaviour {
     public float maxHunger = 100f, curHunger = 100f, hungerGain, hungerdrain, maxThirst = 100f, curThirst = 100f,thirstGain,thirstdrain;
-    private bool drink = false, eat = false;
+    private bool drink = false; //eat = false;
 
 
     // Update is called once per frame
