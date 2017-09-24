@@ -52,7 +52,7 @@ public class CubLife : MonoBehaviour {
         Destroy(this.gameObject);
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "water")
         {
@@ -64,7 +64,7 @@ public class CubLife : MonoBehaviour {
             Destroy(other.gameObject);
         }
     }
-    private void OnTriggerExit2D(Collider2D other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.tag == "water")
         {
