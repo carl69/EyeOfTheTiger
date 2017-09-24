@@ -15,7 +15,7 @@ public class FollowCamera : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		x = transform.position.x +(  GameObject.FindGameObjectWithTag("Player").transform.position.x -transform.position.x)/Smooth;
 
 		Vector3 aux = new Vector3 (x, transform.position.y, transform.position.z);
