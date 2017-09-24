@@ -10,8 +10,8 @@ public class PlayerDeath : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        textBox = GameObject.FindGameObjectWithTag("TextPrompts").transform.GetChild(0).gameObject;
+    }
 
     private void OnTriggerEnter(Collider collision)
     {
@@ -77,6 +77,6 @@ public class PlayerDeath : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-		
+
 	}
 }
