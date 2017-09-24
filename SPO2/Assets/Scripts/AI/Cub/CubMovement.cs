@@ -78,11 +78,20 @@ public class CubMovement : MonoBehaviour
         }
         pathIsEnded = false;
         // dir to next waypoint
-        Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-        dir *= speed * Time.fixedDeltaTime;
+        //Vector3 dir = (path.vectorPath[currentWaypoint] - transform.position).normalized;
+        //dir *= speed * Time.fixedDeltaTime;
 
-        rb.AddForce(dir, fMode);
+        //rb.AddForce(dir, fMode);
+
+
         float dist = Vector3.Distance(transform.position, path.vectorPath[currentWaypoint]);
+        if (dist > nextWaypointDistance)
+        {
+            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+
+        }
+
+
         if (dist < nextWaypointDistance)
         {
             currentWaypoint++;
