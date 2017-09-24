@@ -14,7 +14,7 @@ public class AIShootingScript : MonoBehaviour {
 	void Update () {
 	}
 
-    private void OnTriggerEnter2D(Collider2D p)
+    private void OnTriggerEnter(Collider p)
     {
         if (p.tag == "Player" || p.tag == "Cub")
         {
@@ -29,8 +29,8 @@ public class AIShootingScript : MonoBehaviour {
             Temporary_Bullet_Handler.transform.Rotate(Vector3.left * 90);
 
             //Retrieve the Rigidbody component from the instantiated Bullet and control it.
-            Rigidbody2D Temporary_RigidBody;
-            Temporary_RigidBody = Temporary_Bullet_Handler.GetComponent<Rigidbody2D>();
+            Rigidbody Temporary_RigidBody;
+            Temporary_RigidBody = Temporary_Bullet_Handler.GetComponent<Rigidbody>();
 
             //Tell the bullet to be "pushed" forward by an amount set by Bullet_Forward_Force.
             Temporary_RigidBody.AddForce(transform.right * speed * Time.deltaTime);
