@@ -1621,7 +1621,7 @@ public class AstarPath : VersionedMonoBehaviour {
 
 		System.GC.Collect();
 
-		Log("Scanning - Process took "+(lastScanTime*1000).ToString("0")+" ms to complete");
+		//Log("Scanning - Process took "+(lastScanTime*1000).ToString("0")+" ms to complete");
 	}
 
 	IEnumerable<Progress> ScanGraph (NavGraph graph) {
