@@ -5,13 +5,10 @@ using UnityEngine;
 public class AIShootingScript : MonoBehaviour {
     public GameObject Bullet;
     public GameObject spawnPoint;
-    GameObject parent;
+
 
     public float speed;
-	// Use this for initialization
-	void Start () {
-        parent = transform.parent.gameObject;
-	}
+
 	
 	// Update is called once per frame
 	void Update () {
