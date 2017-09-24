@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AiPray : MonoBehaviour {
+public class AiHunter : MonoBehaviour {
     public Vector2[] walkLocations;
     Vector2 curTarget;
     private int target = 0;
@@ -42,7 +42,7 @@ public class AiPray : MonoBehaviour {
         }
         else
         {
-            //transform.LookAt(curTarget);
+            transform.LookAt(curTarget);
             transform.position = Vector2.MoveTowards(transform.position, curTarget, step);
         }
     }
