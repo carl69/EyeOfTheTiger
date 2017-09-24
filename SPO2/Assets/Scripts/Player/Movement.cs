@@ -8,7 +8,7 @@ public class Movement : MonoBehaviour
     private float speed = 10f, jumpVelocity = 10f, gravityStrength, addedRunningSpeed, currRunningSpeed = 0;
     public LayerMask playerMask;
     Transform myTransform, tagGround;
-    Rigidbody2D myBody;
+    Rigidbody myBody;
     public bool isGrounded = false;
     public bool updateStats;
 
@@ -20,7 +20,7 @@ public class Movement : MonoBehaviour
 
         CheckStats();
 
-        myBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
+        myBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
         myTransform = GameObject.FindGameObjectWithTag("Player").transform;
         tagGround = GameObject.Find(this.name + "/tag_ground").transform;
     }
@@ -35,7 +35,7 @@ public class Movement : MonoBehaviour
 
 
 
-        isGrounded = Physics2D.Linecast(myTransform.position, tagGround.position, playerMask);
+        isGrounded = Physics.Linecast(myTransform.position, tagGround.position, playerMask);
 
         Move(Input.GetAxisRaw("Horizontal"));
         if (Input.GetButtonDown("Jump") && jumped == false)
@@ -86,7 +86,7 @@ public class Movement : MonoBehaviour
         gravityStrength = Playstats.gravity;
         //change the ingame gravity
         Vector2 gravityS = new Vector2(0, gravityStrength);
-        Physics2D.gravity = gravityS;
+        Physics.gravity = gravityS;
         //Change jump varible
         jumpVelocity = Playstats.jumphight;
         //change speed varible
