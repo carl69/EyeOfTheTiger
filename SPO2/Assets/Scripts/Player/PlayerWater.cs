@@ -52,7 +52,7 @@ public class PlayerWater : MonoBehaviour
                // button.SetActive(true);
                 drink = 0;
                 counter = 30;
-                gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+                //gameObject.GetComponent<Rigidbody>().gravityScale = 0;
 
 
             }
@@ -62,13 +62,13 @@ public class PlayerWater : MonoBehaviour
         {
             counter--;
             transform.RotateAround(transform.position, new Vector3(1, 0, 0), 3);
-            gameObject.GetComponent<Rigidbody2D>().gravityScale = 0;
+            //gameObject.GetComponent<Rigidbody>().gravityScale = 0;
         }
 
 
     }
 
-    public void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "water")
         {
@@ -77,7 +77,7 @@ public class PlayerWater : MonoBehaviour
 
 
     }
-    public void OnTriggerExit2D(Collider2D collision)
+    public void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.tag == "water")
             drinking = false;

@@ -42,18 +42,18 @@ public class food : MonoBehaviour {
 				//button.SetActive (true);
 				eaten = 0;
 				counter = 30;
-				gameObject.GetComponent<Rigidbody2D> ().gravityScale = 0;
+				//gameObject.GetComponent<Rigidbody> ().gravityScale = 0;
             }
         }
 
 		if (counter > 0) {
 			counter--;
 			transform.RotateAround (transform.position, new Vector3 (1, 0, 0), 3);
-			gameObject.GetComponent<Rigidbody2D> ().gravityScale = 0;
+			//gameObject.GetComponent<Rigidbody> ().gravityScale = 0;
 		}
     }
 
-    public void OnTriggerStay2D(Collider2D other){
+    public void OnTriggerStay(Collider other){
 
 		if (other.gameObject.tag == "food" && eaten <= maxFood && Input.GetKeyDown(KeyCode.Space)) {
             if ((maxFood - eaten) <= amountOfFood)
