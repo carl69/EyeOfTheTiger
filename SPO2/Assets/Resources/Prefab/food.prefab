@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4035327935204316}
   - component: {fileID: 33790644271971268}
   - component: {fileID: 23044761849834148}
-  - component: {fileID: 61239898972039398}
   - component: {fileID: 108017216819340488}
+  - component: {fileID: 65757756957164492}
   m_Layer: 0
   m_Name: food
   m_TagString: food
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318109642181176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.71, y: -1.74, z: 0}
+  m_LocalPosition: {x: 88.84222, y: -4.4286413, z: -0.09620476}
   m_LocalScale: {x: 0.78999996, y: 0.78999996, z: 0.78999996}
   m_Children:
   - {fileID: 4428809710039786}
@@ -152,31 +152,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318109642181176}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!61 &61239898972039398
-BoxCollider2D:
+--- !u!65 &65757756957164492
+BoxCollider:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1318109642181176}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
+  m_Size: {x: 3.2047148, y: 1.9100444, z: 1}
+  m_Center: {x: -0.36465687, y: 0.8158751, z: 0}
 --- !u!108 &108017216819340488
 Light:
   m_ObjectHideFlags: 1
