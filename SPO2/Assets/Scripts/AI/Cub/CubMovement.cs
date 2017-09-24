@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Rigidbody))]
 [RequireComponent(typeof(Seeker))]
 
 
@@ -13,10 +13,10 @@ public class CubMovement : MonoBehaviour
     public Transform target;
     public float updateRate = 2f;
     private Seeker seeker;
-    private Rigidbody2D rb;
+    private Rigidbody rb;
     public Path path;
     public float speed = 300f;
-    public ForceMode2D fMode;
+    public ForceMode fMode;
     public bool pathIsEnded = false;
     public float nextWaypointDistance = 3;
     private int currentWaypoint = 0;
@@ -24,7 +24,7 @@ public class CubMovement : MonoBehaviour
     void Start()
     {
         seeker = GetComponent<Seeker>();
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         if (target == null)
         {
             Debug.LogError("No Player Found");
