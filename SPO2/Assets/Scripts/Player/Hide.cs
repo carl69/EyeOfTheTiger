@@ -27,7 +27,7 @@ public class Hide : MonoBehaviour {
 
 	}
 
-	private void OnTriggerEnter2D (Collider2D other)
+	private void OnTriggerEnter (Collider other)
 	{
 
 		if (other.gameObject.tag == "Bush")
@@ -35,7 +35,7 @@ public class Hide : MonoBehaviour {
 			hiden = true;
 		}
 	}
-	private void OnTriggerExit2D(Collider2D collision)
+	private void OnTriggerExit(Collider collision)
 	{
 		if (collision.gameObject.tag == "Bush")
 		{
