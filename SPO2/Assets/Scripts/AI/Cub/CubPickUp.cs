@@ -46,7 +46,7 @@ public class CubPickUp : MonoBehaviour {
             cubMovement.enabled = false;
         }
 	}
-    private void OnTriggerEnter2D(Collider2D c)
+    private void OnTriggerEnter(Collider c)
     {
         if (c.tag =="Player")
         {
@@ -59,7 +59,7 @@ public class CubPickUp : MonoBehaviour {
             inHive = true;
         }
     }
-    private void OnTriggerExit2D(Collider2D c)
+    private void OnTriggerExit(Collider c)
     {
         cubMovement.enabled = true;
         if (c.tag == "Player")
