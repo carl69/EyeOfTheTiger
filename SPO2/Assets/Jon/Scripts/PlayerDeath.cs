@@ -13,7 +13,7 @@ public class PlayerDeath : MonoBehaviour {
 		
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
 
         if (collision.gameObject.tag == "Trap")
@@ -44,13 +44,30 @@ public class PlayerDeath : MonoBehaviour {
         if(collision.gameObject.tag == "WallofDeath")
         {
             gameObject.SetActive(false);
-            if(GameObject.FindGameObjectWithTag("Cub").activeInHierarchy == true)
+            if(GameObject.FindGameObjectWithTag("Cub") == true)
             {
                 Instantiate(TigerPrefab, GameObject.FindGameObjectWithTag("Cub").transform.position, Quaternion.identity);
                 Destroy(GameObject.FindGameObjectWithTag("Cub"));
             }
             else
             {
+                Debug.Log("No cub found!");
+                Time.timeScale = 0;
+                textBox.SetActive(true);
+                textBox.transform.GetChild(9).gameObject.SetActive(true);
+            }
+        }
+        if(collision.gameObject.tag == "Bullet")
+        {
+            gameObject.SetActive(false);
+            if (GameObject.FindGameObjectWithTag("Cub") == true)
+            {
+                Instantiate(TigerPrefab, GameObject.FindGameObjectWithTag("Cub").transform.position, Quaternion.identity);
+                Destroy(GameObject.FindGameObjectWithTag("Cub"));
+            }
+            else
+            {
+                Debug.Log("No cub found!");
                 Time.timeScale = 0;
                 textBox.SetActive(true);
                 textBox.transform.GetChild(9).gameObject.SetActive(true);

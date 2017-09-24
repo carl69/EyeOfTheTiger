@@ -30,7 +30,7 @@ public class TextPrompt : MonoBehaviour {
         	
 	}
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player" && triggerNumber == "1" && text1Shown == false)
         {
