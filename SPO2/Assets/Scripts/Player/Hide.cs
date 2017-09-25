@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class Hide : MonoBehaviour {
 	public bool hidden = false;
 	private bool hiden = false;
 	private Renderer[] renderChildren;
+    private GameObject cub;
 	// Use this for initialization
 	void Start () {
+        //finds if cub is in the game. finds the cub
+        if (GameObject.Find("Cub") != null)
+        {
+            cub = GameObject.Find("Cub");
+        }
 		//finds child objects
 		renderChildren = GetComponentsInChildren<Renderer>();
 	}
@@ -21,11 +24,22 @@ public class Hide : MonoBehaviour {
 
 		if (hiden == true && Input.GetKey (KeyCode.Space)) {
 			intoHide ();
-		} else {
-			outoHide();
-		}
+            gameObject.layer = 14;
+            if (cub != null)
+            {
+                cub.layer = 14;
+            }
 
-	}
+        } else {
+			outoHide();
+            gameObject.layer = 8;
+            if (cub != null)
+            {
+                cub.layer = 9;
+            }
+        }
+
+    }
 
 	private void OnTriggerEnter (Collider other)
 	{
