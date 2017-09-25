@@ -10,12 +10,12 @@ public class UIHunger : MonoBehaviour {
     food Food;
 	// Use this for initialization
 	void Start () {
-        Food = GameObject.Find("Player").GetComponent<food>();
+        Food = GameObject.FindWithTag("Player").GetComponent<food>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Food = GameObject.Find("Player").GetComponent<food>();
+        Food = GameObject.FindWithTag("Player").GetComponent<food>();
 
 
 
