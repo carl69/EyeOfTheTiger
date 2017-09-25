@@ -15,6 +15,10 @@ public class UIHunger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Food = GameObject.Find("Player").GetComponent<food>();
+
+
+
         MaxHunger = Food.maxFood;
         CurHunger = Food.eaten;
 

@@ -90,7 +90,7 @@ public class CubMovement : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
 
         }
-        Debug.Log(nextWaypointDistance);
+        //Debug.Log(nextWaypointDistance);
 
         if (dist < nextWaypointDistance)
         {

@@ -15,6 +15,9 @@ public class UIWater : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        Water = GameObject.Find("Player").GetComponent<PlayerWater>();
+
+
         MaxThirst = Water.MaxWater;
         CurThirst = Water.drink;
 
