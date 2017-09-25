@@ -16,6 +16,8 @@ public class PlayerDeath : MonoBehaviour {
         //    this.gameObject.name = "Player";
         //}
 
+
+
         Food = this.gameObject.GetComponent<food>();
         playerWater = this.gameObject.GetComponent<PlayerWater>();
         textBox = GameObject.FindGameObjectWithTag("TextPrompts").transform.GetChild(0).gameObject;
@@ -35,10 +37,7 @@ public class PlayerDeath : MonoBehaviour {
                 DestroyCub();
                 if (deathTextShown == false)
                 {
-                    textBox.SetActive(true);
-                    textBox.transform.GetChild(8).gameObject.SetActive(true);
-                    deathTextShown = true;
-                    Time.timeScale = 0;
+                    FirstDeath();
                 }
             } 
             else
@@ -54,7 +53,10 @@ public class PlayerDeath : MonoBehaviour {
             {
                 CreateNewPlayer();
                 DestroyCub();
-
+                if (deathTextShown == false)
+                {
+                    FirstDeath();
+                }
             }
             else
             {
@@ -68,6 +70,10 @@ public class PlayerDeath : MonoBehaviour {
             {
                 CreateNewPlayer();
                 DestroyCub();
+                if (deathTextShown == false)
+                {
+                    FirstDeath();
+                }
             }
             else
             {
@@ -85,6 +91,10 @@ public class PlayerDeath : MonoBehaviour {
                 DestroyPlayer();
                 CreateNewPlayer();
                 DestroyCub();
+                if (deathTextShown == false)
+                {
+                    FirstDeath();
+                }
             }
             else {
                 GameOver();
@@ -93,7 +103,12 @@ public class PlayerDeath : MonoBehaviour {
 	}
 
 
-
+    void FirstDeath() {
+        textBox.SetActive(true);
+        textBox.transform.GetChild(8).gameObject.SetActive(true);
+        deathTextShown = true;
+        Time.timeScale = 0;
+    }
     void DestroyPlayer() {
         gameObject.SetActive(false);
     }
