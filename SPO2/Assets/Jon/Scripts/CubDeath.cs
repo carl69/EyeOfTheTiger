@@ -11,9 +11,10 @@ public class CubDeath : MonoBehaviour {
 
     private void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag == "Trap")
+        if(collision.gameObject.tag == "Trap" || collision.gameObject.tag == "WallofDeath" || collision.gameObject.tag == "Bullet" || collision.gameObject.tag == "Enemie")
         {
             Destroy(gameObject);
+            Destroy(GameObject.Find("CubUI"));
         }
     }
 

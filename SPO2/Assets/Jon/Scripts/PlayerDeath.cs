@@ -48,6 +48,8 @@ public class PlayerDeath : MonoBehaviour {
             {
                 Instantiate(TigerPrefab, GameObject.FindGameObjectWithTag("Cub").transform.position, Quaternion.identity);
                 Destroy(GameObject.FindGameObjectWithTag("Cub"));
+                Destroy(GameObject.Find("CubUI"));
+
             }
             else
             {
