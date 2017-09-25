@@ -169,7 +169,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006279963806992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -212.89, y: 9.76, z: 0}
+  m_LocalPosition: {x: -206.86, y: 10.62, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4433058646790170}
@@ -484,9 +484,9 @@ MonoBehaviour:
   Running: 500
   InfoFood: '***Player Food script***'
   maxHunger: 100
-  startHunger: 100
+  startHunger: 75
   hungerSpeed: 1
-  foodPickUp: 20
+  foodPickUp: 25
   InfoWater: '***Player Water script***'
   maxWater: 100
   startWater: 100
@@ -543,10 +543,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drinking: 0
-  drink: 50
+  drink: 75
   MaxWater: 100
-  rate: 2
-  lossAmount: 1
+  rate: 0.2
+  lossAmount: 0.3
   drinkAudio: 0
 --- !u!114 &114502701630950546
 MonoBehaviour:
