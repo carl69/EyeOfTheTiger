@@ -11,10 +11,10 @@ public class PlayerDeath : MonoBehaviour {
     PlayerWater playerWater;
 	// Use this for initialization
 	void Start () {
-        if (this.gameObject.name != "Player")
-        {
-            this.gameObject.name = "Player";
-        }
+        //if (this.gameObject.name != "Player")
+        //{
+        //    this.gameObject.name = "Player";
+        //}
 
         Food = this.gameObject.GetComponent<food>();
         playerWater = this.gameObject.GetComponent<PlayerWater>();
@@ -26,6 +26,7 @@ public class PlayerDeath : MonoBehaviour {
 
         if (collision.gameObject.tag == "Trap")
         {
+            Debug.Log("1");
             gameObject.SetActive(false);
             if (GameObject.FindGameObjectWithTag("Cub") == true)
             {
@@ -85,13 +86,16 @@ public class PlayerDeath : MonoBehaviour {
                 CreateNewPlayer();
                 DestroyCub();
             }
+            else {
+                GameOver();
+            }
         }
 	}
 
 
 
     void DestroyPlayer() {
-        Destroy(this.gameObject);
+        gameObject.SetActive(false);
     }
     void CreateNewPlayer()
     {
