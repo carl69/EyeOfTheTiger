@@ -28,6 +28,14 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (myBody == null)
+        {
+            CheckStats();
+
+            myBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+            myTransform = GameObject.FindGameObjectWithTag("Player").transform;
+            tagGround = GameObject.Find(this.name + "/tag_ground").transform;
+        }
 
         if (updateStats) {
             CheckStats();

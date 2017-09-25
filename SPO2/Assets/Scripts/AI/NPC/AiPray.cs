@@ -22,7 +22,11 @@ public class AiPray : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (player == null)
+        {
+            player = GameObject.Find("Player");
 
+        }
 
         float step = aiSpeed * Time.deltaTime;
         float dist = Vector2.Distance(curTarget, this.transform.position);

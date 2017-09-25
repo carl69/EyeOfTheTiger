@@ -58,12 +58,12 @@ public class PlayerWater : MonoBehaviour
             }
 
         }
-        if (counter > 0)
-        {
-            counter--;
-            transform.RotateAround(transform.position, new Vector3(1, 0, 0), 3);
+        //if (counter > 0)
+        //{
+        //    counter--;
+        //    transform.RotateAround(transform.position, new Vector3(1, 0, 0), 3);
             //gameObject.GetComponent<Rigidbody>().gravityScale = 0;
-        }
+        //}
 
 
     }

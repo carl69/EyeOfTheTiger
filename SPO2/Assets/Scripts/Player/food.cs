@@ -41,16 +41,16 @@ public class food : MonoBehaviour {
             {
 				//button.SetActive (true);
 				eaten = 0;
-				counter = 30;
+				//counter = 30;
 				//gameObject.GetComponent<Rigidbody> ().gravityScale = 0;
             }
         }
 
-		if (counter > 0) {
-			counter--;
-			transform.RotateAround (transform.position, new Vector3 (1, 0, 0), 3);
+		//if (counter > 0) {
+		//	counter--;
+		//	transform.RotateAround (transform.position, new Vector3 (1, 0, 0), 3);
 			//gameObject.GetComponent<Rigidbody> ().gravityScale = 0;
-		}
+		//}
     }
 
     public void OnTriggerStay(Collider other){
