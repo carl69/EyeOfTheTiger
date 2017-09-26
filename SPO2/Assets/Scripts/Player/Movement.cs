@@ -5,7 +5,8 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
 
-    private float speed = 10f, jumpVelocity = 10f, gravityStrength, addedRunningSpeed, currRunningSpeed = 0;
+    private float speed = 10f, jumpVelocity = 10f, gravityStrength, addedRunningSpeed;
+    public float currRunningSpeed = 0;
     public LayerMask playerMask;
     Transform myTransform, tagGround;
     Rigidbody myBody;
@@ -13,7 +14,9 @@ public class Movement : MonoBehaviour
     public bool updateStats;
 
     private bool jumped;
-    
+
+    public float xMovement;
+    public float yMovement;
     // Use this for initialization
     void Start()
     {
@@ -28,6 +31,11 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        xMovement = myBody.velocity.x;
+        yMovement = myBody.velocity.y;
+
+        //Debug.Log(yMovement);
+
         if (myBody == null)
         {
             CheckStats();
@@ -75,6 +83,7 @@ public class Movement : MonoBehaviour
         Vector2 moveVel = myBody.velocity;
         moveVel.x = horizonalInput * (speed + currRunningSpeed) * Time.deltaTime;
         myBody.velocity = moveVel;
+
     }
 
     public void Jump()
