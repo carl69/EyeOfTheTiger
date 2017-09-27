@@ -461,11 +461,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ea29d047d2450498745371ba044b49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canMoveInAir: 1
+  currRunningSpeed: 0
   playerMask:
     serializedVersion: 2
     m_Bits: 1024
   isGrounded: 1
   updateStats: 0
+  xMovement: 0
+  yMovement: 0
 --- !u!114 &114140695577425492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -545,8 +549,6 @@ MonoBehaviour:
   drinking: 0
   drink: 75
   MaxWater: 100
-  rate: 0.2
-  lossAmount: 0.3
   drinkAudio: 0
 --- !u!114 &114502701630950546
 MonoBehaviour:
