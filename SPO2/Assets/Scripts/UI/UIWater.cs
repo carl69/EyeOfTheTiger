@@ -11,12 +11,13 @@ public class UIWater : MonoBehaviour {
     GameObject player;
 	// Use this for initialization
 	void Start () {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.Find("Player");
         Water = player.GetComponent<PlayerWater>();
     }
 	
 	// Update is called once per frame
 	void Update () {
+        Debug.Log(player);
         if (player == null)
         {
             player = GameObject.FindWithTag("Player");

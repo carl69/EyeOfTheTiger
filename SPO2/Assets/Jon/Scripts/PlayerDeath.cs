@@ -11,10 +11,10 @@ public class PlayerDeath : MonoBehaviour {
     PlayerWater playerWater;
 	// Use this for initialization
 	void Start () {
-        //if (this.gameObject.name != "Player")
-        //{
-        //    this.gameObject.name = "Player";
-        //}
+        if (this.gameObject.name != "Player")
+        {
+            this.gameObject.name = "Player";
+        }
 
 
 
@@ -29,7 +29,7 @@ public class PlayerDeath : MonoBehaviour {
         if (collision.gameObject.tag == "Trap")
         {
             Debug.Log("1");
-            gameObject.SetActive(false);
+            DestroyPlayer();
             if (GameObject.FindGameObjectWithTag("Cub") == true)
             {
                 Debug.Log("Cub found!");
@@ -48,8 +48,8 @@ public class PlayerDeath : MonoBehaviour {
        
         if(collision.gameObject.tag == "WallofDeath")
         {
-            gameObject.SetActive(false);
-            if(GameObject.FindGameObjectWithTag("Cub") == true)
+            DestroyPlayer();
+            if (GameObject.FindGameObjectWithTag("Cub") == true)
             {
                 CreateNewPlayer();
                 DestroyCub();
@@ -65,7 +65,7 @@ public class PlayerDeath : MonoBehaviour {
         }
         if(collision.gameObject.tag == "Bullet")
         {
-            gameObject.SetActive(false);
+            DestroyPlayer();
             if (GameObject.FindGameObjectWithTag("Cub") == true)
             {
                 CreateNewPlayer();
@@ -110,7 +110,8 @@ public class PlayerDeath : MonoBehaviour {
         Time.timeScale = 0;
     }
     void DestroyPlayer() {
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
+        Destroy(this.gameObject);
     }
     void CreateNewPlayer()
     {

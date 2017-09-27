@@ -18,19 +18,22 @@ public class Movement : MonoBehaviour
     public float xMovement;
     public float yMovement;
     // Use this for initialization
-    void Start()
+    void Awake()
     {
 
         CheckStats();
 
-        myBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
-        myTransform = GameObject.FindGameObjectWithTag("Player").transform;
-        tagGround = GameObject.Find(this.name + "/tag_ground").transform;
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (myBody == null)
+        {
+            CheckStats();
+        }
+
         xMovement = myBody.velocity.x;
         yMovement = myBody.velocity.y;
 
@@ -110,6 +113,11 @@ public class Movement : MonoBehaviour
         speed = Playstats.playerSpeed;
         // add running speed var
         addedRunningSpeed = Playstats.Running;
+
+
+        myBody = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody>();
+        myTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        tagGround = GameObject.Find(this.name + "/tag_ground").transform;
     }
 
 }
