@@ -5,17 +5,20 @@ using UnityEngine.SceneManagement;
 
 public class PlayerWater : MonoBehaviour
 {
+    [HideInInspector]
     public bool drinking = false;
     public float drink = 50;
+    [HideInInspector]
     public float MaxWater = 100;
     // how fast you lose water
-    public float rate = 2;
+    private float rate = 2;
     private float timer;
    // public GameObject button;
     int counter = 0;
-    public float lossAmount = 1;
+    private float lossAmount = 1;
     Audio_pickup audio_pickup;
-
+    private float drinkAmount;
+    [HideInInspector]
     public bool drinkAudio = false;
 
     playerStats PlayStats;
@@ -23,6 +26,11 @@ public class PlayerWater : MonoBehaviour
     {
         PlayStats = this.gameObject.GetComponent<playerStats>();
         MaxWater = PlayStats.maxWater;
+        drink = PlayStats.startWater;
+        rate = PlayStats.waterLossRate;
+        lossAmount = PlayStats.waterLossAmount;
+        drinkAmount = PlayStats.waterPickUp;
+        
 
 
         //audio_pickup = GameObject.Find("PickUps").GetComponent<Audio_pickup>();
@@ -40,7 +48,7 @@ public class PlayerWater : MonoBehaviour
             if (drink < MaxWater)
             {
                 drinkAudio = true;
-                drink++;
+                drink += drinkAmount;
             }
         }
         else if (timer < Time.time)
