@@ -17,7 +17,6 @@ public class UIWater : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(player);
         if (player == null)
         {
             player = GameObject.FindWithTag("Player");
