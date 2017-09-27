@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-
+    public bool canMoveInAir;
+    [HideInInspector]
     private float speed = 10f, jumpVelocity = 10f, gravityStrength, addedRunningSpeed;
+    [HideInInspector]
     public float currRunningSpeed = 0;
     public LayerMask playerMask;
     Transform myTransform, tagGround;
     Rigidbody myBody;
+    [HideInInspector]
     public bool isGrounded = false;
     public bool updateStats;
 
@@ -74,6 +77,10 @@ public class Movement : MonoBehaviour
 
     public void Move(float horizonalInput)
     {
+        if (!canMoveInAir && !isGrounded)
+        {
+            return;
+        }
         if (Input.GetKey(KeyCode.LeftShift))
         {
             currRunningSpeed = addedRunningSpeed;
