@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public bool canMoveInAir;
+    public bool canMoveInAir = false;
     [HideInInspector]
     private float speed = 10f, jumpVelocity = 10f, gravityStrength, addedRunningSpeed;
     [HideInInspector]
