@@ -43,7 +43,7 @@ public class PlayerWater : MonoBehaviour
             drinkAudio = false;
         }
 
-        if (drinking == true && Input.GetKey(KeyCode.Space))
+        if (drinking == true && Input.GetKey(KeyCode.S))
         {
             if (drink < MaxWater)
             {
