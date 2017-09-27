@@ -5,7 +5,7 @@ using UnityEngine;
 public class CubPickUp : MonoBehaviour {
     bool canPickUp = false;
     bool pickedUp = false;
-    public bool inHive = false;
+    bool inHive = false;
     bool canHive = false;
     public Transform holdingPosision;
     private Transform hiveLocal;
