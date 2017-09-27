@@ -14,7 +14,7 @@ public class food : MonoBehaviour {
 
     Audio_pickup audio_pickup;
 
-	int counter = 0;
+	//int counter = 0;
 	//public GameObject button;
 
     playerStats Playstats;

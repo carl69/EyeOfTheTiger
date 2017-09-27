@@ -4,18 +4,24 @@ using UnityEngine;
 
 public class UIWater : MonoBehaviour {
 
-    public float MaxThirst;
-    public float CurThirst;
+    private float MaxThirst;
+    private float CurThirst;
 
     PlayerWater Water;
+    GameObject player;
 	// Use this for initialization
 	void Start () {
-        Water = GameObject.FindWithTag("Player").GetComponent<PlayerWater>();
+        player = GameObject.FindWithTag("Player");
+        Water = player.GetComponent<PlayerWater>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Water = GameObject.FindWithTag("Player").GetComponent<PlayerWater>();
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player");
+            Water = player.GetComponent<PlayerWater>();
+        }
 
 
         MaxThirst = Water.MaxWater;

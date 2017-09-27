@@ -4,19 +4,25 @@ using UnityEngine;
 
 public class UIHunger : MonoBehaviour {
 
-    public float MaxHunger;
-    public float CurHunger;
+    private float MaxHunger;
+    private float CurHunger;
 
     food Food;
+    GameObject player;
 	// Use this for initialization
 	void Start () {
-        Food = GameObject.FindWithTag("Player").GetComponent<food>();
+        player = GameObject.FindWithTag("Player");
+        Food = player.GetComponent<food>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-        Food = GameObject.FindWithTag("Player").GetComponent<food>();
 
+        if (player == null)
+        {
+            player = GameObject.FindWithTag("Player");
+            Food = player.GetComponent<food>();
+        }
 
 
         MaxHunger = Food.maxFood;
