@@ -9148,7 +9148,6 @@ GameObject:
   - component: {fileID: 1466616643}
   - component: {fileID: 1466616642}
   - component: {fileID: 1466616648}
-  - component: {fileID: 1466616647}
   - component: {fileID: 1466616646}
   m_Layer: 5
   m_Name: Pray
@@ -9232,41 +9231,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8ac7965a263aab48b05b03f6aeadaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 1791927698}
-  updateRate: 2
-  speed: 300
-  fMode: 0
-  pathIsEnded: 0
-  nextWaypointDistance: 15
-  currRunningSpeed: 0
---- !u!114 &1466616647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1466616641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  drawGizmos: 1
-  detailedGizmos: 0
-  startEndModifier:
-    addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
-    useRaycasting: 0
-    mask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    useGraphRaycasting: 0
-  traversableTags: -1
-  traversableTagsCompatibility:
-    tagsChange: -1
-    tagsSet: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
+  velocity: 5
+  distance: 10
 --- !u!54 &1466616648
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9280,7 +9246,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1470807109
 GameObject:
