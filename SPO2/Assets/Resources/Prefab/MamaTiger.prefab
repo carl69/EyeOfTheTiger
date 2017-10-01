@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 23432023810743836}
   - component: {fileID: 54155381351369660}
   - component: {fileID: 114172157710734858}
+  - component: {fileID: 65437451210968196}
   m_Layer: 0
   m_Name: MamaTiger
-  m_TagString: Untagged
+  m_TagString: Mother
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1693269470940676}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.9, y: -0.05, z: 0}
+  m_LocalPosition: {x: 10.9, y: 0.04, z: 0}
   m_LocalScale: {x: 1.5, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,6 +99,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
+--- !u!65 &65437451210968196
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1693269470940676}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65484193728469456
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -121,6 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d608e540a0de2a45a6fd062b3cdac72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  walkingSpeed: 5
+  RunningSpeed: 5
+  jumpVelocity: 60000
   stage: 0
   targetPoint:
   - {fileID: 0}
@@ -129,16 +145,15 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   whatTODo: 
-  walkingSpeed: 5
   Naming: Delay, AD, Wait, Jump, Walk,Run
   Commando:
-  - AD
-  - Delay
-  - Jump
-  - Wait
-  - Walk
+  - 
+  - 
+  - 
+  - 
+  - 
   delayTime:
-  - 0
+  - 2
   - 2
   - 0
   - 0
