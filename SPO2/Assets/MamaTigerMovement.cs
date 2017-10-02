@@ -50,7 +50,7 @@ public class MamaTigerMovement : MonoBehaviour {
         myBody = GameObject.FindGameObjectWithTag("Mother").GetComponent<Rigidbody>();
     }
 
-    void Update () {
+    void FixedUpdate () {
 
         //NextStep
         if (nextStage[stage] == "AD")
@@ -142,8 +142,8 @@ public class MamaTigerMovement : MonoBehaviour {
         float dist = Vector3.Distance(walkToTarget.position, transform.position);
         if (dist <= 0.5f)
         {
-            myBody.AddForce(transform.up * jumpVelocity * Time.deltaTime);
             NextStage();
+            myBody.AddForce(transform.up * jumpVelocity * Time.deltaTime);
         }
 
         
