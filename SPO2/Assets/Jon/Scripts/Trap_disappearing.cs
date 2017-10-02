@@ -21,7 +21,7 @@ public class Trap_disappearing : MonoBehaviour {
             pMovement.enabled = false;
 
             GetComponent<AudioSource>().Play();
-            Destroy(transform.GetChild(0).gameObject,1f);
+            Destroy(transform.GetChild(0).gameObject, 0.5f);
             trapSprung = true;
         }
     }
