@@ -21,8 +21,11 @@ public class RunPray : MonoBehaviour
 	}
 	void Update(){
 
-		if (huir) rb.velocity = new Vector2 (velocity, rb.velocity.y);
-
+		if (huir && (transform.position.x > tigre.transform.position.x))
+			rb.velocity = new Vector2 (velocity, rb.velocity.y);
+		else if (huir && (transform.position.x < tigre.transform.position.x)) {
+			transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, -1 * velocity * Time.deltaTime);
+		}
 		checkDistancia ();
 
 	}
