@@ -25,6 +25,8 @@ public class Audio_pickup : MonoBehaviour {
         if (isEating == true)
         {
             transform.GetChild(0).GetComponent<AudioSource>().GetComponent<AudioSource>().PlayOneShot(food);
+            GameObject.FindGameObjectWithTag("Player").transform.GetChild(3).gameObject.SetActive(true);
+            Destroy(GameObject.FindGameObjectWithTag("Player").transform.GetChild(3).gameObject, 2f);
             isEating = false;
         }
         if(playerWater.drinkAudio == true && transform.GetChild(1).GetComponent<AudioSource>().isPlaying == false)
