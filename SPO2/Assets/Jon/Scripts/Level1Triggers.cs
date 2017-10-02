@@ -14,25 +14,24 @@ public class Level1Triggers : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player" && triggerNumber == "1")
+        if(other.gameObject.tag == "Mother" && triggerNumber == "1")
         {
-            Debug.Log("Player entered trigger!");
             transform.GetChild(0).gameObject.SetActive(true);
             Destroy(gameObject, 3f);
         }
-        if(other.gameObject.tag == "Player" && triggerNumber == "2")
+        if(other.gameObject.tag == "Mother" && triggerNumber == "2")
         {
             transform.GetChild(0).gameObject.SetActive(true);
             Destroy(gameObject, 3f);
             
         }
-        if (other.gameObject.tag == "Player" && triggerNumber == "3")
+        if (other.gameObject.tag == "Mother" && triggerNumber == "3")
         {
             transform.GetChild(0).gameObject.SetActive(true);
             Destroy(gameObject, 2f);
 
         }
-        if (other.gameObject.tag == "Player" && triggerNumber == "4")
+        if (other.gameObject.tag == "Pray" && triggerNumber == "4")
         {
             transform.GetChild(0).gameObject.SetActive(true);
             Destroy(gameObject, 3f);
@@ -42,7 +41,7 @@ public class Level1Triggers : MonoBehaviour {
             transform.GetChild(0).gameObject.SetActive(true);
             Destroy(gameObject, 2f);
         }
-        if (other.gameObject.tag == "Player" && triggerNumber == "6")
+        if (other.gameObject.tag == "Mother" && triggerNumber == "6")
         {
             transform.GetChild(0).gameObject.SetActive(true);
             Destroy(gameObject, 2f);

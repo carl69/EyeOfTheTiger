@@ -47,7 +47,7 @@ public class PlayerWater : MonoBehaviour
         {
             if (drink < MaxWater)
             {
-                drinkAudio = true;
+                drinkAudio = true;              
                 drink += drinkAmount;
             }
         }

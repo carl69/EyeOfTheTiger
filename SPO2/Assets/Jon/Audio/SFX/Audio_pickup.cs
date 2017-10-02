@@ -30,6 +30,8 @@ public class Audio_pickup : MonoBehaviour {
         if(playerWater.drinkAudio == true && transform.GetChild(1).GetComponent<AudioSource>().isPlaying == false)
         {
             transform.GetChild(1).GetComponent<AudioSource>().PlayOneShot(water);
+            GameObject.FindGameObjectWithTag("Player").transform.GetChild(2).gameObject.SetActive(true);
+            Destroy(GameObject.FindGameObjectWithTag("Player").transform.GetChild(2).gameObject, 2f);
         }
 	}
 }
