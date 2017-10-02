@@ -21,7 +21,6 @@ public class TigerAnimatorController : MonoBehaviour {
         anim.SetFloat("xMovement", Tiger.GetComponent<Movement>().xMovement);
         anim.SetFloat("yMovement", Tiger.GetComponent<Movement>().yMovement);
 
-        print(Tiger.GetComponent<PlayerWater>().drinkAudio);
         /*if (Input.GetKeyDown(KeyCode.W))
             transform.forward = new Vector3(0f, 0f, 1f);
         else if (Input.GetKeyDown(KeyCode.S))
