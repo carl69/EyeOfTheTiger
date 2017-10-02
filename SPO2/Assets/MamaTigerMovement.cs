@@ -15,7 +15,7 @@ public class MamaTigerMovement : MonoBehaviour {
         public string Naming = "Delay, AD, Wait, Jump, Walk, Run, Carry, LetGo";
         public string[] Commando;
     //What To Do to go to next stage
-        public string ToDo = "AD, ColideWithMother, Distance, Drinking, Eating";
+        public string ToDo = "AD, ColideWithMother, Distance, Drinking, Eating, TargetDestroyed";
         public string[] nextStage;
 
         public float[] delayTime;
@@ -49,7 +49,7 @@ public class MamaTigerMovement : MonoBehaviour {
         pFood = player.GetComponent<food>();
         pWater = player.GetComponent<PlayerWater>();
 
-        ToDo = "AD, ColideWithMother, Distance, Drinking, Eating";
+        ToDo = "AD, ColideWithMother, Distance, Drinking, Eating, TargetDestroyed";
         Naming = "Delay, AD, Wait, Jump, Walk, Run";
 
     curTarget = targetPoint[stage];
@@ -120,6 +120,14 @@ public class MamaTigerMovement : MonoBehaviour {
         if (nextStage[stage] == "Eating")
         {
             if (pFood.eating)
+            {
+                NextStage();
+            }
+        }
+
+        if (nextStage[stage] == "TargetDestroyed")
+        {
+            if (Targets[stage] == null)
             {
                 NextStage();
             }

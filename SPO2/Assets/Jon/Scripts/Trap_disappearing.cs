@@ -16,7 +16,7 @@ public class Trap_disappearing : MonoBehaviour {
         if (other.gameObject.tag == "Player" && trapSprung == false)
         {
             GetComponent<AudioSource>().Play();
-            Destroy(transform.GetChild(0).gameObject);
+            Destroy(transform.GetChild(0).gameObject,1f);
             trapSprung = true;
         }
     }
