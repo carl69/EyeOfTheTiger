@@ -39,6 +39,7 @@ public class MamaTigerMovement : MonoBehaviour {
     PlayerWater pWater;
     private void Start()
     {
+        gameObject.layer = 11;
         player = GameObject.Find("Player");
         pFood = player.GetComponent<food>();
         pWater = player.GetComponent<PlayerWater>();
@@ -66,7 +67,12 @@ public class MamaTigerMovement : MonoBehaviour {
                 float dist = Vector3.Distance(targetPoint[stage].position, transform.position);
             if (dist <= 0.5f && closeToMom)
             {
+                gameObject.layer = 11;
                 NextStage();
+            }
+            else if (gameObject.layer == 11)
+            {          
+                gameObject.layer = 15;
             }
         }
 
