@@ -72,7 +72,6 @@ public class MamaTigerMovement : MonoBehaviour {
 
         if (nextStage[stage] == "Distance")
         {
-
             if (Targets[stage] == null)
             {
                 Debug.Log("No Target On Stage " + stage);
@@ -83,7 +82,7 @@ public class MamaTigerMovement : MonoBehaviour {
                 Debug.Log("Distance on Stage " + stage + " are not applied");
             }
             else {
-                float dist = Vector3.Distance(Targets[stage].transform.position, transform.position);
+                    float dist = Vector3.Distance(Targets[stage].transform.position, transform.position);
                 if (dist <= Distance[stage])
                 {
                     NextStage();
@@ -97,15 +96,15 @@ public class MamaTigerMovement : MonoBehaviour {
             {
                 NextStage();
             }
-
         }
 
         if (nextStage[stage] == "Eating")
         {
-
+            if (pFood.eating)
+            {
+                NextStage();
+            }
         }
-
-
 
 
         //Select Funcions
@@ -133,8 +132,6 @@ public class MamaTigerMovement : MonoBehaviour {
         {
             RunPoint();
         }
-
-
     }
     //Mods
     void Jump() {

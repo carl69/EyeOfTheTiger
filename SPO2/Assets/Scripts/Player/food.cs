@@ -28,7 +28,10 @@ public class food : MonoBehaviour {
         amountOfFood = Playstats.foodPickUp;
         rate = Playstats.hungerSpeed;
 
-        audio_pickup = GameObject.Find("PickUps").GetComponent<Audio_pickup>();
+        if (GameObject.Find("PickUps") != null)
+        {
+            audio_pickup = GameObject.Find("PickUps").GetComponent<Audio_pickup>();
+        }
     }
 
     private void Update()
