@@ -9,7 +9,7 @@ public class RunPray : MonoBehaviour
 	
 	private Rigidbody rb;
 	public float velocity = 5 ;
-	bool huir = false;
+	bool huir = false, huida = false;
 	GameObject tigre;
 	public float distance = 10;
 	void Start()
@@ -23,7 +23,7 @@ public class RunPray : MonoBehaviour
 
 		if (huir && (transform.position.x > tigre.transform.position.x))
 			rb.velocity = new Vector2 (velocity, rb.velocity.y);
-		else if (huir && (transform.position.x < tigre.transform.position.x)) {
+		else if (huida && (transform.position.x < tigre.transform.position.x)) {
 			transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, -1 * velocity * Time.deltaTime);
 		}
 		checkDistancia ();
@@ -38,11 +38,13 @@ public class RunPray : MonoBehaviour
 	}
 
 	void checkDistancia(){
-		print (+transform.position.x - tigre.transform.position.x);
+		print (-transform.position.x + tigre.transform.position.x);
 		if (!huir && +transform.position.x  -tigre.transform.position.x <= distance || (transform.position.x >0 &&  -transform.position.x + tigre.transform.position.x <= distance )) {
 			huir = true;
 		}
-
+		else if (!huida && -transform.position.x  +tigre.transform.position.x <= distance || (transform.position.x >0 &&  +transform.position.x - tigre.transform.position.x <= distance )) {
+			huida = true;
+		}
 
 	}
 
