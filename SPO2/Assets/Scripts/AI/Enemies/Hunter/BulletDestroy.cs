@@ -8,5 +8,12 @@ public class BulletDestroy : MonoBehaviour {
         
         Destroy(this.gameObject, 3);
 	}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == ("Mother"))
+        {
+            Destroy(this.gameObject);
 
+        }
+    }
 }

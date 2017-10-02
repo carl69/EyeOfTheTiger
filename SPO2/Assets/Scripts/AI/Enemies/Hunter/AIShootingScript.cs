@@ -16,7 +16,7 @@ public class AIShootingScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider p)
     {
-        if (p.tag == "Player" || p.tag == "Cub")
+        if (p.tag == "Player" || p.tag == "Cub" || p.tag == "Mother")
         {
             //Instantiate(Bullet, new Vector3(transform.position.x, transform.position.y, 0), parent.transform.rotation);
 
