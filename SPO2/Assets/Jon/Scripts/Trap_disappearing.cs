@@ -5,6 +5,7 @@ using UnityEngine;
 public class Trap_disappearing : MonoBehaviour {
 
     public bool trapSprung = false;
+    Movement pMovement;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +16,10 @@ public class Trap_disappearing : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player" && trapSprung == false)
         {
+
+            pMovement = other.gameObject.GetComponent<Movement>();
+            pMovement.enabled = false;
+
             GetComponent<AudioSource>().Play();
             Destroy(transform.GetChild(0).gameObject,1f);
             trapSprung = true;
