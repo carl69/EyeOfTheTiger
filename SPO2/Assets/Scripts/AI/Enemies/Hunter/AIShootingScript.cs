@@ -6,6 +6,7 @@ public class AIShootingScript : MonoBehaviour {
     public GameObject Bullet;
     public GameObject spawnPoint;
 
+    public AudioClip gunShot;
 
     public float speed;
 
@@ -23,6 +24,8 @@ public class AIShootingScript : MonoBehaviour {
             //The Bullet instantiation happens here.
             GameObject Temporary_Bullet_Handler;
             Temporary_Bullet_Handler = Instantiate(Bullet, spawnPoint.transform.position, this.transform.rotation) as GameObject;
+
+            GetComponent<AudioSource>().PlayOneShot(gunShot);
 
             //Sometimes bullets may appear rotated incorrectly due to the way its pivot was set from the original modeling package.
             //This is EASILY corrected here, you might have to rotate it from a different axis and or angle based on your particular mesh.
