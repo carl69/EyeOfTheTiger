@@ -11,15 +11,20 @@ public class MamaTigerMovement : MonoBehaviour {
 
     public int stage = 0;
         public Transform[] targetPoint;
-        public int[] whatTODo;
-
     //What to do to trigger the next stage
         public string Naming = "Delay, AD, Wait, Jump, Walk, Run";
-
         public string[] Commando;
-        public float[] delayTime;
+    //What To Do to go to next stage
+        public string ToDo = "AD, ColideWithMother, Distance, Drinking, Eating";
+        public string[] nextStage;
 
-    
+        public float[] delayTime;
+        public float[] Distance;
+        public GameObject[] Targets;
+
+    //checks if you written it right
+        //private string[] allStringsInToDo = { "AD", "ColideWithMother", "Distance", "Drinking", "Eating"};
+        //private string[] allStringsInNaming = { "Delay", "AD", "Wait", "Jump", "Walk", "Run"};
     //Used in the Delay Funcion
     private float startTime;
     private bool changed = true;
@@ -27,15 +32,83 @@ public class MamaTigerMovement : MonoBehaviour {
     private Transform curTarget;
     //Used in the Wait Funcion
     private bool closeToMom = false;
-    
-    
+
+    //Finds The Player && Codes
+    GameObject player;
+    food pFood;
+    PlayerWater pWater;
     private void Start()
     {
-        curTarget = targetPoint[stage];
+        player = GameObject.Find("Player");
+        pFood = player.GetComponent<food>();
+        pWater = player.GetComponent<PlayerWater>();
+
+        ToDo = "AD, ColideWithMother, Distance, Drinking, Eating";
+        Naming = "Delay, AD, Wait, Jump, Walk, Run";
+
+    curTarget = targetPoint[stage];
         myBody = GameObject.FindGameObjectWithTag("Mother").GetComponent<Rigidbody>();
     }
 
     void Update () {
+
+        //NextStep
+        if (nextStage[stage] == "AD")
+        {
+            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                NextStage();
+            }
+        }
+
+        if (nextStage[stage] == "ColideWithMother")
+        {
+                float dist = Vector3.Distance(targetPoint[stage].position, transform.position);
+            if (dist <= 0.5f && closeToMom)
+            {
+                NextStage();
+            }
+        }
+
+        if (nextStage[stage] == "Distance")
+        {
+
+            if (Targets[stage] == null)
+            {
+                Debug.Log("No Target On Stage " + stage);
+            }
+            else
+            if (Distance[stage] == 0)
+            {
+                Debug.Log("Distance on Stage " + stage + " are not applied");
+            }
+            else {
+                float dist = Vector3.Distance(Targets[stage].transform.position, transform.position);
+                if (dist <= Distance[stage])
+                {
+                    NextStage();
+                }
+            }
+        }
+
+        if (nextStage[stage] == "Drinking")
+        {
+            if (pWater.drinkAudio)
+            {
+                NextStage();
+            }
+
+        }
+
+        if (nextStage[stage] == "Eating")
+        {
+
+        }
+
+
+
+
+        //Select Funcions
         if (Commando[stage] == "Delay")
         {
             waitforsomesec();
@@ -65,8 +138,18 @@ public class MamaTigerMovement : MonoBehaviour {
     }
     //Mods
     void Jump() {
-        myBody.AddForce(transform.up * jumpVelocity * Time.deltaTime);
-        NextStage();
+
+        Transform walkToTarget = targetPoint[stage];
+        float step = walkingSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, walkToTarget.position, step);
+        float dist = Vector3.Distance(walkToTarget.position, transform.position);
+        if (dist <= 0.5f)
+        {
+            myBody.AddForce(transform.up * jumpVelocity * Time.deltaTime);
+            NextStage();
+        }
+
+        
 
     }
     void WalkTo() {
@@ -82,15 +165,14 @@ public class MamaTigerMovement : MonoBehaviour {
     }
     void Wait() {
             Transform endTarget = targetPoint[stage];
-            float step = walkingSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, endTarget.position, step);
             float dist = Vector3.Distance(endTarget.position, transform.position);
-        if (dist <= 0.5f && closeToMom)
+            float step = walkingSpeed * Time.deltaTime;
+
+        if (dist >= 0.5f)
         {
-            NextStage();
+            transform.position = Vector3.MoveTowards(transform.position, endTarget.position, step);
         }
-
-
+        
     }
     void RunPoint() {
             Transform walkToTarget = targetPoint[stage];
@@ -103,11 +185,6 @@ public class MamaTigerMovement : MonoBehaviour {
         }
     }
     void WalkBackAndForth() {
-        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            NextStage();
-        }
-
         //Sets Walking Points
             Transform target0 = targetPoint[stage];
             Transform target1 = targetPoint[stage+1];
@@ -149,6 +226,12 @@ public class MamaTigerMovement : MonoBehaviour {
             changed = true;
             NextStage();
         }
+
+    }
+    void Carry() {
+
+    }
+    void LetDown() {
 
     }
     //Move To Next Stage

@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class food : MonoBehaviour {
     [HideInInspector]
     public float maxFood = 100;
+    [HideInInspector]
+    public bool eating = false;
     public float eaten = 50;
     private float amountOfFood = 10;
     // food loss rate
@@ -31,6 +33,10 @@ public class food : MonoBehaviour {
 
     private void Update()
     {
+        if (eating)
+        {
+            eating = false;
+        }
 
         if (timer < Time.time)
         {
@@ -39,18 +45,9 @@ public class food : MonoBehaviour {
 
             if (eaten <= 0)
             {
-				//button.SetActive (true);
 				eaten = 0;
-				//counter = 30;
-				//gameObject.GetComponent<Rigidbody> ().gravityScale = 0;
             }
         }
-
-		//if (counter > 0) {
-		//	counter--;
-		//	transform.RotateAround (transform.position, new Vector3 (1, 0, 0), 3);
-			//gameObject.GetComponent<Rigidbody> ().gravityScale = 0;
-		//}
     }
 
     public void OnTriggerStay(Collider other){
@@ -64,6 +61,7 @@ public class food : MonoBehaviour {
             {
                 eaten += amountOfFood;
             }
+            eating = true;
             audio_pickup.isEating = true;
             Destroy (other.gameObject);
 		}
