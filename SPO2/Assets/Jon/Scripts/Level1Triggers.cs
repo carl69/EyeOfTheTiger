@@ -46,6 +46,12 @@ public class Level1Triggers : MonoBehaviour {
             transform.GetChild(0).gameObject.SetActive(true);
             Destroy(gameObject, 2f);
         }
+        if (other.gameObject.tag == "Mother" && triggerNumber == "7")
+        {
+            transform.GetChild(0).gameObject.SetActive(true);
+            transform.GetChild(1).gameObject.SetActive(true);
+            Destroy(gameObject, 2f);
+        }
 
 
     }
