@@ -13,9 +13,9 @@ public class KillingPray : MonoBehaviour {
 	void Update () {
 		
 	}
-    private void OnTriggerEnter(Collider c)
+    private void OnTriggerStay(Collider c)
     {
-        if (c.tag == "Pray")
+		if (c.tag == "Pray" && Input.GetKey (KeyCode.LeftShift))
         {
             Instantiate(food, new Vector3(c.transform.position.x, c.transform.position.y, c.transform.position.z), Quaternion.identity);
             Destroy(c.gameObject);

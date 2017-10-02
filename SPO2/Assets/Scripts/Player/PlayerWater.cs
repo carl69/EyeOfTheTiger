@@ -14,7 +14,7 @@ public class PlayerWater : MonoBehaviour
     private float rate = 2;
     private float timer;
    // public GameObject button;
-    int counter = 0;
+    //int counter = 0;
     private float lossAmount = 1;
     Audio_pickup audio_pickup;
     private float drinkAmount;
@@ -59,7 +59,7 @@ public class PlayerWater : MonoBehaviour
             {
                // button.SetActive(true);
                 drink = 0;
-                counter = 30;
+                //counter = 30;
                 //gameObject.GetComponent<Rigidbody>().gravityScale = 0;
 
 

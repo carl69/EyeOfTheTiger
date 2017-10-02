@@ -5,11 +5,11 @@ using UnityEngine;
 public class FollowCamera : MonoBehaviour {
 	//public GameObject Tiger;
 	public float Smooth = 10.0f;
-	float x,y;
+    float x;//,y;
 	// Use this for initialization
 	void Start () {
 		x = GameObject.FindGameObjectWithTag("Player").transform.position.x;
-	    y = GameObject.FindGameObjectWithTag("Player").transform.position.y ;
+	    //y = GameObject.FindGameObjectWithTag("Player").transform.position.y ;
 		//Vector3 aux = new Vector3 (x, y+7, transform.position.z);
 
 	}
