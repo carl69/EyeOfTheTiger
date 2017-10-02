@@ -20,5 +20,10 @@ public class KillingPray : MonoBehaviour {
             Instantiate(food, new Vector3(c.transform.position.x, c.transform.position.y, c.transform.position.z), Quaternion.identity);
             Destroy(c.gameObject);
         }
+        if (c.tag == "Pray" && this.tag == "Mother")
+        {
+            Instantiate(food, new Vector3(c.transform.position.x, c.transform.position.y, c.transform.position.z), Quaternion.identity);
+            Destroy(c.gameObject);
+        }
     }
 }

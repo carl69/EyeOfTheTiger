@@ -12,7 +12,7 @@ public class MamaTigerMovement : MonoBehaviour {
     public int stage = 0;
         public Transform[] targetPoint;
     //What to do to trigger the next stage
-        public string Naming = "Delay, AD, Wait, Jump, Walk, Run";
+        public string Naming = "Delay, AD, Wait, Jump, Walk, Run, Carry, LetGo";
         public string[] Commando;
     //What To Do to go to next stage
         public string ToDo = "AD, ColideWithMother, Distance, Drinking, Eating";
@@ -34,13 +34,18 @@ public class MamaTigerMovement : MonoBehaviour {
     private bool closeToMom = false;
 
     //Finds The Player && Codes
+    private bool carriCub = false;
+    GameObject CubHolder;
     GameObject player;
     food pFood;
     PlayerWater pWater;
+    Movement pMovement;
     private void Start()
     {
         gameObject.layer = 11;
+        CubHolder = GameObject.Find("CubHolder");
         player = GameObject.Find("Player");
+        pMovement = player.GetComponent<Movement>();
         pFood = player.GetComponent<food>();
         pWater = player.GetComponent<PlayerWater>();
 
@@ -50,8 +55,16 @@ public class MamaTigerMovement : MonoBehaviour {
     curTarget = targetPoint[stage];
         myBody = GameObject.FindGameObjectWithTag("Mother").GetComponent<Rigidbody>();
     }
-
+    private void Update()
+    {
+        // basic mods that need constant update
+        if (carriCub)
+        {
+            player.transform.position = CubHolder.transform.position;
+        }
+    }
     void FixedUpdate () {
+        
 
         //NextStep
         if (nextStage[stage] == "AD")
@@ -137,6 +150,14 @@ public class MamaTigerMovement : MonoBehaviour {
         if (Commando[stage] == "Run")
         {
             RunPoint();
+        }
+        if (Commando[stage] == "Carry")
+        {
+            Carry();
+        }
+        if (Commando[stage] == "LetGo")
+        {
+            LetDown();
         }
     }
     //Mods
@@ -232,10 +253,29 @@ public class MamaTigerMovement : MonoBehaviour {
 
     }
     void Carry() {
-
+        gameObject.layer = 15;
+            Transform walkToTarget = Targets[stage].transform;
+            float step = walkingSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, walkToTarget.position, step);
+        if (closeToMom)
+        {
+            carriCub = true;
+            pMovement.enabled = false;
+            gameObject.layer = 11;
+            NextStage();
+        }
     }
     void LetDown() {
-
+            Transform walkToTarget = targetPoint[stage];
+            float step = walkingSpeed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, walkToTarget.position, step);
+            float dist = Vector3.Distance(walkToTarget.position, transform.position);
+        if (dist <= 0.5f)
+        {
+            carriCub = false;
+            pMovement.enabled = true;
+            NextStage();
+        }
     }
     //Move To Next Stage
     void NextStage() {
