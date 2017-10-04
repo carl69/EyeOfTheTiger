@@ -15,7 +15,7 @@ public class TreeFall : MonoBehaviour {
 	}
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Tree" || other.tag == "TreeCutter")
+        if (other.tag == "Tree" || other.tag == "TreeCutter" || other.tag == "WallofDeath")
         {
             FallingTree.enabled = true;
         }
