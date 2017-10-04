@@ -12,7 +12,7 @@ public class WallOfDeathScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = new Vector3(transform.position.x + Time.deltaTime * speed, transform.position.y,0);
+        transform.position = new Vector3(transform.position.x + Time.deltaTime * speed, transform.position.y,transform.position.z);
 	}
 
 }
