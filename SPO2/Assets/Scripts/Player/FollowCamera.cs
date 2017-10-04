@@ -20,25 +20,28 @@ public class FollowCamera : MonoBehaviour {
 
 	void FixedUpdate () {
 
-		if (Input.GetKey (KeyCode.D) && Input.GetKey (KeyCode.LeftShift)) {
-			if(counter <=23)counter++;
-			x =  (GameObject.FindGameObjectWithTag ("Player").transform.position.x);
+        //if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    if (counter <= 23) counter++;
+        //    x = (GameObject.FindGameObjectWithTag("Player").transform.position.x);
 
-			Vector3 aux2 = new Vector3 (x, transform.position.y, transform.position.z);
-			transform.position = aux2;
-			transform.localRotation = Quaternion.Euler(0.0f, counter, 0.0f);
+        //    Vector3 aux2 = new Vector3(x, transform.position.y, transform.position.z);
+        //    transform.position = aux2;
+        //    transform.localRotation = Quaternion.Euler(0.0f, counter, 0.0f);
 
-		}
-		else if(Input.GetKey (KeyCode.A) && Input.GetKey (KeyCode.LeftShift)){
-			if(counter <=23)counter++;
+        //}
+        //else if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.LeftShift))
+        //{
+        //    if (counter <= 23) counter++;
 
-			x =  (GameObject.FindGameObjectWithTag ("Player").transform.position.x);
+        //    x = (GameObject.FindGameObjectWithTag("Player").transform.position.x);
 
-			Vector3 aux3 = new Vector3 (x, transform.position.y, transform.position.z);
-			transform.position = aux3;
-			transform.localRotation = Quaternion.Euler(0.0f, -counter, 0.0f);
+        //    Vector3 aux3 = new Vector3(x, transform.position.y, transform.position.z);
+        //    transform.position = aux3;
+        //    transform.localRotation = Quaternion.Euler(0.0f, -counter, 0.0f);
 
-		}else {
+        //}
+        //else {
 			if(counter >0)counter-=5;
 			if(counter <=0) counter = 0 ;
 			x = transform.position.x + (GameObject.FindGameObjectWithTag ("Player").transform.position.x - transform.position.x) / Smooth;
@@ -46,7 +49,7 @@ public class FollowCamera : MonoBehaviour {
 			Vector3 aux = new Vector3 (x, transform.position.y, transform.position.z);
 			transform.position = aux;
 			transform.localRotation = Quaternion.Euler(0.0f, counter, 0.0f);
-		}
+		//}
 	}
 }
 
