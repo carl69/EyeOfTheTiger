@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MamaTigerMovement : MonoBehaviour {
     //Stats
+    public float waitingDis;
+    public bool collideWithPlayer;
     public float walkingSpeed;
     public float RunningSpeed;
     public float jumpVelocity;
@@ -42,7 +44,11 @@ public class MamaTigerMovement : MonoBehaviour {
     Movement pMovement;
     private void Start()
     {
-        gameObject.layer = 11;
+        if (!collideWithPlayer)
+        {
+            gameObject.layer = 11;
+        }
+
         CubHolder = GameObject.Find("CubHolder");
         player = GameObject.Find("Player");
         pMovement = player.GetComponent<Movement>();
@@ -80,7 +86,10 @@ public class MamaTigerMovement : MonoBehaviour {
                 float dist = Vector3.Distance(targetPoint[stage].position, transform.position);
             if (dist <= 0.5f && closeToMom)
             {
-                gameObject.layer = 11;
+                if (!collideWithPlayer)
+                {
+                    gameObject.layer = 11;
+                }
                 NextStage();
             }
             else if (gameObject.layer == 11)
@@ -200,7 +209,7 @@ public class MamaTigerMovement : MonoBehaviour {
             float dist = Vector3.Distance(endTarget.position, transform.position);
             float step = walkingSpeed * Time.deltaTime;
 
-        if (dist >= 0.5f)
+        if (dist >= waitingDis)
         {
             transform.position = Vector3.MoveTowards(transform.position, endTarget.position, step);
         }

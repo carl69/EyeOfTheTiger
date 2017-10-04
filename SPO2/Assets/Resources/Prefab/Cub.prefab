@@ -64,13 +64,14 @@ GameObject:
   - component: {fileID: 65566913939899224}
   - component: {fileID: 114319406298981834}
   - component: {fileID: 114395467836064432}
+  - component: {fileID: 114103771520989108}
   m_Layer: 9
   m_Name: Cub
   m_TagString: Cub
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1868080005302626
 GameObject:
   m_ObjectHideFlags: 1
@@ -437,6 +438,33 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.9668598, z: 1}
   m_Center: {x: 0, y: 0.016570091, z: 0}
+--- !u!114 &114103771520989108
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1643312031150948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d608e540a0de2a45a6fd062b3cdac72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitingDis: 0
+  collideWithPlayer: 0
+  walkingSpeed: 15
+  RunningSpeed: 10
+  jumpVelocity: 1
+  stage: 0
+  targetPoint:
+  - {fileID: 0}
+  - {fileID: 0}
+  Naming: Delay, AD, Wait, Jump, Walk, Run, Carry, LetGo
+  Commando: []
+  ToDo: AD, ColideWithMother, Distance, Drinking, Eating, TargetDestroyed
+  nextStage: []
+  delayTime: []
+  Distance: []
+  Targets: []
 --- !u!114 &114319406298981834
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -473,7 +501,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643312031150948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a7023105af41f04caab0b3e4c491916, type: 3}
   m_Name: 
@@ -496,7 +524,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643312031150948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3ab11564da372ac4ab7e65831c97e034, type: 3}
   m_Name: 
