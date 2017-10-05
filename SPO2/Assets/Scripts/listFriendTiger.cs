@@ -10,7 +10,7 @@ public class listFriendTiger : MonoBehaviour
 	private Rigidbody rb;
 	public float velocity = 5, distance2 = 10, distance3 = 11, velocity2 = -5 ;
 	bool escapeRight = false, escapeLeft = false;
-	GameObject tigre, POS;
+	GameObject tigre;
 	public float distance = 20;
 	public GameObject[] players;
 
