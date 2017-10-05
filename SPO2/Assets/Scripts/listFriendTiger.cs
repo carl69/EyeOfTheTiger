@@ -8,10 +8,10 @@ public class listFriendTiger : MonoBehaviour
 {
 
 	private Rigidbody rb;
-	public float velocity = 5, distance2 = 4, distance3 = 5 ;
+	public float velocity = 5, distance2 = 10, distance3 = 11, velocity2 = -5 ;
 	bool escapeRight = false, escapeLeft = false;
-	GameObject tigre;
-	public float distance = 10;
+	GameObject tigre, POS;
+	public float distance = 20;
 	public GameObject[] players;
 
 	void Start()
@@ -28,13 +28,13 @@ public class listFriendTiger : MonoBehaviour
 		if (escapeRight && (transform.position.x > tigre.transform.position.x)){
 			players = GameObject.FindGameObjectsWithTag ("Player");
 			if (+transform.position.x - tigre.transform.position.x >= distance2) {
-				transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, velocity * Time.deltaTime);
+				rb.velocity = new Vector2 (velocity2, rb.velocity.y);
 			}
 		}
 		if (escapeLeft && (transform.position.x < tigre.transform.position.x)) {
 			players = GameObject.FindGameObjectsWithTag("Player");
 			if (-transform.position.x + tigre.transform.position.x >= distance3) {
-				transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, velocity * Time.deltaTime);
+				rb.velocity = new Vector2 (velocity, rb.velocity.y);
 			}
 		}
 		checkDistancia ();
