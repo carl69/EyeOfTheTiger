@@ -49,7 +49,7 @@ public class FollowCamera : MonoBehaviour {
 
 			Vector3 aux = new Vector3 (x, transform.position.y, transform.position.z);
 			transform.position = aux;
-			transform.localRotation = Quaternion.Euler(0.0f, counter, 0.0f);
+			transform.localRotation = Quaternion.Euler(0.0f, 0, 0.0f);
 		}
 	}
 }

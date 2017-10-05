@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MamaTigerMovement : MonoBehaviour {
-    //Stats
+    //Affects the object
     public float waitingDis;
+    public float clock;
+    //Stats
     public bool collideWithPlayer;
     public float walkingSpeed;
     public float RunningSpeed;
@@ -63,6 +65,7 @@ public class MamaTigerMovement : MonoBehaviour {
     }
     private void Update()
     {
+        clock = Time.time;
         // basic mods that need constant update
         if (carriCub)
         {
