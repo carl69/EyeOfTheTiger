@@ -14,8 +14,6 @@ public class listFriendTiger : MonoBehaviour
 	public float distance = 10;
 	public GameObject[] players;
 
-	UnityEngine.AI.NavMeshAgent enemigo;
-
 	void Start()
 	{
 
@@ -26,6 +24,7 @@ public class listFriendTiger : MonoBehaviour
 	}
 
 	void Update(){
+
 		if (escapeRight && (transform.position.x > tigre.transform.position.x)){
 			players = GameObject.FindGameObjectsWithTag ("Player");
 			if (+transform.position.x - tigre.transform.position.x >= distance2) {
@@ -36,7 +35,6 @@ public class listFriendTiger : MonoBehaviour
 			players = GameObject.FindGameObjectsWithTag("Player");
 			if (-transform.position.x + tigre.transform.position.x >= distance3) {
 				transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, velocity * Time.deltaTime);
-				print (-transform.position.x + tigre.transform.position.x);
 			}
 		}
 		checkDistancia ();
