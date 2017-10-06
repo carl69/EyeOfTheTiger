@@ -1576,7 +1576,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1810986481573812}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.70710677}
-  m_LocalPosition: {x: -120.88063, y: 1.0707445, z: 0}
+  m_LocalPosition: {x: 0, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4730099040588156}
@@ -2688,42 +2688,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d608e540a0de2a45a6fd062b3cdac72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clock: 0
+  stage: 0
+  collideWithPlayer: 0
   walkingSpeed: 5
   RunningSpeed: 10
   jumpVelocity: 0
-  stage: 0
-  targetPoint:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  Naming: Delay, AD, Wait, Jump, Walk, Run, Carry, LetGo
-  Commando:
-  - Wait
+  allStringsInCommando:
   - Delay
+  - Patrol
   - Wait
+  - Jump
+  - Walk
+  - Run
+  - Carry
+  - LetGo
+  - RunFromTarget
+  - GoToStage
+  Commando:
   - 
-  ToDo: AD, ColideWithMother, Distance, Drinking, Eating, TargetDestroyed
-  nextStage:
+  allStringsInNextStage:
+  - Timed
+  - Clock
+  - AD
+  - ColideWithMother
+  - Distance
+  - Drinking
+  - Eating
   - TargetDestroyed
+  nextStage:
   - 
-  - 
-  - 
-  delayTime:
-  - 0
-  - 5
-  - 0
-  - 0
-  Distance:
-  - 0
-  - 0
-  - 0
-  - 0
-  Targets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  targetPoint: []
+  delayTime: []
+  Distance: []
+  TargetBecomesPlayer: 00
+  Targets: []
+  timeOfDay: []
+  GoToStage: 
+  waitingDis: 0
 --- !u!137 &137243039448866598
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

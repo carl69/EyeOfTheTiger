@@ -3,36 +3,82 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MamaTigerMovement : MonoBehaviour {
+    //Affects the object
+    [Header("Script usage")]
+    [Tooltip("Whats the time since object start")]
+    public float clock;
+    [Tooltip("Current elements active")]
+    public int stage = 0;
     //Stats
-    public float waitingDis;
+    [Header("Stats of the Object")]
+    [Tooltip("Can the object collide with the player?")]
     public bool collideWithPlayer;
+    [Tooltip("How fast the object walks")]
     public float walkingSpeed;
+    [Tooltip("How fast the object runs (Running = WalkingSpeed + RunningSpeed)")]
     public float RunningSpeed;
+    [Tooltip("How high the object jumps")]
     public float jumpVelocity;
     Rigidbody myBody;
 
-    public int stage = 0;
-        public Transform[] targetPoint;
-    //What to do to trigger the next stage
-        public string Naming = "Delay, AD, Wait, Jump, Walk, Run, Carry, LetGo";
-        public string[] Commando;
-    //What To Do to go to next stage
-        public string ToDo = "AD, ColideWithMother, Distance, Drinking, Eating, TargetDestroyed";
-        public string[] nextStage;
+    [Header("Stages")]
 
-        public float[] delayTime;
-        public float[] Distance;
-        public GameObject[] Targets;
+    [Tooltip("Commands you can put in on the Commant list")]
+    public string[] allStringsInCommando = { "Delay", "Patrol", "Wait", "Jump", "Walk", "Run", "Carry", "LetGo", "RunFromTarget", "GoToStage"};
+    //ComandoList
 
-    //checks if you written it right
-        //private string[] allStringsInToDo = { "AD", "ColideWithMother", "Distance", "Drinking", "Eating"};
-        //private string[] allStringsInNaming = { "Delay", "AD", "Wait", "Jump", "Walk", "Run"};
+    //  Delay, 
+    //  AD / Patrol, 
+    //  Wait, 
+    //  Jump, 
+    //  Walk, 
+    //  Run, 
+    //  Carry, 
+    //  LetGo, 
+    //  RunfromTarget,
+    //  GoToStage.
+    [Tooltip("What the Object do")]
+    public string[] Commando;
+
+    [Tooltip("Commands you can put in on the Next Stage list")]
+    public string[] allStringsInNextStage = { "Timed", "Clock", "AD", "ColideWithMother", "Distance", "Drinking", "Eating", "TargetDestroyed" };
+    //NextStageList
+
+    //  Timed,
+    //  Clock,
+    //  AD,
+    //  ColideWithMother,
+    //  Distance,
+    //  Drinking,
+    //  Eating,
+    //  TargetDestroyed.
+    [Tooltip("What needs to happen for the object to select the next element")]
+    public string[] nextStage;
+
+    [Header("Connditions needed to be meet depending on the code")]
+    [Tooltip("Waypoints you can drag in. Needed in: Walk, Run, Jump, ColideWithMother")]
+    public Transform[] targetPoint;
+    [Tooltip("The time until the object skips to the next element. Needed in: Timed")]
+    public float[] delayTime;
+    [Tooltip("The Distance to *Targets*. Needed in: Distance")]
+    public float[] Distance;
+    [Tooltip("Targets turn into the object with name *Player*")]
+    public bool[] TargetBecomesPlayer;
+    [Tooltip("The object watches the current target. Needed in: Distance, TargetDestroyed, Carry, RunfromTarget")]
+    public GameObject[] Targets;
+    [Tooltip("The time since the object got created. Needed in: Clock")]
+    public float[] timeOfDay;
+    [Tooltip("Go To a selected stage in the element stage. Needed in: GoToStage")]
+    public int[] GoToStage; 
+
+
     //Used in the Delay Funcion
     private float startTime;
     private bool changed = true;
     //Used in the AD Funcion
     private Transform curTarget;
     //Used in the Wait Funcion
+    public float waitingDis;
     private bool closeToMom = false;
 
     //Finds The Player && Codes
@@ -42,8 +88,13 @@ public class MamaTigerMovement : MonoBehaviour {
     food pFood;
     PlayerWater pWater;
     Movement pMovement;
+    float startTimeCheck;
+
+
     private void Start()
     {
+        startTimeCheck = Time.time;
+
         if (!collideWithPlayer)
         {
             gameObject.layer = 11;
@@ -51,95 +102,77 @@ public class MamaTigerMovement : MonoBehaviour {
 
         CubHolder = GameObject.Find("CubHolder");
         player = GameObject.Find("Player");
-        pMovement = player.GetComponent<Movement>();
-        pFood = player.GetComponent<food>();
-        pWater = player.GetComponent<PlayerWater>();
+        if (player != null)
+        {
+            pMovement = player.GetComponent<Movement>();
+            pFood = player.GetComponent<food>();
+            pWater = player.GetComponent<PlayerWater>();
+        }
+        
 
-        ToDo = "AD, ColideWithMother, Distance, Drinking, Eating, TargetDestroyed";
-        Naming = "Delay, AD, Wait, Jump, Walk, Run";
+       // Naming = "Delay, AD, Wait, Jump, Walk, Run";
 
-    curTarget = targetPoint[stage];
-        myBody = GameObject.FindGameObjectWithTag("Mother").GetComponent<Rigidbody>();
+        curTarget = targetPoint[stage];
+        myBody = this.gameObject.GetComponent<Rigidbody>();
     }
     private void Update()
     {
+        clock = Time.time - startTimeCheck;
         // basic mods that need constant update
         if (carriCub)
         {
             player.transform.position = CubHolder.transform.position;
         }
+
+        if (TargetBecomesPlayer[stage])
+        {
+            if (Targets[stage] == null)
+            {
+                Targets[stage] = GameObject.Find("Player");
+            }
+        }
     }
     void FixedUpdate () {
-        
+
 
         //NextStep
+        if (nextStage[stage] == "Timed")
+        {
+            Waiting();
+        }
+        if (nextStage[stage] == "Clock")
+        {
+            Clock();
+        }
+
         if (nextStage[stage] == "AD")
         {
-            if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                NextStage();
-            }
+            ADpressed();
         }
 
         if (nextStage[stage] == "ColideWithMother")
         {
-                float dist = Vector3.Distance(targetPoint[stage].position, transform.position);
-            if (dist <= 0.5f && closeToMom)
-            {
-                if (!collideWithPlayer)
-                {
-                    gameObject.layer = 11;
-                }
-                NextStage();
-            }
-            else if (gameObject.layer == 11)
-            {          
-                gameObject.layer = 15;
-            }
+            MotherColiding();
         }
 
         if (nextStage[stage] == "Distance")
         {
-            if (Targets[stage] == null)
-            {
-                Debug.Log("No Target On Stage " + stage);
-            }
-            else
-            if (Distance[stage] == 0)
-            {
-                Debug.Log("Distance on Stage " + stage + " are not applied");
-            }
-            else {
-                    float dist = Vector3.Distance(Targets[stage].transform.position, transform.position);
-                if (dist <= Distance[stage])
-                {
-                    NextStage();
-                }
-            }
+            DistanceFunch();           
         }
 
         if (nextStage[stage] == "Drinking")
         {
-            if (pWater.drinkAudio)
-            {
-                NextStage();
-            }
+            PlayerDrinking();
         }
 
         if (nextStage[stage] == "Eating")
         {
-            if (pFood.eating)
-            {
-                NextStage();
-            }
+            PlayerEating();
         }
 
         if (nextStage[stage] == "TargetDestroyed")
         {
-            if (Targets[stage] == null)
-            {
-                NextStage();
-            }
+            DestroyTarget();
         }
 
 
@@ -148,7 +181,7 @@ public class MamaTigerMovement : MonoBehaviour {
         {
             waitforsomesec();
         }
-        if (Commando[stage] == "AD")
+        if (Commando[stage] == "AD" || Commando[stage] == "Patrol")
         {
             WalkBackAndForth();
         }
@@ -176,8 +209,96 @@ public class MamaTigerMovement : MonoBehaviour {
         {
             LetDown();
         }
+        if (Commando[stage] == "RunFromTarget")
+        {
+            RunAway();
+        }
+        if (Commando[stage] == "GoToStage")
+        {
+            ToStageZero();
+        }
     }
-    //Mods
+    //ToDos
+    void Clock() {
+        if (timeOfDay[stage] < clock)
+        {
+            NextStage();
+        }
+    }
+    void ADpressed() {
+        if (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            NextStage();
+        }
+    }
+    void MotherColiding()
+    {
+
+        float dist = Vector3.Distance(targetPoint[stage].position, transform.position);
+        if (dist <= 0.5f && closeToMom)
+        {
+            if (!collideWithPlayer)
+            {
+                gameObject.layer = 11;
+            }
+            NextStage();
+        }
+        else if (gameObject.layer == 11)
+        {
+            gameObject.layer = 15;
+        }
+    }
+    void DistanceFunch() {
+        if (Targets[stage] == null)
+        {
+            Debug.Log("No Target On Stage " + stage);
+        }
+        else
+            if (Distance[stage] == 0)
+        {
+            Debug.Log("Distance on Stage " + stage + " are not applied");
+        }
+        else
+        {
+            float dist = Vector3.Distance(Targets[stage].transform.position, transform.position);
+            if (dist <= Distance[stage])
+            {
+                NextStage();
+            }
+        }
+    }
+    void PlayerDrinking() {
+        if (pWater.drinkAudio)
+        {
+            NextStage();
+        }
+    }
+    void PlayerEating() {
+        if (pFood.eating)
+        {
+            NextStage();
+        }
+    }
+    void DestroyTarget() {
+        if (Targets[stage] == null)
+        {
+            NextStage();
+        }
+    }
+    void Waiting() {
+        if (changed)
+        {
+            startTime = delayTime[stage] + Time.time;
+            changed = false;
+        }
+        else if (startTime <= Time.time)
+        {
+            changed = true;
+            NextStage();
+        }
+    }
+
+    //Commands
     void Jump() {
 
         Transform walkToTarget = targetPoint[stage];
@@ -256,8 +377,7 @@ public class MamaTigerMovement : MonoBehaviour {
         float step = walkingSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, curTarget.position, step);
     }
-    void waitforsomesec(){
-        
+    void waitforsomesec(){        
         if (changed)
         {
             startTime = delayTime[stage] + Time.time;
@@ -267,18 +387,24 @@ public class MamaTigerMovement : MonoBehaviour {
             changed = true;
             NextStage();
         }
-
     }
     void Carry() {
-        gameObject.layer = 15;
-            Transform walkToTarget = Targets[stage].transform;
+        if (!collideWithPlayer)
+        {
+            gameObject.layer = 15;
+        }
+        Transform walkToTarget = Targets[stage].transform;
             float step = walkingSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, walkToTarget.position, step);
         if (closeToMom)
         {
             carriCub = true;
             pMovement.enabled = false;
-            gameObject.layer = 11;
+            if (!collideWithPlayer)
+            {
+                gameObject.layer = 11;
+
+            }
             NextStage();
         }
     }
@@ -294,6 +420,17 @@ public class MamaTigerMovement : MonoBehaviour {
             NextStage();
         }
     }
+    void RunAway() {
+            Transform walkToTarget = Targets[stage].transform;
+            float step = (walkingSpeed + RunningSpeed) * Time.deltaTime;
+        transform.position = Vector2.MoveTowards(transform.position, walkToTarget.position, -step);
+    }
+    void ToStageZero() {
+        stage = GoToStage[stage];
+    }
+
+
+
     //Move To Next Stage
     void NextStage() {
         stage += 1;

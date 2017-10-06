@@ -25,6 +25,8 @@ GameObject:
   - component: {fileID: 54908295298303782}
   - component: {fileID: 65390114358804660}
   - component: {fileID: 65202124664674518}
+  - component: {fileID: 114127142541006286}
+  - component: {fileID: 114840713274064484}
   m_Layer: 13
   m_Name: pray
   m_TagString: Pray
@@ -123,6 +125,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.7999992, y: 1.4000015, z: 1.4000015}
   m_Center: {x: -0.0000019073486, y: 0, z: 0}
+--- !u!114 &114127142541006286
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1610467020512234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8ac7965a263aab48b05b03f6aeadaa1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: 5
+  distance: 10
 --- !u!114 &114814725734238316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,3 +155,28 @@ MonoBehaviour:
   turnDist: 5
   aiSpeed: 10
   notSafe: 0
+--- !u!114 &114840713274064484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1610467020512234}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d608e540a0de2a45a6fd062b3cdac72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waitingDis: 0
+  collideWithPlayer: 0
+  walkingSpeed: 0
+  RunningSpeed: 0
+  jumpVelocity: 0
+  stage: 0
+  targetPoint: []
+  Naming: Delay, AD, Wait, Jump, Walk, Run, Carry, LetGo
+  Commando: []
+  ToDo: AD, ColideWithMother, Distance, Drinking, Eating, TargetDestroyed
+  nextStage: []
+  delayTime: []
+  Distance: []
+  Targets: []

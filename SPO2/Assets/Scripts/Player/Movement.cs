@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     public LayerMask playerMask;
     Transform myTransform, tagGround;
     Rigidbody myBody;
-    [HideInInspector]
+   // [HideInInspector]
     public bool isGrounded = false;
     public bool updateStats;
 
