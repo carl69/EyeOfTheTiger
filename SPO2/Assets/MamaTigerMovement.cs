@@ -21,35 +21,57 @@ public class MamaTigerMovement : MonoBehaviour {
     public float jumpVelocity;
     Rigidbody myBody;
 
-
-    //What to do to trigger the next stage
-
     [Header("Stages")]
-    public string Naming = "Delay, AD, Wait, Jump, Walk, Run, Carry, LetGo, RunfromTarget";
 
-    //[Tooltip("Whats the time since object start /n HELP")]
-    //private string[] allStringsInNaming = { "Delay", "AD", "Wait", "Jump", "Walk", "Run"};
+    [Tooltip("Commands you can put in on the Commant list")]
+    public string[] allStringsInCommando = { "Delay", "Patrol", "Wait", "Jump", "Walk", "Run", "Carry", "LetGo", "RunFromTarget", "GoToStage"};
+    //ComandoList
 
-
-
-
+    //  Delay, 
+    //  AD / Patrol, 
+    //  Wait, 
+    //  Jump, 
+    //  Walk, 
+    //  Run, 
+    //  Carry, 
+    //  LetGo, 
+    //  RunfromTarget,
+    //  GoToStage.
+    [Tooltip("What the Object do")]
     public string[] Commando;
-        public Transform[] targetPoint;
 
-    //What To Do to go to next stage
-    public string ToDo = "Patrol, ColideWithMother, Distance, Drinking, Eating, TargetDestroyed, GoToStage";
+    [Tooltip("Commands you can put in on the Next Stage list")]
+    public string[] allStringsInNextStage = { "Timed", "Clock", "AD", "ColideWithMother", "Distance", "Drinking", "Eating", "TargetDestroyed" };
+    //NextStageList
 
+    //  Timed,
+    //  Clock,
+    //  AD,
+    //  ColideWithMother,
+    //  Distance,
+    //  Drinking,
+    //  Eating,
+    //  TargetDestroyed.
+    [Tooltip("What needs to happen for the object to select the next element")]
     public string[] nextStage;
 
-        public float[] delayTime;
-        public float[] Distance;
-        public bool[] TargetBecomesPlayer;
-        public GameObject[] Targets;
-        public float[] timeOfDay;
-        public int[] GoToStage; 
+    [Header("Connditions needed to be meet depending on the code")]
+    [Tooltip("Waypoints you can drag in. Needed in: Walk, Run, Jump, ColideWithMother")]
+    public Transform[] targetPoint;
+    [Tooltip("The time until the object skips to the next element. Needed in: Timed")]
+    public float[] delayTime;
+    [Tooltip("The Distance to *Targets*. Needed in: Distance")]
+    public float[] Distance;
+    [Tooltip("Targets turn into the object with name *Player*")]
+    public bool[] TargetBecomesPlayer;
+    [Tooltip("The object watches the current target. Needed in: Distance, TargetDestroyed, Carry, RunfromTarget")]
+    public GameObject[] Targets;
+    [Tooltip("The time since the object got created. Needed in: Clock")]
+    public float[] timeOfDay;
+    [Tooltip("Go To a selected stage in the element stage. Needed in: GoToStage")]
+    public int[] GoToStage; 
 
-    //checks if you written it right
-        //private string[] allStringsInToDo = { "AD", "ColideWithMother", "Distance", "Drinking", "Eating"};
+
     //Used in the Delay Funcion
     private float startTime;
     private bool changed = true;
@@ -88,10 +110,9 @@ public class MamaTigerMovement : MonoBehaviour {
         }
         
 
-        ToDo = "AD, ColideWithMother, Distance, Drinking, Eating, TargetDestroyed, Clock, Timed";
        // Naming = "Delay, AD, Wait, Jump, Walk, Run";
 
-    curTarget = targetPoint[stage];
+        curTarget = targetPoint[stage];
         myBody = this.gameObject.GetComponent<Rigidbody>();
     }
     private void Update()
@@ -356,8 +377,7 @@ public class MamaTigerMovement : MonoBehaviour {
         float step = walkingSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, curTarget.position, step);
     }
-    void waitforsomesec(){
-        
+    void waitforsomesec(){        
         if (changed)
         {
             startTime = delayTime[stage] + Time.time;
@@ -367,7 +387,6 @@ public class MamaTigerMovement : MonoBehaviour {
             changed = true;
             NextStage();
         }
-
     }
     void Carry() {
         if (!collideWithPlayer)
