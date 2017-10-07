@@ -18,7 +18,7 @@ public class listFriendTiger : MonoBehaviour
 	{
 
 		rb = GetComponent<Rigidbody>();
-		tigre = GameObject.Find("Player");
+		tigre = GameObject.Find("Cub");
 
 
 	}
@@ -26,13 +26,13 @@ public class listFriendTiger : MonoBehaviour
 	void Update(){
 
 		if (escapeRight && (transform.position.x > tigre.transform.position.x)){
-			players = GameObject.FindGameObjectsWithTag ("Player");
+			players = GameObject.FindGameObjectsWithTag ("Cub");
 			if (+transform.position.x - tigre.transform.position.x >= distance2) {
 				rb.velocity = new Vector2 (velocity2, rb.velocity.y);
 			}
 		}
 		if (escapeLeft && (transform.position.x < tigre.transform.position.x)) {
-			players = GameObject.FindGameObjectsWithTag("Player");
+			players = GameObject.FindGameObjectsWithTag("Cub");
 			if (-transform.position.x + tigre.transform.position.x >= distance3) {
 				rb.velocity = new Vector2 (velocity, rb.velocity.y);
 			}
