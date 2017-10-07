@@ -24,7 +24,7 @@ public class MamaTigerMovement : MonoBehaviour {
     [Header("Stages")]
 
     [Tooltip("Commands you can put in on the Commant list")]
-    public string[] allStringsInCommando = { "Delay", "Patrol", "Wait", "Jump", "Walk", "Run", "Carry", "LetGo", "RunFromTarget", "GoToStage"};
+    public string[] allStringsInCommando = { "Delay", "Patrol", "Wait", "Jump", "Walk", "Run", "Carry", "LetGo", "RunFromTarget", "GoToStage", "DestroyTarget" };
     //ComandoList
 
     //  Delay, 
@@ -181,6 +181,10 @@ public class MamaTigerMovement : MonoBehaviour {
 
 
         //Select Funcions
+        if (Commando[stage] == "DestroyTarget")
+        {
+            DestroyTargets();
+        }
         if (Commando[stage] == "Delay")
         {
             waitforsomesec();
@@ -303,6 +307,9 @@ public class MamaTigerMovement : MonoBehaviour {
     }
 
     //Commands
+    void DestroyTargets() {
+        Destroy(Targets[stage].gameObject);
+    }
     void Jump() {
 
         Transform walkToTarget = targetPoint[stage];
@@ -356,10 +363,7 @@ public class MamaTigerMovement : MonoBehaviour {
             Transform target0 = targetPoint[stage];
             Transform target1 = targetPoint[stage+1];
 
-        //if (semiRandomTurnPoints)
-        //{
-        //    target0.position = new Vector3(target0.position.x ,target0.position.y,0);
-        //}
+
 
         //Update the points
         if (curTarget == target0 || curTarget == target1)
@@ -373,9 +377,6 @@ public class MamaTigerMovement : MonoBehaviour {
         float dist = Vector3.Distance(curTarget.position, transform.position);
         if (semiRandomTurnPoints)
         {
-            
-
-
             if (dist <= 0.5f + distanceForRandom)
             {
                 //Find The Next Target
@@ -386,10 +387,24 @@ public class MamaTigerMovement : MonoBehaviour {
                 }
                 else if (curTarget == target1)
                 {
-                    distanceForRandom = Random.Range(0, howRandom); 
+                    distanceForRandom = Random.Range(0, howRandom);
                     curTarget = target0;
                 }
 
+            }
+        }
+        else {
+            if (dist <= 0.5f)
+            {
+                //Find The Next Target
+                if (curTarget == target0)
+                {
+                    curTarget = target1;
+                }
+                else if (curTarget == target1)
+                {
+                    curTarget = target0;
+                }
             }
         }
         //MovesThere

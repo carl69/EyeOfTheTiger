@@ -13,7 +13,7 @@ public class AISpawner : MonoBehaviour {
 	void Update () {
         if (Input.GetKey(KeyCode.S))
         {
-            Debug.Log("");
+
 
             var gos = Instantiate(pray);
             gos.transform.parent = this.gameObject.transform;
