@@ -340,19 +340,39 @@ MonoBehaviour:
   walkingSpeed: 5
   RunningSpeed: 10
   jumpVelocity: 10
-  Naming: Delay, AD, Wait, Jump, Walk, Run, Carry, LetGo
+  allStringsInCommando:
+  - Delay
+  - Patrol
+  - Wait
+  - Jump
+  - Walk
+  - Run
+  - Carry
+  - LetGo
+  - RunFromTarget
+  - GoToStage
   Commando:
   - Patrol
   - RunFromTarget
   - GoToStage
-  targetPoint:
-  - {fileID: 4481164741985202}
-  - {fileID: 4665352600761436}
-  ToDo: AD, ColideWithMother, Distance, Drinking, Eating, TargetDestroyed
+  allStringsInNextStage:
+  - Timed
+  - Clock
+  - AD
+  - ColideWithMother
+  - Distance
+  - Drinking
+  - Eating
+  - TargetDestroyed
   nextStage:
   - Distance
   - Timed
   - 
+  targetPoint:
+  - {fileID: 4481164741985202}
+  - {fileID: 4665352600761436}
+  semiRandomTurnPoints: 1
+  howRandom: 5
   delayTime:
   - 0
   - 2
