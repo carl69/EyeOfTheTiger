@@ -18,17 +18,8 @@ public class CanvasController : MonoBehaviour {
     public void Resume()
     {
         Debug.Log("Resume clicked!");
-        Time.timeScale = 1;
-        //for (int i = 0; i < textBox.transform.childCount; i++)
-        //{
-        //    if (textBox.transform.GetChild(i).gameObject.activeSelf == true)
-        //    {
-        //        curChild = textBox.transform.GetChild(i);
-        //    }
-        //}
-       // curChild.gameObject.SetActive(false);
-       
         textBox.SetActive(false);
+        Time.timeScale = 1;  
     }
 
     public void Play()
