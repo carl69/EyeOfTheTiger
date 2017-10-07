@@ -36,6 +36,11 @@ public class CanvasController : MonoBehaviour {
         Time.timeScale = 1;
     }
 
+    public void Play()
+    {
+        SceneManager.LoadScene("Level02");
+    }
+
 	// Update is called once per frame
 	void Update () {
 		

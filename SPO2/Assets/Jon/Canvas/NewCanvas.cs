@@ -29,6 +29,11 @@ public class NewCanvas : MonoBehaviour {
         textBox.SetActive(false);
     }
 
+    public void Play()
+    {
+        SceneManager.LoadScene("Level02");
+    }
+
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
