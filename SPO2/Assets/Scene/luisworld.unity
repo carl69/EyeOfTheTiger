@@ -3805,6 +3805,10 @@ Prefab:
       propertyPath: Targets.Array.data[3]
       value: 
       objectReference: {fileID: 775459821}
+    - target: {fileID: 1693269470940676, guid: fe7647e185282bd419251a2913ef51e5, type: 2}
+      propertyPath: m_TagString
+      value: Mother
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fe7647e185282bd419251a2913ef51e5, type: 2}
   m_IsPrefabParent: 0
@@ -7755,6 +7759,7 @@ MonoBehaviour:
   distance3: 11
   velocity2: -5
   distance: 20
+  mayor0: 0
   players: []
 --- !u!23 &896133955
 MeshRenderer:
@@ -7814,7 +7819,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 896133953}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 123.4, y: 4.8, z: -1}
+  m_LocalPosition: {x: 90, y: 4.8, z: -1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9052,7 +9057,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4323518007410838, guid: 2f3560dedfa9b7848b8501f44b5276d8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 93.3
+      value: 131.8
       objectReference: {fileID: 0}
     - target: {fileID: 4323518007410838, guid: 2f3560dedfa9b7848b8501f44b5276d8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -15865,23 +15870,43 @@ MonoBehaviour:
   walkingSpeed: 7
   RunningSpeed: 10
   jumpVelocity: 0
-  Naming: Delay, AD, Wait, Jump, Walk, Run, Carry, LetGo
+  allStringsInCommando:
+  - Delay
+  - Patrol
+  - Wait
+  - Jump
+  - Walk
+  - Run
+  - Carry
+  - LetGo
+  - RunFromTarget
+  - GoToStage
   Commando:
   - Wait
   - Walk
   - Run
+  - 
+  allStringsInNextStage:
+  - Timed
+  - Clock
+  - AD
+  - ColideWithMother
+  - Distance
+  - Drinking
+  - Eating
+  - TargetDestroyed
+  nextStage:
+  - Distance
+  - Distance
+  - 
   - 
   targetPoint:
   - {fileID: 730780734}
   - {fileID: 1618657592}
   - {fileID: 2043356982}
   - {fileID: 0}
-  ToDo: AD, ColideWithMother, Distance, Drinking, Eating
-  nextStage:
-  - Distance
-  - Distance
-  - 
-  - 
+  semiRandomTurnPoints: 0
+  howRandom: 0
   delayTime: []
   Distance:
   - 37
@@ -15951,6 +15976,10 @@ Prefab:
     - target: {fileID: 400000, guid: 39ea3064766642f4e8c9b626afae8522, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 39ea3064766642f4e8c9b626afae8522, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 39ea3064766642f4e8c9b626afae8522, type: 3}
