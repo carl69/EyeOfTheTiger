@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class TreeFall : MonoBehaviour {
     private Animator FallingTree;
+
+    public AudioClip[] fallingAudio;
+
 	// Use this for initialization
 	void Start () {
         FallingTree = GetComponent<Animator>();
@@ -18,6 +21,7 @@ public class TreeFall : MonoBehaviour {
         if (other.tag == "Tree" || other.tag == "TreeCutter" || other.tag == "WallofDeath")
         {
             FallingTree.enabled = true;
+            GetComponent<AudioSource>().PlayOneShot(fallingAudio[Random.Range(0, 4)]);
         }
         if (other.gameObject.layer == 10)
         {

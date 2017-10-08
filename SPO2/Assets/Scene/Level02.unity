@@ -1492,7 +1492,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4885536739482372, guid: c50eb24c1987eb342a4901bb044c1346, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -229.73
+      value: -225.11
       objectReference: {fileID: 0}
     - target: {fileID: 4885536739482372, guid: c50eb24c1987eb342a4901bb044c1346, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1525,7 +1525,7 @@ Prefab:
     - target: {fileID: 114335475478687442, guid: c50eb24c1987eb342a4901bb044c1346,
         type: 2}
       propertyPath: speed
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1458926499934240, guid: c50eb24c1987eb342a4901bb044c1346, type: 2}
       propertyPath: m_Name
@@ -5070,7 +5070,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 81121437052929844, guid: fd49e636a8794254d8421622a974f606, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: fd49e636a8794254d8421622a974f606, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1342725772
@@ -5366,6 +5367,18 @@ Transform:
   m_PrefabParentObject: {fileID: 4470240501053470, guid: 0fe81b77c42a2654cb78c099e221367f,
     type: 2}
   m_PrefabInternal: {fileID: 1378976983}
+--- !u!1 &1381723302 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1006279963806992, guid: 2f3560dedfa9b7848b8501f44b5276d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 1078607787}
+--- !u!81 &1381723303
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1381723302}
+  m_Enabled: 1
 --- !u!1001 &1415711007
 Prefab:
   m_ObjectHideFlags: 0
