@@ -33,6 +33,16 @@ public class CanvasController : MonoBehaviour {
         Time.timeScale = 1;
     }
 
+    public void ExitToMain()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void QuitApp()
+    {
+        Application.Quit();
+    }
+
     // Update is called once per frame
     void Update()
     {
