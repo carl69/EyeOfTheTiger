@@ -33,12 +33,12 @@ public class CanvasController : MonoBehaviour {
         Time.timeScale = 1;
     }
 
-    public void Exit()
+    public void ExitToMain()
     {
         SceneManager.LoadScene("MainMenu");
     }
 
-    public void Quit()
+    public void QuitApp()
     {
         Application.Quit();
     }
