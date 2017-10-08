@@ -9,25 +9,22 @@ public class CanvasController : MonoBehaviour {
     public GameObject textBox;
     public Transform curChild;
 
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-
-   public void Continue()
+    // Use this for initialization
+    void Start()
     {
-        Debug.Log("Button clicked!");
-        Time.timeScale = 1;
-        for (int i = 0; i < textBox.transform.childCount; i++)
-        {
-            if(textBox.transform.GetChild(i).gameObject.activeSelf == true)
-            {
-                curChild = textBox.transform.GetChild(i);
-            }
-        }
-        curChild.gameObject.SetActive(false);
+
+    }
+
+    public void Resume()
+    {
+        Debug.Log("Resume clicked!");
         textBox.SetActive(false);
+        Time.timeScale = 1;  
+    }
+
+    public void Play()
+    {
+        SceneManager.LoadScene("Level02");
     }
 
     public void Restart()
@@ -36,8 +33,13 @@ public class CanvasController : MonoBehaviour {
         Time.timeScale = 1;
     }
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    // Update is called once per frame
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            textBox.SetActive(true);
+            Time.timeScale = 0;
+        }
+    }
 }

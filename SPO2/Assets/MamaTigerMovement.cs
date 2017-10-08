@@ -7,7 +7,7 @@ public class MamaTigerMovement : MonoBehaviour {
     [Header("Script usage")]
     [Tooltip("Whats the time since object start")]
     public float clock;
-    [Tooltip("Current elements active")]
+    [Tooltip("Current elements index active")]
     public int stage = 0;
     //Stats
     [Header("Stats of the Object")]
@@ -24,7 +24,7 @@ public class MamaTigerMovement : MonoBehaviour {
     [Header("Stages")]
 
     [Tooltip("Commands you can put in on the Commant list")]
-    public string[] allStringsInCommando = { "Delay", "Patrol", "Wait", "Jump", "Walk", "Run", "Carry", "LetGo", "RunFromTarget", "GoToStage"};
+    public string[] allStringsInCommando = { "Delay", "Patrol", "Wait", "Jump", "Walk", "Run", "Carry", "LetGo", "RunFromTarget", "GoToStage", "DestroyTarget" };
     //ComandoList
 
     //  Delay, 
@@ -58,6 +58,9 @@ public class MamaTigerMovement : MonoBehaviour {
     [Header("Connditions needed to be meet depending on the code")]
     [Tooltip("Waypoints you can drag in. Needed in: Walk, Run, Jump, ColideWithMother")]
     public Transform[] targetPoint;
+    public bool semiRandomTurnPoints;
+    public float howRandom;
+
     [Tooltip("The time until the object skips to the next element. Needed in: Timed")]
     public float[] delayTime;
     [Tooltip("The Distance to *Targets*. Needed in: Distance")]
@@ -77,6 +80,7 @@ public class MamaTigerMovement : MonoBehaviour {
     private bool changed = true;
     //Used in the AD Funcion
     private Transform curTarget;
+    private float distanceForRandom = 0;
     //Used in the Wait Funcion
     public float waitingDis;
     private bool closeToMom = false;
@@ -177,6 +181,10 @@ public class MamaTigerMovement : MonoBehaviour {
 
 
         //Select Funcions
+        if (Commando[stage] == "DestroyTarget")
+        {
+            DestroyTargets();
+        }
         if (Commando[stage] == "Delay")
         {
             waitforsomesec();
@@ -299,6 +307,9 @@ public class MamaTigerMovement : MonoBehaviour {
     }
 
     //Commands
+    void DestroyTargets() {
+        Destroy(Targets[stage].gameObject);
+    }
     void Jump() {
 
         Transform walkToTarget = targetPoint[stage];
@@ -348,8 +359,12 @@ public class MamaTigerMovement : MonoBehaviour {
     }
     void WalkBackAndForth() {
         //Sets Walking Points
+
             Transform target0 = targetPoint[stage];
             Transform target1 = targetPoint[stage+1];
+
+
+
         //Update the points
         if (curTarget == target0 || curTarget == target1)
         {
@@ -360,18 +375,37 @@ public class MamaTigerMovement : MonoBehaviour {
         }
         //Calulate the distance to the next target
         float dist = Vector3.Distance(curTarget.position, transform.position);
-        if (dist <= 0.5f)
+        if (semiRandomTurnPoints)
         {
-            //Find The Next Target
-            if (curTarget == target0)
+            if (dist <= 0.5f + distanceForRandom)
             {
-                curTarget = target1;
-            }
-            else if (curTarget == target1)
-            {
-                curTarget = target0;
-            }
+                //Find The Next Target
+                if (curTarget == target0)
+                {
+                    distanceForRandom = Random.Range(0, howRandom);
+                    curTarget = target1;
+                }
+                else if (curTarget == target1)
+                {
+                    distanceForRandom = Random.Range(0, howRandom);
+                    curTarget = target0;
+                }
 
+            }
+        }
+        else {
+            if (dist <= 0.5f)
+            {
+                //Find The Next Target
+                if (curTarget == target0)
+                {
+                    curTarget = target1;
+                }
+                else if (curTarget == target1)
+                {
+                    curTarget = target0;
+                }
+            }
         }
         //MovesThere
         float step = walkingSpeed * Time.deltaTime;
