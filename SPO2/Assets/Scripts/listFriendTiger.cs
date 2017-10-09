@@ -37,8 +37,8 @@ public class listFriendTiger : MonoBehaviour
 			}
 			if (+transform.position.x - tigre.transform.position.x >= distance2/* -transform.position.x + tigre.transform.position.x >= distance2*/) {
 				print ("7");
-				//rb.velocity = new Vector2 (velocity2, rb.velocity.y);
-				transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, velocity * Time.deltaTime);
+				rb.velocity = new Vector2 (velocity2, rb.velocity.y);
+				//transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, velocity * Time.deltaTime);
 			}
 		}
 		if (escapeLeft /*&& (transform.position.x < tigre.transform.position.x)*/) {
@@ -51,8 +51,8 @@ public class listFriendTiger : MonoBehaviour
 			}
 			if (-transform.position.x + tigre.transform.position.x >= distance3) {
 				print ("8");
-				//rb.velocity = new Vector2 (velocity, rb.velocity.y);
-				transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, -1 * velocity2 * Time.deltaTime);
+				rb.velocity = new Vector2 (velocity, rb.velocity.y);
+				//transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, -1 * velocity2 * Time.deltaTime);
 			}
 		}
 		checkDistancia ();
