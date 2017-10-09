@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CubBabi : MonoBehaviour {
     public int AmountOfFoodNeededToAgeUp;
-    public bool InHive;
+    public int CurFood;
+    public int Level = 1;
+    private bool InHive;
     public float PickUpDistance;
     private Transform Hive;
     private GameObject Carry;
@@ -22,15 +24,21 @@ public class CubBabi : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        if (CurFood <= AmountOfFoodNeededToAgeUp)
+        {
+            CurFood = 0;
+            Level++;
+
+        }
+
+
+
         if (!Player)
         {
             Player = GameObject.Find("Player");
         }
 
-
-
-        
-        
             if (Input.GetKeyDown(KeyCode.E) && dist < PickUpDistance && carrying == false)
             {
                 carrying = true;
@@ -57,7 +65,10 @@ public class CubBabi : MonoBehaviour {
 
     void HiveMode()
     {
-        this.transform.position = new Vector2(Hive.position.x, Hive.position.y);
+        if (Level == 1)
+        {
+            this.transform.position = new Vector2(Hive.position.x, Hive.position.y);
+        }
         carrying = false;
 
     }
@@ -80,6 +91,11 @@ public class CubBabi : MonoBehaviour {
         {
             canPutInHive = true;
             Hive = other.transform;
+        }
+        if (other.tag == "Food")
+        {
+            CurFood++;
+            Destroy(other);
         }
     }
     private void OnTriggerExit(Collider other)
