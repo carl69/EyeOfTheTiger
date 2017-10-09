@@ -7,6 +7,7 @@ public class FoodPickUP : MonoBehaviour {
     GameObject CubHoldingPosition;
     float dist;
     public float pickUpRange;
+    bool carrying = false;
 
 	// Use this for initialization
 	void Start () {
@@ -21,9 +22,18 @@ public class FoodPickUP : MonoBehaviour {
         }
         dist = Vector2.Distance(Player.transform.position, transform.position);
 
-        if (dist < pickUpRange && Input.GetKeyDown(KeyCode.E))
+        if (dist < pickUpRange && Input.GetKeyDown(KeyCode.E) && carrying == false)
         {
-            
+            carrying = true;
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            carrying = false;
+        }
+        if (carrying)
+        {
+            transform.position = new Vector2(CubHoldingPosition.transform.position.x, CubHoldingPosition.transform.position.y);
+                //CubHoldingPosition.transform.position;
         }
 
     }
