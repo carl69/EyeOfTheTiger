@@ -19,7 +19,7 @@ public class listFriendTiger : MonoBehaviour
 	{
 
 		rb = GetComponent<Rigidbody>();
-		tigre = GameObject.FindGameObjectWithTag("Player");
+		tigre = GameObject.FindGameObjectWithTag("Cub");
 		players =new GameObject[10];
 
 
