@@ -9,7 +9,7 @@ public class CameraFade : MonoBehaviour {
     public float fadeSpeed = 0.01f;
     public int drawDepth = -1000;
 
-    private float alpha = 0.0f;
+    public float alpha = 0.0f;
     public float fadeDir = -1.0f;
 
 
