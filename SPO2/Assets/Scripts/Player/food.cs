@@ -55,7 +55,7 @@ public class food : MonoBehaviour {
 
     public void OnTriggerStay(Collider other){
 
-		if (other.gameObject.tag == "food" && eaten <= maxFood && Input.GetKeyDown(KeyCode.S)) {
+		if (other.gameObject.tag == "food" && eaten <= maxFood && Input.GetKeyDown(KeyCode.X)) {
             if ((maxFood - eaten) <= amountOfFood)
             {
                 eaten = maxFood;

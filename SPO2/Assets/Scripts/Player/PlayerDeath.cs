@@ -106,7 +106,7 @@ public class PlayerDeath : MonoBehaviour {
 
     void FirstDeath() {
         textBox.SetActive(true);
-        textBox.transform.GetChild(0).GetComponent<Text>().text = "When you die you will continue playing as your cub, if you have one...";
+        textBox.transform.GetChild(1).GetComponent<Text>().text = "When you die you will continue playing as your cub, if you have one...";
         deathTextShown = true;
         Time.timeScale = 0;
     }
@@ -126,6 +126,6 @@ public class PlayerDeath : MonoBehaviour {
         Debug.Log("No cub found!");
         Time.timeScale = 0;
         textBox.SetActive(true);
-        textBox.transform.GetChild(0).GetComponent<Text>().text = "You died and have no cubs to keep playing.";
+        textBox.transform.GetChild(1).GetComponent<Text>().text = "You died and have no cubs to keep playing.";
     }
 }
