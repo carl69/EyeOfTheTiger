@@ -19,43 +19,54 @@ public class listFriendTiger : MonoBehaviour
 	{
 
 		rb = GetComponent<Rigidbody>();
-		tigre = GameObject.Find("Cub");
+		tigre = GameObject.FindGameObjectWithTag("Player");
 		players =new GameObject[10];
 
 
 	}
 
 	void Update(){
-		if (escapeRight && (transform.position.x > tigre.transform.position.x)){
+
+		if (escapeRight /*&& (transform.position.x > tigre.transform.position.x)*/){
+			print ("3");
 			if (!unavez) {
+				print ("5");
 				players [counter] = tigre;
 				counter++;
 				unavez = true;
 			}
-			if (+transform.position.x - tigre.transform.position.x >= distance2) {
+			if (+transform.position.x - tigre.transform.position.x >= distance2/* -transform.position.x + tigre.transform.position.x >= distance2*/) {
+				print ("7");
 				rb.velocity = new Vector2 (velocity2, rb.velocity.y);
+				//transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, velocity * Time.deltaTime);
 			}
 		}
-		if (escapeLeft && (transform.position.x < tigre.transform.position.x)) {
+		if (escapeLeft /*&& (transform.position.x < tigre.transform.position.x)*/) {
+			print ("4");
 			if (!unavez) {
+				print ("6");
 				players [counter] = tigre;
 				counter++;
 				unavez = true;
 			}
 			if (-transform.position.x + tigre.transform.position.x >= distance3) {
+				print ("8");
 				rb.velocity = new Vector2 (velocity, rb.velocity.y);
+				//transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, -1 * velocity2 * Time.deltaTime);
 			}
 		}
 		checkDistancia ();
 	}
 
 	void checkDistancia(){
-		//The part cemment is if the game is in negative part
-		if (!escapeRight && /*(transform.position.x < 0 && +transform.position.x - tigre.transform.position.x <= distance) || */(transform.position.x > 0 &&  transform.position.x - tigre.transform.position.x <= distance  &&  transform.position.x - tigre.transform.position.x >= mayor0)){
+		//The part comment is if the game is in negative part
+		if (!escapeRight && (transform.position.x < 0 && +transform.position.x - tigre.transform.position.x <= distance && +transform.position.x - tigre.transform.position.x >= mayor0) /*|| (transform.position.x > 0 &&  transform.position.x - tigre.transform.position.x <= distance  &&  transform.position.x - tigre.transform.position.x >= mayor0)*/){
 			escapeRight = true;
+			print ("1");
 		}
-		if (!escapeLeft && /*(transform.position.x < 0 && -transform.position.x + tigre.transform.position.x <= distance) ||*/ (transform.position.x > 0 && -transform.position.x + tigre.transform.position.x <= distance && -transform.position.x + tigre.transform.position.x >= mayor0 )){
+		if (!escapeLeft && (transform.position.x < 0 && -transform.position.x + tigre.transform.position.x <= distance && -transform.position.x + tigre.transform.position.x >= mayor0) /*|| (transform.position.x > 0 && -transform.position.x + tigre.transform.position.x <= distance && -transform.position.x + tigre.transform.position.x >= mayor0 )*/){
 			escapeLeft = true;
+			print ("2");
 		}
 	}
 
