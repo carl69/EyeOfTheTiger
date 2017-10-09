@@ -27,7 +27,7 @@ private IEnumerator Playtimer()
     while (true)
     {
         yield return new WaitForSeconds(1);
-        playTime += 1;
+        playTime += 600;
         seconds = (playTime % 60);
         minutes = (playTime / 60) % 60;
         hours = (playTime / 3600) % 24;
