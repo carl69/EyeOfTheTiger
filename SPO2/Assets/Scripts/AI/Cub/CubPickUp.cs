@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CubPickUp : MonoBehaviour {
-    bool canPickUp = false;
+    public bool canPickUp = false;
     bool pickedUp = false;
     bool inHive = false;
     bool canHive = false;
