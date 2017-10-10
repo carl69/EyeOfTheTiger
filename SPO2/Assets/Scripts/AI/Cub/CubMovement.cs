@@ -27,7 +27,7 @@ public class CubMovement : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         if (target == null)
         {
-            target = GameObject.Find("Player").transform;
+            target = GameObject.FindGameObjectWithTag("Player").transform;
             Debug.LogError("No Player Found");
             return;
         }
