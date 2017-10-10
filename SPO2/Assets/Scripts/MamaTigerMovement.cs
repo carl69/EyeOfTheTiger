@@ -360,7 +360,7 @@ public class MamaTigerMovement : MonoBehaviour {
     void WalkBackAndForth() {
         //Sets Walking Points
 
-            Transform target0 = targetPoint[stage];
+        Transform target0 = targetPoint[stage];
             Transform target1 = targetPoint[stage+1];
 
 
