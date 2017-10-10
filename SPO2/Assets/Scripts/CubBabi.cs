@@ -25,7 +25,7 @@ public class CubBabi : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (CurFood <= AmountOfFoodNeededToAgeUp)
+        if (CurFood >= AmountOfFoodNeededToAgeUp)
         {
             CurFood = 0;
             Level++;
@@ -92,10 +92,10 @@ public class CubBabi : MonoBehaviour {
             canPutInHive = true;
             Hive = other.transform;
         }
-        if (other.tag == "Food")
+        if (other.tag == "food")
         {
             CurFood++;
-            Destroy(other);
+            Destroy(other.gameObject);
         }
     }
     private void OnTriggerExit(Collider other)
