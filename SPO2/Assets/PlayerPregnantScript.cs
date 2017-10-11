@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerPregnantScript : MonoBehaviour {
     public bool pregnant = false;
     public bool atDen = false;
-    GameObject partner;
+    public GameObject partner;
     GameObject hive;
     public GameObject Cub;
 
@@ -40,7 +40,7 @@ public class PlayerPregnantScript : MonoBehaviour {
         }
         if (other.gameObject == partner)
         {
-            if (GameObject.Find("Cub") == null && GameObject.Find("BabiCub") == null)
+            if (GameObject.FindWithTag("Cub") == null && GameObject.Find("BabiCub") == null)
             {
                 pregnant = true;
             }
