@@ -11,6 +11,7 @@ public class CubBabi : MonoBehaviour {
     private Transform Hive;
     private GameObject Carry;
     private GameObject Player;
+    public GameObject Cub;
     private bool canPutInHive = false;
     private bool carrying = false;
     float dist;
@@ -24,6 +25,10 @@ public class CubBabi : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (Level == 2)
+        {
+            Instantiate(Cub, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+        }
 
         if (CurFood >= AmountOfFoodNeededToAgeUp)
         {

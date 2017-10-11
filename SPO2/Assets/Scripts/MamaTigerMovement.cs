@@ -67,6 +67,7 @@ public class MamaTigerMovement : MonoBehaviour {
     public float[] Distance;
     [Tooltip("Targets turn into the object with name *Player*")]
     public bool[] TargetBecomesPlayer;
+    public bool targetPointsBecomeTargets;
     [Tooltip("The object watches the current target. Needed in: Distance, TargetDestroyed, Carry, RunfromTarget")]
     public GameObject[] Targets;
     [Tooltip("The time since the object got created. Needed in: Clock")]
@@ -116,18 +117,12 @@ public class MamaTigerMovement : MonoBehaviour {
 
        // Naming = "Delay, AD, Wait, Jump, Walk, Run";
 
-        curTarget = targetPoint[stage];
         myBody = this.gameObject.GetComponent<Rigidbody>();
     }
     private void Update()
     {
         clock = Time.time - startTimeCheck;
         // basic mods that need constant update
-        if (carriCub)
-        {
-            player.transform.position = CubHolder.transform.position;
-        }
-
         if (TargetBecomesPlayer[stage])
         {
             if (Targets[stage] == null)
@@ -135,6 +130,22 @@ public class MamaTigerMovement : MonoBehaviour {
                 Targets[stage] = GameObject.Find("Player");
             }
         }
+
+        if (targetPointsBecomeTargets)
+        {
+            curTarget = Targets[stage].transform;
+        }
+        else
+        {
+            curTarget = targetPoint[stage];
+        }
+
+        if (carriCub)
+        {
+            player.transform.position = CubHolder.transform.position;
+        }
+
+        
     }
     void FixedUpdate () {
 
@@ -337,7 +348,7 @@ public class MamaTigerMovement : MonoBehaviour {
 
     }
     void Wait() {
-            Transform endTarget = targetPoint[stage];
+            Transform endTarget = curTarget;
             float dist = Vector3.Distance(endTarget.position, transform.position);
             float step = walkingSpeed * Time.deltaTime;
 
@@ -360,7 +371,7 @@ public class MamaTigerMovement : MonoBehaviour {
     void WalkBackAndForth() {
         //Sets Walking Points
 
-        Transform target0 = targetPoint[stage];
+            Transform target0 = targetPoint[stage];
             Transform target1 = targetPoint[stage+1];
 
 
