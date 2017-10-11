@@ -6,8 +6,8 @@ public class ParkRanger : MonoBehaviour
 {
 
     private Rigidbody rb;
-    public float velocity = 5, distance2 = 0, distance3 = 0, velocity2 = -5;
-	bool escapeRight = false, escapeLeft = false, unavez = false;
+    public float velocity = 5, distance2 = 10, distance3 = 10, velocity2 = -5;
+	bool escapeRight = false, escapeLeft = false, unavez = false, unavez2 = false;
     public GameObject tigre;
     public float distance = 20, mayor0 = 0.0f;
     public GameObject[] players;
@@ -17,7 +17,8 @@ public class ParkRanger : MonoBehaviour
     {
 
         rb = GetComponent<Rigidbody>();
-        tigre = GameObject.FindGameObjectWithTag("Cub");
+		tigre = GameObject.FindGameObjectWithTag("Cub");
+
         players = new GameObject[10];
 
 
@@ -38,14 +39,15 @@ public class ParkRanger : MonoBehaviour
         if (escapeRight /*&& (transform.position.x > tigre.transform.position.x)*/)
         {
             print("3");
-            if (!unavez)
+			if (!unavez)
             {
                 print("5");
                 players[counter] = tigre;
                 counter++;
                 unavez = true;
             }
-			if (+transform.position.x - tigre.transform.position.x >= distance2/* -transform.position.x + tigre.transform.position.x >= distance2*/) {
+			print (+transform.position.x - tigre.transform.position.x);
+			if (+transform.position.x - tigre.transform.position.x >= mayor0/* distance2*/){
 				print ("7");
 				rb.velocity = new Vector2 (velocity2, rb.velocity.y);
 				//transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, velocity * Time.deltaTime);
@@ -54,14 +56,14 @@ public class ParkRanger : MonoBehaviour
         if (escapeLeft /*&& (transform.position.x < tigre.transform.position.x)*/)
         {
             print("4");
-            if (!unavez)
+			if (!unavez2)
             {
                 print("6");
                 players[counter] = tigre;
                 counter++;
-                unavez = true;
+                unavez2 = true;
             }
-            if (-transform.position.x + tigre.transform.position.x >= distance3)
+			if (-transform.position.x + tigre.transform.position.x >= mayor0/*distance3*/ )
             {
                 print("8");
                 rb.velocity = new Vector2(velocity, rb.velocity.y);
