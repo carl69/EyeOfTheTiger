@@ -32,21 +32,24 @@ private IEnumerator Playtimer()
         seconds = (playTime % 60);
         minutes = (playTime / 60) % 60;
         hours = (playTime / 3600) % 24;
-        if (hours == 24)
+        if (hours >= 24)
         {
-                day++;
+                
             playTime = 0;
         }
         if (hours >= 21 || hours <= 5)
         {
             isNight = true;
+            isDay = false;
         }
         else isNight = false;
-        if (hours >= 6 && hours <= 20)
+        if (hours >= 6 && hours <= 20 && isDay == false)
         {
-            isDay = true;
+                day++;
+                isDay = true;
+                isNight = false;
         }
-        else isDay = false;
+        
     }
 
 

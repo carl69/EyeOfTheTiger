@@ -8,6 +8,7 @@ public class ParkRangerAppears : MonoBehaviour {
     GameObject Clock;
     Clock_24Hour Time;
     Renderer rend;
+    bool active = false;
 	// Use this for initialization
 	void Start () {
         rend = GetComponent<Renderer>();
@@ -18,13 +19,16 @@ public class ParkRangerAppears : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (neededIntToCome <= Time.day && PR.enabled == true)
+        if (neededIntToCome >= Time.day && PR.enabled == true && active == false)
         {
+            transform.GetChild(0).gameObject.SetActive(false);
             rend.enabled = false;
             PR.enabled = false;
         }
-        else if(rend.enabled == true)
+        else if(Time.isDay  && rend.enabled != true)
         {
+            active = true;
+            transform.GetChild(0).gameObject.SetActive(true);
             rend.enabled = true;
             PR.enabled = true;
         }
