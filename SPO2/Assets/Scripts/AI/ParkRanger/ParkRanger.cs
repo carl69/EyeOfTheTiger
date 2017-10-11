@@ -6,10 +6,10 @@ public class ParkRanger : MonoBehaviour
 {
 
     private Rigidbody rb;
-    public float velocity = 5, distance2 = 10, distance3 = 11, velocity2 = -5;
-    bool escapeRight = false, escapeLeft = false, unavez = false;
+    public float velocity = 5, distance2 = 0, distance3 = 0, velocity2 = -5;
+	bool escapeRight = false, escapeLeft = false, unavez = false;
     public GameObject tigre;
-    public float distance = 20, mayor0 = 0;
+    public float distance = 20, mayor0 = 0.0f;
     public GameObject[] players;
     int counter = 0;
 
@@ -21,6 +21,7 @@ public class ParkRanger : MonoBehaviour
         players = new GameObject[10];
 
 
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,7 +31,6 @@ public class ParkRanger : MonoBehaviour
             tigre = GameObject.FindGameObjectWithTag("Cub");
         }
     }
-
     void Update()
     {
 
@@ -45,12 +45,11 @@ public class ParkRanger : MonoBehaviour
                 counter++;
                 unavez = true;
             }
-            if (+transform.position.x - tigre.transform.position.x >= distance2/* -transform.position.x + tigre.transform.position.x >= distance2*/)
-            {
-                print("7");
-                rb.velocity = new Vector2(velocity2, rb.velocity.y);
-                //transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, velocity * Time.deltaTime);
-            }
+			if (+transform.position.x - tigre.transform.position.x >= distance2/* -transform.position.x + tigre.transform.position.x >= distance2*/) {
+				print ("7");
+				rb.velocity = new Vector2 (velocity2, rb.velocity.y);
+				//transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, velocity * Time.deltaTime);
+			}
         }
         if (escapeLeft /*&& (transform.position.x < tigre.transform.position.x)*/)
         {
@@ -67,7 +66,7 @@ public class ParkRanger : MonoBehaviour
                 print("8");
                 rb.velocity = new Vector2(velocity, rb.velocity.y);
                 //transform.position = Vector2.MoveTowards (transform.position, tigre.transform.position, -1 * velocity2 * Time.deltaTime);
-            }
+			}
         }
         checkDistancia();
     }
