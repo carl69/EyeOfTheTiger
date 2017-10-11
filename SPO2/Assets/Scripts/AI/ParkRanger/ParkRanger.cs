@@ -23,8 +23,17 @@ public class ParkRanger : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Cub")
+        {
+            tigre = GameObject.FindGameObjectWithTag("Cub");
+        }
+    }
+
     void Update()
     {
+
 
         if (escapeRight /*&& (transform.position.x > tigre.transform.position.x)*/)
         {
