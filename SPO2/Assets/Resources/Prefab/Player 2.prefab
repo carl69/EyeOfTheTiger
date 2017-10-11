@@ -29,6 +29,7 @@ GameObject:
   - component: {fileID: 114202727239526916}
   - component: {fileID: 54675684253205686}
   - component: {fileID: 65757169459776818}
+  - component: {fileID: 114776387709994778}
   m_Layer: 8
   m_Name: Player 2
   m_TagString: Player
@@ -1760,7 +1761,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006279963806992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -206.86, y: 10.62, z: 0}
+  m_LocalPosition: {x: -9.508558, y: 0.9523047, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4006578597597086}
@@ -2661,12 +2662,12 @@ MonoBehaviour:
   InfoFood: '***Player Food script***'
   maxHunger: 100
   startHunger: 75
-  hungerSpeed: 1
+  hungerSpeed: 10
   foodPickUp: 25
   InfoWater: '***Player Water script***'
   maxWater: 100
   startWater: 100
-  waterLossRate: 0.2
+  waterLossRate: 10
   waterLossAmount: 1
   waterPickUp: 1
 --- !u!114 &114202727239526916
@@ -2734,7 +2735,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxFood: 100
+  eating: 0
   eaten: 48
+--- !u!114 &114776387709994778
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006279963806992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9763205f40a4cd4790adac8fa178307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pregnant: 0
+  atDen: 0
+  Cub: {fileID: 1220669267260956, guid: 7966d21df289f8948a130888fba6caff, type: 2}
 --- !u!137 &137455107403062212
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

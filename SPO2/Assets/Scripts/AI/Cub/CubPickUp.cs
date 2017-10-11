@@ -7,14 +7,17 @@ public class CubPickUp : MonoBehaviour {
     bool pickedUp = false;
     bool inHive = false;
     bool canHive = false;
+    public float pickUpDist;
     public Transform holdingPosision;
     private Transform hiveLocal;
 
     GameObject curHive;
-    GameObject curplayer;
+    public GameObject curplayer;
     MamaTigerMovement cubMovement;
-	// Use this for initialization
-	void Start () {
+
+    public float dist;
+    // Use this for initialization
+    void Start () {
         cubMovement = this.gameObject.GetComponent<MamaTigerMovement>();
         curplayer = GameObject.Find("CubHoldingPosition");
         holdingPosision = curplayer.transform;
@@ -22,7 +25,19 @@ public class CubPickUp : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (pickedUp)
+        dist = Vector3.Distance(holdingPosision.position, transform.position);
+        if (dist < pickUpDist)
+        {
+            Debug.Log("In  Pick up range");
+            canPickUp = true;
+        }
+        else
+        {
+            Debug.Log("Out of pick up range");
+            canPickUp = false;
+        }
+
+            if (pickedUp)
         {
             transform.position = holdingPosision.position;
             cubMovement.enabled = false;
@@ -53,13 +68,8 @@ public class CubPickUp : MonoBehaviour {
                 cubMovement.enabled = true;
                 pickedUp = false;
             }
-
-            
-            
-
-            
-
         }
+
 	}
     void HiveMode() {
         hiveLocal = curHive.transform;
@@ -68,11 +78,11 @@ public class CubPickUp : MonoBehaviour {
     }
     private void OnTriggerEnter(Collider c)
     {
-        if (c.tag =="Player")
-        {
-            Debug.Log("In  Pick up range");
-            canPickUp = true;
-        }
+        //if (c.tag =="Player")
+        //{
+        //    Debug.Log("In  Pick up range");
+        //    canPickUp = true;
+        //}
         if (c.tag == "Hive")
         {
             Debug.Log("In Hive range");
@@ -82,11 +92,11 @@ public class CubPickUp : MonoBehaviour {
     }
     private void OnTriggerExit(Collider c)
     {
-        if (c.tag == "Player")
-        {
-            Debug.Log("Out of pick up range");
-            canPickUp = false;
-        }
+        //if (c.tag == "Player")
+        //{
+        //    Debug.Log("Out of pick up range");
+        //    canPickUp = false;
+        //}
         if (c.tag == "Hive")
         {
             Debug.Log("Out of Hive range");
