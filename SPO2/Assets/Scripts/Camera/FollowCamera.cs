@@ -19,7 +19,7 @@ public class FollowCamera : MonoBehaviour {
 	// Update is called once per frame
 
 	void FixedUpdate () {
-
+		
         if (Input.GetAxis("Horizontal") > 0 && Input.GetKey(KeyCode.LeftShift))
         {
             if (counter <= 23) counter++;
@@ -32,16 +32,16 @@ public class FollowCamera : MonoBehaviour {
         }
         else if (Input.GetAxis("Horizontal") < 0 && Input.GetKey(KeyCode.LeftShift))
         {
-            if (counter <= 23) counter++;
+            if (counter >= -23) counter--;
 
             x = (GameObject.FindGameObjectWithTag("Player").transform.position.x);
 
             Vector3 aux3 = new Vector3(x, transform.position.y, transform.position.z);
             transform.position = aux3;
-            transform.localRotation = Quaternion.Euler(0.0f, -counter, 0.0f);
+            transform.localRotation = Quaternion.Euler(0.0f, counter, 0.0f);
 
         }
-        else
+        /*else
         {
             if (counter >0)counter-=5;
 			if(counter <=0) counter = 0 ;
@@ -50,6 +50,19 @@ public class FollowCamera : MonoBehaviour {
 			Vector3 aux = new Vector3 (x, transform.position.y, transform.position.z);
 			transform.position = aux;
 			transform.localRotation = Quaternion.Euler(0.0f, 0, 0.0f);
+		}*/
+
+		else
+		{
+			print (counter);
+			if (counter >0)counter-=2;
+			if (counter <0)counter+=2;
+			if(-4 <= counter && counter <=4) counter = 0 ;
+			x = transform.position.x + (GameObject.FindGameObjectWithTag ("Player").transform.position.x - transform.position.x) / Smooth;
+
+			Vector3 aux = new Vector3 (x, transform.position.y, transform.position.z);
+			transform.position = aux;
+			transform.localRotation = Quaternion.Euler(0.0f, counter, 0.0f);
 		}
 	}
 }
