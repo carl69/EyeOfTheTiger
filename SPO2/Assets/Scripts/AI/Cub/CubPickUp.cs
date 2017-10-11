@@ -12,10 +12,10 @@ public class CubPickUp : MonoBehaviour {
 
     GameObject curHive;
     GameObject curplayer;
-    CubMovement cubMovement;
+    MamaTigerMovement cubMovement;
 	// Use this for initialization
 	void Start () {
-        cubMovement = this.gameObject.GetComponent<CubMovement>();
+        cubMovement = this.gameObject.GetComponent<MamaTigerMovement>();
         curplayer = GameObject.Find("CubHoldingPosition");
         holdingPosision = curplayer.transform;
 	}

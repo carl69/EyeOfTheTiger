@@ -4,7 +4,7 @@ using UnityEngine;
 using Pathfinding;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(Seeker))]
+//[RequireComponent(typeof(Seeker))]
 
 
 public class CubMovement : MonoBehaviour

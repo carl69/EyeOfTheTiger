@@ -55,8 +55,6 @@ GameObject:
   - component: {fileID: 4877284695889696}
   - component: {fileID: 33413457836768500}
   - component: {fileID: 23504086371133218}
-  - component: {fileID: 114624250679701816}
-  - component: {fileID: 114497137686080418}
   - component: {fileID: 114430348406056792}
   - component: {fileID: 114394664578898420}
   - component: {fileID: 54240993039178180}
@@ -485,22 +483,27 @@ MonoBehaviour:
   targetPoint:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   semiRandomTurnPoints: 0
-  howRandom: 0
+  howRandom: 3
   delayTime:
   - 0
   - 0
   Distance:
   - 0
   - 0
-  TargetBecomesPlayer: 0000
+  - 0
+  TargetBecomesPlayer: 0101
+  targetPointsBecomeTargets: 1
   Targets:
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   timeOfDay:
   - 0
   - 0
-  GoToStage: 0000000000000000
+  - 0
+  GoToStage: 000000000000000000000000
   waitingDis: 3
 --- !u!114 &114319406298981834
 MonoBehaviour:
@@ -554,49 +557,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb59dbb8cf65e8443bc9b5611c2eee1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canPickUp: 0
   holdingPosision: {fileID: 0}
---- !u!114 &114497137686080418
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1643312031150948}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ab11564da372ac4ab7e65831c97e034, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  updateRate: 2
-  speed: 15
-  fMode: 1
-  pathIsEnded: 0
-  nextWaypointDistance: 3
---- !u!114 &114624250679701816
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1643312031150948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 373b52eb9bf8c40f785bb6947a1aee66, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  drawGizmos: 1
-  detailedGizmos: 0
-  startEndModifier:
-    addPoints: 0
-    exactStartPoint: 3
-    exactEndPoint: 3
-    useRaycasting: 0
-    mask:
-      serializedVersion: 2
-      m_Bits: 4294967295
-    useGraphRaycasting: 0
-  traversableTags: -1
-  traversableTagsCompatibility:
-    tagsChange: -1
-    tagsSet: -1
-  tagPenalties: 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
