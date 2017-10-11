@@ -98,6 +98,7 @@ public class MamaTigerMovement : MonoBehaviour {
 
     private void Start()
     {
+        curTarget = targetPoint[stage];
         startTimeCheck = Time.time;
 
         if (!collideWithPlayer)
@@ -137,7 +138,7 @@ public class MamaTigerMovement : MonoBehaviour {
         }
         else
         {
-            curTarget = targetPoint[stage];
+            
         }
 
         if (carriCub)
@@ -370,6 +371,7 @@ public class MamaTigerMovement : MonoBehaviour {
     }
     void WalkBackAndForth() {
         //Sets Walking Points
+        Debug.Log(curTarget);
 
             Transform target0 = targetPoint[stage];
             Transform target1 = targetPoint[stage+1];
@@ -382,30 +384,32 @@ public class MamaTigerMovement : MonoBehaviour {
         }
         else
         {
-            curTarget = target0;
+            curTarget = target1;
         }
         //Calulate the distance to the next target
         float dist = Vector3.Distance(curTarget.position, transform.position);
         if (semiRandomTurnPoints)
         {
-            if (dist <= 0.5f + distanceForRandom)
+            if (dist <= 1f + distanceForRandom)
             {
                 //Find The Next Target
                 if (curTarget == target0)
                 {
-                    distanceForRandom = Random.Range(0, howRandom);
                     curTarget = target1;
+
+                    distanceForRandom = Random.Range(0, howRandom);
                 }
                 else if (curTarget == target1)
                 {
+                    //curTarget = target0;
+
                     distanceForRandom = Random.Range(0, howRandom);
-                    curTarget = target0;
                 }
 
             }
         }
         else {
-            if (dist <= 0.5f)
+            if (dist <= 1f)
             {
                 //Find The Next Target
                 if (curTarget == target0)
