@@ -75,12 +75,12 @@ public class ParkRanger : MonoBehaviour
     void checkDistancia()
     {
         //The part comment is if the game is in negative part
-        if (!escapeRight && (transform.position.x < 0 && +transform.position.x - tigre.transform.position.x <= distance && +transform.position.x - tigre.transform.position.x >= mayor0) /*|| (transform.position.x > 0 &&  transform.position.x - tigre.transform.position.x <= distance  &&  transform.position.x - tigre.transform.position.x >= mayor0)*/)
+        if (!escapeRight && /*(transform.position.x < 0 && +transform.position.x - tigre.transform.position.x <= distance && +transform.position.x - tigre.transform.position.x >= mayor0) ||*/ (transform.position.x > 0 &&  transform.position.x - tigre.transform.position.x <= distance  &&  transform.position.x - tigre.transform.position.x >= mayor0))
         {
             escapeRight = true;
             print("1");
         }
-        if (!escapeLeft && (transform.position.x < 0 && -transform.position.x + tigre.transform.position.x <= distance && -transform.position.x + tigre.transform.position.x >= mayor0) /*|| (transform.position.x > 0 && -transform.position.x + tigre.transform.position.x <= distance && -transform.position.x + tigre.transform.position.x >= mayor0 )*/)
+        if (!escapeLeft &&/* (transform.position.x < 0 && -transform.position.x + tigre.transform.position.x <= distance && -transform.position.x + tigre.transform.position.x >= mayor0) ||*/ (transform.position.x > 0 && -transform.position.x + tigre.transform.position.x <= distance && -transform.position.x + tigre.transform.position.x >= mayor0 ))
         {
             escapeLeft = true;
             print("2");
