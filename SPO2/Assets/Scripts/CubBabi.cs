@@ -6,29 +6,37 @@ public class CubBabi : MonoBehaviour {
     public int AmountOfFoodNeededToAgeUp;
     public int CurFood;
     public int Level = 1;
-    private bool InHive;
+     bool InHive;
     public float PickUpDistance;
-    private Transform Hive;
-    private GameObject Carry;
-    private GameObject Player;
+     Transform Hive;
+     GameObject Carry;
+     GameObject Player;
     public GameObject Cub;
-    private bool canPutInHive = false;
-    private bool carrying = false;
-    float dist;
+     bool canPutInHive = false;
+     bool carrying = false;
+     float dist;
+    Rigidbody rb;
     // Use this for initialization
     void Start () {
+        rb = GetComponent<Rigidbody>();
         if (this.gameObject.name != "BabiCub") 
         {
             this.gameObject.name = "BabiCub";
         }
-        if (!Player)
-        {
-            Player = GameObject.Find("Player");
-        }
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
+        if (!Player)
+        {
+            Player = GameObject.Find("Player");
+            if (!Carry)
+            {
+                Carry = GameObject.Find("CubHoldingPosition");
+            }
+        }
+
         if (Level == 2)
         {
             Instantiate(Cub, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
@@ -69,6 +77,14 @@ public class CubBabi : MonoBehaviour {
         if (canPutInHive && carrying == false)
         {
             HiveMode();
+            if (rb.useGravity == true)
+            {
+                rb.useGravity = false;
+            }
+        }
+        else if (rb.useGravity == false)
+        {
+            rb.useGravity = true;
         }
 	}
 
@@ -77,17 +93,14 @@ public class CubBabi : MonoBehaviour {
     {
         if (Level == 1)
         {
-            this.transform.position = new Vector2(Hive.position.x, Hive.position.y);
+            this.transform.position = new Vector3(Hive.position.x, Hive.position.y,0);
         }
-        carrying = false;
+        
 
     }
     void CarryMode()
     {
-        if (!Carry)
-        {
-            Carry = GameObject.Find("CubHoldingPosition");
-        }
+        
 
         this.transform.position = Carry.transform.position;
     }
