@@ -2531,6 +2531,7 @@ GameObject:
   - component: {fileID: 686152217}
   - component: {fileID: 686152222}
   - component: {fileID: 686152223}
+  - component: {fileID: 686152224}
   m_Layer: 0
   m_Name: ParkRanger
   m_TagString: ParkRanger
@@ -2646,6 +2647,18 @@ MonoBehaviour:
   distance: 20
   mayor0: 10
   players: []
+--- !u!114 &686152224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 686152216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7c92780c976d5844bae19654b8429b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  neededIntToCome: 2
 --- !u!1001 &688619016
 Prefab:
   m_ObjectHideFlags: 0
@@ -2858,33 +2871,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1667691343508166, guid: b013d473320655d409b939dcef516eb0, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1769182096121842, guid: b013d473320655d409b939dcef516eb0, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1223814812764650, guid: b013d473320655d409b939dcef516eb0, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114135287094596570, guid: b013d473320655d409b939dcef516eb0,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224827831968855604, guid: b013d473320655d409b939dcef516eb0,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224638707189080916, guid: b013d473320655d409b939dcef516eb0,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b013d473320655d409b939dcef516eb0, type: 2}
