@@ -22,8 +22,8 @@ GameObject:
   - component: {fileID: 20192456042249564}
   - component: {fileID: 92312794057093730}
   - component: {fileID: 124864490355257324}
-  - component: {fileID: 81121437052929844}
-  - component: {fileID: 114278392456356748}
+  - component: {fileID: 114405388574194944}
+  - component: {fileID: 114112665566104830}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -38,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344550676131110}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -12.34, y: 11.96, z: -31.75}
+  m_LocalPosition: {x: 675.66003, y: 11.96, z: -26.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,13 +80,6 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
   m_StereoMirrorMode: 0
---- !u!81 &81121437052929844
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1344550676131110}
-  m_Enabled: 1
 --- !u!92 &92312794057093730
 Behaviour:
   m_ObjectHideFlags: 1
@@ -94,7 +87,7 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1344550676131110}
   m_Enabled: 1
---- !u!114 &114278392456356748
+--- !u!114 &114112665566104830
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -102,10 +95,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1344550676131110}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7df9bd5b1668a5a49aa628296110aac3, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b5861709280aed4dbbdbc1cd42b71f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Smooth: 1
+  Smooth: 10
+  counter: 0
+--- !u!114 &114405388574194944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1344550676131110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67267c5126a7fd0448e647edb4d569d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTexture: {fileID: 0}
+  fadeSpeed: 0.01
+  drawDepth: -1000
+  alpha: 0
+  fadeDir: -1
 --- !u!124 &124864490355257324
 Behaviour:
   m_ObjectHideFlags: 1
