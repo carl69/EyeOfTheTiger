@@ -17,6 +17,10 @@ public class CubBabi : MonoBehaviour {
     float dist;
     // Use this for initialization
     void Start () {
+        if (this.gameObject.name != "BabiCub") 
+        {
+            this.gameObject.name = "BabiCub";
+        }
         if (!Player)
         {
             Player = GameObject.Find("Player");
@@ -28,6 +32,7 @@ public class CubBabi : MonoBehaviour {
         if (Level == 2)
         {
             Instantiate(Cub, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            Destroy(this.gameObject);
         }
 
         if (CurFood >= AmountOfFoodNeededToAgeUp)
