@@ -370,6 +370,7 @@ public class MamaTigerMovement : MonoBehaviour {
     }
     void WalkBackAndForth() {
         //Sets Walking Points
+        Debug.Log(curTarget);
 
             Transform target0 = targetPoint[stage];
             Transform target1 = targetPoint[stage+1];
@@ -382,13 +383,13 @@ public class MamaTigerMovement : MonoBehaviour {
         }
         else
         {
-            curTarget = target0;
+            curTarget = target1;
         }
         //Calulate the distance to the next target
         float dist = Vector3.Distance(curTarget.position, transform.position);
         if (semiRandomTurnPoints)
         {
-            if (dist <= 0.5f + distanceForRandom)
+            if (dist <= 1f + distanceForRandom)
             {
                 //Find The Next Target
                 if (curTarget == target0)
@@ -405,7 +406,7 @@ public class MamaTigerMovement : MonoBehaviour {
             }
         }
         else {
-            if (dist <= 0.5f)
+            if (dist <= 1f)
             {
                 //Find The Next Target
                 if (curTarget == target0)

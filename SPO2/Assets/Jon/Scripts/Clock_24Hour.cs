@@ -15,6 +15,7 @@ public bool isDay = false;
 
 private Text textClock;
 
+public int day = 0;
 // Use this for initialization
 void Start()
 {
@@ -33,6 +34,7 @@ private IEnumerator Playtimer()
         hours = (playTime / 3600) % 24;
         if (hours == 24)
         {
+                day++;
             playTime = 0;
         }
         if (hours >= 21 || hours <= 5)
