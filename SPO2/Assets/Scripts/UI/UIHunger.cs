@@ -33,14 +33,14 @@ public class UIHunger : MonoBehaviour {
         int foodProsentint = Mathf.RoundToInt(foodsProsent * 10);
         if (foodProsentint <= 10)
         {
-            //for (int i = 0; i < foodProsentint; i++)
-            //{
-            //    this.transform.GetChild(i).gameObject.SetActive(false);
-            //}
-            for (int i = 10; foodProsentint < i ; i--)
+            for (int i = 0; i < foodProsentint; i++)
+            {
+                this.transform.GetChild(i).gameObject.SetActive(true);
+            }
+            for (int i = 9; foodProsentint < i+1 ; i--)
             {
                 Debug.Log(i);
-                this.transform.GetChild(i).gameObject.SetActive(true);
+                this.transform.GetChild(i).gameObject.SetActive(false);
             }
         }
         //{
