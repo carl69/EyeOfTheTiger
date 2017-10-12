@@ -6,7 +6,7 @@ public class UIHunger : MonoBehaviour {
 
     private float MaxHunger;
     private float CurHunger;
-
+    public float foodsProsent;
     food Food;
     GameObject player;
 	// Use this for initialization
@@ -20,7 +20,7 @@ public class UIHunger : MonoBehaviour {
 
         if (player == null)
         {
-            player = GameObject.FindWithTag("Player");
+            player = GameObject.FindWithTag("Player");  
             Food = player.GetComponent<food>();
         }
 
@@ -28,6 +28,36 @@ public class UIHunger : MonoBehaviour {
         MaxHunger = Food.maxFood;
         CurHunger = Food.eaten;
 
-        transform.localScale = new Vector3(CurHunger / MaxHunger, 1, 0); 
+        //transform.localScale
+        foodsProsent = CurHunger / MaxHunger;
+        int foodProsentint = Mathf.RoundToInt(foodsProsent * 10);
+        if (foodProsentint <= 10)
+        {
+            //for (int i = 0; i < foodProsentint; i++)
+            //{
+            //    this.transform.GetChild(i).gameObject.SetActive(false);
+            //}
+            for (int i = 10; foodProsentint < i ; i--)
+            {
+                Debug.Log(i);
+                this.transform.GetChild(i).gameObject.SetActive(true);
+            }
+        }
+        //{
+        //    if (foodsProsent <= 0.9)
+        //    {
+        //        for (int i = 0; i < 10; i++)
+        //        {
+        //            this.transform.GetChild(i).gameObject.SetActive(false);
+        //        }
+        //    }
+            
+
+        //}
+        
+        
+
+
+
 	}
 }
