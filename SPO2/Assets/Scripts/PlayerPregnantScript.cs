@@ -8,7 +8,7 @@ public class PlayerPregnantScript : MonoBehaviour {
     public GameObject partner;
     GameObject hive;
     public GameObject Cub;
-
+    bool canBecomePregnant = false;
     // Use this for initialization
     void Start () {
 		
@@ -20,6 +20,10 @@ public class PlayerPregnantScript : MonoBehaviour {
         {
             pregnant = false;
             Instantiate(Cub, new Vector3(hive.transform.position.x, hive.transform.position.y, 0), Quaternion.identity);
+        }
+        if (canBecomePregnant && Input.GetKeyDown(KeyCode.E))
+        {
+            pregnant = true;
         }
 
 
@@ -42,7 +46,8 @@ public class PlayerPregnantScript : MonoBehaviour {
         {
             if (GameObject.FindWithTag("Cub") == null && GameObject.Find("BabiCub") == null)
             {
-                pregnant = true;
+                canBecomePregnant = true;
+                //pregnant = true;
             }
         }
     }
@@ -51,6 +56,10 @@ public class PlayerPregnantScript : MonoBehaviour {
         if (other.tag == "Hive")
         {
             atDen = false;
+        }
+        if (other.gameObject == partner)
+        {
+            canBecomePregnant = false;
         }
     }
 }

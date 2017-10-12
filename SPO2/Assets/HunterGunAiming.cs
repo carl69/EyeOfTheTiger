@@ -16,7 +16,7 @@ public class HunterGunAiming : MonoBehaviour {
             Player = GameObject.FindGameObjectWithTag("Player");
 
         }
-        //transform.LookAt(Player.transform);
-        transform.rotation = Quaternion.LookRotation(transform.position - Player.transform.position);
+        transform.LookAt(Player.transform);
+        //transform.rotation = Quaternion.LookRotation(transform.position - Player.transform.position);
     }
 }
