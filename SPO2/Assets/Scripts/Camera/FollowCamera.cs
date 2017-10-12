@@ -53,7 +53,7 @@ public class FollowCamera : MonoBehaviour {
 
 		else
 		{
-			print (counter);
+//			print (counter);
 			if (counter >0)counter-=2;
 			if (counter <0)counter+=2;
 			if(-4 <= counter && counter <=4) counter = 0 ;
