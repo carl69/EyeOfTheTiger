@@ -5,7 +5,7 @@ using UnityEngine;
 public class FollowCamera : MonoBehaviour {
 	//public GameObject Tiger;
 	public float Smooth = 10.0f;
-	public float counter = 0.0f;
+	public float counter = 0.0f ;
 	float x;//,y;
 
 	// Use this for initialization
@@ -23,7 +23,7 @@ public class FollowCamera : MonoBehaviour {
         if (Input.GetAxis("Horizontal") > 0 && Input.GetKey(KeyCode.LeftShift))
         {
             if (counter <= 23) counter++;
-            x = (GameObject.FindGameObjectWithTag("Player").transform.position.x);
+			x = (GameObject.FindGameObjectWithTag("Player").transform.position.x);
 
             Vector3 aux2 = new Vector3(x, transform.position.y, transform.position.z);
             transform.position = aux2;
@@ -33,8 +33,7 @@ public class FollowCamera : MonoBehaviour {
         else if (Input.GetAxis("Horizontal") < 0 && Input.GetKey(KeyCode.LeftShift))
         {
             if (counter >= -23) counter--;
-
-            x = (GameObject.FindGameObjectWithTag("Player").transform.position.x);
+			x = (GameObject.FindGameObjectWithTag("Player").transform.position.x);
 
             Vector3 aux3 = new Vector3(x, transform.position.y, transform.position.z);
             transform.position = aux3;
@@ -58,6 +57,7 @@ public class FollowCamera : MonoBehaviour {
 			if (counter >0)counter-=2;
 			if (counter <0)counter+=2;
 			if(-4 <= counter && counter <=4) counter = 0 ;
+
 			x = transform.position.x + (GameObject.FindGameObjectWithTag ("Player").transform.position.x - transform.position.x) / Smooth;
 
 			Vector3 aux = new Vector3 (x, transform.position.y, transform.position.z);
