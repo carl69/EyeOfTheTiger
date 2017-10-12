@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54077549661160338}
   - component: {fileID: 114797771288217242}
   - component: {fileID: 114243227962191514}
+  - component: {fileID: 114277852595543562}
   m_Layer: 0
   m_Name: ParkRanger
   m_TagString: ParkRanger
@@ -297,6 +298,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   neededIntToCome: 1
+--- !u!114 &114277852595543562
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1185799443030380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007ab3d2f190c1946ada3fd86cc940f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poach: {fileID: 0}
+  velocity: 5
+  counter: 0
 --- !u!114 &114797771288217242
 MonoBehaviour:
   m_ObjectHideFlags: 1
