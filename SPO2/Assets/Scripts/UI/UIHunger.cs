@@ -39,7 +39,7 @@ public class UIHunger : MonoBehaviour {
             }
             for (int i = 9; foodProsentint < i+1 ; i--)
             {
-                Debug.Log(i);
+
                 this.transform.GetChild(i).gameObject.SetActive(false);
             }
         }

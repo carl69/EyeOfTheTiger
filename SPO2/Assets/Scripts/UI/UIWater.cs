@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UIWater : MonoBehaviour {
 
-    private float MaxThirst;
-    private float CurThirst;
+    public float MaxThirst;
+    public float CurThirst;
     float WaterProsent;
     PlayerWater Water;
     GameObject player;
@@ -19,9 +19,11 @@ public class UIWater : MonoBehaviour {
 	void Update () {
         if (player == null)
         {
-            player = GameObject.FindWithTag("Player");
             Water = player.GetComponent<PlayerWater>();
+            player = GameObject.FindWithTag("Player");
+            Debug.Log("FUCK");
         }
+
 
 
         MaxThirst = Water.MaxWater;
@@ -39,7 +41,6 @@ public class UIWater : MonoBehaviour {
             }
             for (int i = 9; WaterProsentint < i + 1; i--)
             {
-                Debug.Log(i);
                 this.transform.GetChild(i).gameObject.SetActive(false);
             }
         }
