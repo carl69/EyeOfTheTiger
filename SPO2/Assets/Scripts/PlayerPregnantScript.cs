@@ -16,14 +16,16 @@ public class PlayerPregnantScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (pregnant && atDen && Input.GetKeyDown(KeyCode.E))
+        if (pregnant && atDen && Input.GetKeyDown(KeyCode.Z))
         {
             pregnant = false;
             Instantiate(Cub, new Vector3(hive.transform.position.x, hive.transform.position.y, 0), Quaternion.identity);
         }
-        if (canBecomePregnant && Input.GetKeyDown(KeyCode.E))
+        if (canBecomePregnant && Input.GetKeyDown(KeyCode.Z))
         {
             pregnant = true;
+            GameObject.FindGameObjectWithTag("Mate").transform.GetChild(1).gameObject.SetActive(true);
+            Destroy(GameObject.FindGameObjectWithTag("Mate").transform.GetChild(1).gameObject, 3f);
         }
 
 
@@ -32,6 +34,12 @@ public class PlayerPregnantScript : MonoBehaviour {
             partner = GameObject.Find("Partner");
         }
 
+        if (pregnant == true)
+        {
+            GameObject.FindGameObjectWithTag("Hive").transform.GetChild(2).gameObject.SetActive(true);
+        }
+        
+        else GameObject.FindGameObjectWithTag("Hive").transform.GetChild(2).gameObject.SetActive(false);
         
 
 	}
