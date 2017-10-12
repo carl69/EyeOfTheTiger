@@ -48,7 +48,7 @@ public class CubPickUp : MonoBehaviour {
             HiveMode();
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.Z))
         {
             if (!pickedUp && canPickUp)
             {

@@ -57,11 +57,11 @@ public class CubBabi : MonoBehaviour {
             Player = GameObject.Find("Player");
         }
 
-            if (Input.GetKeyDown(KeyCode.E) && dist < PickUpDistance && carrying == false)
+            if (Input.GetKeyDown(KeyCode.Z) && dist < PickUpDistance && carrying == false)
             {
                 carrying = true;
             }
-            else if (Input.GetKeyDown(KeyCode.E) && carrying == true)
+            else if (Input.GetKeyDown(KeyCode.Z) && carrying == true)
             {
                 carrying = false;
             }
