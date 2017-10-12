@@ -19,8 +19,18 @@ public class PlayerPregnantScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-       
-        
+        GameObject a = GameObject.FindGameObjectWithTag("Hive");
+        Debug.Log(a);
+        if (pregnant == true)
+        {
+            GameObject.FindGameObjectWithTag("Hive").transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = zButton;
+            GameObject.FindGameObjectWithTag("Hive").transform.GetChild(0).gameObject.GetComponentInChildren<Text>().text = "Get a cub";
+        }
+        //else
+        //{
+        //    GameObject.FindGameObjectWithTag("Hive").transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+        //    GameObject.FindGameObjectWithTag("Hive").transform.GetChild(0).gameObject.GetComponentInChildren<Text>().text = null;
+        //}
 
         if (pregnant && atDen && Input.GetKeyDown(KeyCode.Z))
         {
