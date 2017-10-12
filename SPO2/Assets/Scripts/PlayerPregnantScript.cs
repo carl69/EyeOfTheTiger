@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerPregnantScript : MonoBehaviour {
     public bool pregnant = false;
@@ -9,6 +10,8 @@ public class PlayerPregnantScript : MonoBehaviour {
     GameObject hive;
     public GameObject Cub;
     bool canBecomePregnant = false;
+
+    public Sprite zButton;
     // Use this for initialization
     void Start () {
 		
@@ -16,6 +19,19 @@ public class PlayerPregnantScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        GameObject a = GameObject.FindGameObjectWithTag("Hive");
+        Debug.Log(a);
+        if (pregnant == true)
+        {
+            GameObject.FindGameObjectWithTag("Hive").transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = zButton;
+            GameObject.FindGameObjectWithTag("Hive").transform.GetChild(0).gameObject.GetComponentInChildren<Text>().text = "Get a cub";
+        }
+        //else
+        //{
+        //    GameObject.FindGameObjectWithTag("Hive").transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+        //    GameObject.FindGameObjectWithTag("Hive").transform.GetChild(0).gameObject.GetComponentInChildren<Text>().text = null;
+        //}
+
         if (pregnant && atDen && Input.GetKeyDown(KeyCode.Z))
         {
             pregnant = false;
@@ -34,15 +50,9 @@ public class PlayerPregnantScript : MonoBehaviour {
             partner = GameObject.Find("Partner");
         }
 
-        if (pregnant == true)
-        {
-            GameObject.FindGameObjectWithTag("Hive").transform.GetChild(2).gameObject.SetActive(true);
-        }
-        
-        else GameObject.FindGameObjectWithTag("Hive").transform.GetChild(2).gameObject.SetActive(false);
-        
 
-	}
+
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Hive")
