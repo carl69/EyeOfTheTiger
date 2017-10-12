@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CameraFade : MonoBehaviour {
 
     public Texture2D fadeTexture;
-    public float fadeSpeed = 0.01f;
+    public float fadeSpeed = 0.1f;
     public int drawDepth = -1000;
 
     public float alpha = 0.0f;

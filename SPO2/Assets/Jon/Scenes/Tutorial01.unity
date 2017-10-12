@@ -328,7 +328,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4323518007410838, guid: 2f3560dedfa9b7848b8501f44b5276d8, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.87443
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4323518007410838, guid: 2f3560dedfa9b7848b8501f44b5276d8, type: 2}
       propertyPath: m_LocalRotation.x
@@ -362,6 +362,16 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.3223222
       objectReference: {fileID: 0}
+    - target: {fileID: 137920698743707820, guid: 2f3560dedfa9b7848b8501f44b5276d8,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 57797f82ec4051345b21df881640d5f5, type: 2}
+    - target: {fileID: 137455107403062212, guid: 2f3560dedfa9b7848b8501f44b5276d8,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 57797f82ec4051345b21df881640d5f5, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f3560dedfa9b7848b8501f44b5276d8, type: 2}
   m_IsPrefabParent: 0
@@ -1106,7 +1116,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 873602925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -2.1900005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 506664093}
@@ -1144,7 +1154,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: fb9db248e00ec9f49ba0c87e1e99771a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0c832999622f69944a5767e82545209e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1487,6 +1497,7 @@ GameObject:
   - component: {fileID: 1064043107}
   - component: {fileID: 1064043106}
   - component: {fileID: 1064043111}
+  - component: {fileID: 1064043112}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1533,7 +1544,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -1558,7 +1569,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1064043105}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 156.63, y: 5.2, z: -15.2}
+  m_LocalPosition: {x: 156.63, y: 7.14, z: -15.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1572,11 +1583,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1064043105}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7df9bd5b1668a5a49aa628296110aac3, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b5861709280aed4dbbdbc1cd42b71f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   Smooth: 10
   counter: 0
+--- !u!114 &1064043112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1064043105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67267c5126a7fd0448e647edb4d569d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTexture: {fileID: 2800000, guid: d8f9475e48908714687aa3ae45d2565e, type: 3}
+  fadeSpeed: 0.1
+  drawDepth: -1000
+  alpha: 1
+  fadeDir: 1
 --- !u!4 &1126979007 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4470240501053470, guid: 0fe81b77c42a2654cb78c099e221367f,
@@ -2261,7 +2288,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1547824136}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.97, y: 0, z: 0}
+  m_LocalPosition: {x: -10.97, y: -2.19, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 506664093}
@@ -2299,7 +2326,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 71d86f20ca3a3394797aefc12d3a9bf0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 920cb6e2932c7fb4e9109f41393dd8e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
