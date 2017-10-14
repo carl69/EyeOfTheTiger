@@ -30,6 +30,12 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
+        
+    }
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+
         if (Input.GetButtonDown("Jump") && jumped == false)
         {
             jumped = true;
@@ -39,10 +45,8 @@ public class Movement : MonoBehaviour
         {
             jumped = false;
         }
-    }
-    // Update is called once per frame
-    void FixedUpdate()
-    {
+
+
         if (myBody == null)
         {
             CheckStats();
@@ -80,10 +84,10 @@ public class Movement : MonoBehaviour
 
     public void Move(float horizonalInput)
     {
-        if (!canMoveInAir && !isGrounded)
-        {
-            return;
-        }
+        //if (!canMoveInAir && !isGrounded)
+        //{
+        //    return;
+        //}
         if (Input.GetKey(KeyCode.LeftShift))
         {
             currRunningSpeed = addedRunningSpeed;
