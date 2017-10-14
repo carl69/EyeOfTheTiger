@@ -414,6 +414,16 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 57797f82ec4051345b21df881640d5f5, type: 2}
+    - target: {fileID: 114140695577425492, guid: 2f3560dedfa9b7848b8501f44b5276d8,
+        type: 2}
+      propertyPath: hungerSpeed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 114140695577425492, guid: 2f3560dedfa9b7848b8501f44b5276d8,
+        type: 2}
+      propertyPath: waterLossRate
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f3560dedfa9b7848b8501f44b5276d8, type: 2}
   m_IsPrefabParent: 0
@@ -1521,9 +1531,9 @@ GameObject:
   - component: {fileID: 1064043109}
   - component: {fileID: 1064043108}
   - component: {fileID: 1064043107}
-  - component: {fileID: 1064043106}
   - component: {fileID: 1064043111}
   - component: {fileID: 1064043112}
+  - component: {fileID: 1064043106}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1635,6 +1645,38 @@ Transform:
   m_PrefabParentObject: {fileID: 4470240501053470, guid: 0fe81b77c42a2654cb78c099e221367f,
     type: 2}
   m_PrefabInternal: {fileID: 170434097}
+--- !u!1 &1129836920 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1006279963806992, guid: 2f3560dedfa9b7848b8501f44b5276d8,
+    type: 2}
+  m_PrefabInternal: {fileID: 213661055}
+--- !u!114 &1129836921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129836920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 397bfd2a60d4b50429019343314416de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepSound: event:/Footsteps
+  runningSound: event:/Running
+  isRunning: 0
+  isWalking: 0
+--- !u!114 &1129836922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1129836920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!1001 &1184101053
 Prefab:
   m_ObjectHideFlags: 0

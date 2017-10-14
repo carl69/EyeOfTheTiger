@@ -8,7 +8,7 @@ public class PlayerPregnantScript : MonoBehaviour {
     public bool pregnant = false;
     public bool atDen = false;
     public GameObject partner;
-    GameObject hive;
+    public GameObject hive;
     public GameObject Cub;
     bool canBecomePregnant = false;
 
@@ -21,7 +21,7 @@ public class PlayerPregnantScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GameObject a = GameObject.FindGameObjectWithTag("Hive");
-        Debug.Log(a);
+
         if (pregnant == true)
         {
             if (ZbuttonForHive)
@@ -52,7 +52,7 @@ public class PlayerPregnantScript : MonoBehaviour {
 
         if (partner == null)
         {
-            partner = GameObject.Find("Partner");
+            partner = GameObject.FindGameObjectWithTag("Partner");
         }
 
 

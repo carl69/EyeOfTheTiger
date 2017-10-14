@@ -1,69 +1,77 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMOD;
+using FMODUnity;
 
 public class Audio_PlayerMovement : MonoBehaviour
 {
+    [EventRef]
+    public string footstepSound = "event:/Footsteps";
+    public string runningSound = "event:/Running";
+    private FMOD.Studio.EventInstance footstepSFX;
+    private FMOD.Studio.EventInstance runningSFX;
 
-    public AudioClip[] footsteps;
-    public AudioClip[] running;
-    public AudioClip jump;
 
-
-    public bool clipPlaying = false;
+    public bool isRunning = false;
+    public bool isWalking = false;
 
     // Use this for initialization
     void Start()
     {
+        footstepSFX = RuntimeManager.CreateInstance(footstepSound);
+        runningSFX = RuntimeManager.CreateInstance(runningSound);
+    }
 
+    public void playFootsteps()
+    {
+        footstepSFX.setParameterValue("PlayerWalking", 1f);
+        footstepSFX.start();
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(footstepSFX, gameObject.transform, GetComponent<Rigidbody>());
+    }
+    public void playRunning()
+    {
+        runningSFX.setParameterValue("PlayerRunning", 1f);
+        runningSFX.start();
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(runningSFX, gameObject.transform, GetComponent<Rigidbody>());
+    }
+    public void stopFootsteps()
+    {
+        footstepSFX.setParameterValue("PlayerNotWalking", 1f);
+        footstepSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+    }
+    public void stopRunning()
+    {
+        runningSFX.setParameterValue("PlayerNotRunning", 1f);
+        runningSFX.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Time.timeScale == 1 && GameObject.FindGameObjectWithTag("Player") == true)
+        if ((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && !Input.GetKey(KeyCode.LeftShift) && isWalking == false)
         {
-            if (!Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (clipPlaying == false) && (transform.GetChild(0).GetComponent<AudioSource>().isPlaying == false && GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().isGrounded == true))
-            {
-                transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(footsteps[Random.Range(0, 3)]);
-                // clipPlaying = true;
-            }
-
-            if (transform.GetChild(0).GetComponent<AudioSource>().isPlaying == true && GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().isGrounded == false)
-            {
-                transform.GetChild(0).GetComponent<AudioSource>().Stop();
-            }
-
-            if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-            {
-                transform.GetChild(0).GetComponent<AudioSource>().Stop();
-                clipPlaying = false;
-            }
-
-            if (Input.GetKeyDown(KeyCode.W) && transform.GetChild(1).GetComponent<AudioSource>().isPlaying == false && GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().isGrounded == true)
-            {
-                transform.GetChild(1).GetComponent<AudioSource>().PlayOneShot(jump);
-            }
+            isWalking = true;
+            playFootsteps();
         }
-        if (Time.timeScale == 1 && GameObject.FindGameObjectWithTag("Player") == true)
+        if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))
         {
-            if ((Input.GetKey(KeyCode.LeftShift) && (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))) && clipPlaying == false && (transform.GetChild(0).GetComponent<AudioSource>().isPlaying == false && GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().isGrounded == true))
-            {
-                transform.GetChild(0).GetComponent<AudioSource>().PlayOneShot(running[Random.Range(0, 4)]);
-                // clipPlaying = true;
-            }
-
-            if (transform.GetChild(0).GetComponent<AudioSource>().isPlaying == true && GameObject.FindGameObjectWithTag("Player").GetComponent<Movement>().isGrounded == false)
-            {
-                transform.GetChild(0).GetComponent<AudioSource>().Stop();
-            }
-
-            if (!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D))
-            {
-                transform.GetChild(0).GetComponent<AudioSource>().Stop();
-                clipPlaying = false;
-            }
-
+            isRunning = false;
+            isWalking = false;
+            stopFootsteps();
+            stopRunning();
+        }
+        if ((Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)) && Input.GetKey(KeyCode.LeftShift) && isRunning == false)
+        {
+            isRunning = true;
+            isWalking = false;
+            stopFootsteps();
+            playRunning();
+        }
+        if (!Input.GetKey(KeyCode.LeftShift))
+        {
+            isRunning = false;
+            stopRunning();
         }
     }
 }
