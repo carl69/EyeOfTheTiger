@@ -6,9 +6,9 @@ public class UIWater : MonoBehaviour {
 
     public float MaxThirst;
     public float CurThirst;
-    float WaterProsent;
-    PlayerWater Water;
-    GameObject player;
+    public float WaterProsent;
+    public PlayerWater Water;
+    public GameObject player;
 	// Use this for initialization
 	void Start () {
         player = GameObject.Find("Player");
@@ -17,11 +17,10 @@ public class UIWater : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (player == null)
+        if (!player)
         {
-            Water = player.GetComponent<PlayerWater>();
             player = GameObject.FindWithTag("Player");
-            Debug.Log("FUCK");
+            Water = player.GetComponent<PlayerWater>();
         }
 
 

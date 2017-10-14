@@ -8,7 +8,7 @@ public class PlayerPregnantScript : MonoBehaviour {
     public bool pregnant = false;
     public bool atDen = false;
     public GameObject partner;
-    GameObject hive;
+    public GameObject hive;
     public GameObject Cub;
     bool canBecomePregnant = false;
 
@@ -52,7 +52,7 @@ public class PlayerPregnantScript : MonoBehaviour {
 
         if (partner == null)
         {
-            partner = GameObject.Find("Partner");
+            partner = GameObject.FindGameObjectWithTag("Partner");
         }
 
 

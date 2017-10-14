@@ -9,7 +9,7 @@ public class CubBabi : MonoBehaviour {
      bool InHive;
     public float PickUpDistance;
      Transform Hive;
-     GameObject Carry;
+     public GameObject Carry;
      GameObject Player;
     public GameObject Cub;
      bool canPutInHive = false;
