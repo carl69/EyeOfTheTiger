@@ -21,7 +21,7 @@ public class PlayerPregnantScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         GameObject a = GameObject.FindGameObjectWithTag("Hive");
-        Debug.Log(a);
+
         if (pregnant == true)
         {
             if (ZbuttonForHive)

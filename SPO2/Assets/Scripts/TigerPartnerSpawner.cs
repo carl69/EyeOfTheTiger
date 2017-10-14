@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class TigerPartnerSpawner : MonoBehaviour {
     public GameObject Partner;
-    public bool SpawnTigerPartner = false;
 
 	// Use this for initialization
 	void Start () {
@@ -13,9 +12,9 @@ public class TigerPartnerSpawner : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (SpawnTigerPartner)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            if (!GameObject.FindGameObjectWithTag("Partner"))
+            if (!GameObject.FindGameObjectWithTag("Partner") && !GameObject.FindGameObjectWithTag("Cub"))
             {
                 SpawnPartner();
             }
