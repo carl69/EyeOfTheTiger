@@ -31,6 +31,8 @@ GameObject:
   - component: {fileID: 65757169459776818}
   - component: {fileID: 114539759320473250}
   - component: {fileID: 135939945267354486}
+  - component: {fileID: 114357813477043908}
+  - component: {fileID: 114215184321507626}
   m_Layer: 8
   m_Name: Player 2
   m_TagString: Player
@@ -2686,6 +2688,18 @@ MonoBehaviour:
   TigerPrefab: {fileID: 1006279963806992}
   textBox: {fileID: 0}
   deathTextShown: 0
+--- !u!114 &114215184321507626
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006279963806992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ListenerNumber: 0
 --- !u!114 &114256530771634504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2725,6 +2739,21 @@ MonoBehaviour:
   drink: 75
   MaxWater: 100
   drinkAudio: 0
+--- !u!114 &114357813477043908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1006279963806992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5be69eb1275461242ad4588703dd989f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  footstepSound: event:/Footsteps
+  runningSound: event:/Running
+  isRunning: 0
+  isWalking: 0
 --- !u!114 &114502701630950546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2754,6 +2783,7 @@ MonoBehaviour:
   pregnant: 0
   atDen: 0
   partner: {fileID: 0}
+  hive: {fileID: 0}
   Cub: {fileID: 1220669267260956, guid: 7966d21df289f8948a130888fba6caff, type: 2}
   zButton: {fileID: 0}
 --- !u!135 &135939945267354486
