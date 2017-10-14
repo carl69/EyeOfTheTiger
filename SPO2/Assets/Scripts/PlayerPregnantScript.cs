@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerPregnantScript : MonoBehaviour {
-    public bool GAY = true;
+    public bool ZbuttonForHive = true;
     public bool pregnant = false;
     public bool atDen = false;
     public GameObject partner;
@@ -24,7 +24,7 @@ public class PlayerPregnantScript : MonoBehaviour {
         Debug.Log(a);
         if (pregnant == true)
         {
-            if (GAY)
+            if (ZbuttonForHive)
             {
                 GameObject.FindGameObjectWithTag("Hive").transform.GetChild(0).gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = zButton;
                 GameObject.FindGameObjectWithTag("Hive").transform.GetChild(0).gameObject.GetComponentInChildren<Text>().text = "Get a cub";

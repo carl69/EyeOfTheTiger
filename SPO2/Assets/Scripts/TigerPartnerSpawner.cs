@@ -15,9 +15,9 @@ public class TigerPartnerSpawner : MonoBehaviour {
     void Update () {
         if (SpawnTigerPartner)
         {
-            if (true)
+            if (!GameObject.FindGameObjectWithTag("Partner"))
             {
-
+                SpawnPartner();
             }
         }
     }
