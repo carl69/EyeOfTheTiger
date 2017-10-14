@@ -28,7 +28,18 @@ public class Movement : MonoBehaviour
 
         
     }
-
+    private void Update()
+    {
+        if (Input.GetButtonDown("Jump") && jumped == false)
+        {
+            jumped = true;
+            Jump();
+        }
+        else if (jumped == true)
+        {
+            jumped = false;
+        }
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -60,15 +71,7 @@ public class Movement : MonoBehaviour
         isGrounded = Physics.Linecast(myTransform.position, tagGround.position, playerMask);
 
         Move(Input.GetAxisRaw("Horizontal"));
-        if (Input.GetButtonDown("Jump") && jumped == false)
-        {
-            jumped = true;
-            Jump();
-        }
-        else if (jumped == true)
-        {
-            jumped = false;
-        }
+        
 
 
 

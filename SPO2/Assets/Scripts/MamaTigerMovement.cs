@@ -9,6 +9,7 @@ public class MamaTigerMovement : MonoBehaviour {
     public float clock;
     [Tooltip("Current elements index active")]
     public int stage = 0;
+    public float vel;
     //Stats
     [Header("Stats of the Object")]
     [Tooltip("Can the object collide with the player?")]
@@ -122,6 +123,9 @@ public class MamaTigerMovement : MonoBehaviour {
     }
     private void Update()
     {
+        
+        vel = myBody.velocity.x;
+
         clock = Time.time - startTimeCheck;
         // basic mods that need constant update
         if (TargetBecomesPlayer[stage])

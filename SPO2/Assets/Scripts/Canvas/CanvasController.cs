@@ -24,7 +24,7 @@ public class CanvasController : MonoBehaviour {
 
     public void Play()
     {
-        SceneManager.LoadScene("Level02");
+        SceneManager.LoadScene("Tutorial01");
     }
 
     public void Restart()
