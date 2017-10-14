@@ -84,10 +84,10 @@ public class Movement : MonoBehaviour
 
     public void Move(float horizonalInput)
     {
-        //if (!canMoveInAir && !isGrounded)
-        //{
-        //    return;
-        //}
+        if (!canMoveInAir && !isGrounded)
+        {
+            return;
+        }
         if (Input.GetKey(KeyCode.LeftShift))
         {
             currRunningSpeed = addedRunningSpeed;
