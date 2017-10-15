@@ -16,7 +16,11 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
+<<<<<<< HEAD
 [LOG] AsyncManager::init                       : manager 00000000BBCAE8D8 isAsync 1 updatePeriod 0.02
+=======
+[LOG] AsyncManager::init                       : manager 00000000A21250A8 isAsync 1 updatePeriod 0.02
+>>>>>>> 7bbf87c45469e13e777ea41bf67194cda946c9b1
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -24,6 +28,7 @@
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
+<<<<<<< HEAD
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
@@ -91,6 +96,9 @@
 [LOG] SoundI::release                          :     done
 [LOG] SoundI::release                          : release codec. (0000000068F094B8)
 [LOG] SoundI::release                          : done
+=======
+[ERR] RuntimeBankModel::openFile               : Failed to open file 'Assets\FMODProject\EyeOfTheTiger\Build\Desktop/.strings.bank'
+>>>>>>> 7bbf87c45469e13e777ea41bf67194cda946c9b1
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
