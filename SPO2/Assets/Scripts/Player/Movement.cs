@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     public bool isGrounded = false;
     public bool updateStats;
 
+    public float jumping = 1;
     private bool jumped;
 
     public float xMovement;
@@ -30,19 +31,29 @@ public class Movement : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && jumped == false)
-        {
-            jumped = true;
-            Jump();
-        }
-        else if (jumped == true)
-        {
-            jumped = false;
-        }
+        
     }
     // Update is called once per frame
     void FixedUpdate()
     {
+        
+
+        if (Input.GetButton("Jump") && jumped == false )
+        {
+            jumped = true;
+            Jump();
+            jumping = 0.3f;
+        }
+        else if (jumped == true && jumping <= 0)
+        {
+            jumped = false;
+        }
+        if (jumping > 0)
+        {
+            jumping -= 1 * Time.deltaTime;
+        }
+
+
         if (myBody == null)
         {
             CheckStats();

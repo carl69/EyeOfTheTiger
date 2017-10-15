@@ -26,9 +26,9 @@ public class TigerAnimatorController : MonoBehaviour {
         else if (Input.GetKeyDown(KeyCode.S))
             transform.forward = new Vector3(0f, 0f, -1f);
             */
-        if (Tiger.GetComponent<Movement>().xMovement<0)
+        if (Tiger.GetComponent<Movement>().xMovement<-0.5f)
             transform.forward = new Vector3(-1f, 0f, 0f);
-        else if (Tiger.GetComponent<Movement>().xMovement > 0)
+        else if (Tiger.GetComponent<Movement>().xMovement > 0.5f)
             transform.forward = new Vector3(1f, 0f, 0f);
     }
 }
