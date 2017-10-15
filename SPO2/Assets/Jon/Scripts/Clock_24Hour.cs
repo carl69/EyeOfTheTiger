@@ -10,6 +10,8 @@ private int seconds = 0;
 private int minutes = 0;
 private int hours = 0;
 
+public int ingameSeconds;
+
 public bool isNight = false;
 public bool isDay = false;
 
@@ -28,7 +30,7 @@ private IEnumerator Playtimer()
     while (true)
     {
         yield return new WaitForSeconds(1);
-        playTime += 600;
+        playTime += ingameSeconds;
         seconds = (playTime % 60);
         minutes = (playTime / 60) % 60;
         hours = (playTime / 3600) % 24;
