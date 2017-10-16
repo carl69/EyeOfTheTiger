@@ -63,7 +63,7 @@ public class FollowCamera : MonoBehaviour {
 			if (counter2 >0)counter2--;
 			if (counter2 <0)counter2++;
 			if(-1 <= counter2 && counter2 <=1) counter2 = 0 ;*/
-			print (transform.position.z);
+			//print (transform.position.z);
 			x = transform.position.x + (GameObject.FindGameObjectWithTag ("Player").transform.position.x - transform.position.x) / Smooth;
 			zz = startPos.z;
 			yy = startPos.y;

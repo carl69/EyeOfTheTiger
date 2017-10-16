@@ -14,16 +14,17 @@ public class ParkRanger : MonoBehaviour
     public GameObject[] players;
     int counter = 0;
 
+    private SpriteRenderer checkmark;
+
     void Start()
     {
 
         rb = GetComponent<Rigidbody>();
 		tigre = GameObject.FindGameObjectWithTag("Cub");
-
         players = new GameObject[10];
 
-
-
+        checkmark = transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.GetComponent<SpriteRenderer>();
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,6 +32,12 @@ public class ParkRanger : MonoBehaviour
         if(other.gameObject.tag == "Cub")
         {
             tigre = GameObject.FindGameObjectWithTag("Cub");
+            Color alphaValue = checkmark.color;
+            alphaValue.a = 1;             
+            checkmark.color = alphaValue;
+            Destroy(transform.GetChild(1).gameObject, 4);
+
+
         }
     }
     void Update()
