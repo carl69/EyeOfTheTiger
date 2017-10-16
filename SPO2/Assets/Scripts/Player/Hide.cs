@@ -41,7 +41,7 @@ public class Hide : MonoBehaviour {
 
     }
 
-	private void OnTriggerEnter (Collider other)
+	private void OnTriggerStay (Collider other)
 	{
 
 		if (other.gameObject.tag == "Bush")
@@ -49,16 +49,16 @@ public class Hide : MonoBehaviour {
 			hiden = true;
 		}
 	}
-	private void OnTriggerExit(Collider collision)
-	{
-		if (collision.gameObject.tag == "Bush")
-		{
-			hiden = false;
-		}
-	}
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "Bush")
+        {
+            hiden = false;
+        }
+    }
 
 
-	public void intoHide()
+    public void intoHide()
 	{
 		foreach (Renderer r in renderChildren)
 		{
