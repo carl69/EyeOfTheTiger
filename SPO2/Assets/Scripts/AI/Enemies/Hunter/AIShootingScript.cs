@@ -10,16 +10,19 @@ public class AIShootingScript : MonoBehaviour {
 
     public float speed;
 
+    bool shoot = false;
+    public float fireRate = 4;
+    float timer = 0;
+
 	
 	// Update is called once per frame
 	void Update () {
-	}
-
-    private void OnTriggerEnter(Collider p)
-    {
-        if (p.tag == "Player" || p.tag == "Cub" || p.tag == "Mother")
+        if (shoot == true && timer <= 0)
         {
-            //Instantiate(Bullet, new Vector3(transform.position.x, transform.position.y, 0), parent.transform.rotation);
+            timer = fireRate;
+
+
+
 
             //The Bullet instantiation happens here.
             GameObject Temporary_Bullet_Handler;
@@ -38,9 +41,29 @@ public class AIShootingScript : MonoBehaviour {
             //Tell the bullet to be "pushed" forward by an amount set by Bullet_Forward_Force.
             Temporary_RigidBody.AddForce(transform.right * speed * Time.deltaTime);
 
+        }
+        else if (shoot == true)
+        {
+            timer -= 1 * Time.deltaTime;
+        }
+        else if(timer != 1){
+            timer = 1;
+        }
 
+	}
 
-
+    private void OnTriggerEnter(Collider p)
+    {
+        if (p.tag == "Player" || p.tag == "Cub" || p.tag == "Mother")
+        {
+            shoot = true;
+        }
+    }
+    private void OnTriggerExit(Collider p)
+    {
+        if (p.tag == "Player" || p.tag == "Cub" || p.tag == "Mother")
+        {
+            shoot = false;
         }
     }
 }
