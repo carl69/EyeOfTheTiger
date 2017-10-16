@@ -16,15 +16,7 @@
 [LOG] Thread::initThread                       : Init FMOD stream thread. Priority: 2, Stack Size: 65536, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Priority: 3, Stack Size: 49152, Semaphore: No, Sleep Time: 0, Looping: Yes.
-<<<<<<< HEAD
-[LOG] AsyncManager::init                       : manager 000000003B116428 isAsync 1 updatePeriod 0.02
-=======
-<<<<<<< HEAD
-[LOG] AsyncManager::init                       : manager 00000000BBCAE8D8 isAsync 1 updatePeriod 0.02
-=======
-[LOG] AsyncManager::init                       : manager 00000000A21250A8 isAsync 1 updatePeriod 0.02
->>>>>>> 7bbf87c45469e13e777ea41bf67194cda946c9b1
->>>>>>> 8dc2de71343e1d657893abf9332e13b7e6ad050b
+[LOG] AsyncManager::init                       : manager 000000003F70C8E8 isAsync 1 updatePeriod 0.02
 [LOG] Thread::initThread                       : Init FMOD Studio update thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
@@ -32,11 +24,6 @@
 [LOG] PlaybackSystem::init                     : done
 [LOG] Thread::initThread                       : Init FMOD Studio bank load thread. Priority: 0, Stack Size: 65536, Semaphore: No, Sleep Time: 1, Looping: No.
 [LOG] Manager::init                            : done.
-<<<<<<< HEAD
-[LOG] Profile::init                            : Profiler listening on port: 9264
-[ERR] RuntimeBankModel::openFile               : Failed to open file 'Assets\FMODProject\EyeOfTheTiger\Build\Desktop/.strings.bank'
-=======
-<<<<<<< HEAD
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
 [LOG] Manager::readBank                        : fileversion = 99, compatVersion = 99 (oldest = 44, newest = 99)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
@@ -45,14 +32,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 16000
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 15424
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000067E8F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000785AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF87D625C70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF87D625C40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF87D625D40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF87D625DF0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000976F09F8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFAB5435C70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFAB5435C40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFAB5435D40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFAB5435DF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000000005A519C68
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Format has 1 subsounds.
@@ -61,7 +48,7 @@
 [LOG] SystemI::createSoundInternal             : creating subsound 0/1
 [LOG] SystemI::createSample                    : mode 02000202 length 33728 samples, lengthbytes 7776
 [LOG] SystemI::createSample                    : channels = 2
-[LOG] SystemI::createSample                    : output = 00000000BB9B0EF8
+[LOG] SystemI::createSample                    : output = 000000005A542198
 [LOG] OutputSoftware::createSample             : lengthpcm 33728, lengthbytes 7776, channels 2, format 2, freq 48000, mode 0200020a
 [LOG] SystemI::createSoundInternal             : No name found in file, use filename.
 [LOG] SystemI::createSoundInternal             : done.  OpenState now = FMOD_OPENSTATE_READY.
@@ -71,14 +58,14 @@
 [LOG] SystemI::createSoundInternal             : exinfo->length             = 16000
 [LOG] SystemI::createSoundInternal             : exinfo->fileoffset         = 15424
 [LOG] SystemI::createSoundInternal             : exinfo->numsubsounds       = 1
-[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 0000000067E8F5FC
+[LOG] SystemI::createSoundInternal             : exinfo->inclusionlist      = 00000000785AF5FC
 [LOG] SystemI::createSoundInternal             : exinfo->inclusionlistnum   = 1
 [LOG] SystemI::createSoundInternal             : exinfo->suggestedsoundtype = 5
-[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FF87D625C70
-[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FF87D625C40
-[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FF87D625D40
-[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FF87D625DF0
-[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 00000000976F09F8
+[LOG] SystemI::createSoundInternal             : exinfo->useropen           = 00007FFAB5435C70
+[LOG] SystemI::createSoundInternal             : exinfo->userclose          = 00007FFAB5435C40
+[LOG] SystemI::createSoundInternal             : exinfo->userread           = 00007FFAB5435D40
+[LOG] SystemI::createSoundInternal             : exinfo->userseek           = 00007FFAB5435DF0
+[LOG] SystemI::createSoundInternal             : exinfo->fileuserdata       = 000000005A519C68
 [LOG] SystemI::createSoundInternal             : exinfo->initialseekpostype = 1
 [LOG] SystemI::DSPCodecPoolRegister            : register codec pool for pool type 5
 [LOG] SystemI::createSoundInternal             : Format has 1 subsounds.
@@ -87,27 +74,25 @@
 [LOG] SystemI::createSoundInternal             : creating subsound 0/1
 [LOG] SystemI::createSample                    : mode 02000202 length 35584 samples, lengthbytes 8032
 [LOG] SystemI::createSample                    : channels = 2
-[LOG] SystemI::createSample                    : output = 00000000BB9B0EF8
+[LOG] SystemI::createSample                    : output = 000000005A542198
 [LOG] OutputSoftware::createSample             : lengthpcm 35584, lengthbytes 8032, channels 2, format 2, freq 48000, mode 0200020a
 [LOG] SystemI::createSoundInternal             : No name found in file, use filename.
 [LOG] SystemI::createSoundInternal             : done.  OpenState now = FMOD_OPENSTATE_READY.
 
-[LOG] SoundI::release                          :  (0000000068F09068)
-[LOG] SoundI::release                          : release subsounds. (0000000068F09068)
-[LOG] SoundI::release                          :     SFX_TigerFootsteps3 (0000000051FDA4F8)
+[LOG] SystemI::mixerSuspend                    : Suspending output.
+[LOG] SystemI::mixerResume                     : Resuming output.
+[LOG] SoundI::release                          :  (000000005A438198)
+[LOG] SoundI::release                          : release subsounds. (000000005A438198)
+[LOG] SoundI::release                          :     SFX_TigerFootsteps3 (000000005A3A4CF8)
 [LOG] SoundI::release                          :     done
-[LOG] SoundI::release                          : release codec. (0000000068F09068)
+[LOG] SoundI::release                          : release codec. (000000005A438198)
 [LOG] SoundI::release                          : done
-[LOG] SoundI::release                          :  (0000000068F094B8)
-[LOG] SoundI::release                          : release subsounds. (0000000068F094B8)
-[LOG] SoundI::release                          :     SFX_Tiger_running04 (0000000051FDAEB8)
+[LOG] SoundI::release                          :  (000000005A438028)
+[LOG] SoundI::release                          : release subsounds. (000000005A438028)
+[LOG] SoundI::release                          :     SFX_Tiger_running04 (000000005A3A51D8)
 [LOG] SoundI::release                          :     done
-[LOG] SoundI::release                          : release codec. (0000000068F094B8)
+[LOG] SoundI::release                          : release codec. (000000005A438028)
 [LOG] SoundI::release                          : done
-=======
-[ERR] RuntimeBankModel::openFile               : Failed to open file 'Assets\FMODProject\EyeOfTheTiger\Build\Desktop/.strings.bank'
->>>>>>> 7bbf87c45469e13e777ea41bf67194cda946c9b1
->>>>>>> 8dc2de71343e1d657893abf9332e13b7e6ad050b
 [LOG] Thread::callback                         : FMOD Studio update thread finished.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
