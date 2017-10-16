@@ -2516,7 +2516,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 6720d5cfdee20ce49a2c3c1b8f859e44, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2777,18 +2777,18 @@ TextMesh:
   m_GameObject: {fileID: 1411821419289344}
   m_Text: 
   m_OffsetZ: 0
-  m_CharacterSize: 0.77
-  m_LineSpacing: 0
-  m_Anchor: 0
+  m_CharacterSize: 1
+  m_LineSpacing: 1
+  m_Anchor: 1
   m_Alignment: 0
   m_TabSize: 4
-  m_FontSize: 14
+  m_FontSize: 17
   m_FontStyle: 3
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 6720d5cfdee20ce49a2c3c1b8f859e44, type: 3}
   m_Color:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4278190080
 --- !u!114 &114174022122450014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2818,10 +2818,10 @@ MonoBehaviour:
   textToDisplay:
   - I caught myself a wild boar the other day...
   - Fuck this jungle man.
-  - I think I saw something over there.
+  - I think I saw something over here.
   - Everyday is the same.
-  - I hope no one sees me doing this.
-  textBox: {fileID: 21300000, guid: 3005e5ba95c34f04f958086ee612def9, type: 3}
+  - I hope no-one sees me doing this.
+  textBox: {fileID: 21300000, guid: e26eafd02a414c548b811c8ece85cfb0, type: 3}
 --- !u!114 &114322929899351636
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3063,7 +3063,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -313874202
+  randomSeed: -203573460
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -6355,7 +6355,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 13.78, y: 3.44}
+  m_Size: {x: 22.699999, y: 17}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 0
@@ -6367,15 +6367,15 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1411821419289344}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.66}
-  m_LocalScale: {x: 0.5828839, y: 1.3890285, z: 1.6661228}
+  m_LocalPosition: {x: 0, y: 0, z: -1.1}
+  m_LocalScale: {x: 0.6688409, y: 1.8223028, z: 1.4023607}
   m_Children: []
   m_Father: {fileID: 224878099595041462}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -6.11, y: 1.04}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -0.97, y: 1.95}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224878099595041462
@@ -6385,8 +6385,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1519852510903082}
   m_LocalRotation: {x: -0, y: 0.70710576, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 0, y: 0, z: 1.81}
-  m_LocalScale: {x: 0.8556154, y: 0.27697444, z: 0.3757805}
+  m_LocalPosition: {x: 0, y: 0, z: 4.36}
+  m_LocalScale: {x: 0.34271106, y: 0.14518902, z: 0.1969828}
   m_Children:
   - {fileID: 224610375301548794}
   m_Father: {fileID: 4120037527664830}
@@ -6394,6 +6394,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.04, y: 2.7149}
+  m_AnchoredPosition: {x: -0.05, y: 2.73}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

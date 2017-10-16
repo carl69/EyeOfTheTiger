@@ -9,8 +9,6 @@ public class CanvasController : MonoBehaviour {
     public GameObject textBox;
     public Transform curChild;
 
-    public bool isPaused = false;
-
     // Use this for initialization
     void Start()
     {
@@ -48,23 +46,10 @@ public class CanvasController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-       
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Time.timeScale == 1)
-            {
-                textBox.SetActive(true);
-                isPaused = true;
-                Time.timeScale = 0;
-            }
-            else
-            {
-                textBox.SetActive(false);
-                isPaused = false;
-                Time.timeScale = 1;
-            }
-            
+            textBox.SetActive(true);
+            Time.timeScale = 0;
         }
-        
     }
 }

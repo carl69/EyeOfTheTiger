@@ -4,64 +4,20 @@ using UnityEngine;
 
 public class TigerPartnerSpawner : MonoBehaviour {
     public GameObject Partner;
-    food Pfood;
-    GameObject player;
-    public float spendingfood = 0;
-    float betweeAdds;
+
 	// Use this for initialization
 	void Start () {
-        
-        player = GameObject.FindGameObjectWithTag("Player");
-        Pfood = player.GetComponent<food>();
-        
+
     }
 
     // Update is called once per frame
     void Update () {
-        if (!player)
+        if (Input.GetKeyDown(KeyCode.F))
         {
-            player = GameObject.FindGameObjectWithTag("Player");
-            Pfood = player.GetComponent<food>();
-        }
-
-        if (Input.GetKey(KeyCode.F))
-        {
-            if (Pfood.eaten >= 10)
+            if (!GameObject.FindGameObjectWithTag("Partner") && !GameObject.FindGameObjectWithTag("Cub"))
             {
-                if (spendingfood == 0)
-                {
-                    Pfood.eaten -= 10;
-                    spendingfood = 10;
-                }
-
-
-
-                if (Pfood.eaten >= 15)
-                {
-                    if (spendingfood == 10)
-                    {
-                        Pfood.eaten -= 10;
-                        spendingfood = 20;
-
-
-                        if (!GameObject.FindGameObjectWithTag("Partner") && !GameObject.FindGameObjectWithTag("Cub"))
-                        {
-                            SpawnPartner();
-                        }
-
-                    }
-                }
+                SpawnPartner();
             }
-
-
-
-
-
-        }
-        else if (spendingfood != 0)
-        {
-            Pfood.eaten += spendingfood;
-            spendingfood = 0;
         }
     }
     void SpawnPartner() {
