@@ -7,10 +7,12 @@ public class FollowCamera : MonoBehaviour {
 	public float Smooth = 10.0f;
 	public float counter = 0.0f, counter2 = 0.0f ;
 	float x, z, y, yy , zz;
+    public Vector3 startPos;
 
 	// Use this for initialization
 	void Start () {
 		x = GameObject.FindGameObjectWithTag("Player").transform.position.x;
+        startPos = gameObject.transform.position;
 		//Vector3 aux = new Vector3 (x, y+7, transform.position.z);
 
 	}
@@ -63,8 +65,8 @@ public class FollowCamera : MonoBehaviour {
 			if(-1 <= counter2 && counter2 <=1) counter2 = 0 ;*/
 			print (transform.position.z);
 			x = transform.position.x + (GameObject.FindGameObjectWithTag ("Player").transform.position.x - transform.position.x) / Smooth;
-			zz = -28;
-			yy = 12;
+			zz = startPos.z;
+			yy = startPos.y;
 			Vector3 aux = new Vector3 (x,yy /*transform.position.y*/ , zz/*transform.position.z*/);
 			transform.position = aux;
 			transform.localRotation = Quaternion.Euler(0.0f,0.0f /*counter*/, 0.0f);
