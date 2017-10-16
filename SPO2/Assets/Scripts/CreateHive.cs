@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CreateHive : MonoBehaviour {
-	public GameObject Partner;
+	public GameObject Hives;
 	GameObject Player;
 	food Pfood;
-	public float usedFood = 0;
+	public float usedFood = 0, y = 0.0f;
 	public float timeBetween = 3;
 	float timer = 0;
 
@@ -28,7 +28,7 @@ public class CreateHive : MonoBehaviour {
 		}
 
 
-		if (Input.GetKey(KeyCode.F) && !GameObject.FindGameObjectWithTag("Partner"))
+		if (Input.GetKey(KeyCode.F))
 		{
 
 
@@ -55,16 +55,9 @@ public class CreateHive : MonoBehaviour {
 			}
 			if (usedFood == 20)
 			{
-				if (!GameObject.FindGameObjectWithTag("Partner") && !GameObject.FindGameObjectWithTag("Cub"))
-				{
-					SpawnPartner();
+				
+					SpawnHive();
 					usedFood = 0;
-				}
-				else
-				{
-					Pfood.eaten += usedFood;
-					usedFood = 0;
-				}
 			}
 		}
 		else {
@@ -75,9 +68,8 @@ public class CreateHive : MonoBehaviour {
 			}
 		}
 	}
-	void SpawnPartner() {
-		int SpawnPoint = Random.Range(0, transform.childCount);
-		GameObject partnerSpawner = this.gameObject.transform.GetChild(SpawnPoint).gameObject;
-		Instantiate(Partner, new Vector3(partnerSpawner.transform.position.x, partnerSpawner.transform.position.y, 0), Quaternion.identity);
+	void SpawnHive() {
+		y = Player.transform.position.y - 3;
+		Instantiate(Hives, new Vector3(Player.transform.position.x, y, 5), Quaternion.identity);
 	}
 }

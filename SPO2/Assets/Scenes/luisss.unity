@@ -223,6 +223,11 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 1.28
       objectReference: {fileID: 0}
+    - target: {fileID: 114227816566025498, guid: 6881d1861dfcae84983d984aad3d1381,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6881d1861dfcae84983d984aad3d1381, type: 2}
   m_IsPrefabParent: 0
@@ -1926,7 +1931,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4323518007410838, guid: 2f3560dedfa9b7848b8501f44b5276d8, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 147.16913
+      value: 76.4
       objectReference: {fileID: 0}
     - target: {fileID: 4323518007410838, guid: 2f3560dedfa9b7848b8501f44b5276d8, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2154,6 +2159,25 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1772378553}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1831238095 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1504782809385564, guid: 6881d1861dfcae84983d984aad3d1381,
+    type: 2}
+  m_PrefabInternal: {fileID: 292848613}
+--- !u!114 &1831238096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1831238095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a3588b29935c5b40a7f5cd30d4464f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Partner: {fileID: 1397324570918480, guid: ce05b90df40c93e43b29109bc5e9e1c4, type: 2}
+  usedFood: 0
+  timeBetween: 3
 --- !u!1 &1880277296
 GameObject:
   m_ObjectHideFlags: 0
