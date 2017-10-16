@@ -31,8 +31,6 @@ GameObject:
   - component: {fileID: 65757169459776818}
   - component: {fileID: 114539759320473250}
   - component: {fileID: 135939945267354486}
-  - component: {fileID: 114357813477043908}
-  - component: {fileID: 114215184321507626}
   m_Layer: 8
   m_Name: Player 2
   m_TagString: Player
@@ -1764,7 +1762,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006279963806992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 147.16913, y: 0.6000004, z: 1.1793747}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4006578597597086}
@@ -2688,18 +2686,6 @@ MonoBehaviour:
   TigerPrefab: {fileID: 1006279963806992}
   textBox: {fileID: 0}
   deathTextShown: 0
---- !u!114 &114215184321507626
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006279963806992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ListenerNumber: 0
 --- !u!114 &114256530771634504
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2739,21 +2725,6 @@ MonoBehaviour:
   drink: 75
   MaxWater: 100
   drinkAudio: 0
---- !u!114 &114357813477043908
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006279963806992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5be69eb1275461242ad4588703dd989f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  footstepSound: event:/Footsteps
-  runningSound: event:/Running
-  isRunning: 0
-  isWalking: 0
 --- !u!114 &114502701630950546
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2811,7 +2782,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 727d3821dfc12e44aa5f9fe162389f5a, type: 2}
+  - {fileID: 2100000, guid: 57797f82ec4051345b21df881640d5f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2911,7 +2882,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 727d3821dfc12e44aa5f9fe162389f5a, type: 2}
+  - {fileID: 2100000, guid: 57797f82ec4051345b21df881640d5f5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

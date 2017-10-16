@@ -2645,8 +2645,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 18.23, y: 3.29, z: 5.71}
-  m_Center: {x: 3.4322677, y: -0.02342987, z: -0.0000006475767}
+  m_Size: {x: 12.919986, y: 3.29, z: 5.71}
+  m_Center: {x: 0.7772576, y: -0.02342987, z: 0.000000053106003}
 --- !u!65 &65489152005082136
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2669,8 +2669,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 7.6287365, y: 5.588725, z: 35.357227}
-  m_Center: {x: -0.35350657, y: 2.475418, z: 0.6944332}
+  m_Size: {x: 7.6287365, y: 6.582156, z: 41.267258}
+  m_Center: {x: -0.35350657, y: 2.9721336, z: 1.8980618}
 --- !u!82 &82493051502723524
 AudioSource:
   m_ObjectHideFlags: 1
@@ -2817,10 +2817,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textToDisplay:
   - I caught myself a wild boar the other day...
-  - Fuck this jungle man.
-  - I think I saw something over here.
-  - Everyday is the same.
-  - I hope no-one sees me doing this.
+  - This jungle all looks the same
+  - I think I saw something over there
+  - Everyday is the same
+  - I hope no one sees me doing this
+  - I wish there was another way
+  - Was that a tiger I spotted?
+  - Today I'll get that tiger
+  - I hope I don't get caught
+  - Where did it go?
   textBox: {fileID: 21300000, guid: e26eafd02a414c548b811c8ece85cfb0, type: 3}
 --- !u!114 &114322929899351636
 MonoBehaviour:
@@ -2870,8 +2875,8 @@ MonoBehaviour:
   clock: 0
   stage: 0
   vel: 0
-  collideWithPlayer: 0
-  walkingSpeed: 5
+  collideWithPlayer: 1
+  walkingSpeed: 0
   RunningSpeed: 10
   jumpVelocity: 0
   allStringsInCommando:
@@ -2886,6 +2891,10 @@ MonoBehaviour:
   - RunFromTarget
   - GoToStage
   Commando:
+  - Wait
+  - 
+  - 
+  - 
   - 
   allStringsInNextStage:
   - Timed
@@ -2898,17 +2907,27 @@ MonoBehaviour:
   - TargetDestroyed
   nextStage:
   - 
-  targetPoint: []
+  targetPoint:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   semiRandomTurnPoints: 0
   howRandom: 0
   delayTime: []
   Distance: []
-  TargetBecomesPlayer: 00
+  TargetBecomesPlayer: 0000000000
   targetPointsBecomeTargets: 0
-  Targets: []
+  Targets:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   timeOfDay: []
   GoToStage: 
-  waitingDis: 0
+  waitingDis: 2
 --- !u!137 &137243039448866598
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
