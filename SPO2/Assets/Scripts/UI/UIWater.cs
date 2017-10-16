@@ -11,7 +11,7 @@ public class UIWater : MonoBehaviour {
     public GameObject player;
 	// Use this for initialization
 	void Start () {
-        player = GameObject.Find("Player");
+        player = GameObject.FindGameObjectWithTag("Player");
         Water = player.GetComponent<PlayerWater>();
     }
 	
