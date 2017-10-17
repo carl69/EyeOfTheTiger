@@ -9,7 +9,7 @@ public class CreateHive : MonoBehaviour {
 	public float usedFood = 0, y = 0.0f;
 	public float timeBetween = 3;
 	float timer = 0, Pos1 = 0.0f, Pos2 = 0.0f;
-	bool yeah = false;
+
 	// Use this for initialization
 	void Start () {
 		if (!Player)
