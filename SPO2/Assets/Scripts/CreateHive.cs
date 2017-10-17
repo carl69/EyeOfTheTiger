@@ -8,7 +8,7 @@ public class CreateHive : MonoBehaviour {
 	food Pfood;
 	public float usedFood = 0, y = 0.0f;
 	public float timeBetween = 3;
-	float timer = 0;
+	float timer = 0, Pos1 = 0.0f, Pos2 = 0.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -55,9 +55,9 @@ public class CreateHive : MonoBehaviour {
 			}
 			if (usedFood == 20)
 			{
-				
-					SpawnHive();
-					usedFood = 0;
+
+				SpawnHive();
+				usedFood = 0;
 			}
 		}
 		else {
@@ -69,7 +69,12 @@ public class CreateHive : MonoBehaviour {
 		}
 	}
 	void SpawnHive() {
-		y = Player.transform.position.y - 3;
-		Instantiate(Hives, new Vector3(Player.transform.position.x, y, 5), Quaternion.identity);
+
+		if (Pos1 >= Player.transform.position.x || Pos2 <= Player.transform.position.x) {
+			y = Player.transform.position.y;
+			Instantiate (Hives, new Vector3 (Player.transform.position.x, y, 5), Quaternion.Euler (-120, 0, -180));
+			Pos1 = Player.transform.position.x - 20 ;
+			Pos2 = Player.transform.position.x + 20 ;
+		}
 	}
 }
