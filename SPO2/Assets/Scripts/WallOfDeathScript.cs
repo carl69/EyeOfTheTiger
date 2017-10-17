@@ -11,9 +11,17 @@ public class WallOfDeathScript : MonoBehaviour {
     public bool isPlayingAudio = false;
     private bool hasStarted = false;
 
-	// Use this for initialization
-	void Start () {
-		
+    public GameObject clock;
+    public Clock_24Hour clockScript;
+    public bool notDriveAtNight = false;
+    public bool haveClockInTheScene;
+    // Use this for initialization
+    void Start () {
+        if (!clock && haveClockInTheScene)
+        {
+            clock = GameObject.FindGameObjectWithTag("Clock");
+            clockScript = clock.GetComponent<Clock_24Hour>();
+        }
 	}
 	
 	// Update is called once per frame
@@ -22,16 +30,36 @@ public class WallOfDeathScript : MonoBehaviour {
         timeLeft -= Time.deltaTime;
         if (timeLeft < 0)
         {
-            if (hasStarted == false)
+            if (notDriveAtNight)
             {
-                GameObject.Find("DeforestationStart").GetComponent<Deforestation_start>().playHorn = true;
-                hasStarted = true;
+                if (clockScript.isDay)
+                {
+                    if (hasStarted == false)
+                    {
+                        GameObject.Find("DeforestationStart").GetComponent<Deforestation_start>().playHorn = true;
+                        hasStarted = true;
+                    }
+                    transform.position = new Vector3(transform.position.x + Time.deltaTime * speed, transform.position.y, transform.position.z);
+                    if (isPlayingAudio == false)
+                    {
+                        GetComponent<AudioSource>().Play();
+                        isPlayingAudio = true;
+                    }
+                }
             }
-            transform.position = new Vector3(transform.position.x + Time.deltaTime * speed, transform.position.y, transform.position.z);
-            if (isPlayingAudio == false)
+            else
             {
-                GetComponent<AudioSource>().Play();
-                isPlayingAudio = true;
+                if (hasStarted == false)
+                {
+                    GameObject.Find("DeforestationStart").GetComponent<Deforestation_start>().playHorn = true;
+                    hasStarted = true;
+                }
+                transform.position = new Vector3(transform.position.x + Time.deltaTime * speed, transform.position.y, transform.position.z);
+                if (isPlayingAudio == false)
+                {
+                    GetComponent<AudioSource>().Play();
+                    isPlayingAudio = true;
+                }
             }
         }
 	}

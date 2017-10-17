@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TigerPartnerSpawner : MonoBehaviour {
     public GameObject Partner;
-    GameObject Player;
-    food Pfood;
+    public GameObject Player;
+    public food Pfood;
     public float usedFood = 0;
     public float timeBetween = 3;
     float timer = 0;
@@ -36,10 +36,10 @@ public class TigerPartnerSpawner : MonoBehaviour {
             {
 
 
-                usedFood = 10;
-                Pfood.eaten -= 10;
+                usedFood = 20;
+                Pfood.eaten -= 20;
             }
-            if (usedFood == 10)
+            if (usedFood == 20)
             {
                 if (timer < timeBetween)
                 {
@@ -47,13 +47,13 @@ public class TigerPartnerSpawner : MonoBehaviour {
                     return;
                 }
                 
-                    usedFood = 20;
-                    Pfood.eaten -= 10;
+                    usedFood = 40;
+                    Pfood.eaten -= 20;
                     //**************//
                     timer = 0;
                 
             }
-            if (usedFood == 20)
+            if (usedFood == 40)
             {
                 if (!GameObject.FindGameObjectWithTag("Partner") && !GameObject.FindGameObjectWithTag("Cub"))
                 {
