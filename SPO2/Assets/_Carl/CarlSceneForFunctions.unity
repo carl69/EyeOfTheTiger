@@ -1401,23 +1401,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1271682851}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1275717721 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1006279963806992, guid: 2f3560dedfa9b7848b8501f44b5276d8,
-    type: 2}
-  m_PrefabInternal: {fileID: 1635897901}
---- !u!135 &1275717734
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1275717721}
-  m_Material: {fileID: 13400000, guid: dd93a4aacf300244d8085a0042389a75, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1287565221
 GameObject:
   m_ObjectHideFlags: 0
@@ -1962,6 +1945,12 @@ Prefab:
       propertyPath: TigerPrefab
       value: 
       objectReference: {fileID: 1006279963806992, guid: 2f3560dedfa9b7848b8501f44b5276d8,
+        type: 2}
+    - target: {fileID: 135939945267354486, guid: 2f3560dedfa9b7848b8501f44b5276d8,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: dd93a4aacf300244d8085a0042389a75,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2f3560dedfa9b7848b8501f44b5276d8, type: 2}
