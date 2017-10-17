@@ -2,12 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CreateHive : MonoBehaviour {
-	using System.Collections;
-	using System.Collections.Generic;
-	using UnityEngine;
-
-	public class CreateHive : MonoBehaviour {
+	public class CreateHive: MonoBehaviour {
 		public GameObject Hives;
 		GameObject Player;
 		food Pfood;
