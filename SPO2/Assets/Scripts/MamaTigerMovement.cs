@@ -96,6 +96,8 @@ public class MamaTigerMovement : MonoBehaviour {
     Movement pMovement;
     float startTimeCheck;
 
+    //vel
+    Vector3 previous;
 
     private void Start()
     {
@@ -123,8 +125,11 @@ public class MamaTigerMovement : MonoBehaviour {
     }
     private void Update()
     {
-        
-        vel = myBody.velocity.x;
+
+        vel = ((transform.position - previous).magnitude) / Time.deltaTime;
+        previous = transform.position;
+
+        //vel = myBody.velocity.x;
 
         clock = Time.time - startTimeCheck;
         // basic mods that need constant update
@@ -394,20 +399,19 @@ public class MamaTigerMovement : MonoBehaviour {
         float dist = Vector3.Distance(curTarget.position, transform.position);
         if (semiRandomTurnPoints)
         {
-            if (dist <= 1f + distanceForRandom)
+            if (dist <= 1f + Random.Range(0, howRandom))
             {
                 //Find The Next Target
                 if (curTarget == target0)
                 {
+                    Debug.Log(curTarget + "OUO");
                     curTarget = target1;
-
-                    distanceForRandom = Random.Range(0, howRandom);
                 }
                 else if (curTarget == target1)
                 {
-                    //curTarget = target0;
+                    Debug.Log(curTarget + "WUW");
 
-                    distanceForRandom = Random.Range(0, howRandom);
+                    curTarget = target0;
                 }
 
             }

@@ -24,7 +24,8 @@ public class CanvasController : MonoBehaviour {
 
     public void Play()
     {
-        SceneManager.LoadScene("Tutorial01");
+         int y = SceneManager.GetActiveScene().buildIndex;
+            SceneManager.LoadScene(y + 1);
     }
 
     public void Restart()
@@ -46,10 +47,18 @@ public class CanvasController : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.P))
         {
-            textBox.SetActive(true);
-            Time.timeScale = 0;
+            if (Time.timeScale == 1)
+            {
+                textBox.SetActive(true);
+                Time.timeScale = 0;
+            }
+            else
+            {
+                textBox.SetActive(false);
+                Time.timeScale = 1;
+            }
         }
     }
 }
