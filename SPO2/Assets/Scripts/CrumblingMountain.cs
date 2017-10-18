@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Object_destructable1 : MonoBehaviour {
+public class CrumblingMountain : MonoBehaviour {
     public float deathTimer = 10f;
     public bool isBeingDestroyed=false;
     public GameObject particles;
