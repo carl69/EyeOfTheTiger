@@ -19,8 +19,12 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
     public bool Done = false;
     public GameObject ActivateScript;
 
-	// Use this for initialization
-	void Start () {
+
+    public bool notCanGetMoreCubsThenOne = false;
+    private GameObject cub;
+
+    // Use this for initialization
+    void Start () {
         ActivateScript.SetActive(false);
         timer = foodGivingRate;
         if (!player)
@@ -55,6 +59,28 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (!cub && notCanGetMoreCubsThenOne)
+        {
+            cub = GameObject.FindGameObjectWithTag("Cub");
+        }
+        else if( notCanGetMoreCubsThenOne)
+        {
+            if (spentFood != 0)
+            {
+                parentToGraySprite.SetActive(false);
+                parentToSprites.SetActive(false);
+
+                for (int i = 0; i < sprites.Length; i++)
+                {
+                    sprites[i].SetActive(false);
+                }
+
+                pfood.eaten += spentFood;
+                spentFood = 0;
+            }
+            return;
+        }
+
 
         if (canGiveFood && Done == false)
         {

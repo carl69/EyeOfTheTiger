@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowCamera : MonoBehaviour {
-	//public GameObject Tiger;
+    //public GameObject Tiger;
+
+
 	public float Smooth = 10.0f;
 	public float counter = 0.0f, counter2 = 0.0f ;
 	float x, z, y, yy , zz;
@@ -21,6 +23,7 @@ public class FollowCamera : MonoBehaviour {
 	// Update is called once per frame
 
 	void FixedUpdate () {
+        
 
 		if (Input.GetAxis("Horizontal") > 0 && Input.GetKey(KeyCode.LeftShift) && HuntingMode)
 		{
