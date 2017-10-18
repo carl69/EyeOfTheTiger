@@ -69,7 +69,6 @@ public class WallOfDeathScript : MonoBehaviour {
 			if(!stopInspector){
 				if (notDriveAtNight) {
 					if (clockScript.isDay || !stop2) {
-						print ("hola2");
 						if (hasStarted == false) {
 							GameObject.Find ("DeforestationStart").GetComponent<Deforestation_start> ().playHorn = true;
 							hasStarted = true;
