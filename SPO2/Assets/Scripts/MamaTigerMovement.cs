@@ -404,13 +404,10 @@ public class MamaTigerMovement : MonoBehaviour {
                 //Find The Next Target
                 if (curTarget == target0)
                 {
-                    Debug.Log(curTarget + "OUO");
                     curTarget = target1;
                 }
                 else if (curTarget == target1)
                 {
-                    Debug.Log(curTarget + "WUW");
-
                     curTarget = target0;
                 }
 

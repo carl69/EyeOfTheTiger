@@ -11,7 +11,13 @@ public class AISpawner : MonoBehaviour {
 	void Start () {
         Clock = GameObject.Find("24HourClock");
         Clock24Hour = Clock.GetComponent<Clock_24Hour>();
-	}
+
+
+
+        var gos = Instantiate(pray);
+        gos.transform.parent = this.gameObject.transform;
+        gos.transform.position = this.transform.position;
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPayingFoodToThisObject : MonoBehaviour {
-    public bool canGiveFood;
+    private bool canGiveFood;
     public GameObject parentToSprites;
     public GameObject parentToGraySprite;
     public GameObject[] sprites;
@@ -58,7 +58,11 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
 
         if (canGiveFood && Done == false)
         {
-            
+            if (parentToSprites.activeSelf == false)
+            {
+                parentToGraySprite.SetActive(true);
+                parentToSprites.SetActive(true);
+            }
 
             if (Input.GetKey(KeyCode.F) )
             {
@@ -151,6 +155,7 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
             sprites[i].SetActive(false);
             
         }
+        Destroy(this);
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -165,8 +170,7 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
             if (Done == false)
             {
                 timer = 0;
-                parentToGraySprite.SetActive(true);
-                parentToSprites.SetActive(true);
+                
                 canGiveFood = true;
             }
             
