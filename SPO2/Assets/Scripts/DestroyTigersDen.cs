@@ -7,7 +7,7 @@ public class DestroyTigersDen : MonoBehaviour {
 	private GameObject workingDen;
 	private GameObject DestroyedDen;
 	WallOfDeathScript stopedBull;
-	public bool stop = true;
+	public bool stop = true, stopInspector;
 
 	public int day, day2;
 	public GameObject clock;
@@ -36,11 +36,6 @@ public class DestroyTigersDen : MonoBehaviour {
 
 	private void OnTriggerEnter(Collider other)
 	{
-		/*if (other.tag == "WallofDeath" && !destroyer && day == day2)
-        {
-            workingDen.SetActive(false);
-            DestroyedDen.SetActive(true);
-        }*/
 		if (other.gameObject.tag == "WallofDeath") {
 			stop = false;
 			day2 = clockScript.day + 1;
