@@ -7315,10 +7315,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9763205f40a4cd4790adac8fa178307, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ZbuttonForHive: 1
   pregnant: 0
   atDen: 0
   partner: {fileID: 0}
+  hive: {fileID: 0}
   Cub: {fileID: 1220669267260956, guid: 7966d21df289f8948a130888fba6caff, type: 2}
+  zButton: {fileID: 0}
 --- !u!65 &1381723306
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7484,6 +7487,7 @@ MonoBehaviour:
     m_Bits: 1024
   isGrounded: 1
   updateStats: 0
+  jumping: 1
   xMovement: 0
   yMovement: 0
 --- !u!33 &1381723316
@@ -9485,7 +9489,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4227273345637604, guid: fd49e636a8794254d8421622a974f606, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -27.6
+      value: -34.66
       objectReference: {fileID: 0}
     - target: {fileID: 4227273345637604, guid: fd49e636a8794254d8421622a974f606, type: 2}
       propertyPath: m_LocalRotation.x
@@ -10289,6 +10293,11 @@ Prefab:
         type: 2}
       propertyPath: curplayer
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114430348406056792, guid: 2555eed688730f042baa3b38cc0290ce,
+        type: 2}
+      propertyPath: pickUpDist
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114395467836064432, guid: 2555eed688730f042baa3b38cc0290ce, type: 2}
