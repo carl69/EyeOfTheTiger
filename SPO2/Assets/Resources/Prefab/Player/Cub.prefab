@@ -449,6 +449,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clock: 0
   stage: 0
+  vel: 0
   collideWithPlayer: 0
   walkingSpeed: 6
   RunningSpeed: 10
@@ -522,7 +523,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643312031150948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e711e2c401447004685eaec0a519bc6e, type: 3}
   m_Name: 
@@ -558,4 +559,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canPickUp: 0
+  pickUpDist: 3
   holdingPosision: {fileID: 0}
+  curplayer: {fileID: 0}
+  dist: 0

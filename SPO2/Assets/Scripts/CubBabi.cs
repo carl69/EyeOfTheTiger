@@ -117,8 +117,8 @@ public class CubBabi : MonoBehaviour {
         }
         if (other.tag == "food")
         {
-            CurFood++;
-            Destroy(other.gameObject);
+            //CurFood++;
+            //Destroy(other.gameObject);
         }
     }
     private void OnTriggerExit(Collider other)
