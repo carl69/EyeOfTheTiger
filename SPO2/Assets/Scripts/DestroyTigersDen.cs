@@ -16,8 +16,8 @@ public class DestroyTigersDen : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		workingDen = this.gameObject.transform.GetChild(0).gameObject;
-		DestroyedDen = this.gameObject.transform.GetChild(1).gameObject;
+		//workingDen = this.gameObject.transform.GetChild(0).gameObject;
+		//DestroyedDen = this.gameObject.transform.GetChild(1).gameObject;
 
 
 
@@ -29,8 +29,8 @@ public class DestroyTigersDen : MonoBehaviour {
 	void Update () {
 		day = clockScript.day;
 		if (!stop && day == day2) {
-			workingDen.SetActive(false);
-			DestroyedDen.SetActive(true);
+			//workingDen.SetActive(false);
+			//DestroyedDen.SetActive(true);
 			Destroy (this.gameObject);
 		}
 	}
