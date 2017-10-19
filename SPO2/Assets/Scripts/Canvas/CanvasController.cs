@@ -17,9 +17,10 @@ public class CanvasController : MonoBehaviour {
 
     public void Resume()
     {
+        Time.timeScale = 1;
         Debug.Log("Resume clicked!");
         textBox.SetActive(false);
-        Time.timeScale = 1;  
+          
     }
 
     public void Play()
@@ -30,8 +31,8 @@ public class CanvasController : MonoBehaviour {
 
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ExitToMain()
@@ -59,6 +60,10 @@ public class CanvasController : MonoBehaviour {
                 textBox.SetActive(false);
                 Time.timeScale = 1;
             }
+        }
+        if (textBox.activeSelf == false)
+        {
+            Time.timeScale = 1;
         }
     }
 }
