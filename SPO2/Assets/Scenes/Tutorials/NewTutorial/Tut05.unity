@@ -1391,6 +1391,34 @@ Transform:
   m_Father: {fileID: 1425274614}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1305581102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1305581103}
+  m_Layer: 0
+  m_Name: Leave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1305581103
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1305581102}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 244.1, y: 6.0999994, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1425274613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,11 +1706,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9e4e485d53ec74b418197d0567444e46, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &1758877372 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4832172617704704, guid: bcff2f31e64f31b4795d7df484a0dbf4,
-    type: 2}
-  m_PrefabInternal: {fileID: 681892476}
 --- !u!1001 &1786429975
 Prefab:
   m_ObjectHideFlags: 0
@@ -2052,7 +2075,7 @@ Prefab:
     - target: {fileID: 114325524322228580, guid: a1cc19c7235b26b42ac8dd55fd139a8f,
         type: 2}
       propertyPath: Commando.Array.data[1]
-      value: Walk
+      value: Run
       objectReference: {fileID: 0}
     - target: {fileID: 114325524322228580, guid: a1cc19c7235b26b42ac8dd55fd139a8f,
         type: 2}
@@ -2073,7 +2096,7 @@ Prefab:
         type: 2}
       propertyPath: targetPoint.Array.data[1]
       value: 
-      objectReference: {fileID: 1758877372}
+      objectReference: {fileID: 1305581103}
     - target: {fileID: 114325524322228580, guid: a1cc19c7235b26b42ac8dd55fd139a8f,
         type: 2}
       propertyPath: waitingDis
@@ -2097,7 +2120,7 @@ Prefab:
     - target: {fileID: 114325524322228580, guid: a1cc19c7235b26b42ac8dd55fd139a8f,
         type: 2}
       propertyPath: timeOfDay.Array.data[1]
-      value: 2
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 114325524322228580, guid: a1cc19c7235b26b42ac8dd55fd139a8f,
         type: 2}
@@ -2124,6 +2147,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114325524322228580, guid: a1cc19c7235b26b42ac8dd55fd139a8f,
+        type: 2}
+      propertyPath: targetPoint.Array.data[2]
+      value: 
+      objectReference: {fileID: 1305581103}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a1cc19c7235b26b42ac8dd55fd139a8f, type: 2}
   m_IsPrefabParent: 0
