@@ -15,11 +15,13 @@ public class FoodPickUP : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!Player)
+        if (!Player || !CubHoldingPosition)
         {
             Player = GameObject.Find("Player");
             CubHoldingPosition = GameObject.Find("CubHoldingPosition");
         }
+
+
         dist = Vector2.Distance(Player.transform.position, transform.position);
 
         if (dist < pickUpRange && Input.GetKeyDown(KeyCode.Z) && carrying == false)

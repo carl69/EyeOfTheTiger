@@ -31,10 +31,11 @@ public class CubBabi : MonoBehaviour {
         if (!Player)
         {
             Player = GameObject.Find("Player");
-            if (!Carry)
-            {
-                Carry = GameObject.Find("CubHoldingPosition");
-            }
+            
+        }
+        if (!Carry)
+        {
+            Carry = GameObject.Find("CubHoldingPosition");
         }
 
         if (Level == 2)
