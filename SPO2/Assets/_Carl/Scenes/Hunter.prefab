@@ -336,6 +336,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4714040726344514}
   - component: {fileID: 95491226410655702}
+  - component: {fileID: 114397726934550336}
   m_Layer: 0
   m_Name: EliteHunter01
   m_TagString: Untagged
@@ -2232,14 +2233,14 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1525247923384788}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.70710677}
-  m_LocalPosition: {x: 23.23, y: 0.7, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 118.61, y: 0.7, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_Children:
   - {fileID: 4714040726344514}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 270, z: 0}
 --- !u!4 &4852325811072180
 Transform:
   m_ObjectHideFlags: 1
@@ -2671,7 +2672,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1525247923384788}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d608e540a0de2a45a6fd062b3cdac72, type: 3}
   m_Name: 
@@ -2695,9 +2696,9 @@ MonoBehaviour:
   - RunFromTarget
   - GoToStage
   Commando:
-  - Wait
+  - 
   - Walk
-  - DestroyTarget
+  - Walk
   - 
   - 
   allStringsInNextStage:
@@ -2716,7 +2717,7 @@ MonoBehaviour:
   - 
   - 
   targetPoint:
-  - {fileID: 0}
+  - {fileID: 4840847279179800}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
@@ -2724,12 +2725,17 @@ MonoBehaviour:
   semiRandomTurnPoints: 1
   howRandom: 5
   delayTime:
-  - 50
+  - 0
+  - 15
+  - 0
+  - 0
+  - 0
+  Distance:
+  - 48
   - 0
   - 0
   - 0
   - 0
-  Distance: []
   TargetBecomesPlayer: 0000000000
   targetPointsBecomeTargets: 0
   Targets:
@@ -2746,6 +2752,19 @@ MonoBehaviour:
   - 0
   GoToStage: 0000000000000000000000000000000000000000
   waitingDis: 0
+--- !u!114 &114397726934550336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339446042450868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb2c2db97d85e8448787498a5dda408, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hunter: {fileID: 1525247923384788}
+  velocity: 0
 --- !u!114 &114623743660078766
 MonoBehaviour:
   m_ObjectHideFlags: 1
