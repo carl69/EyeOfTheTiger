@@ -18,7 +18,6 @@ public class KillingPray : MonoBehaviour {
 		float number = Random.Range (1.0f, 3.9f);
 		if (c.tag == "Pray" && Input.GetKey (KeyCode.LeftShift) && this.tag == "Player")
         {	
-			print (number);
 			if (number >= 1.0f && number < 2.0f) {
 				Instantiate (food, new Vector3 (c.transform.position.x + 3, c.transform.position.y /*- 1*/, c.transform.position.z), Quaternion.identity);
 			}
