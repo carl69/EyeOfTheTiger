@@ -353,7 +353,19 @@ public class MamaTigerMovement : MonoBehaviour {
     }
     void WalkTo() {
             Transform walkToTarget = targetPoint[stage];
-            float step = walkingSpeed * Time.deltaTime;
+        if (walkToTarget.position.x - this.transform.position.x < 0 && vel != -1)
+        {
+            vel = -1;
+        }
+        else if (walkToTarget.position.x - this.transform.position.x > 0 && vel != 1)
+        {
+            vel = 1;
+        }
+
+
+
+
+        float step = walkingSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, walkToTarget.position, step);
             float dist = Vector3.Distance(walkToTarget.position, transform.position);
         if (dist <= 0.5f)
