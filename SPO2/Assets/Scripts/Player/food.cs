@@ -13,6 +13,9 @@ public class food : MonoBehaviour {
     // food loss rate
     private float rate;
     private float timer;
+    //fix food pickup
+    private bool canEatThis = false;
+    private GameObject foodObject;
 
     Audio_pickup audio_pickup;
 
@@ -36,6 +39,25 @@ public class food : MonoBehaviour {
 
     private void Update()
     {
+        if (canEatThis)
+        {
+            if (/*foodObject.gameObject.tag == "food" && eaten <= maxFood && */Input.GetKeyDown(KeyCode.E))
+            {
+                if ((maxFood - eaten) <= amountOfFood)
+                {
+                    eaten = maxFood;
+                }
+                else
+                {
+                    eaten += amountOfFood;
+                }
+                eating = true;
+                audio_pickup.isEating = true;
+                Destroy(foodObject.gameObject);
+            }
+        }
+
+
         if (eating)
         {
             eating = false;
@@ -53,23 +75,25 @@ public class food : MonoBehaviour {
         }
     }
 
-    public void OnTriggerStay(Collider other){
+    public void OnTriggerEnter(Collider other){
 
-		if (other.gameObject.tag == "food" && eaten <= maxFood && Input.GetKeyDown(KeyCode.X)) {
-            if ((maxFood - eaten) <= amountOfFood)
-            {
-                eaten = maxFood;
-            }
-            else
-            {
-                eaten += amountOfFood;
-            }
-            eating = true;
-            audio_pickup.isEating = true;
-            Destroy (other.gameObject);
-		}
+        if (other.tag == "food")
+        {
+            canEatThis = true;
+            foodObject = other.gameObject;
+        }
 
 	}
+
+    public void OnTriggerExit(Collider other)
+    {
+
+        if (other.tag == "food")
+        {
+            canEatThis = false;;
+        }
+
+    }
 
 
 }
