@@ -99,7 +99,7 @@ public class WallOfDeathScript : MonoBehaviour {
 
 
 	public void OnTriggerEnter(Collider other){
-		if (other.gameObject.tag == "TigersDen") {
+		if (other.gameObject.tag == "//jsjdnfjasndolasn TigersDen") {
 			stop = true;
 			stop2 = false;
 			day2 = clockScript.day + 1;
