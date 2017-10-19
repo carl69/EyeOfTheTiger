@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FoodPickUP : MonoBehaviour {
     GameObject Player;
-    GameObject CubHoldingPosition;
+    public GameObject CubHoldingPosition;
     float dist;
     public float pickUpRange;
     bool carrying = false;
