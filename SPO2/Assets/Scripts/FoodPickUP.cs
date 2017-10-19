@@ -24,11 +24,11 @@ public class FoodPickUP : MonoBehaviour {
 
         dist = Vector2.Distance(Player.transform.position, transform.position);
 
-        if (dist < pickUpRange && Input.GetKeyDown(KeyCode.Z) && carrying == false)
+        if (dist < pickUpRange && Input.GetKeyDown(KeyCode.R) && carrying == false)
         {
             carrying = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Z))
+        else if (Input.GetKeyDown(KeyCode.R))
         {
             carrying = false;
         }
