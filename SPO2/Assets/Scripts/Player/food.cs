@@ -37,16 +37,18 @@ public class food : MonoBehaviour {
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
+        if (!foodObject)
+        {
+            canEatThis = false;
+        }
+
         if (canEatThis)
         {
             if (/*foodObject.gameObject.tag == "food" && eaten <= maxFood && */Input.GetKeyDown(KeyCode.E))
             {
-                if (!foodObject)
-                {
-                    canEatThis = false;
-                }
+                
 
                 if ((maxFood - eaten) <= amountOfFood)
                 {
