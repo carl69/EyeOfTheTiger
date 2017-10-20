@@ -43,6 +43,11 @@ public class food : MonoBehaviour {
         {
             if (/*foodObject.gameObject.tag == "food" && eaten <= maxFood && */Input.GetKeyDown(KeyCode.E))
             {
+                if (!foodObject)
+                {
+                    canEatThis = false;
+                }
+
                 if ((maxFood - eaten) <= amountOfFood)
                 {
                     eaten = maxFood;
@@ -90,7 +95,7 @@ public class food : MonoBehaviour {
 
         if (other.tag == "food")
         {
-            canEatThis = false;;
+            canEatThis = false;
         }
 
     }
