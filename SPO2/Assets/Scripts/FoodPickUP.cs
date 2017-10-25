@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FoodPickUP : MonoBehaviour {
     GameObject Player;
-    GameObject CubHoldingPosition;
+    public GameObject CubHoldingPosition;
     float dist;
     public float pickUpRange;
     bool carrying = false;
@@ -15,18 +15,20 @@ public class FoodPickUP : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!Player)
+        if (!Player || !CubHoldingPosition)
         {
             Player = GameObject.Find("Player");
             CubHoldingPosition = GameObject.Find("CubHoldingPosition");
         }
+
+
         dist = Vector2.Distance(Player.transform.position, transform.position);
 
-        if (dist < pickUpRange && Input.GetKeyDown(KeyCode.Z) && carrying == false)
+        if (dist < pickUpRange && Input.GetKeyDown(KeyCode.R) && carrying == false)
         {
             carrying = true;
         }
-        else if (Input.GetKeyDown(KeyCode.Z))
+        else if (Input.GetKeyDown(KeyCode.R))
         {
             carrying = false;
         }

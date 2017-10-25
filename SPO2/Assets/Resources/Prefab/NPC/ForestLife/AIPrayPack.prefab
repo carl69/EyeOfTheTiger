@@ -646,6 +646,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4031293688466276}
   - component: {fileID: 95532498357504482}
+  - component: {fileID: 114483221994879374}
   m_Layer: 0
   m_Name: HogDeer
   m_TagString: Untagged
@@ -911,7 +912,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1841416197205622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 45.68724, y: 0.7300005, z: 0.9721813}
+  m_LocalPosition: {x: 722.58185, y: 0, z: 1.4552383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4771311540272168}
@@ -1431,7 +1432,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1098193640479534}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.8, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4031293688466276}
@@ -1723,6 +1724,19 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114483221994879374
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1803789440719076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30d147a74113dba4f88f90910efec5d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prey: {fileID: 1098193640479534}
+  velocity: 0
 --- !u!114 &114579213173654246
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1736,6 +1750,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clock: 0
   stage: 0
+  vel: 0
   collideWithPlayer: 1
   walkingSpeed: 3
   RunningSpeed: 7

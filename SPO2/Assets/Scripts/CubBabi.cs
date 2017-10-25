@@ -31,10 +31,11 @@ public class CubBabi : MonoBehaviour {
         if (!Player)
         {
             Player = GameObject.Find("Player");
-            if (!Carry)
-            {
-                Carry = GameObject.Find("CubHoldingPosition");
-            }
+            
+        }
+        if (!Carry)
+        {
+            Carry = GameObject.Find("CubHoldingPosition");
         }
 
         if (Level == 2)
@@ -57,11 +58,11 @@ public class CubBabi : MonoBehaviour {
             Player = GameObject.Find("Player");
         }
 
-            if (Input.GetKeyDown(KeyCode.Z) && dist < PickUpDistance && carrying == false)
+            if (Input.GetKeyDown(KeyCode.R) && dist < PickUpDistance && carrying == false)
             {
                 carrying = true;
             }
-            else if (Input.GetKeyDown(KeyCode.Z) && carrying == true)
+            else if (Input.GetKeyDown(KeyCode.R) && carrying == true)
             {
                 carrying = false;
             }
@@ -117,8 +118,8 @@ public class CubBabi : MonoBehaviour {
         }
         if (other.tag == "food")
         {
-            CurFood++;
-            Destroy(other.gameObject);
+            //CurFood++;
+            //Destroy(other.gameObject);
         }
     }
     private void OnTriggerExit(Collider other)

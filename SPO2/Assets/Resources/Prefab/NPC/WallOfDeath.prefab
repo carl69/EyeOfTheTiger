@@ -11,6 +11,22 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1458926499934240}
   m_IsPrefabParent: 1
+--- !u!1 &1287273671628718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4291403171071704}
+  - component: {fileID: 65724877248447734}
+  m_Layer: 0
+  m_Name: PreySpawnerDied
+  m_TagString: PreySpawnerDied
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1458926499934240
 GameObject:
   m_ObjectHideFlags: 0
@@ -79,6 +95,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4291403171071704
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287273671628718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4885536739482372}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4798812770131460
 Transform:
   m_ObjectHideFlags: 1
@@ -114,10 +143,11 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1458926499934240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 1, z: 0}
+  m_LocalPosition: {x: -37.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4798812770131460}
+  - {fileID: 4291403171071704}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -227,6 +257,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 14.094448, z: 9.5}
   m_Center: {x: 0, y: 6.5642223, z: 0}
+--- !u!65 &65724877248447734
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1287273671628718}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 18.8, y: 1, z: 1}
+  m_Center: {x: 8.1, y: 0.79, z: 0}
 --- !u!82 &82798654739618610
 AudioSource:
   m_ObjectHideFlags: 1
@@ -335,6 +377,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fae375c3e23982f4db6bb8474e6bf374, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.2
-  timeLeft: 5
+  speed: 5
+  timeLeft: 1
   isPlayingAudio: 0
+  clock: {fileID: 0}
+  clockScript: {fileID: 0}
+  notDriveAtNight: 1
+  haveClockInTheScene: 1
+  stopInspector: 1
+  day: 0
+  day2: 0

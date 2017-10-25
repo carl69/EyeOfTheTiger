@@ -54,14 +54,14 @@ public class AIShootingScript : MonoBehaviour {
 
     private void OnTriggerEnter(Collider p)
     {
-        if (p.tag == "Player" || p.tag == "Cub" || p.tag == "Mother")
+		if (p.tag == "Player" || p.tag == "Cub" || p.tag == "Mother" || p.tag == "Pray")
         {
             shoot = true;
         }
     }
     private void OnTriggerExit(Collider p)
     {
-        if (p.tag == "Player" || p.tag == "Cub" || p.tag == "Mother")
+		if (p.tag == "Player" || p.tag == "Cub" || p.tag == "Mother" || p.tag == "Pray")
         {
             shoot = false;
         }

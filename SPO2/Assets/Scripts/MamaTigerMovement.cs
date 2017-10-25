@@ -96,8 +96,7 @@ public class MamaTigerMovement : MonoBehaviour {
     Movement pMovement;
     float startTimeCheck;
 
-    //vel
-    Vector3 previous;
+
 
     private void Start()
     {
@@ -126,10 +125,16 @@ public class MamaTigerMovement : MonoBehaviour {
     private void Update()
     {
 
-        vel = ((transform.position - previous).magnitude) / Time.deltaTime;
-        previous = transform.position;
+            //if (curTarget.position.x - this.transform.position.x < 0 && vel != -1)
+            //{
+            //    vel = -1;
+            //}
+            //else if (curTarget.position.x - this.transform.position.x > 0 && vel != 1)
+            //{
+            //    vel = 1;
+            //}
+        
 
-        //vel = myBody.velocity.x;
 
         clock = Time.time - startTimeCheck;
         // basic mods that need constant update
@@ -348,7 +353,19 @@ public class MamaTigerMovement : MonoBehaviour {
     }
     void WalkTo() {
             Transform walkToTarget = targetPoint[stage];
-            float step = walkingSpeed * Time.deltaTime;
+        if (walkToTarget.position.x - this.transform.position.x < 0 && vel != -1)
+        {
+            vel = -1;
+        }
+        else if (walkToTarget.position.x - this.transform.position.x > 0 && vel != 1)
+        {
+            vel = 1;
+        }
+
+
+
+
+        float step = walkingSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, walkToTarget.position, step);
             float dist = Vector3.Distance(walkToTarget.position, transform.position);
         if (dist <= 0.5f)
@@ -395,6 +412,17 @@ public class MamaTigerMovement : MonoBehaviour {
         {
             curTarget = target1;
         }
+
+        if (curTarget.position.x - this.transform.position.x < 0 && vel != -1)
+        {
+            vel = -1;
+        }
+        else if (curTarget.position.x - this.transform.position.x > 0 && vel != 1)
+        {
+            vel = 1;
+        }
+
+
         //Calulate the distance to the next target
         float dist = Vector3.Distance(curTarget.position, transform.position);
         if (semiRandomTurnPoints)
@@ -404,19 +432,17 @@ public class MamaTigerMovement : MonoBehaviour {
                 //Find The Next Target
                 if (curTarget == target0)
                 {
-                    Debug.Log(curTarget + "OUO");
                     curTarget = target1;
                 }
                 else if (curTarget == target1)
                 {
-                    Debug.Log(curTarget + "WUW");
-
                     curTarget = target0;
                 }
 
             }
         }
-        else {
+        else
+        {
             if (dist <= 1f)
             {
                 //Find The Next Target
@@ -479,7 +505,20 @@ public class MamaTigerMovement : MonoBehaviour {
     }
     void RunAway() {
             Transform walkToTarget = Targets[stage].transform;
-            float step = (walkingSpeed + RunningSpeed) * Time.deltaTime;
+
+
+        if (walkToTarget.position.x - this.transform.position.x < 0 && vel != 1)
+        {
+            vel = 1;
+        }
+        else if (walkToTarget.position.x - this.transform.position.x > 0 && vel != -1)
+        {
+            vel = -1;
+        }
+
+
+        //vel = (walkToTarget.position.x / walkToTarget.position.x) * -1;
+        float step = (walkingSpeed + RunningSpeed) * Time.deltaTime;
         transform.position = Vector2.MoveTowards(transform.position, walkToTarget.position, -step);
     }
     void ToStageZero() {

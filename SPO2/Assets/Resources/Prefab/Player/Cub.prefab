@@ -112,6 +112,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4580889104872280}
+  - component: {fileID: 114512534267314162}
   m_Layer: 9
   m_Name: Tiger
   m_TagString: Untagged
@@ -195,7 +196,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643312031150948}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.27, y: 0, z: 0}
+  m_LocalPosition: {x: -21404.395, y: 23408.34, z: -23584.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4580889104872280}
@@ -449,6 +450,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clock: 0
   stage: 0
+  vel: 0
   collideWithPlayer: 0
   walkingSpeed: 6
   RunningSpeed: 10
@@ -522,7 +524,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1643312031150948}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e711e2c401447004685eaec0a519bc6e, type: 3}
   m_Name: 
@@ -558,4 +560,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canPickUp: 0
+  pickUpDist: 3
   holdingPosision: {fileID: 0}
+  curplayer: {fileID: 0}
+  dist: 0
+--- !u!114 &114512534267314162
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1955864131474130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c2ac239947d654a83208b022422c3c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cub: {fileID: 1643312031150948}
+  velocity: 0

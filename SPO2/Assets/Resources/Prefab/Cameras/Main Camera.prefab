@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 124864490355257324}
   - component: {fileID: 114405388574194944}
   - component: {fileID: 114112665566104830}
+  - component: {fileID: 114273792848444656}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -100,6 +101,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Smooth: 10
   counter: 0
+  counter2: 0
+  startPos: {x: 0, y: 0, z: 0}
+  HuntingMode: 0
+--- !u!114 &114273792848444656
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1344550676131110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 635c32b3b96f1ff48b6171bfe72c9e9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseThisScript: 0
+  WaitToStart: 2
+  CameraFollowScript: {fileID: 114112665566104830}
 --- !u!114 &114405388574194944
 MonoBehaviour:
   m_ObjectHideFlags: 1

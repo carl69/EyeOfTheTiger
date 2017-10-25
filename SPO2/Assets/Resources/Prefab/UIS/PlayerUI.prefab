@@ -125,7 +125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1058478097874506
 GameObject:
   m_ObjectHideFlags: 1
@@ -173,7 +173,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1142057119095422
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +464,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1445754599452024
 GameObject:
   m_ObjectHideFlags: 1
@@ -528,7 +528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1556844817359958
 GameObject:
   m_ObjectHideFlags: 1
@@ -593,7 +593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1605005508891780
 GameObject:
   m_ObjectHideFlags: 1
@@ -1674,6 +1674,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7cda804c61a653449839007d643cfb3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MaxThirst: 0
+  CurThirst: 0
+  WaterProsent: 0
+  Water: {fileID: 0}
+  player: {fileID: 0}
 --- !u!114 &114927773452392760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3442,7 +3447,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 1
-  m_Camera: {fileID: 20192456042249564, guid: fd49e636a8794254d8421622a974f606, type: 2}
+  m_Camera: {fileID: 0}
   m_PlaneDistance: 5
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
