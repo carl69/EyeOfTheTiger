@@ -17,7 +17,7 @@ public class PlayerWater : MonoBehaviour
     //int counter = 0;
     private float lossAmount = 1;
     Audio_pickup audio_pickup;
-    private float drinkAmount;
+    public float drinkAmount;
     [HideInInspector]
     public bool drinkAudio = false;
 
@@ -29,7 +29,7 @@ public class PlayerWater : MonoBehaviour
         drink = PlayStats.startWater;
         rate = PlayStats.waterLossRate;
         lossAmount = PlayStats.waterLossAmount;
-        drinkAmount = PlayStats.waterPickUp;
+        //drinkAmount = PlayStats.waterPickUp;
         
 
 
