@@ -285,7 +285,7 @@ public class MamaTigerMovement : MonoBehaviour {
     void DistanceFunch() {
         if (Targets[stage] == null)
         {
-            Debug.Log("No Target On Stage " + stage);
+           // Debug.Log("No Target On Stage " + stage);
         }
         else
             if (Distance[stage] == 0)
