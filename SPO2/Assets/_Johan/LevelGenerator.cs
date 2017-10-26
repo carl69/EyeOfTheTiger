@@ -6,7 +6,7 @@ public class LevelGenerator : MonoBehaviour {
     public int levelLength;
     public int difficultyLevel;
 
-    int whatKindOfModueShouldBeLoaded;
+    public int whatKindOfModueShouldBeLoaded;
     public GameObject[] modules;
 
 
@@ -38,11 +38,11 @@ public class LevelGenerator : MonoBehaviour {
             {
                 Instantiate(denModules[Random.Range(0, denModules.Length)], gameObject.transform.position, gameObject.transform.rotation);
             }
-            if (whatKindOfModueShouldBeLoaded <= 11 && whatKindOfModueShouldBeLoaded >= 40)
+            if (whatKindOfModueShouldBeLoaded >= 11 && whatKindOfModueShouldBeLoaded <= 40)
             {
                 Instantiate(poacherModules[Random.Range(0, poacherModules.Length)], gameObject.transform.position, gameObject.transform.rotation);
             }
-            if (whatKindOfModueShouldBeLoaded <= 41 && whatKindOfModueShouldBeLoaded >= 100)
+            if (whatKindOfModueShouldBeLoaded >= 41 && whatKindOfModueShouldBeLoaded <= 100)
             {
                 Instantiate(resourceModules[Random.Range(0, resourceModules.Length)], gameObject.transform.position, gameObject.transform.rotation);
             }
