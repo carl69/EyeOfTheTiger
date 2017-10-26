@@ -20,7 +20,6 @@ public class WallOfDeathScript : MonoBehaviour {
 	public int day, day2;
 	bool stop = false, stop2 = true;
 
-
     // Use this for initialization
     void Start () {
         if (!clock && haveClockInTheScene)
@@ -104,6 +103,10 @@ public class WallOfDeathScript : MonoBehaviour {
 			stop2 = false;
 			day2 = clockScript.day + 1;
 		}
+        if (other.tag == "Tree")
+        {
+            other.GetComponent<TreeFall>().enabled = true;
+        }
 
 	}
 
