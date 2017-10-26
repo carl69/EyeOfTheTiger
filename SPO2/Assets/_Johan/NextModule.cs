@@ -13,7 +13,8 @@ public class NextModule : MonoBehaviour {
         if (levelGenerator.GetComponent<LevelGenerator>().levelLength>0)
         {
             levelGenerator.GetComponent<LevelGenerator>().levelLength -= moduleLength;
-            Instantiate(levelGenerator.GetComponent<LevelGenerator>().modules[Random.Range(0, levelGenerator.GetComponent<LevelGenerator>().modules.Length)], moduleTarget.transform.position, moduleTarget.transform.rotation);
+            levelGenerator.GetComponent<LevelGenerator>().GenerateNextModule();
+            //Instantiate(levelGenerator.GetComponent<LevelGenerator>().modules[Random.Range(0, levelGenerator.GetComponent<LevelGenerator>().modules.Length)], moduleTarget.transform.position, moduleTarget.transform.rotation);
         }
        /* if(levelGenerator.GetComponent<LevelGenerator>().levelLength <= 0)
         {

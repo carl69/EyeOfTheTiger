@@ -1259,6 +1259,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4793015504710114}
+  - component: {fileID: 114860663385574474}
   m_Layer: 0
   m_Name: Module11
   m_TagString: Untagged
@@ -2105,7 +2106,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1989315465599726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1100, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4553940113931310}
@@ -7811,6 +7812,19 @@ MonoBehaviour:
   - {fileID: 8300000, guid: f583b34624637324b9bf5e1291e769f8, type: 3}
   - {fileID: 8300000, guid: e1dbd94f42cff094db792df7730a5499, type: 3}
   - {fileID: 8300000, guid: f00697c9c812b3f45b32cc9ba7d758c0, type: 3}
+--- !u!114 &114860663385574474
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1989315465599726}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc8c1eb47a09854985d5d5e8d0ff8e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moduleTarget: {fileID: 1216483892181880}
+  moduleLength: 100
 --- !u!114 &114867921468202048
 MonoBehaviour:
   m_ObjectHideFlags: 1

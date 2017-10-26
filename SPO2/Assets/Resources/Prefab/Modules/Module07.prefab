@@ -1062,6 +1062,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4342020308164316}
+  - component: {fileID: 114237000541491084}
   m_Layer: 0
   m_Name: Module07
   m_TagString: Untagged
@@ -2024,7 +2025,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1620398267451560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 650, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4534051438175044}
@@ -8205,6 +8206,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Spawn: {fileID: 1220669267260956, guid: 7966d21df289f8948a130888fba6caff, type: 2}
+--- !u!114 &114237000541491084
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1620398267451560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc8c1eb47a09854985d5d5e8d0ff8e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moduleTarget: {fileID: 1029365845795628}
+  moduleLength: 100
 --- !u!114 &114274460879971448
 MonoBehaviour:
   m_ObjectHideFlags: 1
