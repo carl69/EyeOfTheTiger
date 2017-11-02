@@ -56,6 +56,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4115389464565714}
   - component: {fileID: 212562110781312806}
+  - component: {fileID: 114649365768206568}
+  - component: {fileID: 65600401314567384}
   m_Layer: 0
   m_Name: seemlesswater
   m_TagString: Untagged
@@ -186,6 +188,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.5, z: 1}
   m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!65 &65600401314567384
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1640642323193988}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 0.59, z: 0.2}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114114109129005672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -199,6 +213,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   StartingWater: 1
   DecayRate: 0.1
+  CurWater: 0
+  startDecay: 0
+  wallOfDeath: {fileID: 0}
+--- !u!114 &114649365768206568
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1640642323193988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec1d434117c2a7c4b9f707d9b514c567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartingWater: 1
+  DecayRate: 0
   CurWater: 0
   startDecay: 0
   wallOfDeath: {fileID: 0}
