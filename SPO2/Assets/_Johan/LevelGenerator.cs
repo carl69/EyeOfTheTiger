@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour {
-    public int whatModuleWasSupposedToBeLoaded;
+    private int whatModuleWasSupposedToBeLoaded;
     public int levelLength;
     public int moduleSetNumber;
 
