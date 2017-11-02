@@ -5,18 +5,30 @@ using UnityEngine;
 public class LevelGenerator : MonoBehaviour {
     public int whatModuleWasSupposedToBeLoaded;
     public int levelLength;
-    public int difficultyLevel;
+    public int moduleSetNumber;
 
-    public int whatKindOfModueShouldBeLoaded;
+    int moduleCategory;
 
     GameObject[] startingModules;
     GameObject[] finishingModules;
 
+    public GameObject[] emptyModules;
+    public GameObject[] foodModules;
+    public GameObject[] poacherCampModules;
     public GameObject[] poacherModules;
-    public GameObject[] resourceModules;
+    public GameObject[] waterModules;
 
+    public int emptyChance;
+    public int foodChance;
+    public int poacherCampChance;
     public int poacherChance;
-    public int resourceChance;
+    public int waterChance;
+
+    [HideInInspector]public int staEmptyChance;
+    [HideInInspector]public int staFoodChance;
+    [HideInInspector]public int staPoacherCampChance;
+    [HideInInspector]public int staPoacherChance;
+    [HideInInspector]public int staWaterChance;
 
     // Use this for initialization
     void Start () {
@@ -25,37 +37,50 @@ public class LevelGenerator : MonoBehaviour {
 
     public void GenerateNextModule()
     {
-        if (difficultyLevel == 1)
+        staEmptyChance = emptyChance;
+        staFoodChance = staEmptyChance+foodChance;
+        staPoacherCampChance = staFoodChance + poacherCampChance;
+        staPoacherChance = staPoacherCampChance + poacherCampChance;
+        staWaterChance = staPoacherChance + waterChance;
+        
+        if (moduleSetNumber == 1)
         {
-            poacherModules = Resources.LoadAll<GameObject>("Modules/Difficulty1/Poacher") as GameObject[];
-            resourceModules = Resources.LoadAll<GameObject>("Modules/Difficulty1/Resources") as GameObject[];
-        }
-        if (difficultyLevel == 2)
-        {
-            poacherModules = Resources.LoadAll<GameObject>("Modules/Difficulty2/Poacher") as GameObject[];
-            resourceModules = Resources.LoadAll<GameObject>("Modules/Difficulty2/Resources") as GameObject[];
-        }
-        if (difficultyLevel == 3)
-        {
-            poacherModules = Resources.LoadAll<GameObject>("Modules/Difficulty3/Poacher") as GameObject[];
-            resourceModules = Resources.LoadAll<GameObject>("Modules/Difficulty3/Resources") as GameObject[];
+            emptyModules = Resources.LoadAll<GameObject>("Modules/Set1/Empty") as GameObject[];
+            foodModules = Resources.LoadAll<GameObject>("Modules/Set1/Food") as GameObject[];
+            poacherCampModules = Resources.LoadAll<GameObject>("Modules/PoacherCamp/") as GameObject[];
+            poacherModules = Resources.LoadAll<GameObject>("Modules/Set1/Poachers") as GameObject[];
+            waterModules = Resources.LoadAll<GameObject>("Modules/Set1/Water") as GameObject[];
         }
 
-        whatKindOfModueShouldBeLoaded = Random.Range(1, poacherChance + resourceChance);
 
-            
+        moduleCategory = Random.Range(1, emptyChance + foodChance + waterChance + poacherCampChance + poacherChance + waterChance);
+
+
         //choose type of module
-        if (whatKindOfModueShouldBeLoaded <= poacherChance)
+        //empty module
+        if (moduleCategory <= staEmptyChance)
         {
-            whatModuleWasSupposedToBeLoaded = Random.Range(0, poacherModules.Length);
-            Instantiate(poacherModules[Random.Range(0, poacherModules.Length)], gameObject.transform.position, gameObject.transform.rotation);
-            print("paochieros in sight");
+            Instantiate(emptyModules[Random.Range(0, emptyModules.Length)], gameObject.transform.position, gameObject.transform.rotation);
         }
-        else if (whatKindOfModueShouldBeLoaded > poacherChance)
+        //food module
+        else if (moduleCategory > staEmptyChance && moduleCategory <= staFoodChance)
         {
-            whatModuleWasSupposedToBeLoaded = Random.Range(0, resourceModules.Length);
-            Instantiate(resourceModules[Random.Range(0, resourceModules.Length)], gameObject.transform.position, gameObject.transform.rotation);
-            print("Water! ..... or food...");
+            Instantiate(foodModules[Random.Range(0, foodModules.Length)], gameObject.transform.position, gameObject.transform.rotation);
+        }
+        //poacher camp module
+        else if (moduleCategory > staFoodChance && moduleCategory <= staPoacherCampChance)
+        {
+            Instantiate(poacherCampModules[Random.Range(0, poacherCampModules.Length)], gameObject.transform.position, gameObject.transform.rotation);
+        }
+        //poacher module
+        else if (moduleCategory > staPoacherCampChance && moduleCategory <= staPoacherChance)
+        {
+            Instantiate(poacherModules[Random.Range(0, poacherModules.Length)], gameObject.transform.position, gameObject.transform.rotation);
+        }
+        //water module
+        else if (moduleCategory > staPoacherChance && moduleCategory <= staWaterChance)
+        {
+            Instantiate(waterModules[Random.Range(0, waterModules.Length)], gameObject.transform.position, gameObject.transform.rotation);
         }
     }
 }

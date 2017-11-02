@@ -12,8 +12,11 @@ public class NextModule : MonoBehaviour {
     GameObject[] startingModules;
     GameObject[] finishingModules;
 
-    private GameObject[] poacherModules;
-    private GameObject[] resourceModules;
+    public GameObject[] emptyModules;
+    public GameObject[] foodModules;
+    public GameObject[] poacherCampModules;
+    public GameObject[] poacherModules;
+    public GameObject[] waterModules;
 
     private int denChance;
     private int poacherChance;
@@ -31,37 +34,42 @@ public class NextModule : MonoBehaviour {
 	
     void GenerateNextModule()
     {
-        moduleCategory = Random.Range(1, original.GetComponent<LevelGenerator>().poacherChance + original.GetComponent<LevelGenerator>().resourceChance);
+        moduleCategory = Random.Range(1, original.GetComponent<LevelGenerator>().staWaterChance);
 
-        if (original.GetComponent<LevelGenerator>().difficultyLevel == 1)
+        if (original.GetComponent<LevelGenerator>().moduleSetNumber == 1)
         {
-            poacherModules = Resources.LoadAll<GameObject>("Modules/Difficulty1/Poacher") as GameObject[];
-            resourceModules = Resources.LoadAll<GameObject>("Modules/Difficulty1/Resources") as GameObject[];
-        }
-
-        if (original.GetComponent<LevelGenerator>().difficultyLevel == 2)
-        {
-            poacherModules = Resources.LoadAll<GameObject>("Modules/Difficulty2/Poacher") as GameObject[];
-            resourceModules = Resources.LoadAll<GameObject>("Modules/Difficulty2/Resources") as GameObject[];
-        }
-        if (original.GetComponent<LevelGenerator>().difficultyLevel == 3)
-        {
-            poacherModules = Resources.LoadAll<GameObject>("Modules/Difficulty3/Poacher") as GameObject[];
-            resourceModules = Resources.LoadAll<GameObject>("Modules/Difficulty3/Resources") as GameObject[];
+            emptyModules = Resources.LoadAll<GameObject>("Modules/Set1/Empty") as GameObject[];
+            foodModules = Resources.LoadAll<GameObject>("Modules/Set1/Food") as GameObject[];
+            poacherCampModules = Resources.LoadAll<GameObject>("Modules/PoacherCamp/") as GameObject[];
+            poacherModules = Resources.LoadAll<GameObject>("Modules/Set1/Poachers") as GameObject[];
+            waterModules = Resources.LoadAll<GameObject>("Modules/Set1/Water") as GameObject[];
         }
 
         //choose type of module
-        if (moduleCategory <= poacherChance)
+        //empty module
+        if (moduleCategory <= original.GetComponent<LevelGenerator>().staEmptyChance)
         {
-            moduleCategory = Random.Range(0, poacherModules.Length);
-            Instantiate(poacherModules[Random.Range(0, poacherModules.Length)], nextModule.transform.position, nextModule.transform.rotation);
-            print("paochieros in sight");
+            Instantiate(emptyModules[Random.Range(0, emptyModules.Length)], nextModule.transform.position, nextModule.transform.rotation);
         }
-        if (moduleCategory > poacherChance)
+        //food module
+        else if (moduleCategory > original.GetComponent<LevelGenerator>().staEmptyChance && moduleCategory <= original.GetComponent<LevelGenerator>().staFoodChance)
         {
-            moduleCategory = Random.Range(0, resourceModules.Length);
-            Instantiate(resourceModules[Random.Range(0, resourceModules.Length)], nextModule.transform.position, nextModule.transform.rotation);
-            print("Water! ..... or food...");
+            Instantiate(foodModules[Random.Range(0, foodModules.Length)], nextModule.transform.position, nextModule.transform.rotation);
+        }
+        //poacher camp module
+        else if (moduleCategory > original.GetComponent<LevelGenerator>().staFoodChance && moduleCategory <= original.GetComponent<LevelGenerator>().staPoacherCampChance)
+        {
+            Instantiate(poacherCampModules[Random.Range(0, poacherCampModules.Length)], nextModule.transform.position, nextModule.transform.rotation);
+        }
+        //poacher module
+        else if (moduleCategory > original.GetComponent<LevelGenerator>().staPoacherCampChance && moduleCategory <= original.GetComponent<LevelGenerator>().staPoacherChance)
+        {
+            Instantiate(poacherModules[Random.Range(0, poacherModules.Length)], nextModule.transform.position, nextModule.transform.rotation);
+        }
+        //water module
+        else if (moduleCategory > original.GetComponent<LevelGenerator>().staPoacherChance && moduleCategory <= original.GetComponent<LevelGenerator>().staWaterChance)
+        {
+            Instantiate(waterModules[Random.Range(0, waterModules.Length)], nextModule.transform.position, nextModule.transform.rotation);
         }
 
         original.GetComponent<LevelGenerator>().levelLength -= moduleLength;
