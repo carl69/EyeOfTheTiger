@@ -7,7 +7,7 @@ public class AiHunterTarget02 : MonoBehaviour {
     public GameObject Target;
     public List<GameObject> Targets = new List<GameObject>();
     AiHunters02 aihunter02;
-
+    public GameObject Alert;
 
     float UpdateTimer = 2;
     float curTime = 2;
@@ -18,11 +18,15 @@ public class AiHunterTarget02 : MonoBehaviour {
     }
     private void Update()
     {
-        //if (Target.layer == 14)
-        //{
-        //    print("happen");
+        if (Target.layer == 14 && Alert.activeInHierarchy == false)
+        {
+            Alert.SetActive(true);
 
-        //}
+        }
+        else if(Target.layer != 14 && Alert.activeInHierarchy == true )
+        {
+            Alert.SetActive(false);
+        }
 
         if (Targets[0] == null || Target.layer == 14)
         {
@@ -54,7 +58,7 @@ public class AiHunterTarget02 : MonoBehaviour {
             if (x.transform.gameObject.layer != 14)
             {
                 Targets.Add(x.gameObject);
-
+                
                 if (Target == null)
                 {
                     Target = x.gameObject;
@@ -81,7 +85,11 @@ public class AiHunterTarget02 : MonoBehaviour {
         {
             Targets.Remove(d.gameObject);
 
-
+            if (d.gameObject == aihunter02.fpsTarget)
+            {
+                aihunter02.fpsTarget = null;
+                Target = null;
+            }
             if (d.tag == "Player")
             {
                 if (Targets.Count <= 2)
