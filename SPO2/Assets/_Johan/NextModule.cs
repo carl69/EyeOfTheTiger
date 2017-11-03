@@ -7,7 +7,7 @@ public class NextModule : MonoBehaviour {
     public Transform nextModule;
     public int moduleLength;
 
-    private int moduleCategory;
+    public int moduleCategory;
 
     GameObject[] startingModules;
     GameObject[] finishingModules;
@@ -49,7 +49,7 @@ public class NextModule : MonoBehaviour {
         {
             emptyModules = Resources.LoadAll<GameObject>("Modules/Set1/Empty") as GameObject[];
             foodModules = Resources.LoadAll<GameObject>("Modules/Set1/Food") as GameObject[];
-            poacherCampModules = Resources.LoadAll<GameObject>("Modules/PoacherCamp/") as GameObject[];
+            poacherCampModules = Resources.LoadAll<GameObject>("Modules/Set1/PoacherCamp") as GameObject[];
             poacherModules = Resources.LoadAll<GameObject>("Modules/Set1/Poachers") as GameObject[];
             waterModules = Resources.LoadAll<GameObject>("Modules/Set1/Water") as GameObject[];
         }
