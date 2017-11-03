@@ -26,12 +26,21 @@ public class NextModule : MonoBehaviour {
     void Start () {
         nextModule = this.gameObject.transform.GetChild(0);
         original = GameObject.Find("LevelGenerator");
+
         if (original.GetComponent<LevelGenerator>().levelLength>0)
         {
             GenerateNextModule();
         }
+        else
+        {
+            GenerateFinishModule();
+        }
     }
-	
+	void GenerateFinishModule()
+    {
+        finishingModules = Resources.LoadAll<GameObject>("Modules/Set1/Finishing") as GameObject[];
+        Instantiate(finishingModules[Random.Range(0, finishingModules.Length)], nextModule.transform.position, nextModule.transform.rotation);
+    }
     void GenerateNextModule()
     {
         moduleCategory = Random.Range(1, original.GetComponent<LevelGenerator>().staWaterChance);
