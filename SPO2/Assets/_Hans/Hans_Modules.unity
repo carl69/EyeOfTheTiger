@@ -358,7 +358,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &215173410
 Prefab:
@@ -662,7 +662,17 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4323518007410838, guid: 64f86497977ccf9448300f288d2b202b, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114140695577425492, guid: 64f86497977ccf9448300f288d2b202b,
+        type: 2}
+      propertyPath: hungerSpeed
+      value: 999
+      objectReference: {fileID: 0}
+    - target: {fileID: 114140695577425492, guid: 64f86497977ccf9448300f288d2b202b,
+        type: 2}
+      propertyPath: waterLossRate
+      value: 999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64f86497977ccf9448300f288d2b202b, type: 2}
@@ -996,7 +1006,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4412641182824662, guid: 1827284a22a76d34cb37d1e26ae63e5e, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4272848006262720, guid: 1827284a22a76d34cb37d1e26ae63e5e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1615,6 +1625,28 @@ Prefab:
     - target: {fileID: 1669554267768636, guid: 5ce45e6f28b75784ca8445630743017f, type: 2}
       propertyPath: m_Name
       value: WaterPrefab01
+      objectReference: {fileID: 0}
+    - target: {fileID: 114768494736555366, guid: 5ce45e6f28b75784ca8445630743017f,
+        type: 2}
+      propertyPath: enemyLookDistance
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 114768494736555366, guid: 5ce45e6f28b75784ca8445630743017f,
+        type: 2}
+      propertyPath: moveToAttackDistance
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 4126831732879470, guid: 5ce45e6f28b75784ca8445630743017f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 31.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4799686095889914, guid: 5ce45e6f28b75784ca8445630743017f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 65.649994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4833732589855070, guid: 5ce45e6f28b75784ca8445630743017f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ce45e6f28b75784ca8445630743017f, type: 2}
