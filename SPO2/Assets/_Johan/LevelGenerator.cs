@@ -32,17 +32,23 @@ public class LevelGenerator : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        GenerateNextModule();
-    }
-
-    public void GenerateNextModule()
-    {
         staEmptyChance = emptyChance;
-        staFoodChance = staEmptyChance+foodChance;
+        staFoodChance = staEmptyChance + foodChance;
         staPoacherCampChance = staFoodChance + poacherCampChance;
         staPoacherChance = staPoacherCampChance + poacherCampChance;
         staWaterChance = staPoacherChance + waterChance;
-        
+
+
+        //GenerateNextModule();
+        MakeTheStartModule();
+    }
+    public void MakeTheStartModule()
+    {
+        startingModules = Resources.LoadAll<GameObject>("Modules/Set1/Starting") as GameObject[];
+        Instantiate(startingModules[Random.Range(0, startingModules.Length)], gameObject.transform.position, gameObject.transform.rotation);
+    }
+    public void GenerateNextModule()
+    {
         if (moduleSetNumber == 1)
         {
             emptyModules = Resources.LoadAll<GameObject>("Modules/Set1/Empty") as GameObject[];
@@ -52,10 +58,8 @@ public class LevelGenerator : MonoBehaviour {
             waterModules = Resources.LoadAll<GameObject>("Modules/Set1/Water") as GameObject[];
         }
 
-
         moduleCategory = Random.Range(1, emptyChance + foodChance + waterChance + poacherCampChance + poacherChance + waterChance);
-
-
+        
         //choose type of module
         //empty module
         if (moduleCategory <= staEmptyChance)
