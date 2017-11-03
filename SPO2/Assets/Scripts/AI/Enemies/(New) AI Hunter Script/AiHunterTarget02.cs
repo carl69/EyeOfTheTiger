@@ -18,10 +18,15 @@ public class AiHunterTarget02 : MonoBehaviour {
     }
     private void Update()
     {
-        if (Targets[0] == null)
+        if (Targets[0] == null || Target.layer == 14)
         {
             Target = null;
             Targets.Remove(Targets[0]);
+        }
+        if (Target.layer == 14)
+        {
+            print("happen");
+
         }
         if (Targets.Count != 0 )
         {
@@ -41,26 +46,29 @@ public class AiHunterTarget02 : MonoBehaviour {
 
     private void OnTriggerEnter(Collider x)
     {
-        if ((x.tag == "Player" || x.tag == "Pray") && !Targets.Contains(x.gameObject) && x.transform.gameObject.layer != 14)
+        if ((x.tag == "Player" || x.tag == "Pray") && !Targets.Contains(x.gameObject))
         {
-            Targets.Add(x.gameObject);
+            if (x.transform.gameObject.layer != 14)
+            {
+                Targets.Add(x.gameObject);
 
-            if (Target == null)
-            {
-                print("problem is here");
-                Target = x.gameObject;
-            }
-            for (int i = 0; i < Targets.Count; i++)
-            {
-                if (Targets[i] == null)
+                if (Target == null)
                 {
-                    Targets.Remove(Targets[i]);
+                    Target = x.gameObject;
                 }
-                if (Targets[i].tag == "Player")
+                for (int i = 0; i < Targets.Count; i++)
                 {
-                    Target = Targets[i];
+                    if (Targets[i] == null)
+                    {
+                        Targets.Remove(Targets[i]);
+                    }
+                    if (Targets[i].tag == "Player")
+                    {
+                        Target = Targets[i];
+                    }
                 }
             }
+            
             
         }
     }
