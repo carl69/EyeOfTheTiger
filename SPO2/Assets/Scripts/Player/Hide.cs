@@ -22,7 +22,7 @@ public class Hide : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (hiden == true && Input.GetKey (KeyCode.C)) {
+		if (hiden == true /*&& Input.GetKey (KeyCode.C)*/) {
 			intoHide ();
             gameObject.layer = 14;
             if (cub != null)
