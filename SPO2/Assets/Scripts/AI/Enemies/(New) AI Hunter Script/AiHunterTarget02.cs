@@ -41,7 +41,7 @@ public class AiHunterTarget02 : MonoBehaviour {
 
     private void OnTriggerEnter(Collider x)
     {
-        if ((x.tag == "Player" || x.tag == "Pray") && !Targets.Contains(x.gameObject))
+        if ((x.tag == "Player" || x.tag == "Pray") && !Targets.Contains(x.gameObject) && x.transform.gameObject.layer != 11)
         {
             Targets.Add(x.gameObject);
 
