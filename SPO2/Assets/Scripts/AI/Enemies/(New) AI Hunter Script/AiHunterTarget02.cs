@@ -22,6 +22,7 @@ public class AiHunterTarget02 : MonoBehaviour {
         {
             Target = null;
             Targets.Remove(Targets[0]);
+            aihunter02.fpsTarget = null;
         }
         if (Target.layer == 14)
         {
