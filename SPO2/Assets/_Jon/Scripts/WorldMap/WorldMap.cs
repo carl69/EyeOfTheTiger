@@ -44,7 +44,7 @@ public class WorldMap : MonoBehaviour {
                 {
                     Debug.Log("This is a waterfall node");
                     GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node01").transform.GetChild(0).transform.position, step);
-                    SceneManager.LoadScene("RandomLevel");
+                    SceneManager.LoadScene("Node01");
                 }
                 if (hit02.transform.name == "Node02")
                 {

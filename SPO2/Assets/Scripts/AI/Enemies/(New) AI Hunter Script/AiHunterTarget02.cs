@@ -7,7 +7,7 @@ public class AiHunterTarget02 : MonoBehaviour {
     public GameObject Target;
     public List<GameObject> Targets = new List<GameObject>();
     AiHunters02 aihunter02;
-
+    public GameObject Alert;
 
     float UpdateTimer = 2;
     float curTime = 2;
@@ -18,11 +18,23 @@ public class AiHunterTarget02 : MonoBehaviour {
     }
     private void Update()
     {
-        if (Targets[0] == null)
+        if (Target.layer == 14 && Alert.activeInHierarchy == false)
+        {
+            Alert.SetActive(true);
+
+        }
+        else if(Target.layer != 14 && Alert.activeInHierarchy == true )
+        {
+            Alert.SetActive(false);
+        }
+
+        if (Targets[0] == null || Target.layer == 14)
         {
             Target = null;
             Targets.Remove(Targets[0]);
+            aihunter02.fpsTarget = null;
         }
+       
         if (Targets.Count != 0 )
         {
             
@@ -41,26 +53,29 @@ public class AiHunterTarget02 : MonoBehaviour {
 
     private void OnTriggerEnter(Collider x)
     {
-        if ((x.tag == "Player" || x.tag == "Pray") && !Targets.Contains(x.gameObject) && x.transform.gameObject.layer != 14)
+        if ((x.tag == "Player" || x.tag == "Pray") && !Targets.Contains(x.gameObject))
         {
-            Targets.Add(x.gameObject);
-
-            if (Target == null)
+            if (x.transform.gameObject.layer != 14)
             {
-                print("problem is here");
-                Target = x.gameObject;
-            }
-            for (int i = 0; i < Targets.Count; i++)
-            {
-                if (Targets[i] == null)
+                Targets.Add(x.gameObject);
+                
+                if (Target == null)
                 {
-                    Targets.Remove(Targets[i]);
+                    Target = x.gameObject;
                 }
-                if (Targets[i].tag == "Player")
+                for (int i = 0; i < Targets.Count; i++)
                 {
-                    Target = Targets[i];
+                    if (Targets[i] == null)
+                    {
+                        Targets.Remove(Targets[i]);
+                    }
+                    if (Targets[i].tag == "Player")
+                    {
+                        Target = Targets[i];
+                    }
                 }
             }
+            
             
         }
     }
@@ -70,7 +85,11 @@ public class AiHunterTarget02 : MonoBehaviour {
         {
             Targets.Remove(d.gameObject);
 
-
+            if (d.gameObject == aihunter02.fpsTarget)
+            {
+                aihunter02.fpsTarget = null;
+                Target = null;
+            }
             if (d.tag == "Player")
             {
                 if (Targets.Count <= 2)
