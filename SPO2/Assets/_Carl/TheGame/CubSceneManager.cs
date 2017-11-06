@@ -96,6 +96,9 @@ public class CubSceneManager : MonoBehaviour {
 
     void ResetPlayerPrefs()
     {
+        Days = 0;
+        CubLevel = 0;
+        StoredFood = 0;
         PlayerPrefs.SetInt("Days", 0);
         PlayerPrefs.SetInt("CubLevel", 0);
         PlayerPrefs.SetInt("StoredFood", 0);
