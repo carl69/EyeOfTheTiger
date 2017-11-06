@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerPayingFoodToThisObject : MonoBehaviour {
-    private bool canGiveFood;
+public class PlayerPayingFoodToThisObject : MonoBehaviour
+{
+    public bool canGiveFood;
     public GameObject parentToSprites;
     public GameObject parentToGraySprite;
     public GameObject[] sprites;
@@ -22,9 +23,10 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
 
     public bool notCanGetMoreCubsThenOne = false;
     private GameObject cub;
-
+    bool FirstTimeStart = true;
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         ActivateScript.SetActive(false);
         timer = foodGivingRate;
         if (!player)
@@ -56,14 +58,15 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
         parentToGraySprite.SetActive(false);
         parentToSprites.SetActive(false);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update()
+    {
         if (!cub && notCanGetMoreCubsThenOne)
         {
             cub = GameObject.FindGameObjectWithTag("Cub");
         }
-        else if( notCanGetMoreCubsThenOne)
+        else if (notCanGetMoreCubsThenOne)
         {
             if (spentFood != 0)
             {
@@ -90,9 +93,9 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
                 parentToSprites.SetActive(true);
             }
 
-            if (Input.GetKey(KeyCode.F) )
+            if (Input.GetKey(KeyCode.F))
             {
-                
+
 
                 if (timer < foodGivingRate)
                 {
@@ -104,7 +107,8 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
                     Done = true;
                     PAY();
                     return;
-                }else if(pfood.eaten > aCubeOfMeat + 1)
+                }
+                else if (pfood.eaten > aCubeOfMeat + 1)
                 {
                     if (spentFood == aCubeOfMeat * 3)
                     {
@@ -153,7 +157,8 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
             spentFood = 0;
         }
     }
-    void SummonImage() {
+    void SummonImage()
+    {
 
         for (int i = 1; i < sprites.Length + 1; i++)
         {
@@ -162,26 +167,35 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
                 sprites[i - 1].SetActive(true);
             }
         }
+
+        if (spentFood >= totalCost)
+        {
+            PAY();
+        }
     }
-    void Looks() {
+    void Looks()
+    {
         pfood.eaten -= aCubeOfMeat;
         spentFood += aCubeOfMeat;
         timer = 0;
 
+
         SummonImage();
     }
-    void PAY() {
+    void PAY()
+    {
         ActivateScript.SetActive(true);
         parentToGraySprite.SetActive(false);
         Done = true;
         spentFood = 0;
-        for (int i = 0; i < sprites.Length ; i++)
+        for (int i = 0; i < sprites.Length; i++)
         {
-            
+
             sprites[i].SetActive(false);
-            
+
         }
-        Destroy(this);
+        //Destroy(this);
+        this.enabled = false;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -196,10 +210,10 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
             if (Done == false)
             {
                 timer = 0;
-                
+
                 canGiveFood = true;
             }
-            
+
         }
     }
     private void OnTriggerExit(Collider other)
@@ -211,4 +225,27 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
             canGiveFood = false;
         }
     }
+    private void OnEnable()
+    {
+        if (Done == false && FirstTimeStart == false)
+        {
+            canGiveFood = false;
+            Invoke("resets", 1f);
+
+        }
+        else
+        {
+            FirstTimeStart = false;
+        }
+    }
+    void resets()
+    {
+        parentToGraySprite.SetActive(true);
+        parentToSprites.SetActive(true);
+
+        timer = 0;
+
+        canGiveFood = true;
+    }
+
 }

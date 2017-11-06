@@ -112,17 +112,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &66130363 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1807714384933840, guid: 93cbb605b102d9b4cab0e9bc830ba4aa,
-    type: 2}
-  m_PrefabInternal: {fileID: 452285794}
---- !u!114 &66130364 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114798278534544478, guid: 93cbb605b102d9b4cab0e9bc830ba4aa,
-    type: 2}
-  m_PrefabInternal: {fileID: 452285794}
-  m_Script: {fileID: 11500000, guid: edc7a8fa19179744cab380ba51193ca1, type: 3}
 --- !u!1001 &452285794
 Prefab:
   m_ObjectHideFlags: 0
@@ -175,6 +164,11 @@ Prefab:
     - target: {fileID: 1807714384933840, guid: 93cbb605b102d9b4cab0e9bc830ba4aa, type: 2}
       propertyPath: m_TagString
       value: SceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 114798278534544478, guid: 93cbb605b102d9b4cab0e9bc830ba4aa,
+        type: 2}
+      propertyPath: NoSaving
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93cbb605b102d9b4cab0e9bc830ba4aa, type: 2}
@@ -382,12 +376,12 @@ Prefab:
         type: 2}
       propertyPath: cubmang
       value: 
-      objectReference: {fileID: 66130363}
+      objectReference: {fileID: 0}
     - target: {fileID: 114417299853726374, guid: 0979449d8bf9a3f4a9c3c65354a5751c,
         type: 2}
       propertyPath: cubmangScript
       value: 
-      objectReference: {fileID: 66130364}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0979449d8bf9a3f4a9c3c65354a5751c, type: 2}
   m_IsPrefabParent: 0
