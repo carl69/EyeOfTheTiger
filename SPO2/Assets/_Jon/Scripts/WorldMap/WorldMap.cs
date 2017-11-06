@@ -40,23 +40,31 @@ public class WorldMap : MonoBehaviour {
             {
                 if(hit02.transform.name == "Node01")
                 {
-                    Debug.Log("This is a waterfall node");
+                    
                     GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node01").transform.GetChild(0).transform.position, step);
                     SceneManager.LoadScene("Node01");
                 }
                 if (hit02.transform.name == "Node02")
                 {
-                    Debug.Log("This is a clearing node");
+                    
                     GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node02").transform.GetChild(0).transform.position, step);
+                    SceneManager.LoadScene("Node02");
                 }
                 if (hit02.transform.name == "Node03")
                 {
-                    Debug.Log("This is a poacher camp node");
+                    
                     GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node03").transform.GetChild(0).transform.position, step);
+                    SceneManager.LoadScene("Node03");
+                }
+                if (hit02.transform.name == "Node04")
+                {
+
+                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node03").transform.GetChild(0).transform.position, step);
+                    SceneManager.LoadScene("Node04");
                 }
                 if (hit02.transform.name == "Den01")
                 {
-                    Debug.Log("This is a den node");
+                    
                     GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Den01").transform.GetChild(0).transform.position, step);
                 }
                 if (hit02.transform.name == "Den02")
