@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPayingFoodToThisObject : MonoBehaviour {
-    private bool canGiveFood;
+    public bool canGiveFood;
     public GameObject parentToSprites;
     public GameObject parentToGraySprite;
     public GameObject[] sprites;
@@ -22,7 +22,7 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
 
     public bool notCanGetMoreCubsThenOne = false;
     private GameObject cub;
-
+    bool FirstTimeStart = true;
     // Use this for initialization
     void Start () {
         ActivateScript.SetActive(false);
@@ -162,11 +162,17 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
                 sprites[i - 1].SetActive(true);
             }
         }
+
+        if (spentFood >= totalCost)
+        {
+            PAY();
+        }
     }
     void Looks() {
         pfood.eaten -= aCubeOfMeat;
         spentFood += aCubeOfMeat;
         timer = 0;
+        
 
         SummonImage();
     }
@@ -181,7 +187,8 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
             sprites[i].SetActive(false);
             
         }
-        Destroy(this);
+        //Destroy(this);
+        this.enabled = false;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -211,4 +218,26 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
             canGiveFood = false;
         }
     }
+    private void OnEnable()
+    {
+        if (Done == false && FirstTimeStart == false)
+        {
+            canGiveFood = false;
+            Invoke("resets", 1f);
+
+        }
+        else
+        {
+            FirstTimeStart = false;
+        }
+    }
+    void resets() {
+        parentToGraySprite.SetActive(true);
+        parentToSprites.SetActive(true);
+
+        timer = 0;
+
+        canGiveFood = true;
+    }
+
 }

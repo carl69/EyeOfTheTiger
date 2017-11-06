@@ -21,6 +21,8 @@ public class CubSceneManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
         //Cheats
         if (Cheats)
         {
