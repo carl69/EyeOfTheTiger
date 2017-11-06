@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     public bool canMoveInAir = true;
     [HideInInspector]
     private float speed = 10f, jumpVelocity = 10f, gravityStrength, addedRunningSpeed;
-    [HideInInspector]
+    //[HideInInspector]
     public float currRunningSpeed = 0;
     public LayerMask playerMask;
     Transform myTransform, tagGround;
