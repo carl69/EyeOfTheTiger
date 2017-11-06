@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpriteTigerAnimatorController : MonoBehaviour {
     public GameObject Tiger;
     Animator anim;
+    public float RotationSpeed;
 	// Use this for initialization
 	void Start () {
         anim = GetComponent<Animator>();
@@ -20,15 +21,21 @@ public class SpriteTigerAnimatorController : MonoBehaviour {
 
         anim.SetFloat("xMovement", Tiger.GetComponent<Movement>().xMovement);
         anim.SetFloat("yMovement", Tiger.GetComponent<Movement>().yMovement);
-        
+
+
+        if (Tiger.GetComponent<Movement>().xMovement < -0.5f)
+        {
+            gameObject.transform.Rotate(Vector3.up * (RotationSpeed * Time.deltaTime));
+        }
+
         /*if (Input.GetKeyDown(KeyCode.W))
             transform.forward = new Vector3(0f, 0f, 1f);
         else if (Input.GetKeyDown(KeyCode.S))
             transform.forward = new Vector3(0f, 0f, -1f);
-            */
+            *
         if (Tiger.GetComponent<Movement>().xMovement<-0.5f)
             transform.forward = new Vector3(-1f, 0f, 0f);
         else if (Tiger.GetComponent<Movement>().xMovement > 0.5f)
-            transform.forward = new Vector3(1f, 0f, 0f);
+            transform.forward = new Vector3(1f, 0f, 0f);*/
     }
 }
