@@ -34,7 +34,6 @@ public class AiEyes : MonoBehaviour
         {
             aiHunterTarget02.Target = null;
             aiHunterTarget02.Targets.Clear();
-            print("fuk");
             return;
         }
 

@@ -14,7 +14,7 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour {
     public float foodGivingRate;
     public float spentFood;
     public float totalCost;
-    private float aCubeOfMeat = 20;
+    private float aCubeOfMeat = 10;
     private float timer;
     public bool Done = false;
     public GameObject ActivateScript;
