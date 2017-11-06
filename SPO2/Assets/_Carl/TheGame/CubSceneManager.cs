@@ -6,6 +6,7 @@ public class CubSceneManager : MonoBehaviour {
     public int Days;
     public int CubLevel;
     public int StoredFood;
+    //public float 
 
     public bool DebugPlayerPrefs = false;
     public bool Cheats = false;
@@ -21,8 +22,6 @@ public class CubSceneManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
-
         //Cheats
         if (Cheats)
         {

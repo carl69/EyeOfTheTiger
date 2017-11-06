@@ -112,6 +112,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &66130363 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1807714384933840, guid: 93cbb605b102d9b4cab0e9bc830ba4aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 452285794}
+--- !u!114 &66130364 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114798278534544478, guid: 93cbb605b102d9b4cab0e9bc830ba4aa,
+    type: 2}
+  m_PrefabInternal: {fileID: 452285794}
+  m_Script: {fileID: 11500000, guid: edc7a8fa19179744cab380ba51193ca1, type: 3}
 --- !u!1001 &452285794
 Prefab:
   m_ObjectHideFlags: 0
@@ -188,12 +199,12 @@ Prefab:
     - target: {fileID: 224071875467935286, guid: b013d473320655d409b939dcef516eb0,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 370
+      value: 370.5
       objectReference: {fileID: 0}
     - target: {fileID: 224071875467935286, guid: b013d473320655d409b939dcef516eb0,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 208
+      value: 208.5
       objectReference: {fileID: 0}
     - target: {fileID: 224071875467935286, guid: b013d473320655d409b939dcef516eb0,
         type: 2}
@@ -367,14 +378,16 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 1627174884347016, guid: 0979449d8bf9a3f4a9c3c65354a5751c, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1627174884347016, guid: 0979449d8bf9a3f4a9c3c65354a5751c, type: 2}
-      propertyPath: m_TagString
-      value: FoodBank
-      objectReference: {fileID: 0}
+    - target: {fileID: 114417299853726374, guid: 0979449d8bf9a3f4a9c3c65354a5751c,
+        type: 2}
+      propertyPath: cubmang
+      value: 
+      objectReference: {fileID: 66130363}
+    - target: {fileID: 114417299853726374, guid: 0979449d8bf9a3f4a9c3c65354a5751c,
+        type: 2}
+      propertyPath: cubmangScript
+      value: 
+      objectReference: {fileID: 66130364}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0979449d8bf9a3f4a9c3c65354a5751c, type: 2}
   m_IsPrefabParent: 0
@@ -416,6 +429,20 @@ Prefab:
     - target: {fileID: 4323518007410838, guid: 64f86497977ccf9448300f288d2b202b, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 114140695577425492, guid: 64f86497977ccf9448300f288d2b202b,
+        type: 2}
+      propertyPath: foodPickUp
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1985709109086026, guid: 64f86497977ccf9448300f288d2b202b, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114140695577425492, guid: 64f86497977ccf9448300f288d2b202b,
+        type: 2}
+      propertyPath: startHunger
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 64f86497977ccf9448300f288d2b202b, type: 2}
@@ -817,6 +844,10 @@ Prefab:
     - target: {fileID: 114991768574613604, guid: 4b0a6c432e047ee4daf158bb00d4abd8,
         type: 2}
       propertyPath: m_ScreenMatchMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1591957549696308, guid: 4b0a6c432e047ee4daf158bb00d4abd8, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
