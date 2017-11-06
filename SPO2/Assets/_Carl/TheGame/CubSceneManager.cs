@@ -10,11 +10,19 @@ public class CubSceneManager : MonoBehaviour {
 
     public bool DebugPlayerPrefs = false;
     public bool Cheats = false;
+    public bool NoSaving = false;
     private void Awake()
     {
-        Days = PlayerPrefs.GetInt("Days");
-        CubLevel = PlayerPrefs.GetInt("CubLevel");
-        StoredFood = PlayerPrefs.GetInt("StoredFood");
+        if (NoSaving == true)
+        {
+            ResetPlayerPrefs();
+        }
+        else
+        {
+            Days = PlayerPrefs.GetInt("Days");
+            CubLevel = PlayerPrefs.GetInt("CubLevel");
+            StoredFood = PlayerPrefs.GetInt("StoredFood");
+        }
     }
     void Start () {
         
@@ -27,6 +35,10 @@ public class CubSceneManager : MonoBehaviour {
         {
             if (Input.GetKey(KeyCode.LeftShift))
             {
+                if (Input.GetKeyDown(KeyCode.U))
+                {
+                    ResetPlayerPrefs();
+                }
                 if (Input.GetKey(KeyCode.D))
                 {
                     if (Input.GetKeyDown(KeyCode.UpArrow))
@@ -80,6 +92,13 @@ public class CubSceneManager : MonoBehaviour {
     private void OnApplicationQuit()
     {
         UpdatePlayerPrefs();
+    }
+
+    void ResetPlayerPrefs()
+    {
+        PlayerPrefs.SetInt("Days", 0);
+        PlayerPrefs.SetInt("CubLevel", 0);
+        PlayerPrefs.SetInt("StoredFood", 0);
     }
     void UpdatePlayerPrefs()
     {
