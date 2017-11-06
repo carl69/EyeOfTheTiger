@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class WorldMap : MonoBehaviour {
 
     public float speed;
-    public int food = 0;
-    public bool cubLevel03 = false;
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +22,7 @@ public class WorldMap : MonoBehaviour {
         {
             if (hit.transform.name == "Node01")
             {
-                Debug.Log("Hovering over first waterfall");
+                Debug.Log("Hovering over food node");
                 GameObject.Find("Node01").transform.GetChild(2).gameObject.SetActive(true);
                
             }
@@ -64,7 +62,7 @@ public class WorldMap : MonoBehaviour {
                 if (hit02.transform.name == "Den02")
                 {
                     Debug.Log("This is a second den node");
-                    if (food >= 10 && cubLevel03 == true)
+                    if (PlayerPrefs.GetInt("StoredFood") == 10 && PlayerPrefs.GetInt("CubLevel") == 3)
                     {
                         GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Den02").transform.GetChild(0).transform.position, step);
                     }
