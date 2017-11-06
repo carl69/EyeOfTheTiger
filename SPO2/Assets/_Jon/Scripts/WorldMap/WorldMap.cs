@@ -22,15 +22,45 @@ public class WorldMap : MonoBehaviour {
         {
             if (hit.transform.name == "Node01")
             {
-                Debug.Log("Hovering over food node");
+                Debug.Log("Hovering over water node");
                 GameObject.Find("Node01").transform.GetChild(2).gameObject.SetActive(true);
                
             }
             else
             {
-                GameObject.Find("Node01").transform.GetChild(2).gameObject.SetActive(false);
+                GameObject.Find("Node02").transform.GetChild(2).gameObject.SetActive(false);
             }
-         
+            if (hit.transform.name == "Node02")
+            {
+                Debug.Log("Hovering over food node");
+                GameObject.Find("Node02").transform.GetChild(2).gameObject.SetActive(true);
+
+            }
+            else
+            {
+                GameObject.Find("Node02").transform.GetChild(2).gameObject.SetActive(false);
+            }
+            if (hit.transform.name == "Node03")
+            {
+                Debug.Log("Hovering over food node");
+                GameObject.Find("Node03").transform.GetChild(2).gameObject.SetActive(true);
+
+            }
+            else
+            {
+                GameObject.Find("Node03").transform.GetChild(2).gameObject.SetActive(false);
+            }
+            if (hit.transform.name == "Node04")
+            {
+                Debug.Log("Hovering over food node");
+                GameObject.Find("Node04").transform.GetChild(2).gameObject.SetActive(true);
+
+            }
+            else
+            {
+                GameObject.Find("Node04").transform.GetChild(2).gameObject.SetActive(false);
+            }
+
         }
             if (Input.GetMouseButtonDown(0))
         {
@@ -59,7 +89,7 @@ public class WorldMap : MonoBehaviour {
                 if (hit02.transform.name == "Node04")
                 {
 
-                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node03").transform.GetChild(0).transform.position, step);
+                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node04").transform.GetChild(0).transform.position, step);
                     SceneManager.LoadScene("Node04");
                 }
                 if (hit02.transform.name == "Den01")
