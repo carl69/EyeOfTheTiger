@@ -8,8 +8,11 @@ public class Hide : MonoBehaviour {
 	private bool hiden = false;
 	private Renderer[] renderChildren;
     private GameObject cub;
-	// Use this for initialization
-	void Start () {
+
+    Color color;
+    // Use this for initialization
+    void Start () {
+        //color = 
         //finds if cub is in the game. finds the cub
         if (GameObject.Find("Cub") != null)
         {
@@ -62,16 +65,21 @@ public class Hide : MonoBehaviour {
 	{
 		foreach (Renderer r in renderChildren)
 		{
-			r.enabled = false;
-		}
+            //r.enabled = false;
+            Color tmp = r.GetComponent<SpriteRenderer>().color;
+            tmp.a = 0.5f;
+            r.GetComponent<SpriteRenderer>().color = tmp;
+        }
 	}
 	public void outoHide()
 	{
 		hidden = false;
 		foreach (Renderer r in renderChildren)
 		{
-			r.enabled = true;
-		}
+            Color tmp = r.GetComponent<SpriteRenderer>().color;
+            tmp.a = 1f;
+            r.GetComponent<SpriteRenderer>().color = tmp;
+        }
 	}
 
 }
