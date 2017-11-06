@@ -74,7 +74,7 @@ public class food : MonoBehaviour {
         if (timer < Time.time)
         {
             timer = Time.time + rate;
-            eaten--;
+            //eaten--;
 
             if (eaten <= 0)
             {
