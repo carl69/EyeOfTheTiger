@@ -9,7 +9,8 @@ public class food : MonoBehaviour {
     //[HideInInspector]
     public bool eating = false;
     public float eaten = 50;
-    private float amountOfFood = 20;
+    [HideInInspector]
+    public float amountOfFood = 20;
     // food loss rate
     private float rate;
     private float timer;
