@@ -48,18 +48,12 @@ public class AiEyes : MonoBehaviour
 
             if (hit.transform.gameObject.layer == 8)
             {
-                print("1");
-                aiHunterTarget02.Targets.Add(hit.transform.gameObject);
                 aiHunterTarget02.Target = hit.transform.gameObject;
                 Debug.DrawLine(hit.point, hit.point + Vector3.up * 5, Color.red);
             }
             else if (hit.transform.gameObject.layer == 13)
             {
                 aiHunterTarget02.Target = hit.transform.gameObject;
-            }
-            else
-            {
-                print(hit.transform.gameObject);
             }
 
         }
