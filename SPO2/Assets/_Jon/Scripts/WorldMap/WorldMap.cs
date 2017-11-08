@@ -28,7 +28,7 @@ public class WorldMap : MonoBehaviour {
             }
             else
             {
-                GameObject.Find("Node02").transform.GetChild(2).gameObject.SetActive(false);
+                GameObject.Find("Node01").transform.GetChild(2).gameObject.SetActive(false);
             }
             if (hit.transform.name == "Node02")
             {
