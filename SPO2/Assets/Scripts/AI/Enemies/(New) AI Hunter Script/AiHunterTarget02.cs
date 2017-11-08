@@ -18,6 +18,7 @@ public class AiHunterTarget02 : MonoBehaviour {
     }
     private void Update()
     {
+
         if (Target.layer == 14 && Alert.activeInHierarchy == false)
         {
             Alert.SetActive(true);
