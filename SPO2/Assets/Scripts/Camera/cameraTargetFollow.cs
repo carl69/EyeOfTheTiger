@@ -25,15 +25,10 @@ public class cameraTargetFollow : MonoBehaviour {
         {
             leftRight = Input.GetAxis("Horizontal");
 
-            if (curentDistance < maxDistance || curentDistance > -maxDistance)
-            {
-                curentDistance = maxDistance * leftRight;
-                transform.localPosition = new Vector3(curentDistance, 0, 0);
 
-            }
         }
 
-        if (Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Horizontal") == -1)
+        if (/*Input.GetAxis("Horizontal") != 0*/Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Horizontal") == -1)
         {
             timer = 0;
             leftRight = Input.GetAxis("Horizontal");
