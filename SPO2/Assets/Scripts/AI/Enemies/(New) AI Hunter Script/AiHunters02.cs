@@ -41,7 +41,7 @@ public class AiHunters02 : MonoBehaviour {
                 print("Attack");
             }
             else
-                if (fpsTargetDistance < enemyLookDistance)
+                if (fpsTargetDistance < enemyLookDistance + 5)
             {
                 myRenderer.material.color = Color.yellow;
                 lookAtPlayer();

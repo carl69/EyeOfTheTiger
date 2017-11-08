@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114803694067277196}
   - component: {fileID: 54585269559588570}
   - component: {fileID: 65723680685719810}
-  m_Layer: 11
+  m_Layer: 12
   m_Name: Hunter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1468447601700494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.73, y: 0.71, z: 0}
+  m_LocalPosition: {x: 14.04, y: 0.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4596759949544082}
@@ -206,7 +206,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103275484397036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.83, y: 0.71, z: 0}
+  m_LocalPosition: {x: -6.82, y: 0.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4596759949544082}
@@ -232,7 +232,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1164292593310840}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.62, z: 15}
+  m_LocalPosition: {x: 0, y: -0.11, z: 15}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 4372853097527828}
@@ -289,8 +289,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184724378571242}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 43.469017, y: 5.58, z: 3.23}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4582916003073170}
@@ -306,7 +306,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1553703231765190}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0.39, z: 0}
   m_LocalScale: {x: 0.6666663, y: 0.6666667, z: 1.0000002}
   m_Children: []
   m_Father: {fileID: 4582916003073170}
@@ -578,8 +578,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5709c24f4c6249c439e3c56f8f26de3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GoTo: 1
-  movementsSpeed: 0.6
+  GoTo: 0
+  movementsSpeed: 2
   patrollingTurnSpeed: 10
   patrollPoints:
   - {fileID: 4078500992313338}
@@ -642,10 +642,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsTargetDistance: 0
-  enemyLookDistance: 20
-  moveToAttackDistance: 17
-  shootDistance: 17
-  enemyMovementSpeed: 10
+  enemyLookDistance: 21
+  moveToAttackDistance: 21
+  shootDistance: 10.4
+  enemyMovementSpeed: 5
   damping: 5
   fpsTarget: {fileID: 0}
 --- !u!114 &114803694067277196

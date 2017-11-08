@@ -18,23 +18,32 @@ public class AiHunterTarget02 : MonoBehaviour {
     }
     private void Update()
     {
-
-        if (Target.layer == 14 && Alert.activeInHierarchy == false)
+        if (Target != null)
         {
-            Alert.SetActive(true);
+            if (Target.layer == 14)
+            {
+                if (Alert.activeInHierarchy == false)
+                {
+                    Alert.SetActive(true);
 
+                }
+            }
+            else if (Target.layer != 14 && Alert.activeInHierarchy == true)
+            {
+                Alert.SetActive(false);
+            }
         }
-        else if(Target.layer != 14 && Alert.activeInHierarchy == true )
+        else if(Alert.activeInHierarchy == true )
         {
             Alert.SetActive(false);
         }
 
-        if (Targets[0] == null || Target.layer == 14)
-        {
-            Target = null;
-            Targets.Remove(Targets[0]);
-            aihunter02.fpsTarget = null;
-        }
+        //if (Targets[0] == null || Target.layer == 14)
+        //{
+        //    Target = null;
+        //    Targets.Remove(Targets[0]);
+        //    aihunter02.fpsTarget = null;
+        //}
        
         if (Targets.Count != 0 )
         {
