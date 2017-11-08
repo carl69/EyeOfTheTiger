@@ -18,11 +18,7 @@ public class AiHunterTarget02 : MonoBehaviour {
     }
     private void Update()
     {
-<<<<<<< HEAD
         if (Target != null)
-=======
-        if (Target.layer == 14 && Alert.activeInHierarchy == false)
->>>>>>> 586a31f6238608a63a3fe2a22c053ccc3dcc1ed9
         {
             if (Target.layer == 14)
             {

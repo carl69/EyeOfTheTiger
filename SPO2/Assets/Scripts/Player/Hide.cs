@@ -66,9 +66,14 @@ public class Hide : MonoBehaviour {
 		foreach (Renderer r in renderChildren)
 		{
             //r.enabled = false;
-            Color tmp = r.GetComponent<SpriteRenderer>().color;
-            tmp.a = 0.5f;
-            r.GetComponent<SpriteRenderer>().color = tmp;
+            if (r.GetComponent<SpriteRenderer>() != null)
+            {
+                Color tmp = r.GetComponent<SpriteRenderer>().color;
+                tmp.a = 0.5f;
+                r.GetComponent<SpriteRenderer>().color = tmp;
+
+            }
+            
         }
 	}
 	public void outoHide()
@@ -76,9 +81,13 @@ public class Hide : MonoBehaviour {
 		hidden = false;
 		foreach (Renderer r in renderChildren)
 		{
-            Color tmp = r.GetComponent<SpriteRenderer>().color;
-            tmp.a = 1f;
-            r.GetComponent<SpriteRenderer>().color = tmp;
+            if (r.GetComponent<SpriteRenderer>() != null)
+            {
+                Color tmp = r.GetComponent<SpriteRenderer>().color;
+                tmp.a = 1f;
+                r.GetComponent<SpriteRenderer>().color = tmp;
+            }
+                
         }
 	}
 
