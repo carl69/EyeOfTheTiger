@@ -7,7 +7,7 @@ public class addCameraToCanvas : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
        // maincamera = GameObject.FindGameObjectWithTag("MainCamera");
-       maincamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        maincamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         Canvas canva = gameObject.GetComponent<Canvas>();
 
         canva.renderMode = RenderMode.ScreenSpaceCamera;
