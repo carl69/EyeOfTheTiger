@@ -12,9 +12,12 @@ public class FollowCamera : MonoBehaviour {
     public Vector3 startPos;
 
     public bool HuntingMode = false;
+
+    private GameObject cameraFollowTarget;
 	// Use this for initialization
 	void Start () {
-		x = GameObject.FindGameObjectWithTag("Player").transform.position.x;
+        cameraFollowTarget = GameObject.FindGameObjectWithTag("cameraFollowTarget");
+		x = cameraFollowTarget.transform.position.x;
         startPos = gameObject.transform.position;
 		//Vector3 aux = new Vector3 (x, y+7, transform.position.z);
 
@@ -68,7 +71,7 @@ public class FollowCamera : MonoBehaviour {
 			if (counter2 <0)counter2++;
 			if(-1 <= counter2 && counter2 <=1) counter2 = 0 ;*/
 			//print (transform.position.z);
-			x = transform.position.x + (GameObject.FindGameObjectWithTag ("Player").transform.position.x - transform.position.x) / Smooth;
+			x = transform.position.x + (cameraFollowTarget.transform.position.x - transform.position.x) / Smooth;
 			zz = startPos.z + 10;//close camera(by say TO)
 			yy = startPos.y;
 			Vector3 aux = new Vector3 (x,yy /*transform.position.y*/ , zz/*transform.position.z*/);
