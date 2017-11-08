@@ -12,7 +12,7 @@ public class ObjectSpawnerWhenActivated : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Instantiate(Spawn, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.Euler(0,90,0));
+        Instantiate(Spawn, new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(0,90,0));
         this.gameObject.SetActive(false);
 	}
     
