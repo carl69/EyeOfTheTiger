@@ -10,6 +10,8 @@ public class PlayerDeath : MonoBehaviour {
     public bool deathTextShown = false;
     food Food;
     PlayerWater playerWater;
+    public Canvas canvasSpawn;
+    public Canvas PlayerUi;
 	// Use this for initialization
 	void Start () {
         if (this.gameObject.name != "Player")
@@ -21,7 +23,15 @@ public class PlayerDeath : MonoBehaviour {
 
         Food = this.gameObject.GetComponent<food>();
         playerWater = this.gameObject.GetComponent<PlayerWater>();
+        if (GameObject.FindGameObjectWithTag("TextPrompts") == null)
+        {
+            Instantiate(canvasSpawn);
+        }
         textBox = GameObject.FindGameObjectWithTag("TextPrompts").transform.GetChild(0).gameObject;
+        if (GameObject.FindGameObjectWithTag("PlayerUI") == null)
+        {
+            Instantiate(PlayerUi);
+        }
     }
 
     private void OnTriggerEnter(Collider collision)
