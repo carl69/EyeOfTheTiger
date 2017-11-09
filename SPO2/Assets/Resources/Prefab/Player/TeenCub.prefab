@@ -241,8 +241,9 @@ GameObject:
   - component: {fileID: 114237480425701786}
   - component: {fileID: 114194268490911202}
   - component: {fileID: 114180552391053992}
+  - component: {fileID: 114457479506416814}
   m_Layer: 9
-  m_Name: BabiCub
+  m_Name: TeenCub
   m_TagString: Cub
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2942,7 +2943,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   babicub: {fileID: 1220669267260956}
-  NewCub: {fileID: 1220669267260956, guid: 56ff0aeecdf707141ab8d53dd672cae4, type: 2}
+  NewCub: {fileID: 1643312031150948, guid: 2555eed688730f042baa3b38cc0290ce, type: 2}
+--- !u!114 &114457479506416814
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1220669267260956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ab11564da372ac4ab7e65831c97e034, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  updateRate: 2
+  speed: 300
+  fMode: 0
+  pathIsEnded: 0
+  nextWaypointDistance: 3
 --- !u!114 &114733494838718624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2959,7 +2977,7 @@ MonoBehaviour:
   Level: 1
   PickUpDistance: 3
   Carry: {fileID: 0}
-  Cub: {fileID: 1220669267260956, guid: 56ff0aeecdf707141ab8d53dd672cae4, type: 2}
+  Cub: {fileID: 1643312031150948, guid: 2555eed688730f042baa3b38cc0290ce, type: 2}
 --- !u!135 &135627032317194306
 SphereCollider:
   m_ObjectHideFlags: 1
