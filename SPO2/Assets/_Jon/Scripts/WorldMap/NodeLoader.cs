@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class NodeLoader : MonoBehaviour
 {
-
+    public Scene sceneToLoad;
     public string nodeName;
 
     // Use this for initialization
@@ -14,12 +14,14 @@ public class NodeLoader : MonoBehaviour
         nodeName = this.name.ToString();
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             GameObject.Find("WorldMap").GetComponent<WorldMap>().playerMoving = false;
+            //Debug.Log("playerMoving set to false!");
             SceneManager.LoadScene(nodeName);
+            //Debug.Log("Loading scene:" + nodeName);
         }
     }
 
