@@ -14,7 +14,7 @@ public class WorldMap : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        float step = speed * Time.deltaTime;
+        
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
@@ -22,9 +22,7 @@ public class WorldMap : MonoBehaviour {
         {
             if (hit.transform.name == "Node01")
             {
-                Debug.Log("Hovering over water node");
-                GameObject.Find("Node01").transform.GetChild(2).gameObject.SetActive(true);
-               
+                GameObject.Find("Node01").transform.GetChild(2).gameObject.SetActive(true);             
             }
             else
             {
@@ -32,9 +30,7 @@ public class WorldMap : MonoBehaviour {
             }
             if (hit.transform.name == "Node02")
             {
-                Debug.Log("Hovering over food node");
                 GameObject.Find("Node02").transform.GetChild(2).gameObject.SetActive(true);
-
             }
             else
             {
@@ -42,9 +38,7 @@ public class WorldMap : MonoBehaviour {
             }
             if (hit.transform.name == "Node03")
             {
-                Debug.Log("Hovering over food node");
                 GameObject.Find("Node03").transform.GetChild(2).gameObject.SetActive(true);
-
             }
             else
             {
@@ -52,9 +46,7 @@ public class WorldMap : MonoBehaviour {
             }
             if (hit.transform.name == "Node04")
             {
-                Debug.Log("Hovering over food node");
                 GameObject.Find("Node04").transform.GetChild(2).gameObject.SetActive(true);
-
             }
             else
             {
@@ -62,6 +54,8 @@ public class WorldMap : MonoBehaviour {
             }
 
         }
+
+
             if (Input.GetMouseButtonDown(0))
         {
             Ray ray02 = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -71,38 +65,38 @@ public class WorldMap : MonoBehaviour {
                 if(hit02.transform.name == "Node01")
                 {
                     
-                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node01").transform.GetChild(0).transform.position, step);
+                    GameObject.FindGameObjectWithTag("Player").transform.localPosition = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node01").transform.GetChild(0).transform.position, Time.deltaTime * speed);
                     SceneManager.LoadScene("Node01");
                 }
                 if (hit02.transform.name == "Node02")
                 {
                     
-                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node02").transform.GetChild(0).transform.position, step);
+                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.MoveTowards(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node02").transform.GetChild(0).transform.position, Time.deltaTime * speed);
                     SceneManager.LoadScene("Node02");
                 }
                 if (hit02.transform.name == "Node03")
                 {
                     
-                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node03").transform.GetChild(0).transform.position, step);
+                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.MoveTowards(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node03").transform.GetChild(0).transform.position, Time.deltaTime * speed);
                     SceneManager.LoadScene("Node03");
                 }
                 if (hit02.transform.name == "Node04")
                 {
 
-                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node04").transform.GetChild(0).transform.position, step);
+                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.MoveTowards(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Node04").transform.GetChild(0).transform.position, Time.deltaTime * speed);
                     SceneManager.LoadScene("Node04");
                 }
                 if (hit02.transform.name == "Den01")
                 {
                     
-                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Den01").transform.GetChild(0).transform.position, step);
+                    GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.MoveTowards(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Den01").transform.GetChild(0).transform.position, Time.deltaTime * speed);
                 }
                 if (hit02.transform.name == "Den02")
                 {
                     Debug.Log("This is a second den node");
                     if (PlayerPrefs.GetInt("StoredFood") == 10 && PlayerPrefs.GetInt("CubLevel") == 3)
                     {
-                        GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.Lerp(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Den02").transform.GetChild(0).transform.position, step);
+                        GameObject.FindGameObjectWithTag("Player").transform.position = Vector3.MoveTowards(GameObject.FindGameObjectWithTag("Player").transform.position, GameObject.Find("Den02").transform.GetChild(0).transform.position, Time.deltaTime * speed);
                     }
                     else
                     {
