@@ -12,7 +12,8 @@ public class CanvasController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-
+        textBox = GameObject.FindGameObjectWithTag("TextPrompts");
+        textBox.SetActive(false);
     }
 
     public void Resume()
