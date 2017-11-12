@@ -14,6 +14,10 @@ public class MakeAHiveScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        int getplayerprefs = PlayerPrefs.GetInt("Den");
+        PlayerPrefs.SetInt("Den", getplayerprefs + 1);
+        print(getplayerprefs + "  " + PlayerPrefs.GetInt("Den"));
+
         Destroy(destroyThisOne);
         startThisScript.enabled = true;
         Destroy(this.gameObject);
