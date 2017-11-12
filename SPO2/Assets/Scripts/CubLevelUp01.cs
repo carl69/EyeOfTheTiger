@@ -12,6 +12,11 @@ public class CubLevelUp01 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        int getplayerprefs = PlayerPrefs.GetInt("Cub");
+        PlayerPrefs.SetInt("Cub", getplayerprefs + 1);
+        print(getplayerprefs + "  " + PlayerPrefs.GetInt("Cub"));
+
+
         Instantiate(NewCub, new Vector3(transform.position.x, transform.position.y, transform.position.z), Quaternion.identity);
         Destroy(babicub);
 
