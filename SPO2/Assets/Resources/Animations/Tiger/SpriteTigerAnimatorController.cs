@@ -13,14 +13,14 @@ public class SpriteTigerAnimatorController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if(Tiger.GetComponent<Movement>().isGrounded==true)anim.SetBool("IsGrounded", true);
-        else anim.SetBool("IsGrounded", false);
+        //if(Tiger.GetComponent<Movement>().isGrounded==true)anim.SetBool("IsGrounded", true);
+        //else anim.SetBool("IsGrounded", false);
 
-        if (Tiger.GetComponent<PlayerWater>().drinkAudio == true) anim.SetBool("IsDrinking", true);
-        else anim.SetBool("IsDrinking", false);
+        //if (Tiger.GetComponent<PlayerWater>().drinkAudio == true) anim.SetBool("IsDrinking", true);
+        //else anim.SetBool("IsDrinking", false);
 
         anim.SetFloat("xMovement", Tiger.GetComponent<Movement>().xMovement);
-        anim.SetFloat("yMovement", Tiger.GetComponent<Movement>().yMovement);
+        //anim.SetFloat("yMovement", Tiger.GetComponent<Movement>().yMovement);
 
 
         if (Tiger.GetComponent<Movement>().xMovement < -0.5f)
