@@ -25,6 +25,10 @@ public class WorldMapTransitionTo : MonoBehaviour {
             {
                 SceneManager.LoadScene("Den01");
             }
+            if(PlayerPrefs.GetInt("Home") == 2)
+            {
+                SceneManager.LoadScene("Den02");
+            }
 
         }
     }

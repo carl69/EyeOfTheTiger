@@ -27,7 +27,7 @@ public class WaterPollution : MonoBehaviour {
         {
             //Destroy(this);
             gameObject.GetComponent<Renderer>().material.color = new Color(0, 0, 1, 1);
-            Debug.Log("God help us all");
+            //Debug.Log("God help us all");
             outdated = false;
         }
 	}

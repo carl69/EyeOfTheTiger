@@ -182,7 +182,7 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour
 
         SummonImage();
     }
-    void PAY()
+    public void PAY()
     {
         ActivateScript.SetActive(true);
         parentToGraySprite.SetActive(false);

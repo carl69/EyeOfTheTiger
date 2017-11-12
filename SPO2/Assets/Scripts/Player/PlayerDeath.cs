@@ -27,7 +27,7 @@ public class PlayerDeath : MonoBehaviour {
         {
             Instantiate(canvasSpawn);
         }
-        textBox = GameObject.FindGameObjectWithTag("TextPrompts").transform.GetChild(0).gameObject;
+        textBox = GameObject.FindGameObjectWithTag("TextPrompts").gameObject;
         if (GameObject.FindGameObjectWithTag("PlayerUI") == null)
         {
             Instantiate(PlayerUi);
@@ -39,7 +39,7 @@ public class PlayerDeath : MonoBehaviour {
 
         if (collision.gameObject.tag == "Trap")
         {
-            Debug.Log("1");
+            Debug.Log("Player entered trap!");
             DestroyPlayer();
             if (GameObject.FindGameObjectWithTag("Cub") == true)
             {
@@ -134,10 +134,11 @@ public class PlayerDeath : MonoBehaviour {
         Destroy(GameObject.Find("CubUI"));
     }
     void GameOver() {
+        
         Debug.Log("No cub found!");
         Time.timeScale = 0;
         textBox.SetActive(true);
-        textBox.transform.GetChild(1).GetComponent<Text>().text = "You died and have no cubs to keep playing.";
-        textBox.transform.GetChild(2).GetComponent<Button>().interactable = false;
+        textBox.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = "You died and have no cubs to keep playing.";
+        textBox.transform.GetChild(0).transform.GetChild(2).GetComponent<Button>().interactable = false;
     }
 }

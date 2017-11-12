@@ -28,7 +28,7 @@ public class cameraTargetFollow : MonoBehaviour {
 
         }
 
-        if (/*Input.GetAxis("Horizontal") != 0*/Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Horizontal") == -1)
+        if (Input.GetAxis("Horizontal") != 0/*Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Horizontal") == -1*/)
         {
             timer = 0;
             leftRight = Input.GetAxis("Horizontal");

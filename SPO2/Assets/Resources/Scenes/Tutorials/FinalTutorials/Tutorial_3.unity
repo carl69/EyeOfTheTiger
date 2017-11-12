@@ -2199,7 +2199,7 @@ GameObject:
   - component: {fileID: 998204026}
   - component: {fileID: 998204025}
   m_Layer: 5
-  m_Name: Instructions01
+  m_Name: Day01Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3577,7 +3577,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1541839857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.05, y: 13.5, z: 0}
+  m_LocalPosition: {x: -17.05, y: 19.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 506664093}
@@ -3590,7 +3590,9 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1541839857}
-  m_Text: Interact with the stockpile to store food.
+  m_Text: 'Interact with the stockpile to store food.
+
+    Press F to store, holde F to take.'
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
@@ -4014,7 +4016,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2667e50f8d73bd1478b2c3a033a653f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Instructions01: {fileID: 998204023}
+  day01Tip: {fileID: 998204023}
+  instructions01: {fileID: 1768077045}
+  instructions02: {fileID: 506664092}
 --- !u!114 &1724356202
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4163,7 +4167,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785850451}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.88, y: 13.5, z: 0}
+  m_LocalPosition: {x: -20.88, y: 20.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1768077046}
@@ -4176,9 +4180,8 @@ TextMesh:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1785850451}
-  m_Text: 'Interact with the den to establish a home.
-
-    This costs food.'
+  m_Text: "Interact with the den to establish a home.\n                  This costs
+    food."
   m_OffsetZ: 0
   m_CharacterSize: 1
   m_LineSpacing: 1
