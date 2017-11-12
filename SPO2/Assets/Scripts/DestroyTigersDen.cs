@@ -10,7 +10,7 @@ public class DestroyTigersDen : MonoBehaviour {
 	public bool stop = true;
 
 	public int day, day2;
-	public GameObject clock;
+	//public GameObject clock;
 	public Clock_24Hour clockScript;
 	public bool haveClockInTheScene;
 
@@ -21,18 +21,18 @@ public class DestroyTigersDen : MonoBehaviour {
 
 
 
-		clock = GameObject.FindGameObjectWithTag("Clock");
-		clockScript = clock.GetComponent<Clock_24Hour>();
+		//clock = GameObject.FindGameObjectWithTag("Clock");
+		//clockScript = clock.GetComponent<Clock_24Hour>();
 	}
 
 	// Update is called once per frame
 	void Update () {
-		day = clockScript.day;
-		if (!stop && day == day2) {
-			//workingDen.SetActive(false);
-			//DestroyedDen.SetActive(true);
-			Destroy (this.gameObject);
-		}
+		//day = clockScript.day;
+		//if (!stop && day == day2) {
+		//	//workingDen.SetActive(false);
+		//	//DestroyedDen.SetActive(true);
+		//	Destroy (this.gameObject);
+		//}
 	}
 
 	private void OnTriggerEnter(Collider other)

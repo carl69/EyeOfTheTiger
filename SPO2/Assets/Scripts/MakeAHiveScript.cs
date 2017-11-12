@@ -16,7 +16,7 @@ public class MakeAHiveScript : MonoBehaviour {
 	void Update () {
         int getplayerprefs = PlayerPrefs.GetInt("Den");
         PlayerPrefs.SetInt("Den", getplayerprefs + 1);
-        print(getplayerprefs + "  " + PlayerPrefs.GetInt("Den"));
+        //print(getplayerprefs + "  " + PlayerPrefs.GetInt("Den"));
 
         Destroy(destroyThisOne);
         startThisScript.enabled = true;
