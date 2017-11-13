@@ -10,6 +10,7 @@ public class TutorialController : MonoBehaviour {
     public GameObject day01Tip;
     public GameObject instructions01;
     public GameObject instructions02;
+    public GameObject instructions03;
 
     public GameObject mapTip01;
     public GameObject mapTip02;
@@ -31,6 +32,10 @@ public class TutorialController : MonoBehaviour {
             instructions01.SetActive(false);
             instructions02.SetActive(false);
         }
+        if(PlayerPrefs.GetInt("Den") == 1 && SceneManager.GetActiveScene().name == "Tutorial_3")
+        {
+            instructions03.SetActive(true);
+        }
         if(SceneManager.GetActiveScene().name == "Tutorial_4")
         {
             if(PlayerPrefs.GetInt("Days") > 0)
@@ -41,6 +46,7 @@ public class TutorialController : MonoBehaviour {
             {
                 mapTip02.SetActive(true);
             }
+
         }
 	}
 }
