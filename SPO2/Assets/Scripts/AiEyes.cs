@@ -22,7 +22,7 @@ public class AiEyes : MonoBehaviour
     private void FixedUpdate()
     {
         //transform.rotation = Quaternion.Euler(0, transform.parent.transform.rotation.y - 90,0); //transform.parent.transform.rotation;
-        print(transform.parent.transform.rotation.y);
+        //print(transform.parent.transform.rotation.y);
         if (transform.parent.transform.rotation.y < 0)
         {
             eyes = new Ray(transform.position, Vector3.left);
