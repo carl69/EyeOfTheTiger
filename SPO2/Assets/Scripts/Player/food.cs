@@ -15,7 +15,7 @@ public class food : MonoBehaviour {
     private float rate;
     private float timer;
     //fix food pickup
-    private bool canEatThis = false;
+    public bool canEatThis = false;
     private GameObject foodObject;
 
     Audio_pickup audio_pickup;
