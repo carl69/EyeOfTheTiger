@@ -21,10 +21,18 @@ public class AiEyes : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        //transform.rotation = //Quaternion.Euler(0, transform.parent.transform.rotation.y - 90,0); //transform.parent.transform.rotation;
-        //print(transform.rotation.y);
+        //transform.rotation = Quaternion.Euler(0, transform.parent.transform.rotation.y - 90,0); //transform.parent.transform.rotation;
+        print(transform.parent.transform.rotation.y);
+        if (transform.parent.transform.rotation.y < 0)
+        {
+            eyes = new Ray(transform.position, Vector3.left);
 
-        eyes = new Ray(transform.position, test.transform.position);
+        }
+        else
+        {
+            eyes = new Ray(transform.position, Vector3.right);
+
+        }
         Debug.DrawLine(transform.position, test.transform.position , Color.green);
 
         hits = Physics.RaycastAll(eyes, maxEyeSight, LayersThatCanBeSeen);
