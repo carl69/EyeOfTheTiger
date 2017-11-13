@@ -17,6 +17,7 @@ public class TutorialController : MonoBehaviour {
 
     public GameObject food;
     public GameObject tut01tip01;
+    public bool hasEaten = false;
 
 	// Use this for initialization
 	void Start () {
@@ -51,8 +52,9 @@ public class TutorialController : MonoBehaviour {
             }
 
         }
-        if(SceneManager.GetActiveScene().name == "Tutorial_1" && food == null)
+        if(SceneManager.GetActiveScene().name == "Tutorial_1" && food == null && hasEaten == false)
         {
+            hasEaten = true;
             tut01tip01.SetActive(true);
         }
 	}
