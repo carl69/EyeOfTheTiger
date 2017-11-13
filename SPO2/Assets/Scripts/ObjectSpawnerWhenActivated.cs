@@ -7,14 +7,19 @@ public class ObjectSpawnerWhenActivated : MonoBehaviour {
     Transform rot;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-        int getplayerprefs = PlayerPrefs.GetInt("Den");
-        PlayerPrefs.SetInt("Den", getplayerprefs + 1);
-        //print(getplayerprefs + "  " + PlayerPrefs.GetInt("Den"));
+        if (PlayerPrefs.GetInt("Den") <= 1)
+        {
+            int getplayerprefs = PlayerPrefs.GetInt("Den");
+            PlayerPrefs.SetInt("Den", getplayerprefs + 1);
+            print(getplayerprefs + "  " + PlayerPrefs.GetInt("Den"));
+        }
+
 
         Instantiate(Spawn, new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(0,90,0));
         this.gameObject.SetActive(false);
