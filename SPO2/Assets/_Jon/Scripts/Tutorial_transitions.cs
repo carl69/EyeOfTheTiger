@@ -17,7 +17,7 @@ public class Tutorial_transitions : MonoBehaviour {
     {
         if(other.gameObject.tag == "Player" && currentScene == "Tutorial_3")
         {
-            SceneManager.LoadScene("Tutorial_4");         
+            SceneManager.LoadScene("WorldMap");         
         }
         else if (other.gameObject.tag == "Player")
         {

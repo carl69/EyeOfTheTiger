@@ -21,11 +21,17 @@ public class TutorialController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		if(SceneManager.GetActiveScene().name == "WorldMap" && PlayerPrefs.GetInt("Days") == 0)
+        {
+            mapTip01.SetActive(true);
+            Time.timeScale = 0;
+            Debug.Log("Time stopped!");
+        }
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        Debug.Log(Time.time);
 		if(PlayerPrefs.GetInt("Days") == 1 && tip01Shown == false && SceneManager.GetActiveScene().name == "Tutorial_3")
         {
             tip01Shown = true;
@@ -42,15 +48,10 @@ public class TutorialController : MonoBehaviour {
         }
         if(SceneManager.GetActiveScene().name == "WorldMap")
         {
-            if(PlayerPrefs.GetInt("Days") > 0)
-            {
-                mapTip01.SetActive(false);
-            }
             if(PlayerPrefs.GetInt("Days") == 1)
             {
                 mapTip02.SetActive(true);
             }
-
         }
         if(SceneManager.GetActiveScene().name == "Tutorial_1" && food == null && hasEaten == false)
         {
