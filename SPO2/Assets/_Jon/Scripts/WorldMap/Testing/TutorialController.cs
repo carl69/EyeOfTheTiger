@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class TutorialController : MonoBehaviour {
 
-    private bool tip01Shown = false;
-
     public GameObject day01Tip;
     public GameObject instructions01;
     public GameObject instructions02;
@@ -17,6 +15,7 @@ public class TutorialController : MonoBehaviour {
 
     public GameObject food;
     public GameObject tut01tip01;
+    public GameObject playerUI;
     public bool hasEaten = false;
 
 	// Use this for initialization
@@ -24,17 +23,16 @@ public class TutorialController : MonoBehaviour {
 		if(SceneManager.GetActiveScene().name == "WorldMap" && PlayerPrefs.GetInt("Days") == 0)
         {
             mapTip01.SetActive(true);
-            Time.timeScale = 0;
-            Debug.Log("Time stopped!");
+            
+            
         }
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(Time.time);
-		if(PlayerPrefs.GetInt("Days") == 1 && tip01Shown == false && SceneManager.GetActiveScene().name == "Tutorial_3")
+
+		if(PlayerPrefs.GetInt("Days") == 1 && SceneManager.GetActiveScene().name == "Tutorial_3")
         {
-            tip01Shown = true;
             day01Tip.SetActive(true);
         }
         if(PlayerPrefs.GetInt("Days") > 0 && SceneManager.GetActiveScene().name == "Tutorial_3")
@@ -57,6 +55,7 @@ public class TutorialController : MonoBehaviour {
         {
             hasEaten = true;
             tut01tip01.SetActive(true);
+            playerUI.SetActive(true);
         }
 	}
 }
