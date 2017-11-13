@@ -39,7 +39,7 @@ public class TutorialController : MonoBehaviour {
         {
             instructions03.SetActive(true);
         }
-        if(SceneManager.GetActiveScene().name == "Tutorial_4")
+        if(SceneManager.GetActiveScene().name == "WorldMap")
         {
             if(PlayerPrefs.GetInt("Days") > 0)
             {
