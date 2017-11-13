@@ -17,7 +17,7 @@ public class FoodRackScript : MonoBehaviour {
 	void Update () {
         if (canTakeFood)
         {
-            if (Input.GetKeyDown(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 if (amountOfFood >= 1)
                 {

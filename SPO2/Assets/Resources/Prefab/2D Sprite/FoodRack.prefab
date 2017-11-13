@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 33707784703964068}
   - component: {fileID: 65646925685891424}
   - component: {fileID: 23470582166283444}
+  - component: {fileID: 114756592168047776}
   m_Layer: 0
   m_Name: FoodRack
   m_TagString: Untagged
@@ -52,7 +53,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1893148462187126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.36, y: 1.88, z: 1.03}
+  m_LocalPosition: {x: 320.4668, y: 2.21, z: 0}
   m_LocalScale: {x: 2.5707135, y: 2.570713, z: 2.570713}
   m_Children:
   - {fileID: 4466245684320128}
@@ -125,6 +126,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114756592168047776
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1893148462187126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c4fd6797bb6a694ba45a87d3a2a16db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amountOfFood: 3
 --- !u!212 &212430285358399020
 SpriteRenderer:
   m_ObjectHideFlags: 1
