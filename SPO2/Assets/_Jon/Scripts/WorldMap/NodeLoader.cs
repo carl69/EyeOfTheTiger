@@ -22,6 +22,11 @@ public class NodeLoader : MonoBehaviour
             //Debug.Log("playerMoving set to false!");
             SceneManager.LoadScene(nodeName);
             //Debug.Log("Loading scene:" + nodeName);
+            if(nodeName.Contains("Den"))
+            {
+                PlayerPrefs.SetInt("Den", 0);
+                PlayerPrefs.SetInt("Cub", 0);
+            }
         }
     }
 

@@ -25,9 +25,9 @@ public class WorldMap : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-
-        MovePlayer();
-
+       
+            MovePlayer();
+        
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray02 = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -54,7 +54,7 @@ public class WorldMap : MonoBehaviour {
                     selectedNode = hit02.transform.gameObject;
                     playerMoving = true;
                 }
-                if (hit02.transform.name == "Den01")
+                if (hit02.transform.name == "Tutorial_3")
                 {
                     selectedNode = hit02.transform.gameObject;
                     playerMoving = true;
