@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 65977147087185342}
   - component: {fileID: 114233367036694238}
   - component: {fileID: 114115450405300732}
+  - component: {fileID: 114898820348232118}
   m_Layer: 0
   m_Name: TigersDen
   m_TagString: TigersDen
@@ -1090,7 +1091,6 @@ MonoBehaviour:
   stop: 1
   day: 0
   day2: 0
-  clock: {fileID: 0}
   clockScript: {fileID: 0}
   haveClockInTheScene: 0
 --- !u!114 &114686713524250676
@@ -1114,6 +1114,20 @@ MonoBehaviour:
   Done: 0
   ActivateScript: {fileID: 1057058705263666}
   notCanGetMoreCubsThenOne: 0
+--- !u!114 &114898820348232118
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1026883834364020}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 964340a6d2f47794ba24ab06f6edf18f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playprefs: 0
+  usethehack: 0
+  Hive: {fileID: 1201348034292450}
 --- !u!212 &212100614723858954
 SpriteRenderer:
   m_ObjectHideFlags: 1
