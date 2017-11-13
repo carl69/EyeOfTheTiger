@@ -12,6 +12,9 @@ public class PlayerDeath : MonoBehaviour {
     PlayerWater playerWater;
     public Canvas canvasSpawn;
     public Canvas PlayerUi;
+
+    public Button Resume;
+
 	// Use this for initialization
 	void Start () {
         if (this.gameObject.name != "Player")
@@ -27,7 +30,7 @@ public class PlayerDeath : MonoBehaviour {
         {
             //Instantiate(canvasSpawn);
         }
-        textBox = GameObject.FindGameObjectWithTag("TextPrompts").gameObject;
+       
         if (GameObject.FindGameObjectWithTag("PlayerUI") == null)
         {
             //Instantiate(PlayerUi);
@@ -117,7 +120,7 @@ public class PlayerDeath : MonoBehaviour {
     void FirstDeath() {
         textBox.SetActive(true);
         textBox.transform.GetChild(1).GetComponent<Text>().text = "When you die you will continue playing as your cub, if you have one...";
-        textBox.transform.GetChild(2).GetComponent<Button>().interactable = false;
+        Resume.interactable = false;
         deathTextShown = true;
         Time.timeScale = 0;
     }
@@ -139,6 +142,6 @@ public class PlayerDeath : MonoBehaviour {
         Time.timeScale = 0;
         textBox.SetActive(true);
         textBox.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = "You died and have no cubs to keep playing.";
-        textBox.transform.GetChild(0).transform.GetChild(2).GetComponent<Button>().interactable = false;
+        Resume.interactable = false;
     }
 }
