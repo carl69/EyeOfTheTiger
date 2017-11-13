@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class TutorialController : MonoBehaviour {
 
+    private bool day1tipShown = false;
+
     public GameObject day01Tip;
     public GameObject instructions01;
     public GameObject instructions02;
@@ -31,8 +33,9 @@ public class TutorialController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(PlayerPrefs.GetInt("Days") == 1 && SceneManager.GetActiveScene().name == "Tutorial_3")
+		if(PlayerPrefs.GetInt("Days") == 1 && SceneManager.GetActiveScene().name == "Tutorial_3" && day1tipShown == false)
         {
+            day1tipShown = true;
             day01Tip.SetActive(true);
         }
         if(PlayerPrefs.GetInt("Days") > 0 && SceneManager.GetActiveScene().name == "Tutorial_3")
