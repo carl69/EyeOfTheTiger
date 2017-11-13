@@ -25,12 +25,12 @@ public class PlayerDeath : MonoBehaviour {
         playerWater = this.gameObject.GetComponent<PlayerWater>();
         if (GameObject.FindGameObjectWithTag("TextPrompts") == null)
         {
-            Instantiate(canvasSpawn);
+            //Instantiate(canvasSpawn);
         }
         textBox = GameObject.FindGameObjectWithTag("TextPrompts").gameObject;
         if (GameObject.FindGameObjectWithTag("PlayerUI") == null)
         {
-            Instantiate(PlayerUi);
+            //Instantiate(PlayerUi);
         }
     }
 

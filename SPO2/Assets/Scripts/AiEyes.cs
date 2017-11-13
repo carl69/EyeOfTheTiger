@@ -14,14 +14,17 @@ public class AiEyes : MonoBehaviour
 
     public GameObject hunter;
     AiHunterTarget02 aiHunterTarget02;
-
+    Ray eyes;
     private void Start()
     {
         aiHunterTarget02 = hunter.GetComponent<AiHunterTarget02>();
     }
     private void FixedUpdate()
     {
-        Ray eyes = new Ray(transform.position, test.transform.position);
+        //transform.rotation = //Quaternion.Euler(0, transform.parent.transform.rotation.y - 90,0); //transform.parent.transform.rotation;
+        //print(transform.rotation.y);
+
+        eyes = new Ray(transform.position, test.transform.position);
         Debug.DrawLine(transform.position, test.transform.position , Color.green);
 
         hits = Physics.RaycastAll(eyes, maxEyeSight, LayersThatCanBeSeen);
@@ -48,6 +51,7 @@ public class AiEyes : MonoBehaviour
 
             if (hit.transform.gameObject.layer == 8)
             {
+                print("CHILL");
                 aiHunterTarget02.Target = hit.transform.gameObject;
                 Debug.DrawLine(hit.point, hit.point + Vector3.up * 5, Color.red);
             }
