@@ -72,9 +72,9 @@ public class CanvasController : MonoBehaviour {
                 Time.timeScale = 1;
             }
         }
-        if (textBox.activeSelf == false)
-        {
-            Time.timeScale = 1;
-        }
+        //if (textBox.activeSelf == false)
+        //{
+        //    Time.timeScale = 1;
+        //}
     }
 }
