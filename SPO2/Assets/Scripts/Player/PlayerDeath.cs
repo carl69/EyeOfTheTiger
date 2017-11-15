@@ -15,6 +15,8 @@ public class PlayerDeath : MonoBehaviour {
 
     public Button Resume;
 
+    private AudioSource playerDeath;
+
 	// Use this for initialization
 	void Start () {
         if (this.gameObject.name != "Player")
@@ -22,6 +24,8 @@ public class PlayerDeath : MonoBehaviour {
             this.gameObject.name = "Player";
         }
 
+        playerDeath = GameObject.FindGameObjectWithTag("AudioController").transform.GetChild(1).transform.GetChild(1).transform.GetChild(2).GetComponent<AudioSource>();
+        Debug.Log(playerDeath);
 
 
         Food = this.gameObject.GetComponent<food>();
@@ -59,24 +63,24 @@ public class PlayerDeath : MonoBehaviour {
                 GameOver();
             }
         }
-       
-        if(collision.gameObject.tag == "WallofDeath")
-        {
-            DestroyPlayer();
-            if (GameObject.FindGameObjectWithTag("Cub") == true)
-            {
-                CreateNewPlayer();
-                DestroyCub();
-                if (deathTextShown == false)
-                {
-                    FirstDeath();
-                }
-            }
-            else
-            {
-                GameOver();
-            }
-        }
+
+        //if (collision.gameobject.tag == "wallofdeath")
+        //{
+        //    destroyplayer();
+        //    if (gameobject.findgameobjectwithtag("cub") == true)
+        //    {
+        //        createnewplayer();
+        //        destroycub();
+        //        if (deathtextshown == false)
+        //        {
+        //            firstdeath();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        gameover();
+        //    }
+        //}
         if(collision.gameObject.tag == "Bullet")
         {
             DestroyPlayer();
@@ -127,6 +131,8 @@ public class PlayerDeath : MonoBehaviour {
     }
     void DestroyPlayer() {
         //gameObject.SetActive(false);
+        playerDeath.Play();
+        Debug.Log("Death audio playing");
         Destroy(this.gameObject);
     }
     void CreateNewPlayer()
