@@ -93,7 +93,7 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour
                 parentToSprites.SetActive(true);
             }
 
-            if (Input.GetKey(KeyCode.F))
+            if (Input.GetKeyDown(KeyCode.F))
             {
 
 
