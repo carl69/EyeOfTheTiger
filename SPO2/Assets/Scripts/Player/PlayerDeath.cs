@@ -24,6 +24,8 @@ public class PlayerDeath : MonoBehaviour {
             this.gameObject.name = "Player";
         }
 
+        textBox = GameObject.FindGameObjectWithTag("TextPrompts").gameObject;
+        textBox.SetActive(false);
 
         playerDeath = GameObject.FindGameObjectWithTag("AudioController").transform.GetChild(1).transform.GetChild(1).transform.GetChild(2).GetComponent<AudioSource>();
         Debug.Log(playerDeath);

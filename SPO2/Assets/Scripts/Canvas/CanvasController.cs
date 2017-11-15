@@ -13,7 +13,6 @@ public class CanvasController : MonoBehaviour {
     void Start()
     {
         textBox = GameObject.FindGameObjectWithTag("TextPrompts");
-        textBox.SetActive(false);
     }
 
     public void Resume()
