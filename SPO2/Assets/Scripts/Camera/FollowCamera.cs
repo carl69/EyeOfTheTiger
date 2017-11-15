@@ -13,7 +13,7 @@ public class FollowCamera : MonoBehaviour {
 
     public bool HuntingMode = false;
 
-     GameObject cameraFollowTarget;
+     public GameObject cameraFollowTarget;
 	// Use this for initialization
 	void Start () {
         cameraFollowTarget = GameObject.FindGameObjectWithTag("cameraFollowTarget");
