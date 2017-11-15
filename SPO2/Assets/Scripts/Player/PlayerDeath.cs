@@ -12,7 +12,7 @@ public class PlayerDeath : MonoBehaviour {
     PlayerWater playerWater;
     public Canvas canvasSpawn;
     public Canvas PlayerUi;
-
+    public GameObject audioController;
     public Button Resume;
 
 	// Use this for initialization
@@ -22,7 +22,10 @@ public class PlayerDeath : MonoBehaviour {
             this.gameObject.name = "Player";
         }
 
-
+        if (GameObject.FindGameObjectWithTag("AudioController") == null)
+        {
+            Instantiate(audioController);
+        }
 
         Food = this.gameObject.GetComponent<food>();
         playerWater = this.gameObject.GetComponent<PlayerWater>();
