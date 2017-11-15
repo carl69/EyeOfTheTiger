@@ -17,6 +17,11 @@ public class CubNaming : MonoBehaviour {
             NameField.SetActive(true);
             Time.timeScale = 0;
         }
+        else
+        {
+            Button.SetActive(false);
+            NameField.SetActive(false);
+        }
     }
 	
 	// Update is called once per frame
@@ -33,7 +38,7 @@ public class CubNaming : MonoBehaviour {
     {
         Time.timeScale = 1;
         Name = Text.GetComponent<Text>().text;
-        PlayerPrefs.SetString("CubName", name);
+        PlayerPrefs.SetString("CubName", Name);
         Button.SetActive(false);
         NameField.SetActive(false);
     }

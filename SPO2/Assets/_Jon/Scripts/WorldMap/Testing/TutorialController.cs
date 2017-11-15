@@ -19,9 +19,10 @@ public class TutorialController : MonoBehaviour {
     public GameObject tut01tip01;
     public GameObject playerUI;
     public bool hasEaten = false;
+    public bool turnInstructions03Off = false;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		if(SceneManager.GetActiveScene().name == "WorldMap" && PlayerPrefs.GetInt("Days") == 0)
         {
             mapTip01.SetActive(true);
@@ -43,9 +44,11 @@ public class TutorialController : MonoBehaviour {
             instructions01.SetActive(false);
             instructions02.SetActive(false);
         }
-        if(PlayerPrefs.GetInt("Den") == 1 && SceneManager.GetActiveScene().name == "Tutorial_3")
+        if(PlayerPrefs.GetInt("Den") == 1 && SceneManager.GetActiveScene().name == "Tutorial_3" && turnInstructions03Off == false)
         {
+
             instructions03.SetActive(true);
+            turnInstructions03Off = true;
         }
         if(SceneManager.GetActiveScene().name == "WorldMap")
         {
