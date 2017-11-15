@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CubLevelingUpPlayprefsLevling : MonoBehaviour {
+
     GameObject CubSceneManager;
     CubSceneManager script;
 	// Use this for initialization

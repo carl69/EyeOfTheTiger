@@ -13,7 +13,6 @@ public class CanvasController : MonoBehaviour {
     void Start()
     {
         textBox = GameObject.FindGameObjectWithTag("TextPrompts");
-        textBox.SetActive(false);
     }
 
     public void Resume()
@@ -26,7 +25,15 @@ public class CanvasController : MonoBehaviour {
 
     public void Play()
     {
-         int y = SceneManager.GetActiveScene().buildIndex;
+        PlayerPrefs.SetInt("Home", 0);
+        PlayerPrefs.SetInt("Den", 0);
+        PlayerPrefs.SetInt("Cub", 0);
+        PlayerPrefs.SetInt("StoredFood", 0);
+        PlayerPrefs.SetFloat("Food", 5);
+        PlayerPrefs.SetInt("Days", 0);
+        PlayerPrefs.SetString("CubName", "");
+
+        int y = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(y + 1);
     }
 
@@ -64,9 +71,9 @@ public class CanvasController : MonoBehaviour {
                 Time.timeScale = 1;
             }
         }
-        if (textBox.activeSelf == false)
-        {
-            Time.timeScale = 1;
-        }
+        //if (textBox.activeSelf == false)
+        //{
+        //    Time.timeScale = 1;
+        //}
     }
 }

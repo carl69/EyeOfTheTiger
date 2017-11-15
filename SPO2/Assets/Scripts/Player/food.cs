@@ -71,16 +71,17 @@ public class food : MonoBehaviour {
             eating = false;
         }
 
-        if (timer < Time.time)
-        {
-            timer = Time.time + rate;
-            //eaten--;
+    //    if (timer < Time.time)
+    //    {
+    //        timer = Time.time + rate;
+    //        //eaten--;
 
-            if (eaten <= 0)
-            {
-				eaten = 0;
-            }
-        }
+    //        if (eaten <= 0)
+    //        {
+				//eaten = 0;
+    //        }
+    //    }
+        PlayerPrefs.SetFloat("Food", eaten);
     }
 
     public void OnTriggerEnter(Collider other){

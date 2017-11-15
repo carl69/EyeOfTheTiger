@@ -12,8 +12,10 @@ public class PlayerDeath : MonoBehaviour {
     PlayerWater playerWater;
     public Canvas canvasSpawn;
     public Canvas PlayerUi;
-
+    public GameObject audioController;
     public Button Resume;
+
+    private AudioSource playerDeath;
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +24,17 @@ public class PlayerDeath : MonoBehaviour {
             this.gameObject.name = "Player";
         }
 
+        textBox = GameObject.FindGameObjectWithTag("TextPrompts").gameObject;
+        textBox.SetActive(false);
+
+        playerDeath = GameObject.FindGameObjectWithTag("AudioController").transform.GetChild(1).transform.GetChild(1).transform.GetChild(2).GetComponent<AudioSource>();
+        Debug.Log(playerDeath);
+
+
+        if (GameObject.FindGameObjectWithTag("AudioController") == null)
+        {
+            Instantiate(audioController);
+        }
 
 
         Food = this.gameObject.GetComponent<food>();
@@ -59,24 +72,24 @@ public class PlayerDeath : MonoBehaviour {
                 GameOver();
             }
         }
-       
-        if(collision.gameObject.tag == "WallofDeath")
-        {
-            DestroyPlayer();
-            if (GameObject.FindGameObjectWithTag("Cub") == true)
-            {
-                CreateNewPlayer();
-                DestroyCub();
-                if (deathTextShown == false)
-                {
-                    FirstDeath();
-                }
-            }
-            else
-            {
-                GameOver();
-            }
-        }
+
+        //if (collision.gameobject.tag == "wallofdeath")
+        //{
+        //    destroyplayer();
+        //    if (gameobject.findgameobjectwithtag("cub") == true)
+        //    {
+        //        createnewplayer();
+        //        destroycub();
+        //        if (deathtextshown == false)
+        //        {
+        //            firstdeath();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        gameover();
+        //    }
+        //}
         if(collision.gameObject.tag == "Bullet")
         {
             DestroyPlayer();
@@ -98,23 +111,24 @@ public class PlayerDeath : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Food.eaten <= 0 || playerWater.drink <= 0 )
-        {
-            if (GameObject.FindGameObjectWithTag("Cub") == true)
-            {
-                DestroyPlayer();
-                CreateNewPlayer();
-                DestroyCub();
-                if (deathTextShown == false)
-                {
-                    FirstDeath();
-                }
-            }
-            else {
-                GameOver();
-            }
-        }
-	}
+        //if (food.eaten <= 0 || playerwater.drink <= 0)
+        //{
+        //    if (gameobject.findgameobjectwithtag("cub") == true)
+        //    {
+        //        destroyplayer();
+        //        createnewplayer();
+        //        destroycub();
+        //        if (deathtextshown == false)
+        //        {
+        //            firstdeath();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        gameover();
+        //    }
+        //}
+    }
 
 
     void FirstDeath() {
@@ -126,6 +140,8 @@ public class PlayerDeath : MonoBehaviour {
     }
     void DestroyPlayer() {
         //gameObject.SetActive(false);
+        playerDeath.Play();
+        Debug.Log("Death audio playing");
         Destroy(this.gameObject);
     }
     void CreateNewPlayer()
