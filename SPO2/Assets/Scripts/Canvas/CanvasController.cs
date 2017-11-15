@@ -32,7 +32,7 @@ public class CanvasController : MonoBehaviour {
         PlayerPrefs.SetInt("StoredFood", 0);
         PlayerPrefs.SetFloat("Food", 5);
         PlayerPrefs.SetInt("Days", 0);
-        PlayerPrefs.SetString("CubName", "Hans");
+        PlayerPrefs.SetString("CubName", "");
 
         int y = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadScene(y + 1);
