@@ -10,5 +10,9 @@ public class playerStats : MonoBehaviour {
     public string InfoWater = "";
     public float maxWater, startWater, waterLossRate,waterLossAmount, waterPickUp;
 
+    private void Awake()
+    {
+        startHunger = PlayerPrefs.GetFloat("Food");
+    }
 
 }

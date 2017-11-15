@@ -8,6 +8,8 @@ public class CarlsPlayerprefsStalkerScript : MonoBehaviour {
     public int Cub;
     public int Den;
     public int Home;
+    public float Food;
+    public string CubName;
     public bool Change = false;
 	// Use this for initialization
 	void Start () {
@@ -23,6 +25,8 @@ public class CarlsPlayerprefsStalkerScript : MonoBehaviour {
             Cub = PlayerPrefs.GetInt("Cub");
             Den = PlayerPrefs.GetInt("Den");
             Home = PlayerPrefs.GetInt("Home");
+            Food = PlayerPrefs.GetFloat("Food");
+            CubName = PlayerPrefs.GetString("CubName");
         }
         else
         {
@@ -31,6 +35,8 @@ public class CarlsPlayerprefsStalkerScript : MonoBehaviour {
             PlayerPrefs.SetInt("Cub", Cub);
             PlayerPrefs.SetInt("Den", Den);
             PlayerPrefs.SetInt("Home", Home);
+            PlayerPrefs.SetFloat("Food", Food);
+            PlayerPrefs.SetString("CubName", CubName);
 
         }
 
