@@ -98,23 +98,24 @@ public class PlayerDeath : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-        if (Food.eaten <= 0 || playerWater.drink <= 0 )
-        {
-            if (GameObject.FindGameObjectWithTag("Cub") == true)
-            {
-                DestroyPlayer();
-                CreateNewPlayer();
-                DestroyCub();
-                if (deathTextShown == false)
-                {
-                    FirstDeath();
-                }
-            }
-            else {
-                GameOver();
-            }
-        }
-	}
+        //if (food.eaten <= 0 || playerwater.drink <= 0)
+        //{
+        //    if (gameobject.findgameobjectwithtag("cub") == true)
+        //    {
+        //        destroyplayer();
+        //        createnewplayer();
+        //        destroycub();
+        //        if (deathtextshown == false)
+        //        {
+        //            firstdeath();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        gameover();
+        //    }
+        //}
+    }
 
 
     void FirstDeath() {

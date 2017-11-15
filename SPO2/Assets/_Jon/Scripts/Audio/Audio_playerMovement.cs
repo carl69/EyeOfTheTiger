@@ -18,27 +18,32 @@ public class Audio_playerMovement : MonoBehaviour {
 	}
 	
     void GetState()
-    {
-        if(Input.GetAxis("Horizontal") !=0)
+    { if (Time.timeScale == 1)
         {
-            if (Input.GetKey(KeyCode.LeftShift))
+            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
-                //Running
-                isWalking = false;
-                isRunning = true;
+                if (Input.GetKey(KeyCode.LeftShift))
+                {
+                    //Running
+                    isWalking = false;
+                    isRunning = true;
+                    Debug.Log("Running!");
+                }
+                else
+                {
+                    //Walking
+                    isWalking = true;
+                    isRunning = false;
+                    Debug.Log("Walking!");
+                }
             }
             else
             {
-                //Walking
-                isWalking = true;
+                //Stopped
+                isWalking = false;
                 isRunning = false;
+                Debug.Log("No movement!");
             }
-        }
-        else
-        {
-            //Stopped
-            isWalking = false;
-            isRunning = false;
         }
   
     }
@@ -77,6 +82,7 @@ public class Audio_playerMovement : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+        GetState();
+        PlayAudio();
 	}
 }
