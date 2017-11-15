@@ -32,10 +32,14 @@ public class SpriteTigerAnimatorController : MonoBehaviour {
             transform.forward = new Vector3(0f, 0f, 1f);
         else if (Input.GetKeyDown(KeyCode.S))
             transform.forward = new Vector3(0f, 0f, -1f);
-            *
-        if (Tiger.GetComponent<Movement>().xMovement<-0.5f)
+            */
+        if (Tiger.GetComponent<Movement>().xMovement < -0.0f)
+        {
             transform.forward = new Vector3(-1f, 0f, 0f);
-        else if (Tiger.GetComponent<Movement>().xMovement > 0.5f)
-            transform.forward = new Vector3(1f, 0f, 0f);*/
+        }
+        else if (Tiger.GetComponent<Movement>().xMovement > 0.0f)
+        {
+            transform.forward = new Vector3(1f, 0f, 0f);
+        }
     }
 }
