@@ -5,9 +5,14 @@ using UnityEngine;
 public class ObjectSpawnerWhenActivated : MonoBehaviour {
     public GameObject Spawn;
     Transform rot;
+
+    public AudioSource CubSpawnSource;
+    public AudioClip CubSpawnClip;
+
 	// Use this for initialization
 	void Start () {
-        
+
+        CubSpawnSource = GameObject.FindGameObjectWithTag("AudioController").transform.GetChild(1).transform.GetChild(4).transform.GetChild(0).gameObject.GetComponent<AudioSource>();
 
     }
 	
@@ -20,7 +25,7 @@ public class ObjectSpawnerWhenActivated : MonoBehaviour {
             print(getplayerprefs + "  " + PlayerPrefs.GetInt("Den"));
         }
 
-
+        CubSpawnSource.PlayOneShot(CubSpawnClip);
         Instantiate(Spawn, new Vector3(transform.position.x, transform.position.y, transform.position.z + 1), Quaternion.Euler(0,90,0));
         this.gameObject.SetActive(false);
 	}

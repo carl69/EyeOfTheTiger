@@ -10,11 +10,13 @@ public class AiHunterShooting : MonoBehaviour {
     public float fireRate;
     float fireTimer = 0;
 
-    
+    public AudioSource ShotSource;
+    public AudioClip ShotClip;
 
     // Use this for initialization
     void Start () {
-        
+
+        ShotSource = gameObject.GetComponent<AudioSource>();
         
     }
 
@@ -25,6 +27,7 @@ public class AiHunterShooting : MonoBehaviour {
         {
             Rigidbody clone;
             clone = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
+            ShotSource.PlayOneShot(ShotClip);
             clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed * Time.deltaTime);
             Destroy(clone.gameObject, 1f);
             fireTimer = 0;
