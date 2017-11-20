@@ -12,11 +12,24 @@ public class CanvasController : MonoBehaviour {
     public AudioClip hoverMouseClip;
     public AudioSource hoverAudioSource;
 
+    public Button resume;
+
     // Use this for initialization
     void Start()
-    {
-        textBox = GameObject.FindGameObjectWithTag("TextPrompts");
+    {   
+        if(GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>().textBox = GameObject.FindGameObjectWithTag("TextPrompts");
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>().Resume = resume;
+        }
         hoverAudioSource = GameObject.Find("MouseHover").GetComponent<AudioSource>();
+        if (GameObject.FindGameObjectWithTag("TextPrompts") != null)
+        {
+            textBox = GameObject.FindGameObjectWithTag("TextPrompts");
+            textBox.SetActive(false);
+        }
+
+
     }
 
     public void Resume()
@@ -49,8 +62,8 @@ public class CanvasController : MonoBehaviour {
 
     public void ExitToMain()
     {
-        hoverAudioSource.PlayOneShot(hoverMouseClip);
-        SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
+        SceneManager.LoadScene("MainMenu");     
     }
 
     public void QuitApp()
@@ -60,19 +73,21 @@ public class CanvasController : MonoBehaviour {
 
     public void MouseHover()
     {
-        if (hoverAudioSource.isPlaying == false)
+        if (!hoverAudioSource.isPlaying && resume.IsInteractable())
         {
             hoverAudioSource.PlayOneShot(hoverMouseClip);
         }
-        else
-        {
-            hoverAudioSource.PlayOneShot(null);
-        }
+    }
+
+    public void OnMouseExit()
+    {
+        hoverAudioSource.Stop();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             

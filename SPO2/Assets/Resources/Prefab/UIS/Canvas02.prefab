@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 222124322081608404}
   - component: {fileID: 114956202043511060}
   - component: {fileID: 114321997156762798}
+  - component: {fileID: 114835470707832802}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -386,8 +387,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32a39efa81f241545babc447966154fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBox: {fileID: 1544398154431256}
+  textBox: {fileID: 0}
   curChild: {fileID: 0}
+  hoverMouseClip: {fileID: 8300000, guid: 5fcf8901e482b7f4e97d7e68f4569bae, type: 3}
+  hoverAudioSource: {fileID: 0}
+  resume: {fileID: 114321997156762798}
 --- !u!114 &114213899998432598
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -684,7 +688,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114173866459969674}
         m_MethodName: ExitToMain
         m_Mode: 1
         m_Arguments:
@@ -827,6 +831,53 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114835470707832802
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1671278073404564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114173866459969674}
+          m_MethodName: MouseHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114173866459969674}
+          m_MethodName: OnMouseExit
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114869636750969888
 MonoBehaviour:
   m_ObjectHideFlags: 1

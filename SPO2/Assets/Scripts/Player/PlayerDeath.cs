@@ -15,7 +15,7 @@ public class PlayerDeath : MonoBehaviour {
     public GameObject audioController;
     public Button Resume;
 
-    private AudioSource playerDeath;
+    public AudioSource playerDeath;
 
 	// Use this for initialization
 	void Start () {
@@ -24,15 +24,9 @@ public class PlayerDeath : MonoBehaviour {
             this.gameObject.name = "Player";
         }
 
-        textBox = GameObject.FindGameObjectWithTag("TextPrompts").gameObject;
-        
-        textBox.SetActive(false);
-        
-        
+        //textBox = GameObject.FindGameObjectWithTag("TextPrompts").gameObject;
 
         playerDeath = GameObject.FindGameObjectWithTag("AudioController").transform.GetChild(1).transform.GetChild(1).transform.GetChild(2).GetComponent<AudioSource>();
-        
-
 
         if (GameObject.FindGameObjectWithTag("AudioController") == null)
         {

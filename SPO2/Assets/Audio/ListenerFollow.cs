@@ -9,7 +9,10 @@ public class ListenerFollow : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").gameObject;
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            player = GameObject.FindGameObjectWithTag("Player").gameObject;
+        }
     }
 
     private void FollowPlayer()
