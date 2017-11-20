@@ -135,7 +135,7 @@ public class PlayerDeath : MonoBehaviour {
         GameOverScreen.SetActive(true);
         //if (PlayerPrefs.GetInt("Cub") >= 2)
         //{
-        ContinueScreen.SetActive(true);
+       // ContinueScreen.SetActive(true);
         //    Debug.Log("Cub found!");
         //    CreateNewPlayer();
         //    DestroyCub();
