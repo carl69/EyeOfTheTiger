@@ -95,14 +95,10 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.F))
             {
+                print("Button Works");
 
 
-                if (timer < foodGivingRate)
-                {
-                    timer += 1 * Time.deltaTime;
-                    return;
-                }
-                else if (spentFood == aCubeOfMeat * 3)
+                if (spentFood == aCubeOfMeat * 3)
                 {
                     Done = true;
                     PAY();
@@ -130,6 +126,11 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour
                         Looks();
                     }
                 }
+            }
+            else if (timer < foodGivingRate)
+            {
+                timer += 1 * Time.deltaTime;
+                return;
             }
             else if (spentFood != 0)
             {
