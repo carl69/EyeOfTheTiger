@@ -22,7 +22,7 @@ public class CanvasController : MonoBehaviour {
 
         if(GameObject.FindGameObjectWithTag("Player") != null && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>() != null)
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>().textBox = GameObject.FindGameObjectWithTag("TextPrompts");
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>().texts = GameObject.FindGameObjectWithTag("TextPrompts");
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>().Resume = resume;
         }
   

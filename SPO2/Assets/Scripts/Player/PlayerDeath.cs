@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayerDeath : MonoBehaviour {
 
     public GameObject TigerPrefab;
-    public GameObject textBox;
+    public GameObject texts;
     public bool deathTextShown = false;
     food Food;
     PlayerWater playerWater;
@@ -14,6 +14,9 @@ public class PlayerDeath : MonoBehaviour {
     public Canvas PlayerUi;
     public GameObject audioController;
     public Button Resume;
+
+    public GameObject GameOverScreen;
+    public GameObject ContinueScreen;
 
     public AudioSource playerDeath;
 
@@ -23,6 +26,11 @@ public class PlayerDeath : MonoBehaviour {
         {
             this.gameObject.name = "Player";
         }
+
+        GameOverScreen = GameObject.FindGameObjectWithTag("Canvas").transform.GetChild(2).gameObject;
+        GameOverScreen.SetActive(false);
+        ContinueScreen = GameObject.FindGameObjectWithTag("Canvas").transform.GetChild(3).gameObject;
+        ContinueScreen.SetActive(false);
 
         //textBox = GameObject.FindGameObjectWithTag("TextPrompts").gameObject;
 
@@ -52,22 +60,7 @@ public class PlayerDeath : MonoBehaviour {
 
         if (collision.gameObject.tag == "Trap")
         {
-            Debug.Log("Player entered trap!");
-            //DestroyPlayer();
-            if (GameObject.FindGameObjectWithTag("Cub") == true)
-            {
-                Debug.Log("Cub found!");
-                CreateNewPlayer();
-                DestroyCub();
-                if (deathTextShown == false)
-                {
-                    FirstDeath();
-                }
-            } 
-            else
-            {
                 GameOver();
-            }
         }
 
         //if (collision.gameobject.tag == "wallofdeath")
@@ -88,21 +81,8 @@ public class PlayerDeath : MonoBehaviour {
         //    }
         //}
         if(collision.gameObject.tag == "Bullet")
-        {
-            //DestroyPlayer();
-            if (GameObject.FindGameObjectWithTag("Cub") == true)
-            {
-                CreateNewPlayer();
-                DestroyCub();
-                if (deathTextShown == false)
-                {
-                    FirstDeath();
-                }
-            }
-            else
-            {
+        {          
                 GameOver();
-            }
         }
     }
 
@@ -129,8 +109,7 @@ public class PlayerDeath : MonoBehaviour {
 
 
     void FirstDeath() {
-        textBox.SetActive(true);
-        textBox.transform.GetChild(1).GetComponent<Text>().text = "When you die you will continue playing as your cub, if you have one...";
+        texts.SetActive(true);
         Resume.interactable = false;
         deathTextShown = true;
         //Time.timeScale = 0;
@@ -143,19 +122,28 @@ public class PlayerDeath : MonoBehaviour {
     }
     void CreateNewPlayer()
     {
-        Instantiate(TigerPrefab, GameObject.FindGameObjectWithTag("Cub").transform.position, Quaternion.identity);
+        //Instantiate(TigerPrefab, GameObject.FindGameObjectWithTag("Cub").transform.position, Quaternion.identity);
     }
     void DestroyCub() {
-        Destroy(GameObject.FindGameObjectWithTag("Cub"));
-        Destroy(GameObject.Find("CubUI"));
+        //Destroy(GameObject.FindGameObjectWithTag("Cub"));
+        //Destroy(GameObject.Find("CubUI"));
     }
     void GameOver() {
-        
+
         Debug.Log("No cub found!");
         //Time.timeScale = 0;
-        textBox.SetActive(true);
-        textBox.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = "You died and have no cubs to keep playing.";
-        Resume.interactable = false;
+        GameOverScreen.SetActive(true);
+        //if (PlayerPrefs.GetInt("Cub") >= 2)
+        //{
+        ContinueScreen.SetActive(true);
+        //    Debug.Log("Cub found!");
+        //    CreateNewPlayer();
+        //    DestroyCub();
+        //    if (deathTextShown == false)
+        //    {
+        //        FirstDeath();
+        //    }
+        //}
         DestroyPlayer();
     }
 }
