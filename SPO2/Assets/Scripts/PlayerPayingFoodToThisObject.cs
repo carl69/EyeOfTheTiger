@@ -104,7 +104,7 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour
                     PAY();
                     return;
                 }
-                else if (pfood.eaten > aCubeOfMeat + 1)
+                else if (pfood.eaten >= 9)//aCubeOfMeat + 1)
                 {
                     if (spentFood == aCubeOfMeat * 3)
                     {
@@ -129,7 +129,7 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour
             }
             else if (timer < foodGivingRate)
             {
-                timer += 1 * Time.deltaTime;
+                //timer += 1 * Time.deltaTime;
                 return;
             }
             else if (spentFood != 0)
