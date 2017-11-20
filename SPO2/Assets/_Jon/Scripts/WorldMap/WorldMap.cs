@@ -54,12 +54,12 @@ public class WorldMap : MonoBehaviour {
                     selectedNode = hit02.transform.gameObject;
                     playerMoving = true;
                 }
-                if (hit02.transform.name == "Tutorial_3")
+                if (hit02.transform.name == "Den00")
                 {
                     selectedNode = hit02.transform.gameObject;
                     playerMoving = true;
                 }
-                if (hit02.transform.name == "Den02")
+                if (hit02.transform.name == "Den01")
                 {
                     Debug.Log("This is a second den node");
                     if (PlayerPrefs.GetInt("StoredFood") == 10 && PlayerPrefs.GetInt("CubLevel") == 3)
@@ -69,7 +69,9 @@ public class WorldMap : MonoBehaviour {
                     }
                     else
                     {
+                        Debug.Log("Should activate box now!");
                         GameObject.FindGameObjectWithTag("Canvas").transform.GetChild(0).gameObject.SetActive(true);
+                        Debug.Log("Box activated!");
                     }
                 }
             }

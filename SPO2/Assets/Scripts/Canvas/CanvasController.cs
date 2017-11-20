@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class CanvasController : MonoBehaviour {
 
@@ -17,18 +18,18 @@ public class CanvasController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {   
-        if(GameObject.FindGameObjectWithTag("Player") != null)
+        if(GameObject.FindGameObjectWithTag("Player") != null && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>() != null)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>().textBox = GameObject.FindGameObjectWithTag("TextPrompts");
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>().Resume = resume;
         }
+  
         hoverAudioSource = GameObject.Find("MouseHover").GetComponent<AudioSource>();
         if (GameObject.FindGameObjectWithTag("TextPrompts") != null)
         {
             textBox = GameObject.FindGameObjectWithTag("TextPrompts");
             textBox.SetActive(false);
         }
-
 
     }
 
@@ -73,7 +74,7 @@ public class CanvasController : MonoBehaviour {
 
     public void MouseHover()
     {
-        if (!hoverAudioSource.isPlaying && resume.IsInteractable())
+        if (!hoverAudioSource.isPlaying && EventSystem.current.IsPointerOverGameObject())
         {
             hoverAudioSource.PlayOneShot(hoverMouseClip);
         }
