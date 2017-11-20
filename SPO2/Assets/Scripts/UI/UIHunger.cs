@@ -31,8 +31,6 @@ public class UIHunger : MonoBehaviour {
         //transform.localScale
         foodsProsent = CurHunger / MaxHunger;
         int foodProsentint = Mathf.RoundToInt(((foodsProsent) * 10));
-        print(foodProsentint);
-        print(foodsProsent);
         if (foodProsentint <= 10)
         {
             for (int i = 0; i < foodProsentint; i++)
