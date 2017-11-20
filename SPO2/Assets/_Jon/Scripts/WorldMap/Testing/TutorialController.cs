@@ -21,13 +21,15 @@ public class TutorialController : MonoBehaviour {
     public bool hasEaten = false;
     public bool turnInstructions03Off = false;
 
+    public AudioSource ToolTipSource;
+    public AudioClip ToolTipClip;
+
     // Use this for initialization
     void Start () {
 		if(SceneManager.GetActiveScene().name == "WorldMap" && PlayerPrefs.GetInt("Days") == 0)
         {
             mapTip01.SetActive(true);
-            
-            
+            ToolTipSource = GetComponent<AudioSource>();
         }
 	}
 	
@@ -38,6 +40,7 @@ public class TutorialController : MonoBehaviour {
         {
             day1tipShown = true;
             day01Tip.SetActive(true);
+            ToolTipSource.PlayOneShot(ToolTipClip);
         }
         if(PlayerPrefs.GetInt("Days") > 0 && SceneManager.GetActiveScene().name == "Den00")
         {
@@ -48,6 +51,7 @@ public class TutorialController : MonoBehaviour {
         {
 
             instructions03.SetActive(true);
+            ToolTipSource.PlayOneShot(ToolTipClip);
             turnInstructions03Off = true;
         }
         if(SceneManager.GetActiveScene().name == "WorldMap")
@@ -55,12 +59,14 @@ public class TutorialController : MonoBehaviour {
             if(PlayerPrefs.GetInt("Days") == 1)
             {
                 mapTip02.SetActive(true);
+                ToolTipSource.PlayOneShot(ToolTipClip);
             }
         }
         if(SceneManager.GetActiveScene().name == "Tutorial_1" && food == null && hasEaten == false)
         {
             hasEaten = true;
             tut01tip01.SetActive(true);
+            ToolTipSource.PlayOneShot(ToolTipClip);
             playerUI.SetActive(true);
         }
 	}

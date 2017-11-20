@@ -9,12 +9,18 @@ public class AiHunterTarget02 : MonoBehaviour {
     AiHunters02 aihunter02;
     public GameObject Alert;
 
+    public AudioSource AlertSource;
+    public AudioClip AlertClip;
+
     float UpdateTimer = 2;
     float curTime = 2;
 
     private void Start()
     {
         aihunter02 = GetComponent<AiHunters02>();
+
+        AlertSource = gameObject.GetComponent<AudioSource>();
+
     }
     private void Update()
     {
@@ -25,6 +31,11 @@ public class AiHunterTarget02 : MonoBehaviour {
                 if (Alert.activeInHierarchy == false)
                 {
                     Alert.SetActive(true);
+                    Debug.Log("Hunter is alert!");
+                    if (!AlertSource.isPlaying)
+                    {
+                        AlertSource.PlayOneShot(AlertClip);
+                    }
 
                 }
             }
