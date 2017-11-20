@@ -29,9 +29,10 @@ public class TutorialController : MonoBehaviour {
 		if(SceneManager.GetActiveScene().name == "WorldMap" && PlayerPrefs.GetInt("Days") == 0)
         {
             mapTip01.SetActive(true);
-            ToolTipSource = GetComponent<AudioSource>();
+            ToolTipSource = gameObject.GetComponent<AudioSource>();
         }
-	}
+        ToolTipSource = gameObject.GetComponent<AudioSource>();
+    }
 	
 	// Update is called once per frame
 	void Update () {

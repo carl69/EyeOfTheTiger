@@ -156,5 +156,6 @@ public class PlayerDeath : MonoBehaviour {
         textBox.SetActive(true);
         textBox.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = "You died and have no cubs to keep playing.";
         Resume.interactable = false;
+        DestroyPlayer();
     }
 }
