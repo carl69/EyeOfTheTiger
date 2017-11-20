@@ -49,7 +49,7 @@ public class CanvasController : MonoBehaviour {
         PlayerPrefs.SetInt("Den", 0);
         PlayerPrefs.SetInt("Cub", 0);
         PlayerPrefs.SetInt("StoredFood", 0);
-        PlayerPrefs.SetFloat("Food", 5);
+        PlayerPrefs.SetFloat("Food", 0);
         PlayerPrefs.SetInt("Days", 0);
         PlayerPrefs.SetString("CubName", "");
 
