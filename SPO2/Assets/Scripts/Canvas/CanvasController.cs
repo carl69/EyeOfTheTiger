@@ -60,10 +60,13 @@ public class CanvasController : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
+            
             if (Time.timeScale == 1)
             {
+                
                 textBox.SetActive(true);
                 Time.timeScale = 0;
+                
             }
             else
             {

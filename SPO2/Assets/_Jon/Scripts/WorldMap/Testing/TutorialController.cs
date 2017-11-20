@@ -34,17 +34,17 @@ public class TutorialController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if(PlayerPrefs.GetInt("Days") == 1 && SceneManager.GetActiveScene().name == "Tutorial_3" && day1tipShown == false)
+		if(PlayerPrefs.GetInt("Days") == 1 && SceneManager.GetActiveScene().name == "Den00" && day1tipShown == false)
         {
             day1tipShown = true;
             day01Tip.SetActive(true);
         }
-        if(PlayerPrefs.GetInt("Days") > 0 && SceneManager.GetActiveScene().name == "Tutorial_3")
+        if(PlayerPrefs.GetInt("Days") > 0 && SceneManager.GetActiveScene().name == "Den00")
         {
             instructions01.SetActive(false);
             instructions02.SetActive(false);
         }
-        if(PlayerPrefs.GetInt("Den") == 1 && SceneManager.GetActiveScene().name == "Tutorial_3" && turnInstructions03Off == false)
+        if(PlayerPrefs.GetInt("Den") == 1 && SceneManager.GetActiveScene().name == "Den00" && turnInstructions03Off == false)
         {
 
             instructions03.SetActive(true);

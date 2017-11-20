@@ -30,7 +30,6 @@ GameObject:
   - component: {fileID: 54675684253205686}
   - component: {fileID: 114539759320473250}
   - component: {fileID: 135939945267354486}
-  - component: {fileID: 81358125162251052}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -1867,8 +1866,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1006279963806992}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19.4, y: 3.1, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 160.13, y: 1.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4006578597597086}
@@ -2748,13 +2747,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 120
   m_CollisionDetection: 0
---- !u!81 &81358125162251052
-AudioListener:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1006279963806992}
-  m_Enabled: 1
 --- !u!95 &95277945001818118
 Animator:
   serializedVersion: 3
@@ -2883,6 +2875,7 @@ MonoBehaviour:
   canvasSpawn: {fileID: 223621852345239076, guid: b013d473320655d409b939dcef516eb0,
     type: 2}
   PlayerUi: {fileID: 223872793084377722, guid: 4b0a6c432e047ee4daf158bb00d4abd8, type: 2}
+  audioController: {fileID: 0}
   Resume: {fileID: 0}
 --- !u!114 &114256530771634504
 MonoBehaviour:
@@ -2997,7 +2990,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 57797f82ec4051345b21df881640d5f5, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3099,7 +3092,7 @@ SkinnedMeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 57797f82ec4051345b21df881640d5f5, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
