@@ -15,7 +15,7 @@ public class Tutorial_transitions : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "Player" && currentScene == "Tutorial_3")
+        if(other.gameObject.tag == "Player" && currentScene == "Den00")
         {
             SceneManager.LoadScene("WorldMap");         
         }
