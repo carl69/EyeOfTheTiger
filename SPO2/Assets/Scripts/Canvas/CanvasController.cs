@@ -9,10 +9,14 @@ public class CanvasController : MonoBehaviour {
     public GameObject textBox;
     public Transform curChild;
 
+    public AudioClip hoverMouseClip;
+    public AudioSource hoverAudioSource;
+
     // Use this for initialization
     void Start()
     {
         textBox = GameObject.FindGameObjectWithTag("TextPrompts");
+        hoverAudioSource = GameObject.Find("MouseHover").GetComponent<AudioSource>();
     }
 
     public void Resume()
@@ -45,6 +49,7 @@ public class CanvasController : MonoBehaviour {
 
     public void ExitToMain()
     {
+        hoverAudioSource.PlayOneShot(hoverMouseClip);
         SceneManager.LoadScene("MainMenu");
     }
 
@@ -53,7 +58,17 @@ public class CanvasController : MonoBehaviour {
         Application.Quit();
     }
 
-    
+    public void MouseHover()
+    {
+        if (hoverAudioSource.isPlaying == false)
+        {
+            hoverAudioSource.PlayOneShot(hoverMouseClip);
+        }
+        else
+        {
+            hoverAudioSource.PlayOneShot(null);
+        }
+    }
 
     // Update is called once per frame
     void Update()

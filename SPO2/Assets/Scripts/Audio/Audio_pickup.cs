@@ -13,8 +13,14 @@ public class Audio_pickup : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
-        playerWater = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerWater>();
+        if (GameObject.FindGameObjectWithTag("Player") != null)
+        {
+            playerWater = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerWater>();
+        }
+        else
+        {
+            playerWater = null;
+        }
 
 	}
 
@@ -27,9 +33,12 @@ public class Audio_pickup : MonoBehaviour {
             transform.GetChild(0).GetComponent<AudioSource>().GetComponent<AudioSource>().PlayOneShot(food);
             isEating = false;
         }
-        if(playerWater.drinkAudio == true && transform.GetChild(1).GetComponent<AudioSource>().isPlaying == false)
+        if (playerWater != null)
         {
-            transform.GetChild(1).GetComponent<AudioSource>().PlayOneShot(water);
+            if (playerWater.drinkAudio == true && transform.GetChild(1).GetComponent<AudioSource>().isPlaying == false)
+            {
+                transform.GetChild(1).GetComponent<AudioSource>().PlayOneShot(water);
+            }
         }
 	}
 }
