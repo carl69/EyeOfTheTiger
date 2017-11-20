@@ -17,7 +17,9 @@ public class CanvasController : MonoBehaviour {
 
     // Use this for initialization
     void Start()
-    {   
+    {
+        resume = GameObject.FindGameObjectWithTag("Canvas").transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform.GetChild(1).transform.GetChild(0).gameObject.GetComponent<Button>();
+
         if(GameObject.FindGameObjectWithTag("Player") != null && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>() != null)
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>().textBox = GameObject.FindGameObjectWithTag("TextPrompts");
@@ -74,9 +76,9 @@ public class CanvasController : MonoBehaviour {
 
     public void MouseHover()
     {
-        if (!hoverAudioSource.isPlaying && EventSystem.current.IsPointerOverGameObject())
-        {
-            hoverAudioSource.PlayOneShot(hoverMouseClip);
+        if (!hoverAudioSource.isPlaying && resume.IsInteractable())
+        {     
+                    hoverAudioSource.PlayOneShot(hoverMouseClip);
         }
     }
 
