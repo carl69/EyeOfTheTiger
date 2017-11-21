@@ -3,23 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CubLevel02MovementScript : MonoBehaviour {
+    //[Header("Stats of the Object")]
+    //[Tooltip("Can the object collide with the player?")]
+    [Header("Stats")]
+    [Tooltip("Speed")]
     public float Running;
+    [Tooltip("Speed")]
     public float Walking;
-    public float[] MinSleepTime, MaxSleepTime;
-    public float[] MinIdleTime, MaxIdleTime;
-
+    //
+    [Header("Sleeping")]
+    [Tooltip("Time")]
+    public float MinSleepTime;
+    [Tooltip("Time")]
+    public float MaxSleepTime;
+    float SleepingTimer;
+    //
+    [Header("Idle")]
+    [Tooltip("Time")]
+    public float MinIdleTime;
+    [Tooltip("Time")]
+    public float MaxIdleTime;
+    float IdleTimer;
+    //
     public Vector2 RandomWonderPoint;
     public GameObject Home;
     public float distanceTooWonderPoint;
-
+    //
     public enum State
     {
         RunningToPoint, idle, WalkingToPoint, sleeping
     }
+    [Header("State")]
     public State GoTo;
 
     public float maxDistanceFromHive;
-    public int LeftRight;
+    int LeftRight;
+    float Timerfloat;
+    int RandomStateInt;
     // Use this for initialization
     void Start () {
         Home = GameObject.FindGameObjectWithTag("TigersDen");
@@ -52,6 +72,7 @@ public class CubLevel02MovementScript : MonoBehaviour {
             LeftRight = 1;
         }
     }
+
     void RunToPoint() {
 
         //Running to the point
@@ -63,8 +84,9 @@ public class CubLevel02MovementScript : MonoBehaviour {
             ReachPoint();
         }
     }
+
     void WalkToPoint() {
-        //Running to the point
+        //Walking to the point
         transform.position = new Vector2(this.transform.position.x + (Walking * LeftRight * Time.deltaTime), transform.position.y);
 
         //Ending the state
@@ -73,12 +95,87 @@ public class CubLevel02MovementScript : MonoBehaviour {
             ReachPoint();
         }
     }
-    void StayAtPoint() { }
-    void Sleeping() { }
+
+    void StayAtPoint() {
+         
+        if (Timerfloat > IdleTimer)
+        {
+            //ending the state
+            Timerfloat = 0;
+            ReachPoint();
+        }
+        else
+        {
+            Timerfloat += 1 * Time.deltaTime;
+        }
+    }
+
+    void Sleeping() {
+        //Finding the Bed
+        RandomWonderPoint = Home.transform.position;
+
+
+        //Ending the state
+        if (distanceTooWonderPoint < 2)
+        {
+            //Start The Sleep
+            if (Timerfloat > SleepingTimer)
+            {
+                //ending the state
+                Timerfloat = 0;
+                ReachPoint();
+            }
+            else
+            {
+                Timerfloat += 1 * Time.deltaTime;
+            }
+        }
+        else
+        {
+            // walking to bed
+            transform.position = new Vector2(this.transform.position.x + (Walking * LeftRight * Time.deltaTime), transform.position.y);
+        }
+
+
+
+    }
 
     void ReachPoint() {
+
+        RandomState();
         float Xposition = Random.Range(-maxDistanceFromHive, maxDistanceFromHive);
 
+        IdleTimer = Random.Range(MinIdleTime, MaxIdleTime);
+        SleepingTimer = Random.Range(MinSleepTime, MaxSleepTime);
         RandomWonderPoint = new Vector2(Home.transform.position.x + Xposition, this.transform.position.y);
+    }
+    void RandomState()
+    {
+        RandomStateInt = Random.Range(0, 4);
+        if (RandomStateInt == 0)
+        {
+            GoTo = State.RunningToPoint;
+        }
+        else if (RandomStateInt == 1)
+        {
+            GoTo = State.WalkingToPoint;
+        }
+        else if (RandomStateInt == 2)
+        {
+            GoTo = State.idle;
+        }
+        else if (RandomStateInt == 3)
+        {
+            int lessSleep = Random.Range(0,10);
+            if (lessSleep == 0)
+            {
+                GoTo = State.sleeping;
+            }
+            else
+            {
+                RandomState();
+            }
+        }
+
     }
 }
