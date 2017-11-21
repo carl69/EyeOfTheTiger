@@ -28,11 +28,11 @@ public class SpriteTigerAnimatorController : MonoBehaviour {
             gameObject.transform.Rotate(Vector3.up * (RotationSpeed * Time.deltaTime));
         }
 
-        /*if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.W))
             transform.forward = new Vector3(0f, 0f, 1f);
         else if (Input.GetKeyDown(KeyCode.S))
             transform.forward = new Vector3(0f, 0f, -1f);
-            */
+            
         if (Tiger.GetComponent<Movement>().xMovement < -0.0f)
         {
             transform.forward = new Vector3(-1f, 0f, 0f);
