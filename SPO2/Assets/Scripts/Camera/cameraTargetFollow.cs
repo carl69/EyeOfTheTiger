@@ -37,8 +37,6 @@ public class cameraTargetFollow : MonoBehaviour {
 
             if (transform.localPosition.x * leftRight < maxDistance)//(transform.localPosition.x < maxDistance) && (transform.localPosition.x > -maxDistance))
             {
-                print(leftRight);
-
 
                 curentDistance += leftRight * speed * Time.deltaTime;
                 //curentDistance = maxDistance * leftRight;
