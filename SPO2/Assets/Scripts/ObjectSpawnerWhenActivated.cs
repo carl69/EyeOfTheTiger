@@ -9,6 +9,8 @@ public class ObjectSpawnerWhenActivated : MonoBehaviour {
     public AudioSource CubSpawnSource;
     public AudioClip CubSpawnClip;
 
+    public string playerprefsKey = "Den";
+    public int playerprefsLevel = 1;
 	// Use this for initialization
 	void Start () {
 
@@ -18,11 +20,11 @@ public class ObjectSpawnerWhenActivated : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (PlayerPrefs.GetInt("Den") <= 1)
+        if (PlayerPrefs.GetInt(playerprefsKey) <= playerprefsLevel)
         {
-            int getplayerprefs = PlayerPrefs.GetInt("Den");
-            PlayerPrefs.SetInt("Den", getplayerprefs + 1);
-            print(getplayerprefs + "  " + PlayerPrefs.GetInt("Den"));
+            int getplayerprefs = PlayerPrefs.GetInt(playerprefsKey);
+            PlayerPrefs.SetInt(playerprefsKey, getplayerprefs + 1);
+            print(getplayerprefs + "  " + PlayerPrefs.GetInt(playerprefsKey));
         }
 
         CubSpawnSource.PlayOneShot(CubSpawnClip);
