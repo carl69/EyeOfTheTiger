@@ -16,8 +16,10 @@ public class CubBabi : MonoBehaviour {
      bool carrying = false;
      float dist;
     Rigidbody rb;
+    PlayerPayingFoodToThisObject Script01;
     // Use this for initialization
     void Start () {
+        Script01 = GetComponent<PlayerPayingFoodToThisObject>();
         rb = GetComponent<Rigidbody>();
         if (this.gameObject.name != "BabiCub") 
         {
@@ -28,6 +30,17 @@ public class CubBabi : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+        if (PlayerPrefs.GetInt("Cub") >= 1)
+        {
+            if (Script01.enabled == true)
+            {
+                Script01.PAY();
+            }
+        }
+
+
         if (!Player)
         {
             Player = GameObject.Find("Player");
