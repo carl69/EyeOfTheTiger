@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class CameraFade : MonoBehaviour {
 
     public Texture2D fadeTexture;
-    public float fadeSpeed = 0.1f;
+    public float fadeSpeed;
     public int drawDepth = -1000;
 
-    public float alpha = 0.0f;
-    public float fadeDir = -1.0f;
+    public float alpha;
+    public float fadeDir;
 
 
-
-    private void OnGUI()
+    public void OnGUI()
     {
         alpha -= fadeDir * fadeSpeed * Time.deltaTime;
         alpha = Mathf.Clamp01(alpha);
@@ -34,7 +33,9 @@ public class CameraFade : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+
+        fadeSpeed = 0.097f;
+
 	}
 	
 	// Update is called once per frame
