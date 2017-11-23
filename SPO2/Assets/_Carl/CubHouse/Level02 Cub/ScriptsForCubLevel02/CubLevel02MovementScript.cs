@@ -40,14 +40,33 @@ public class CubLevel02MovementScript : MonoBehaviour {
     int LeftRight;
     float Timerfloat;
     int RandomStateInt;
+
+
+    //Needed to spawn the right cub in
+    PlayerPayingFoodToThisObject Script01;
+
     // Use this for initialization
     void Start () {
+        if (GetComponent<PlayerPayingFoodToThisObject>() != null)
+        {
+            Script01 = GetComponent<PlayerPayingFoodToThisObject>();
+
+        }
         Home = GameObject.FindGameObjectWithTag("TigersDen");
         ReachPoint();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+        if (PlayerPrefs.GetInt("Cub") >= 3)
+        {
+            if (Script01.enabled == true)
+            {
+                Script01.PAY();
+            }
+        }
+
+
         if (GoTo == State.RunningToPoint)
         {
             RunToPoint();
@@ -79,7 +98,7 @@ public class CubLevel02MovementScript : MonoBehaviour {
         transform.position = new Vector2(this.transform.position.x + (Running * LeftRight * Time.deltaTime), transform.position.y);
 
         //Ending the state
-        if (distanceTooWonderPoint < 2)
+        if (distanceTooWonderPoint < 4)
         {
             ReachPoint();
         }
