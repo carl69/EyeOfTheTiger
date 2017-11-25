@@ -19,7 +19,7 @@ public class WorldMapTransitionTo : MonoBehaviour {
             Debug.Log("Player entered trigger!");
             if (PlayerPrefs.GetInt("Home") == 0)
             {
-                SceneManager.LoadScene("Tutorial_3");
+                SceneManager.LoadScene("Den00");
             }
             if(PlayerPrefs.GetInt("Home") == 1)
             {

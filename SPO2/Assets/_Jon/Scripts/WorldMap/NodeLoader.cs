@@ -18,7 +18,7 @@ public class NodeLoader : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            GameObject.Find("WorldMap").GetComponent<WorldMap>().playerMoving = false;
+            GameObject.Find("WorldMapController").GetComponent<WorldMap>().playerMoving = false;
             //Debug.Log("playerMoving set to false!");
             SceneManager.LoadScene(nodeName);
             //Debug.Log("Loading scene:" + nodeName);

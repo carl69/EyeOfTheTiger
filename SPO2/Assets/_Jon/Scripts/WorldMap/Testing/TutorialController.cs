@@ -15,6 +15,8 @@ public class TutorialController : MonoBehaviour {
     public GameObject mapTip01;
     public GameObject mapTip02;
 
+    public bool mapTipShown = false;
+
     public GameObject food;
     public GameObject tut01tip01;
     public GameObject playerUI;
@@ -23,6 +25,7 @@ public class TutorialController : MonoBehaviour {
 
     public AudioSource ToolTipSource;
     public AudioClip ToolTipClip;
+    public bool soundHasPlayed = false;
 
     // Use this for initialization
     void Start () {
@@ -32,6 +35,8 @@ public class TutorialController : MonoBehaviour {
             ToolTipSource = gameObject.GetComponent<AudioSource>();
         }
         ToolTipSource = gameObject.GetComponent<AudioSource>();
+        soundHasPlayed = false;
+        mapTipShown = false;
     }
 	
 	// Update is called once per frame
@@ -41,7 +46,11 @@ public class TutorialController : MonoBehaviour {
         {
             day1tipShown = true;
             day01Tip.SetActive(true);
-            ToolTipSource.PlayOneShot(ToolTipClip);
+            if (ToolTipSource.isPlaying == false && soundHasPlayed == false)
+            {
+                ToolTipSource.PlayOneShot(ToolTipClip);
+                soundHasPlayed = true;
+            }
         }
         if(PlayerPrefs.GetInt("Days") > 0 && SceneManager.GetActiveScene().name == "Den00")
         {
@@ -52,22 +61,38 @@ public class TutorialController : MonoBehaviour {
         {
 
             instructions03.SetActive(true);
-            ToolTipSource.PlayOneShot(ToolTipClip);
+            if (ToolTipSource.isPlaying == false && soundHasPlayed == false)
+            {
+                ToolTipSource.PlayOneShot(ToolTipClip);
+                soundHasPlayed = true;
+            }
             turnInstructions03Off = true;
         }
         if(SceneManager.GetActiveScene().name == "WorldMap")
         {
             if(PlayerPrefs.GetInt("Days") == 1)
             {
-                mapTip02.SetActive(true);
-                ToolTipSource.PlayOneShot(ToolTipClip);
+                if (mapTipShown == false)
+                {
+                    mapTip02.SetActive(true);
+                    mapTipShown = true;
+                }
+                if (ToolTipSource.isPlaying == false && soundHasPlayed == false)
+                {
+                    ToolTipSource.PlayOneShot(ToolTipClip);
+                    soundHasPlayed = true;
+                }
             }
         }
         if(SceneManager.GetActiveScene().name == "Tutorial_1" && food == null && hasEaten == false)
         {
             hasEaten = true;
             tut01tip01.SetActive(true);
-            ToolTipSource.PlayOneShot(ToolTipClip);
+            if (ToolTipSource.isPlaying == false && soundHasPlayed == false)
+            {
+                ToolTipSource.PlayOneShot(ToolTipClip);
+                soundHasPlayed = true;
+            }
             playerUI.SetActive(true);
         }
 	}
