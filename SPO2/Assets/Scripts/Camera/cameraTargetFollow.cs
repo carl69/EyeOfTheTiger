@@ -39,9 +39,21 @@ public class cameraTargetFollow : MonoBehaviour {
             {
 
                 curentDistance += leftRight * speed * Time.deltaTime;
+
+
                 //curentDistance = maxDistance * leftRight;
                 if (transform.localPosition.x * leftRight < maxDistance)
                 {
+
+                    //if (transform.localPosition.x * 1 < maxDistance)
+                    //{
+                    //    curentDistance = maxDistance * 1;
+                    //}
+                    //else if (transform.localPosition.x  > maxDistance)
+                    //{
+                    //    curentDistance = maxDistance * -1;
+                    //}
+
                     transform.localPosition = new Vector3(curentDistance, 0, 0); //Vector3.MoveTowards(this.transform.position, new Vector3(curentDistance, 0, 0), speed*Time.deltaTime);//new Vector3(curentDistance, 0, 0);
 
                 }
