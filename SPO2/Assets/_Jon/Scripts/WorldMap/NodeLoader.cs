@@ -8,6 +8,7 @@ public class NodeLoader : MonoBehaviour
     public Scene sceneToLoad;
     public string nodeName;
 
+    int homeRemember;
     // Use this for initialization
     void Start()
     {
@@ -24,6 +25,9 @@ public class NodeLoader : MonoBehaviour
             //Debug.Log("Loading scene:" + nodeName);
             if(nodeName.Contains("Den"))
             {
+                homeRemember = PlayerPrefs.GetInt("Home") + 1;
+
+                PlayerPrefs.SetInt("Home", homeRemember);
                 PlayerPrefs.SetInt("Den", 0);
                 PlayerPrefs.SetInt("Cub", 0);
             }
