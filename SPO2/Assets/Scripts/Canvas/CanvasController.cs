@@ -87,6 +87,17 @@ public class CanvasController : MonoBehaviour {
         hoverAudioSource.Stop();
     }
 
+    public void Continue()
+    {
+
+
+        PlayerPrefs.SetInt("Den", 1);
+        PlayerPrefs.SetInt("Cub", 0);
+        PlayerPrefs.SetString("CubName", "");
+
+        SceneManager.LoadScene("Den"+"0"+PlayerPrefs.GetInt("Home"));
+    }
+
     // Update is called once per frame
     void Update()
     {
