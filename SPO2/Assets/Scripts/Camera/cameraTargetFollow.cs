@@ -9,6 +9,8 @@ public class cameraTargetFollow : MonoBehaviour {
     public float timeBeforeIdel;
     public float timer;
     public float leftRight;
+
+    public float lastPos;
 	// Use this for initialization
 	void Start () {
         leftRight = Input.GetAxis("Horizontal");
@@ -35,15 +37,20 @@ public class cameraTargetFollow : MonoBehaviour {
             leftRight = Input.GetAxis("Horizontal");
 
 
-            if (transform.localPosition.x * leftRight < maxDistance)//(transform.localPosition.x < maxDistance) && (transform.localPosition.x > -maxDistance))
+            //if (Input.GetAxis("Horizontal") == 1)
+            //{
+            //    curentDistance += leftRight * speed * Time.deltaTime;
+            //    transform.localPosition = new Vector3(curentDistance, 0, 0);
+            //}else
+            if(Mathf.Abs(curentDistance) <= maxDistance   /*transform.localPosition.x * leftRight < maxDistance*/)//(transform.localPosition.x < maxDistance) && (transform.localPosition.x > -maxDistance))
             {
 
                 curentDistance += leftRight * speed * Time.deltaTime;
 
 
                 //curentDistance = maxDistance * leftRight;
-                if (transform.localPosition.x * leftRight < maxDistance)
-                {
+                //if (transform.localPosition.x * leftRight < maxDistance)
+                //{
 
                     //if (transform.localPosition.x * 1 < maxDistance)
                     //{
@@ -55,8 +62,8 @@ public class cameraTargetFollow : MonoBehaviour {
                     //}
 
                     transform.localPosition = new Vector3(curentDistance, 0, 0); //Vector3.MoveTowards(this.transform.position, new Vector3(curentDistance, 0, 0), speed*Time.deltaTime);//new Vector3(curentDistance, 0, 0);
-
-                }
+                lastPos = curentDistance;
+                //}
 
             }
         }
@@ -64,6 +71,11 @@ public class cameraTargetFollow : MonoBehaviour {
         {
             curentDistance = 0;
             transform.position = Vector3.MoveTowards(this.transform.position, transform.parent.position, speed * Time.deltaTime);
+        }
+        else
+        {
+            print("");
+            transform.localPosition = new Vector3(lastPos, 0, 0);
         }
 
 	}
