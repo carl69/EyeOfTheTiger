@@ -66,6 +66,7 @@ public class CanvasController : MonoBehaviour {
     public void ExitToMain()
     {
         Time.timeScale = 1;
+        Debug.Log("MainMenu clicked!");
         SceneManager.LoadScene("MainMenu");     
     }
 
