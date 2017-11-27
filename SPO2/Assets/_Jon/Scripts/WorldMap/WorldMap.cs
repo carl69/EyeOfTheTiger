@@ -13,10 +13,24 @@ public class WorldMap : MonoBehaviour
 
     public bool playerMoving = false;
 
+    public GameObject currentHome;
+
+    public Sprite HomeDen;
+    public Sprite HomeText;
+
     // Use this for initialization
     void Start()
     {
+       
+    }
 
+    private void UpdateHome()
+    {
+        currentHome.GetComponent<SphereCollider>().isTrigger = false;
+        currentHome.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = HomeDen;
+        currentHome.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+        currentHome.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+        currentHome.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = HomeText; 
     }
 
     //Function for moving player on world map
@@ -31,8 +45,21 @@ public class WorldMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(PlayerPrefs.GetInt("Home") == 1)
+        {
+            currentHome = GameObject.Find("Dens").transform.GetChild(1).gameObject;
+            UpdateHome();
+        }
+        if (PlayerPrefs.GetInt("Home") == 2)
+        {
+            currentHome = GameObject.Find("Dens").transform.GetChild(2).gameObject;
+            UpdateHome();
+        }
+
+
+
         //Update map and nodes according to in-game days
-        if(PlayerPrefs.GetInt("Days") >= 2)
+        if (PlayerPrefs.GetInt("Days") >= 2)
         {
             GameObject.Find("Map").GetComponent<SpriteRenderer>().sprite = mapUpdates[0];
             GameObject.Find("Nodes").transform.GetChild(1).gameObject.SetActive(false);
