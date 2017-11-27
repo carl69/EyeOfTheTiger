@@ -36,23 +36,23 @@ public class PlayerDeath : MonoBehaviour {
 
         playerDeath = GameObject.FindGameObjectWithTag("AudioController").transform.GetChild(1).transform.GetChild(1).transform.GetChild(2).GetComponent<AudioSource>();
 
-        if (GameObject.FindGameObjectWithTag("AudioController") == null)
-        {
-            Instantiate(audioController);
-        }
+        //if (GameObject.FindGameObjectWithTag("AudioController") == null)
+        //{
+        //    Instantiate(audioController);
+        //}
 
 
-        Food = this.gameObject.GetComponent<food>();
-        playerWater = this.gameObject.GetComponent<PlayerWater>();
-        if (GameObject.FindGameObjectWithTag("TextPrompts") == null)
-        {
-            Instantiate(canvasSpawn);
-        }
+        //Food = this.gameObject.GetComponent<food>();
+        //playerWater = this.gameObject.GetComponent<PlayerWater>();
+        //if (GameObject.FindGameObjectWithTag("TextPrompts") == null)
+        //{
+        //    Instantiate(canvasSpawn);
+        //}
        
-        if (GameObject.FindGameObjectWithTag("PlayerUI") == null)
-        {
-            Instantiate(PlayerUi);
-        }
+        //if (GameObject.FindGameObjectWithTag("PlayerUI") == null)
+        //{
+        //    Instantiate(PlayerUi);
+        //}
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -133,17 +133,15 @@ public class PlayerDeath : MonoBehaviour {
         Debug.Log("No cub found!");
         //Time.timeScale = 0;
         GameOverScreen.SetActive(true);
-        //if (PlayerPrefs.GetInt("Cub") >= 2)
-        //{
-       // ContinueScreen.SetActive(true);
-        //    Debug.Log("Cub found!");
-        //    CreateNewPlayer();
-        //    DestroyCub();
-        //    if (deathTextShown == false)
-        //    {
-        //        FirstDeath();
-        //    }
-        //}
+        if (PlayerPrefs.GetInt("Cub") >= 2)
+        {
+            ContinueScreen.SetActive(true);
+            Debug.Log("Cub found!");
+            //if (deathTextShown == false)
+            //{
+            //    FirstDeath();
+            //}
+        }
         DestroyPlayer();
     }
 }

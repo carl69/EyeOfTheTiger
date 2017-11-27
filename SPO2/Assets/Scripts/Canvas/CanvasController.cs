@@ -66,6 +66,7 @@ public class CanvasController : MonoBehaviour {
     public void ExitToMain()
     {
         Time.timeScale = 1;
+        Debug.Log("MainMenu clicked!");
         SceneManager.LoadScene("MainMenu");     
     }
 
@@ -85,6 +86,17 @@ public class CanvasController : MonoBehaviour {
     public void OnMouseExit()
     {
         hoverAudioSource.Stop();
+    }
+
+    public void Continue()
+    {
+
+
+        PlayerPrefs.SetInt("Den", 1);
+        PlayerPrefs.SetInt("Cub", 0);
+        PlayerPrefs.SetString("CubName", "");
+
+        SceneManager.LoadScene("Den"+"0"+PlayerPrefs.GetInt("Home"));
     }
 
     // Update is called once per frame

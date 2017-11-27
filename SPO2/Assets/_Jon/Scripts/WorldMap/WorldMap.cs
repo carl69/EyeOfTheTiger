@@ -13,10 +13,28 @@ public class WorldMap : MonoBehaviour
 
     public bool playerMoving = false;
 
+    public GameObject currentHome;
+
+    public Sprite HomeDen;
+    public Sprite HomeText;
+
+    public AudioClip MapUpdateClip;
+    public bool mapUpdateClipHasPlayed = false;
+
     // Use this for initialization
     void Start()
     {
+        mapUpdateClipHasPlayed = false;
+    }
 
+    private void UpdateHome()
+    {
+        currentHome.GetComponent<SphereCollider>().isTrigger = false;
+        currentHome.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = HomeDen;
+        currentHome.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+        currentHome.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
+        currentHome.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = HomeText;
+        GameObject.FindGameObjectWithTag("Player").transform.position = currentHome.transform.position;
     }
 
     //Function for moving player on world map
@@ -31,51 +49,109 @@ public class WorldMap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(PlayerPrefs.GetInt("Home") == 1)
+        {
+            currentHome = GameObject.Find("Dens").transform.GetChild(1).gameObject;
+            UpdateHome();
+        }
+        if (PlayerPrefs.GetInt("Home") == 2)
+        {
+            currentHome = GameObject.Find("Dens").transform.GetChild(2).gameObject;
+            UpdateHome();
+        }
+
+
+
         //Update map and nodes according to in-game days
-        if(PlayerPrefs.GetInt("Days") >= 2)
+        if (PlayerPrefs.GetInt("Days") >= 2)
         {
             GameObject.Find("Map").GetComponent<SpriteRenderer>().sprite = mapUpdates[0];
             GameObject.Find("Nodes").transform.GetChild(1).gameObject.SetActive(false);
+            if (mapUpdateClipHasPlayed == false)
+            {
+                GetComponent<AudioSource>().PlayOneShot(MapUpdateClip);
+                mapUpdateClipHasPlayed = true;
+            }
         }
         if (PlayerPrefs.GetInt("Days") >= 3)
         {
             GameObject.Find("Map").GetComponent<SpriteRenderer>().sprite = mapUpdates[1];
             GameObject.Find("Nodes").transform.GetChild(0).gameObject.SetActive(false);
+            if (mapUpdateClipHasPlayed == false)
+            {
+                GetComponent<AudioSource>().PlayOneShot(MapUpdateClip);
+                mapUpdateClipHasPlayed = true;
+            }
         }
         if (PlayerPrefs.GetInt("Days") >= 4)
         {
             GameObject.Find("Map").GetComponent<SpriteRenderer>().sprite = mapUpdates[2];
             GameObject.Find("Dens").transform.GetChild(0).gameObject.SetActive(false);
+            if (mapUpdateClipHasPlayed == false)
+            {
+                GetComponent<AudioSource>().PlayOneShot(MapUpdateClip);
+                mapUpdateClipHasPlayed = true;
+            }
         }
         if (PlayerPrefs.GetInt("Days") >= 5)
         {
             GameObject.Find("Map").GetComponent<SpriteRenderer>().sprite = mapUpdates[3];
             GameObject.Find("Nodes").transform.GetChild(3).gameObject.SetActive(false);
+            if (mapUpdateClipHasPlayed == false)
+            {
+                GetComponent<AudioSource>().PlayOneShot(MapUpdateClip);
+                mapUpdateClipHasPlayed = true;
+            }
         }
         if (PlayerPrefs.GetInt("Days") >= 6)
         {
             GameObject.Find("Map").GetComponent<SpriteRenderer>().sprite = mapUpdates[4];
             GameObject.Find("Nodes").transform.GetChild(2).gameObject.SetActive(false);
+            if (mapUpdateClipHasPlayed == false)
+            {
+                GetComponent<AudioSource>().PlayOneShot(MapUpdateClip);
+                mapUpdateClipHasPlayed = true;
+            }
         }
         if (PlayerPrefs.GetInt("Days") >= 7)
         {
             GameObject.Find("Map").GetComponent<SpriteRenderer>().sprite = mapUpdates[5];
             GameObject.Find("Nodes").transform.GetChild(4).gameObject.SetActive(false);
+            if (mapUpdateClipHasPlayed == false)
+            {
+                GetComponent<AudioSource>().PlayOneShot(MapUpdateClip);
+                mapUpdateClipHasPlayed = true;
+            }
         }
         if (PlayerPrefs.GetInt("Days") >= 8)
         {
             GameObject.Find("Map").GetComponent<SpriteRenderer>().sprite = mapUpdates[6];
             GameObject.Find("Dens").transform.GetChild(1).gameObject.SetActive(false);
+            if (mapUpdateClipHasPlayed == false)
+            {
+                GetComponent<AudioSource>().PlayOneShot(MapUpdateClip);
+                mapUpdateClipHasPlayed = true;
+            }
         }
         if (PlayerPrefs.GetInt("Days") >= 9)
         {
             GameObject.Find("Map").GetComponent<SpriteRenderer>().sprite = mapUpdates[7];
             GameObject.Find("Nodes").transform.GetChild(5).gameObject.SetActive(false);
+            if (mapUpdateClipHasPlayed == false)
+            {
+                GetComponent<AudioSource>().PlayOneShot(MapUpdateClip);
+                mapUpdateClipHasPlayed = true;
+            }
         }
         if (PlayerPrefs.GetInt("Days") >= 10)
         {
             GameObject.Find("Map").GetComponent<SpriteRenderer>().sprite = mapUpdates[8];
             GameObject.Find("Nodes").transform.GetChild(6).gameObject.SetActive(false);
+            if (mapUpdateClipHasPlayed == false)
+            {
+                GetComponent<AudioSource>().PlayOneShot(MapUpdateClip);
+                mapUpdateClipHasPlayed = true;
+            }
         }
 
         MovePlayer();
