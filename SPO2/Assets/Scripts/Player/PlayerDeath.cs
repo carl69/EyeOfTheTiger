@@ -36,23 +36,23 @@ public class PlayerDeath : MonoBehaviour {
 
         playerDeath = GameObject.FindGameObjectWithTag("AudioController").transform.GetChild(1).transform.GetChild(1).transform.GetChild(2).GetComponent<AudioSource>();
 
-        if (GameObject.FindGameObjectWithTag("AudioController") == null)
-        {
-            Instantiate(audioController);
-        }
+        //if (GameObject.FindGameObjectWithTag("AudioController") == null)
+        //{
+        //    Instantiate(audioController);
+        //}
 
 
-        Food = this.gameObject.GetComponent<food>();
-        playerWater = this.gameObject.GetComponent<PlayerWater>();
-        if (GameObject.FindGameObjectWithTag("TextPrompts") == null)
-        {
-            Instantiate(canvasSpawn);
-        }
+        //Food = this.gameObject.GetComponent<food>();
+        //playerWater = this.gameObject.GetComponent<PlayerWater>();
+        //if (GameObject.FindGameObjectWithTag("TextPrompts") == null)
+        //{
+        //    Instantiate(canvasSpawn);
+        //}
        
-        if (GameObject.FindGameObjectWithTag("PlayerUI") == null)
-        {
-            Instantiate(PlayerUi);
-        }
+        //if (GameObject.FindGameObjectWithTag("PlayerUI") == null)
+        //{
+        //    Instantiate(PlayerUi);
+        //}
     }
 
     private void OnTriggerEnter(Collider collision)
