@@ -133,17 +133,15 @@ public class PlayerDeath : MonoBehaviour {
         Debug.Log("No cub found!");
         //Time.timeScale = 0;
         GameOverScreen.SetActive(true);
-        //if (PlayerPrefs.GetInt("Cub") >= 2)
-        //{
-       // ContinueScreen.SetActive(true);
-        //    Debug.Log("Cub found!");
-        //    CreateNewPlayer();
-        //    DestroyCub();
-        //    if (deathTextShown == false)
-        //    {
-        //        FirstDeath();
-        //    }
-        //}
+        if (PlayerPrefs.GetInt("Cub") >= 2)
+        {
+            ContinueScreen.SetActive(true);
+            Debug.Log("Cub found!");
+            //if (deathTextShown == false)
+            //{
+            //    FirstDeath();
+            //}
+        }
         DestroyPlayer();
     }
 }
