@@ -193,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1468447601700494}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.56, y: 0.71, z: 0}
+  m_LocalPosition: {x: 4.2, y: 0.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4596759949544082}
@@ -206,7 +206,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1103275484397036}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -36.465, y: 0.71, z: 0}
+  m_LocalPosition: {x: -30.08, y: 0.71, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4596759949544082}
@@ -290,7 +290,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1184724378571242}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 78.69, y: 0.77, z: -0.36}
+  m_LocalPosition: {x: 269.16, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4582916003073170}
@@ -537,7 +537,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -618,7 +618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoTo: 0
-  movementsSpeed: 2
+  movementsSpeed: 3
   patrollingTurnSpeed: 10
   patrollPoints:
   - {fileID: 4078500992313338}
@@ -636,8 +636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 54061504082796742, guid: 9eb5eb718eaa8ad4a9cbbc684790ae37, type: 2}
-  bulletSpeed: 2593
-  fireRate: 0.55
+  bulletSpeed: 3000
+  fireRate: 2
   ShotSource: {fileID: 0}
   ShotClip: {fileID: 8300000, guid: 0169b112fc0601d40a9f65ce6a7ed232, type: 3}
 --- !u!114 &114545245460942038
@@ -685,10 +685,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fpsTargetDistance: 0
-  enemyLookDistance: 21
-  moveToAttackDistance: 21
-  shootDistance: 10.4
-  enemyMovementSpeed: 5
+  enemyLookDistance: 11
+  moveToAttackDistance: 10
+  shootDistance: 5
+  enemyMovementSpeed: 4
   damping: 5
   fpsTarget: {fileID: 0}
 --- !u!114 &114803694067277196
