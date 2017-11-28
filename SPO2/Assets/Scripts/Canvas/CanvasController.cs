@@ -18,7 +18,10 @@ public class CanvasController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        resume = GameObject.FindGameObjectWithTag("Canvas").transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform.GetChild(1).transform.GetChild(0).gameObject.GetComponent<Button>();
+        if (SceneManager.GetActiveScene().name != "MainMenu")
+        {
+            resume = GameObject.FindGameObjectWithTag("Canvas").transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform.GetChild(1).transform.GetChild(0).gameObject.GetComponent<Button>();
+        }
 
         if(GameObject.FindGameObjectWithTag("Player") != null && GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerDeath>() != null)
         {
