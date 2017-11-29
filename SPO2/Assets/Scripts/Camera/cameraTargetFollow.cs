@@ -74,7 +74,7 @@ public class cameraTargetFollow : MonoBehaviour {
         }
         else
         {
-            print("");
+
             transform.localPosition = new Vector3(lastPos, 0, 0);
         }
 

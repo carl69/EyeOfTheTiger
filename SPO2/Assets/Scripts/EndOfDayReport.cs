@@ -27,35 +27,46 @@ public class EndOfDayReport : MonoBehaviour {
 		// Update is called once per frame
 	public void Equation () {
 
-        NumberFoodInPocket = datas.Food / 10;
-		NumberFoodInFridge = datas.StoredFood;
+        NumberFoodInPocket = PlayerPrefs.GetFloat("Food") / 10;
+		NumberFoodInFridge = PlayerPrefs.GetInt("StoredFood");
 
         GameObject.Find("EndOfDayReport").gameObject.transform.GetChild(0).transform.GetChild(0).GetComponent<Text>().text = NumberFoodInFridge.ToString();
         GameObject.Find("EndOfDayReport").gameObject.transform.GetChild(0).transform.GetChild(1).GetComponent<Text>().text = NumberFoodInPocket.ToString();
         GameObject.Find("EndOfDayReport").gameObject.transform.GetChild(0).transform.GetChild(2).GetComponent<Text>().text = subtractedFood.ToString();
 
-        print ("yep");
+
 		if (NumberFoodInPocket > 0 && NumberFoodInPocket <= subtractedFood) {
-			print ("hola");
 			RestInPocketToZero = subtractedFood - NumberFoodInPocket ;
 			RestInFridge = NumberFoodInFridge - RestInPocketToZero;
-			datas.StoredFood = (int) RestInFridge;
-			datas.Food = 0;
-			if(datas.StoredFood < 0){
-				datas.StoredFood = 0;
+            PlayerPrefs.SetInt("StoredFood", (int)RestInFridge);
+            //datas.StoredFood = (int) RestInFridge;
+            PlayerPrefs.SetFloat("Food",0);
+			//datas.Food = 0;
+			if(PlayerPrefs.GetInt("StoredFood") < 0){
+                PlayerPrefs.SetInt("StoredFood", 0);
+				//datas.StoredFood = 0;
 			}
 
+            print("1");
+
 		} else if (NumberFoodInPocket > subtractedFood) {
-			print ("hola2");
-			RestInPocket = NumberFoodInPocket - subtractedFood;
-			datas.Food = RestInPocket * 10;
+
+            print("2");
+
+
+            RestInPocket = NumberFoodInPocket - subtractedFood;
+            print(RestInPocket);
+            PlayerPrefs.SetFloat("Food", RestInPocket * 10);
+			//datas.Food = RestInPocket * 10;
 
 		} else if (NumberFoodInPocket == 0) {
-			print ("hola3");
-			RestInFridge = NumberFoodInFridge - subtractedFood;
-			print (datas.Food);
-			datas.StoredFood = (int)RestInFridge;
-			print (datas.StoredFood);
+
+            print("3");
+
+
+            RestInFridge = NumberFoodInFridge - subtractedFood;
+            PlayerPrefs.SetInt("StoredFood", (int)RestInFridge);
+			//datas.StoredFood = (int)RestInFridge;
 		}
        
         GameObject.Find("EndOfDayReport").gameObject.transform.GetChild(0).transform.GetChild(3).GetComponent<Text>().text = (NumberFoodInPocket + NumberFoodInFridge - subtractedFood).ToString();
