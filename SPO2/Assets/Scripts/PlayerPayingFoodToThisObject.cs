@@ -77,8 +77,8 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour
                 {
                     sprites[i].SetActive(false);
                 }
-
-                pfood.eaten += spentFood;
+                PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") + spentFood);
+                //pfood.eaten += spentFood;
                 spentFood = 0;
             }
             return;
@@ -140,8 +140,8 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour
                     sprites[i].SetActive(false);
 
                 }
-
-                pfood.eaten += spentFood;
+                PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") + spentFood);
+                //pfood.eaten += spentFood;
                 spentFood = 0;
             }
         }
@@ -153,8 +153,8 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour
                 sprites[i].SetActive(false);
 
             }
-
-            pfood.eaten += spentFood;
+            PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") + spentFood);
+            //pfood.eaten += spentFood;
             spentFood = 0;
         }
     }
@@ -176,7 +176,8 @@ public class PlayerPayingFoodToThisObject : MonoBehaviour
     }
     void Looks()
     {
-        pfood.eaten -= aCubeOfMeat;
+        //pfood.eaten -= aCubeOfMeat;
+        PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") - aCubeOfMeat);
         spentFood += aCubeOfMeat;
         timer = 0;
 

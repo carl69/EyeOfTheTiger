@@ -46,7 +46,7 @@ public class FoodBankReset : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        cubmangScript.StoredFood += 1;
+    cubmangScript.StoredFood += 1;
 
        
 
