@@ -25,9 +25,9 @@ public class EatFromFoodBank : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.E) && PlayerPrefs.GetInt("StoredFood") != 0 && script02.eaten != 100)
             {
-                
 
-                script02.eaten += script02.amountOfFood;
+                PlayerPrefs.SetFloat("Food", PlayerPrefs.GetFloat("Food") + script02.amountOfFood);
+                //script02.eaten += script02.amountOfFood;
                 fud = script01.StoredFood;
                 fud -= 1;
                 script01.StoredFood = fud;
