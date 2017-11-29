@@ -615,31 +615,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
---- !u!1 &478676496 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1939449651078018, guid: 9f146720cd75cf7409257cf2606d9ad9,
-    type: 2}
-  m_PrefabInternal: {fileID: 1411053510}
---- !u!114 &478676499
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 478676496}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba959090e332314892e78f9a826d8b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberFoodInPocket: 0
-  NumberFoodInFridge: 0
-  FoodInPocketAndFridge: 0
-  FinalFoodInReport: 0
-  actualizarDatas: 0
-  RestInPocketToZero: 0
-  RestInFridge: 0
-  RestInPocket: 0
-  subtractedFood: 2
 --- !u!1 &506664092
 GameObject:
   m_ObjectHideFlags: 0
@@ -905,6 +880,55 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0979449d8bf9a3f4a9c3c65354a5751c, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &805993130
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 805993132}
+  - component: {fileID: 805993131}
+  m_Layer: 0
+  m_Name: EndOfDayReportController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &805993131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805993130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fba959090e332314892e78f9a826d8b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumberFoodInPocket: 0
+  NumberFoodInFridge: 0
+  FoodInPocketAndFridge: 0
+  FinalFoodInReport: 0
+  actualizarDatas: 0
+  RestInPocketToZero: 0
+  RestInFridge: 0
+  RestInPocket: 0
+  subtractedFood: 2
+--- !u!4 &805993132
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 805993130}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 696.32007, y: 8.84, z: 7.8}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &886789987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,6 +1943,11 @@ Prefab:
       propertyPath: StoredFood
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114346048771403336, guid: 9f146720cd75cf7409257cf2606d9ad9,
+        type: 2}
+      propertyPath: Days
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f146720cd75cf7409257cf2606d9ad9, type: 2}
   m_IsPrefabParent: 0
@@ -2096,12 +2125,12 @@ Prefab:
     - target: {fileID: 224170010552143140, guid: 950369dfe38a1744f8814e00866a1d1b,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 510.5
+      value: 393
       objectReference: {fileID: 0}
     - target: {fileID: 224170010552143140, guid: 950369dfe38a1744f8814e00866a1d1b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 319
+      value: 245.5
       objectReference: {fileID: 0}
     - target: {fileID: 224170010552143140, guid: 950369dfe38a1744f8814e00866a1d1b,
         type: 2}

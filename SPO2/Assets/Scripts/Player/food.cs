@@ -40,6 +40,8 @@ public class food : MonoBehaviour {
 
     private void FixedUpdate()
     {
+        eaten = PlayerPrefs.GetFloat("Food");
+
         if (!foodObject)
         {
             canEatThis = false;
@@ -61,6 +63,7 @@ public class food : MonoBehaviour {
                 }
                 eating = true;
                 audio_pickup.isEating = true;
+                PlayerPrefs.SetFloat("Food", eaten);
                 Destroy(foodObject.gameObject);
             }
         }
@@ -81,7 +84,7 @@ public class food : MonoBehaviour {
 				//eaten = 0;
     //        }
     //    }
-        PlayerPrefs.SetFloat("Food", eaten);
+        //PlayerPrefs.SetFloat("Food", eaten);
     }
 
     public void OnTriggerEnter(Collider other){
