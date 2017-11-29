@@ -7,6 +7,17 @@ public class FoodRackScript : MonoBehaviour {
     bool canTakeFood = false;
     food Food;
     GameObject player;
+
+	public Sprite newsprite;
+
+
+	//private SpriteRenderer spriteRenderer; 
+	//public Sprite Empty_Food_Rack;
+	//public bool changeSprite = false;
+
+
+
+
 	// Use this for initialization
 	void Start () {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -31,6 +42,27 @@ public class FoodRackScript : MonoBehaviour {
                     }
                     
                     amountOfFood -= 1;
+
+
+
+
+
+
+
+
+					if (amountOfFood == 0) {
+						//changeSprite = true;
+						//spriteRenderer.sprite = Empty_Food_Rack;
+						transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = newsprite;
+							
+							//.GetComponent<SpriteRenderer>().Sprite = new Sprite(Empty_Food_Rack);
+						print ("change sprite");
+
+					}
+
+
+
+
                 }
                 else
                 {
