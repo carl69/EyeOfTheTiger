@@ -59,7 +59,7 @@ public class AiEyes : MonoBehaviour
 
             if (hit.transform.gameObject.layer == 8)
             {
-                print("CHILL");
+
                 aiHunterTarget02.Target = hit.transform.gameObject;
                 Debug.DrawLine(hit.point, hit.point + Vector3.up * 5, Color.red);
             }

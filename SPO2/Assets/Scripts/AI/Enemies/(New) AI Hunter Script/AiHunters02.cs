@@ -46,7 +46,7 @@ public class AiHunters02 : MonoBehaviour {
                 attack();
                 lookAtPlayer();
 
-                print("Attack");
+
             }
             else if (aihunterShooting.enabled == true)
             {
@@ -66,7 +66,7 @@ public class AiHunters02 : MonoBehaviour {
                 //{
                 //    aihunterShooting.enabled = false;
                 //}
-                print("Look at the player");
+
             }
             else
             {
@@ -109,7 +109,7 @@ public class AiHunters02 : MonoBehaviour {
             {
                 aihunterShooting.enabled = true;
             }
-            print("shoot");
+
         }
         else
         {

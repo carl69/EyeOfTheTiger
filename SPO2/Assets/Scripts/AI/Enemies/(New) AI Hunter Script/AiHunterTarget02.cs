@@ -26,7 +26,7 @@ public class AiHunterTarget02 : MonoBehaviour {
     {
         if (Target != null)
         {
-            if (Target.layer == 14)
+            if (Target.layer != 14)
             {
                 if (Alert.activeInHierarchy == false)
                 {
@@ -39,7 +39,7 @@ public class AiHunterTarget02 : MonoBehaviour {
 
                 }
             }
-            else if (Target.layer != 14 && Alert.activeInHierarchy == true)
+            else if (Target.layer == 14 && Alert.activeInHierarchy == true)
             {
                 Alert.SetActive(false);
             }
