@@ -26,7 +26,7 @@ public class AiHunterShooting : MonoBehaviour {
         if (fireRate < fireTimer)
         {
             Rigidbody clone;
-            clone = Instantiate(bullet, transform.position, transform.rotation) as Rigidbody;
+            clone = Instantiate(bullet, transform.position, Quaternion.AngleAxis(transform.rotation.eulerAngles.y + 90, Vector3.up)/*transform.rotation*/) as Rigidbody;
             ShotSource.PlayOneShot(ShotClip);
             clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed * Time.deltaTime);
             Destroy(clone.gameObject, 1f);

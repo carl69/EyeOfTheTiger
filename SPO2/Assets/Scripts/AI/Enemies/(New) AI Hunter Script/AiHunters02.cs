@@ -36,7 +36,7 @@ public class AiHunters02 : MonoBehaviour {
                 fpsTarget = null;
             }
 
-            fpsTargetDistance = Vector3.Distance(fpsTarget.position, transform.position);
+            fpsTargetDistance = Vector3.Distance(fpsTarget.transform.position, transform.position);
 
             if (fpsTargetDistance < moveToAttackDistance)
             {
