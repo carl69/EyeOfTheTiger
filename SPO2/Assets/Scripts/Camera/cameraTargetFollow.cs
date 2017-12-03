@@ -31,42 +31,34 @@ public class cameraTargetFollow : MonoBehaviour {
 
         }
 
-        if (Input.GetAxis("Horizontal") != 0/*Input.GetAxis("Horizontal") == 1 || Input.GetAxis("Horizontal") == -1*/)
-        {
-            timer = 0;
-            leftRight = Input.GetAxis("Horizontal");
+		if (Input.GetAxis ("Horizontal") != 0/*Input.GetAxis ("Horizontal") > 0*/) {
+			timer = 0;
+			leftRight = Input.GetAxis ("Horizontal");
 
+			//print (Input.GetAxis ("Horizontal"));
+			if (Mathf.Abs (curentDistance) <= maxDistance) {
+				curentDistance += leftRight * speed * Time.deltaTime;
 
-            //if (Input.GetAxis("Horizontal") == 1)
-            //{
-            //    curentDistance += leftRight * speed * Time.deltaTime;
-            //    transform.localPosition = new Vector3(curentDistance, 0, 0);
-            //}else
-            if(Mathf.Abs(curentDistance) <= maxDistance   /*transform.localPosition.x * leftRight < maxDistance*/)//(transform.localPosition.x < maxDistance) && (transform.localPosition.x > -maxDistance))
-            {
+				transform.localPosition = new Vector3 (curentDistance, 0, 0); 
+				lastPos = curentDistance;
 
-                curentDistance += leftRight * speed * Time.deltaTime;
+			}
+			if (curentDistance > 9 && Input.GetAxis ("Horizontal") < 0) {
 
+				curentDistance = 0;
+				transform.position = Vector3.MoveTowards(this.transform.position, transform.parent.position, speed * Time.deltaTime);
+				curentDistance = -10;
 
-                //curentDistance = maxDistance * leftRight;
-                //if (transform.localPosition.x * leftRight < maxDistance)
-                //{
+			}
+			if (curentDistance < -9 && Input.GetAxis ("Horizontal") > 0) {
 
-                    //if (transform.localPosition.x * 1 < maxDistance)
-                    //{
-                    //    curentDistance = maxDistance * 1;
-                    //}
-                    //else if (transform.localPosition.x  > maxDistance)
-                    //{
-                    //    curentDistance = maxDistance * -1;
-                    //}
+				curentDistance = 0;
+				transform.position = Vector3.MoveTowards(this.transform.position, transform.parent.position, speed * Time.deltaTime);
+				curentDistance = 10;
 
-                    transform.localPosition = new Vector3(curentDistance, 0, 0); //Vector3.MoveTowards(this.transform.position, new Vector3(curentDistance, 0, 0), speed*Time.deltaTime);//new Vector3(curentDistance, 0, 0);
-                lastPos = curentDistance;
-                //}
+			}
 
-            }
-        }
+		}
         else if(timer > timeBeforeIdel)
         {
             curentDistance = 0;
@@ -74,7 +66,6 @@ public class cameraTargetFollow : MonoBehaviour {
         }
         else
         {
-
             transform.localPosition = new Vector3(lastPos, 0, 0);
         }
 
