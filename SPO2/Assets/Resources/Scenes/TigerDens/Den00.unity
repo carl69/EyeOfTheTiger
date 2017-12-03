@@ -1331,6 +1331,48 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 93cbb605b102d9b4cab0e9bc830ba4aa, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &692773919
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4227763852933430, guid: a273c643b7dbc0443bb73c99343018b6, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 696.32007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227763852933430, guid: a273c643b7dbc0443bb73c99343018b6, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 8.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227763852933430, guid: a273c643b7dbc0443bb73c99343018b6, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 7.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227763852933430, guid: a273c643b7dbc0443bb73c99343018b6, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227763852933430, guid: a273c643b7dbc0443bb73c99343018b6, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227763852933430, guid: a273c643b7dbc0443bb73c99343018b6, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227763852933430, guid: a273c643b7dbc0443bb73c99343018b6, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4227763852933430, guid: a273c643b7dbc0443bb73c99343018b6, type: 2}
+      propertyPath: m_RootOrder
+      value: 24
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: a273c643b7dbc0443bb73c99343018b6, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &740490862
 GameObject:
   m_ObjectHideFlags: 0
@@ -1477,55 +1519,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0979449d8bf9a3f4a9c3c65354a5751c, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &805993130
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 805993132}
-  - component: {fileID: 805993131}
-  m_Layer: 0
-  m_Name: EndOfDayReportController
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &805993131
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805993130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fba959090e332314892e78f9a826d8b3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NumberFoodInPocket: 0
-  NumberFoodInFridge: 0
-  FoodInPocketAndFridge: 0
-  FinalFoodInReport: 0
-  actualizarDatas: 0
-  RestInPocketToZero: 0
-  RestInFridge: 0
-  RestInPocket: 0
-  subtractedFood: 2
---- !u!4 &805993132
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 805993130}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 696.32007, y: 8.84, z: 7.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 24
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &886789987
 GameObject:
   m_ObjectHideFlags: 0
@@ -3524,12 +3517,12 @@ Prefab:
     - target: {fileID: 224170010552143140, guid: 950369dfe38a1744f8814e00866a1d1b,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: 232.5
+      value: 320
       objectReference: {fileID: 0}
     - target: {fileID: 224170010552143140, guid: 950369dfe38a1744f8814e00866a1d1b,
         type: 2}
       propertyPath: m_LocalPosition.y
-      value: 145.5
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 224170010552143140, guid: 950369dfe38a1744f8814e00866a1d1b,
         type: 2}
