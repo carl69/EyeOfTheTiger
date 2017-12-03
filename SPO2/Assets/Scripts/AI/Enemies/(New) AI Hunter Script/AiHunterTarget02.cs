@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AiHunterTarget02 : MonoBehaviour {
+public class AiHunterTarget02 : MonoBehaviour
+{
 
     public GameObject Target;
     public List<GameObject> Targets = new List<GameObject>();
@@ -13,7 +14,7 @@ public class AiHunterTarget02 : MonoBehaviour {
     public AudioClip AlertClip;
 
     float UpdateTimer = 2;
-    float curTime = 2;
+    float curTime = 0;
 
     private void Start()
     {
@@ -26,6 +27,7 @@ public class AiHunterTarget02 : MonoBehaviour {
     {
         if (Target != null)
         {
+            curTime = 0;
             if (Target.layer != 14)
             {
                 if (Alert.activeInHierarchy == false)
@@ -45,11 +47,19 @@ public class AiHunterTarget02 : MonoBehaviour {
                 Alert.SetActive(false);
             }
         }
-        else if(Alert.activeInHierarchy == true)
+        else if (Alert.activeInHierarchy == true)
         {
-            aihunter02.aihunterShooting.enabled = false;
-            aihunter02.fpsTarget = null;
-            Alert.SetActive(false);
+            if (curTime > UpdateTimer)
+            {
+                aihunter02.aihunterShooting.enabled = false;
+                aihunter02.fpsTarget = null;
+                Alert.SetActive(false);
+            }
+            else
+            {
+                curTime += 1 * Time.deltaTime;
+            }
+
         }
 
         //if (Targets[0] == null || Target.layer == 14)
@@ -58,10 +68,10 @@ public class AiHunterTarget02 : MonoBehaviour {
         //    Targets.Remove(Targets[0]);
         //    aihunter02.fpsTarget = null;
         //}
-       
-        if (Targets.Count != 0 )
+
+        if (Targets.Count != 0)
         {
-            
+
             if (Targets[0] != null)
             {
                 if (aihunter02.fpsTarget != Target.transform)
@@ -69,9 +79,9 @@ public class AiHunterTarget02 : MonoBehaviour {
                     aihunter02.fpsTarget = Target.transform;
                 }
             }
-            
+
         }
-        
+
     }
 
 
@@ -82,7 +92,7 @@ public class AiHunterTarget02 : MonoBehaviour {
             if (x.transform.gameObject.layer != 14)
             {
                 Targets.Add(x.gameObject);
-                
+
                 if (Target == null)
                 {
                     Target = x.gameObject;
@@ -99,8 +109,8 @@ public class AiHunterTarget02 : MonoBehaviour {
                     }
                 }
             }
-            
-            
+
+
         }
     }
     private void OnTriggerExit(Collider d)
