@@ -34,7 +34,7 @@ public class CameraFade : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        fadeSpeed = 0.097f;
+        fadeSpeed = 0.25f;
 
 	}
 	

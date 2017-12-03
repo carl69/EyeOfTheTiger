@@ -41,7 +41,7 @@ public class Tutorial_transitions : MonoBehaviour {
     public IEnumerator SceneTransition00()
     {
         Debug.Log("Coroutine started");
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         Debug.Log("3 seconds passed");
         SceneManager.LoadScene("WorldMap");
     }
@@ -49,7 +49,7 @@ public class Tutorial_transitions : MonoBehaviour {
     public IEnumerator SceneTransition01()
     {
         Debug.Log("Coroutine started");
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         Debug.Log("3 seconds passed");
         int y = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(y + 1);
