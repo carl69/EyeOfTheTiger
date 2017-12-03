@@ -27,14 +27,14 @@ public class Audio_playerMovement : MonoBehaviour {
                     //Running
                     isWalking = false;
                     isRunning = true;
-                    Debug.Log("Running!");
+                   // Debug.Log("Running!");
                 }
                 else
                 {
                     //Walking
                     isWalking = true;
                     isRunning = false;
-                    Debug.Log("Walking!");
+                   // Debug.Log("Walking!");
                 }
             }
             else
@@ -42,7 +42,7 @@ public class Audio_playerMovement : MonoBehaviour {
                 //Stopped
                 isWalking = false;
                 isRunning = false;
-                Debug.Log("No movement!");
+                //Debug.Log("No movement!");
             }
         }
   
