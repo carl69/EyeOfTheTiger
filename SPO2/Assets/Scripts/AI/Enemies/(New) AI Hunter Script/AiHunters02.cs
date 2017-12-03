@@ -46,8 +46,12 @@ public class AiHunters02 : MonoBehaviour {
 
                 print("Attack");
             }
-            else
-                if (fpsTargetDistance < enemyLookDistance + 5)
+            else if (aihunterShooting.enabled == true)
+            {
+                aihunterShooting.enabled = false;
+            }
+
+            if (fpsTargetDistance < enemyLookDistance)
             {
                 myRenderer.material.color = Color.yellow;
                 lookAtPlayer();
@@ -56,10 +60,10 @@ public class AiHunters02 : MonoBehaviour {
                 {
                     aihunteridel.enabled = false;
                 }
-                if (aihunterShooting.enabled == true)
-                {
-                    aihunterShooting.enabled = false;
-                }
+                //if (aihunterShooting.enabled == true)
+                //{
+                //    aihunterShooting.enabled = false;
+                //}
                 print("Look at the player");
             }
             else
@@ -69,10 +73,7 @@ public class AiHunters02 : MonoBehaviour {
                 {
                     aihunteridel.enabled = true;
                 }
-                if (aihunterShooting.enabled == true)
-                {
-                    aihunterShooting.enabled = false;
-                }
+
                 myRenderer.material.color = Color.white;
             }
         }
@@ -82,10 +83,10 @@ public class AiHunters02 : MonoBehaviour {
             {
                 aihunteridel.enabled = true;
             }
-            if (aihunterShooting.enabled == true)
-            {
-                aihunterShooting.enabled = false;
-            }
+            //if (aihunterShooting.enabled == true)
+            //{
+            //    aihunterShooting.enabled = false;
+            //}
             myRenderer.material.color = Color.white;
         }
 	}
