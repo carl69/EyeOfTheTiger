@@ -30,7 +30,7 @@ public class AiHunterShooting : MonoBehaviour {
         {
             Rigidbody clone;
             clone = Instantiate(bullet, BulletSpawnPoint.transform.position, Quaternion.AngleAxis(transform.rotation.eulerAngles.y + 90, Vector3.up)/*transform.rotation*/) as Rigidbody;
-            ShotSource.PlayOneShot(ShotClip);
+            ShotSource.PlayOneShot(ShotClip, 1.0f);
             clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed * Time.deltaTime);
             Destroy(clone.gameObject, 1f);
             fireTimer = 0;
@@ -40,7 +40,7 @@ public class AiHunterShooting : MonoBehaviour {
             fireTimer += Time.deltaTime * 1;
             if (hasReloaded == false && fireRate/2.5 < fireTimer)
             {
-                ShotSource.PlayOneShot(ReloadClip, 0.09f);
+                ShotSource.PlayOneShot(ReloadClip, 0.1f);
                 hasReloaded = true;
             }
         }

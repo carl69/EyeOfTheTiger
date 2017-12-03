@@ -34,7 +34,7 @@ public class AiHunterTarget02 : MonoBehaviour {
                     Debug.Log("Hunter is alert!");
                     if (!AlertSource.isPlaying)
                     {
-                        AlertSource.PlayOneShot(AlertClip);
+                        AlertSource.PlayOneShot(AlertClip, 1f);
                     }
 
                 }
