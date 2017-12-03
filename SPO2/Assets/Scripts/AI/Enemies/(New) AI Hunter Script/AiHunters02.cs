@@ -33,6 +33,8 @@ public class AiHunters02 : MonoBehaviour {
         {
             if (fpsTarget.gameObject.layer == 14)
             {
+                aihunterShooting.enabled = false;
+
                 fpsTarget = null;
             }
 
@@ -100,6 +102,8 @@ public class AiHunters02 : MonoBehaviour {
     {
         if (fpsTargetDistance < shootDistance)
         {
+
+
             myRenderer.material.color = Color.black;
             if (aihunterShooting.enabled == false)
             {
