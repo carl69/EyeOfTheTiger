@@ -35,12 +35,15 @@ public class FoodRackScript : MonoBehaviour {
                     if (Food.maxFood - Food.eaten <= Food.amountOfFood)
                     {
                         Food.eaten = Food.maxFood;
+						PlayerPrefs.SetFloat("Food", Food.eaten);
                     }
                     else
                     {
                         Food.eaten += Food.amountOfFood;
+						PlayerPrefs.SetFloat("Food", Food.eaten);
+
                     }
-                    
+
                     amountOfFood -= 1;
 
 
