@@ -21,20 +21,23 @@ public class WorldMap : MonoBehaviour
     public AudioClip MapUpdateClip;
     public bool mapUpdateClipHasPlayed = false;
 
+    public bool playerStartPosUpdated = false;
+
     // Use this for initialization
     void Start()
     {
         mapUpdateClipHasPlayed = false;
+        playerStartPosUpdated = false;
     }
 
     private void UpdateHome()
     {
-        currentHome.GetComponent<SphereCollider>().isTrigger = false;
+        currentHome.GetComponent<SphereCollider>().enabled = false;
         currentHome.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = HomeDen;
         currentHome.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
         currentHome.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = null;
         currentHome.transform.GetChild(1).transform.GetChild(0).transform.GetChild(0).transform.GetChild(1).GetComponent<SpriteRenderer>().sprite = HomeText;
-        GameObject.FindGameObjectWithTag("Player").transform.position = currentHome.transform.position;
+       
     }
 
     //Function for moving player on world map
@@ -53,11 +56,21 @@ public class WorldMap : MonoBehaviour
         {
             currentHome = GameObject.Find("Dens").transform.GetChild(1).gameObject;
             UpdateHome();
+            if (playerStartPosUpdated == false)
+            {
+                GameObject.FindGameObjectWithTag("Player").transform.position = currentHome.transform.position;
+                playerStartPosUpdated = true;
+            }
         }
         if (PlayerPrefs.GetInt("Home") == 2)
         {
             currentHome = GameObject.Find("Dens").transform.GetChild(2).gameObject;
             UpdateHome();
+            if (playerStartPosUpdated == false)
+            {
+                GameObject.FindGameObjectWithTag("Player").transform.position = currentHome.transform.position;
+                playerStartPosUpdated = true;
+            }
         }
 
 
@@ -184,6 +197,26 @@ public class WorldMap : MonoBehaviour
                     playerMoving = true;
                 }
                 if (hit02.transform.name == "Node05")
+                {
+                    selectedNode = hit02.transform.gameObject;
+                    playerMoving = true;
+                }
+                if (hit02.transform.name == "Node06")
+                {
+                    selectedNode = hit02.transform.gameObject;
+                    playerMoving = true;
+                }
+                if (hit02.transform.name == "Node07")
+                {
+                    selectedNode = hit02.transform.gameObject;
+                    playerMoving = true;
+                }
+                if (hit02.transform.name == "Node08")
+                {
+                    selectedNode = hit02.transform.gameObject;
+                    playerMoving = true;
+                }
+                if (hit02.transform.name == "Node09")
                 {
                     selectedNode = hit02.transform.gameObject;
                     playerMoving = true;
