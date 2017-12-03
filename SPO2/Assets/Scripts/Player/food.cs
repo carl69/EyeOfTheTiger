@@ -15,7 +15,7 @@ public class food : MonoBehaviour {
     private float rate;
     private float timer;
     //fix food pickup
-    public bool canEatThis = false;
+	public bool canEatThis = false, canEatThese = false;
     private GameObject foodObject;
 
     Audio_pickup audio_pickup;
@@ -67,6 +67,25 @@ public class food : MonoBehaviour {
                 Destroy(foodObject.gameObject);
             }
         }
+		/*if (canEatThese)
+		{
+			if (Input.GetKeyDown(KeyCode.E))
+			{
+
+
+				if ((maxFood - eaten) <= amountOfFood)
+				{
+					eaten = maxFood;
+				}
+				else
+				{
+					eaten += amountOfFood;
+				}
+				eating = true;
+				audio_pickup.isEating = true;
+				PlayerPrefs.SetFloat("Food", eaten);
+			}
+		}*/
 
 
         if (eating)
@@ -94,7 +113,11 @@ public class food : MonoBehaviour {
             canEatThis = true;
             foodObject = other.gameObject;
         }
-
+		/*if (other.tag == "FoodBank")
+		{
+			canEatThese = true;
+			foodObject = other.gameObject;
+		}*/
 	}
 
     public void OnTriggerExit(Collider other)
@@ -104,6 +127,10 @@ public class food : MonoBehaviour {
         {
             canEatThis = false;
         }
+		/*if (other.tag == "FoodBank")
+		{
+			canEatThese = false;
+		}*/
 
     }
 
