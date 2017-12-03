@@ -1460,6 +1460,7 @@ MonoBehaviour:
   HomeText: {fileID: 21300000, guid: 5f74482e95726e74a949da7ec118fec7, type: 3}
   MapUpdateClip: {fileID: 8300000, guid: 1ec5123c523714441ad3998a0848a4f5, type: 3}
   mapUpdateClipHasPlayed: 0
+  playerStartPosUpdated: 0
 --- !u!82 &592389121
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1678,6 +1679,11 @@ Prefab:
         type: 2}
       propertyPath: StoredFood
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114346048771403336, guid: 9f146720cd75cf7409257cf2606d9ad9,
+        type: 2}
+      propertyPath: Home
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9f146720cd75cf7409257cf2606d9ad9, type: 2}

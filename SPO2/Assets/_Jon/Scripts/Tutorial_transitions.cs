@@ -25,7 +25,7 @@ public class Tutorial_transitions : MonoBehaviour {
     public void OnTriggerEnter(Collider other)
     {
         
-        if (other.gameObject.tag == "Player" && currentScene == "Den00")
+        if (other.gameObject.tag == "Player" && (currentScene == "Den00" || currentScene == "Den01" || currentScene == "Den02"))
         {
             cam.GetComponent<CameraFade>().fadeDir = newFadeDirection;
             StartCoroutine(SceneTransition00());          
