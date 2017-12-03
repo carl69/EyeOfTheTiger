@@ -17,6 +17,7 @@ public class PlayerDeath : MonoBehaviour {
 
     public GameObject GameOverScreen;
     public GameObject ContinueScreen;
+    public GameObject RetryScreen;
 
     public AudioSource playerDeath;
 
@@ -31,6 +32,7 @@ public class PlayerDeath : MonoBehaviour {
         GameOverScreen.SetActive(false);
         ContinueScreen = GameObject.FindGameObjectWithTag("Canvas").transform.GetChild(3).gameObject;
         ContinueScreen.SetActive(false);
+        RetryScreen = GameOverScreen.transform.GetChild(3).gameObject;
 
         //textBox = GameObject.FindGameObjectWithTag("TextPrompts").gameObject;
 
@@ -136,6 +138,7 @@ public class PlayerDeath : MonoBehaviour {
         if (PlayerPrefs.GetInt("Cub") >= 2)
         {
             ContinueScreen.SetActive(true);
+            RetryScreen.SetActive(false);
             Debug.Log("Cub found!");
             //if (deathTextShown == false)
             //{

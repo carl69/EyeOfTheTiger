@@ -102,6 +102,19 @@ public class CanvasController : MonoBehaviour {
         SceneManager.LoadScene("Den"+"0"+PlayerPrefs.GetInt("Home"));
     }
 
+    public void Retry()
+    {
+        PlayerPrefs.SetInt("Home",0);
+        PlayerPrefs.SetInt("Days", 0);
+        PlayerPrefs.SetInt("Den", 0);
+        PlayerPrefs.SetInt("Cub", 0);
+        PlayerPrefs.SetInt("StoredFood", 0);
+        PlayerPrefs.SetFloat("Food",0);
+        PlayerPrefs.SetString("CubName", "");
+
+        SceneManager.LoadScene("Den00");
+    }
+
     // Update is called once per frame
     void Update()
     {
