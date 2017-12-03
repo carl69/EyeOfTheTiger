@@ -230,7 +230,7 @@ public class WorldMap : MonoBehaviour
                 if (hit02.transform.name == "Den01")
                 {
                     Debug.Log("This is a second den node");
-                    if (PlayerPrefs.GetInt("StoredFood") >= 5 && PlayerPrefs.GetInt("Cub") == 2)
+                    if (PlayerPrefs.GetInt("StoredFood") >= 5 && PlayerPrefs.GetInt("Cub") >= 2)
                     {
                         Debug.Log("Requirements for den move met!");
                         selectedNode = hit02.transform.gameObject;
@@ -247,7 +247,7 @@ public class WorldMap : MonoBehaviour
                 if (hit02.transform.name == "Den02")
                 {
                     Debug.Log("This is a second den node");
-                    if (PlayerPrefs.GetInt("StoredFood") >= 10 && PlayerPrefs.GetInt("Cub") == 2)
+                    if (PlayerPrefs.GetInt("StoredFood") >= 10 && PlayerPrefs.GetInt("Cub") >= 2)
                     {
                         selectedNode = hit02.transform.gameObject;
                         playerMoving = true;
