@@ -12,6 +12,8 @@ public class AiHunterShooting : MonoBehaviour {
 
     public AudioSource ShotSource;
     public AudioClip ShotClip;
+    public AudioClip ReloadClip;
+    public bool hasReloaded = false;
 
     // Use this for initialization
     void Start () {
@@ -31,9 +33,15 @@ public class AiHunterShooting : MonoBehaviour {
             clone.velocity = transform.TransformDirection(Vector3.forward * bulletSpeed * Time.deltaTime);
             Destroy(clone.gameObject, 1f);
             fireTimer = 0;
+            hasReloaded = false;
         }
         else {
             fireTimer += Time.deltaTime * 1;
+            if (hasReloaded == false && fireRate/2.5 < fireTimer)
+            {
+                ShotSource.PlayOneShot(ReloadClip);
+                hasReloaded = true;
+            }
         }
 	}
 }

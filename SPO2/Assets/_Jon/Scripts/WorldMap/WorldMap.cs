@@ -60,6 +60,7 @@ public class WorldMap : MonoBehaviour
             {
                 GameObject.FindGameObjectWithTag("Player").transform.position = currentHome.transform.position;
                 playerStartPosUpdated = true;
+                GameObject.Find("Dens").transform.GetChild(0).gameObject.SetActive(false);
             }
         }
         if (PlayerPrefs.GetInt("Home") == 2)
@@ -70,6 +71,7 @@ public class WorldMap : MonoBehaviour
             {
                 GameObject.FindGameObjectWithTag("Player").transform.position = currentHome.transform.position;
                 playerStartPosUpdated = true;
+                GameObject.Find("Dens").transform.GetChild(1).gameObject.SetActive(false);
             }
         }
 
@@ -251,6 +253,7 @@ public class WorldMap : MonoBehaviour
                     {
                         selectedNode = hit02.transform.gameObject;
                         playerMoving = true;
+                        GameObject.Find("Nodes").transform.GetChild(5).gameObject.GetComponent<SphereCollider>().enabled = false;
                     }
                     else
                     {
