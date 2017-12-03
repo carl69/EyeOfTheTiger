@@ -28,8 +28,14 @@ public class AiHunters02 : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
         if (fpsTarget != null)
         {
+            if (fpsTarget.gameObject.layer == 14)
+            {
+                fpsTarget = null;
+            }
+
             fpsTargetDistance = Vector3.Distance(fpsTarget.position, transform.position);
 
             if (fpsTargetDistance < moveToAttackDistance)
