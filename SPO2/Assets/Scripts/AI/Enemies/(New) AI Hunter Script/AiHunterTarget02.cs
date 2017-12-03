@@ -41,11 +41,14 @@ public class AiHunterTarget02 : MonoBehaviour {
             }
             else if (Target.layer == 14 && Alert.activeInHierarchy == true)
             {
+                aihunter02.fpsTarget = null;
                 Alert.SetActive(false);
             }
         }
-        else if(Alert.activeInHierarchy == true )
+        else if(Alert.activeInHierarchy == true)
         {
+            aihunter02.aihunterShooting.enabled = false;
+            aihunter02.fpsTarget = null;
             Alert.SetActive(false);
         }
 

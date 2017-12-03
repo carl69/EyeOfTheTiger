@@ -16,7 +16,7 @@ public class AiHunters02 : MonoBehaviour {
     public Transform fpsTarget;
     Rigidbody rb;
     Renderer myRenderer;
-    AiHunterShooting aihunterShooting;
+    public AiHunterShooting aihunterShooting;
     AiHunterIdel aihunteridel;
     // Use this for initialization
     void Start () {
