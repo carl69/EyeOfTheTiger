@@ -40,7 +40,7 @@ public class AiHunterShooting : MonoBehaviour {
             fireTimer += Time.deltaTime * 1;
             if (hasReloaded == false && fireRate/2.5 < fireTimer)
             {
-                ShotSource.PlayOneShot(ReloadClip);
+                ShotSource.PlayOneShot(ReloadClip, 0.09f);
                 hasReloaded = true;
             }
         }
