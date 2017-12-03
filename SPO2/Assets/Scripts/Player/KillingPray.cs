@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class KillingPray : MonoBehaviour {
     public GameObject food;
+
+    public AudioSource PreyDeathSource;
+    public AudioClip PreyDeathClip;
+
 	// Use this for initialization
 	void Start () {
-		
+        PreyDeathSource = GameObject.FindGameObjectWithTag("AudioController").transform.GetChild(1).transform.GetChild(5).GetChild(0).gameObject.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -31,6 +35,7 @@ public class KillingPray : MonoBehaviour {
 				Instantiate(food, new Vector3(c.transform.position.x + 8, c.transform.position.y , c.transform.position.z), Quaternion.identity);
 				Instantiate(food, new Vector3(c.transform.position.x + 13, c.transform.position.y , c.transform.position.z), Quaternion.identity);
 			}
+            PreyDeathSource.PlayOneShot(PreyDeathClip, 0.075f);
             Destroy(c.gameObject);
         }
         if (c.tag == "Pray" && this.tag == "Mother")
