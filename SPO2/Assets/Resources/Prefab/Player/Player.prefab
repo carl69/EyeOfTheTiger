@@ -277,6 +277,7 @@ MonoBehaviour:
   timeBeforeIdel: 1
   timer: 0
   leftRight: 0
+  lastPos: 0
 --- !u!114 &114140695577425492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -395,6 +396,7 @@ MonoBehaviour:
   eaten: 100
   amountOfFood: 10
   canEatThis: 0
+  canEatThese: 0
 --- !u!114 &114539759320473250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -423,8 +425,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!212 &212067737362753808
 SpriteRenderer:
   m_ObjectHideFlags: 1
