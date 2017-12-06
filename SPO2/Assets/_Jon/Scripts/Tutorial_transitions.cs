@@ -30,6 +30,10 @@ public class Tutorial_transitions : MonoBehaviour {
             cam.GetComponent<CameraFade>().fadeDir = newFadeDirection;
             StartCoroutine(SceneTransition00());          
         }
+        else if(other.gameObject.tag == "Player" && currentScene == "Node09")
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
         else if (other.gameObject.tag == "Player")
         {
             cam.GetComponent<CameraFade>().fadeDir = newFadeDirection;
