@@ -218,10 +218,16 @@ public class WorldMap : MonoBehaviour
                     selectedNode = hit02.transform.gameObject;
                     playerMoving = true;
                 }
-                if (hit02.transform.name == "Node09")
+                if (hit02.transform.name == "Node09" && PlayerPrefs.GetInt("StoredFood") >= 15 && PlayerPrefs.GetInt("Cub") >= 2)
                 {
                     selectedNode = hit02.transform.gameObject;
                     playerMoving = true;
+                }
+                else
+                {
+                    Debug.Log("Should activate box now!");
+                    GameObject.FindGameObjectWithTag("Canvas").transform.GetChild(0).gameObject.SetActive(true);
+                    Debug.Log("Box activated!");
                 }
                 if (hit02.transform.name == "Den00")
                 {
